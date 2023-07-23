@@ -7,7 +7,6 @@ import Registro from "./components/auth/Registro.jsx";
 import { useState } from "react";
 import ErrorPage from "./components/views/Error-page.jsx"
 
-
 function App() {
   const usuario = JSON.parse(sessionStorage.getItem('usuario')) || {}; 
   const [usuarioLogueado, setUsuarioLogueado] = useState(usuario);
