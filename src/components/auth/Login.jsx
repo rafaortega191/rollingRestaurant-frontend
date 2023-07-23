@@ -2,9 +2,14 @@ import { Form, Button, Container, Card } from "react-bootstrap";
 import { login } from "../../helpers/queries";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
+import "./Login.css";
 import { useNavigate } from "react-router-dom";
-
-
+import {
+  AiFillFacebook,
+  AiOutlineTwitter,
+  AiFillGoogleCircle,
+  AiFillInstagram,
+} from "react-icons/ai";
 
 const Login = ({ setUsuarioLogueado }) => {
   const {
@@ -31,7 +36,7 @@ const Login = ({ setUsuarioLogueado }) => {
           "success"
         );
         setUsuarioLogueado(respuesta);
-        
+
         // #TODO
         // Si el usuario es tipo admin, redirigir a /administrador. Sino, redirigir a /home.
 
@@ -43,10 +48,12 @@ const Login = ({ setUsuarioLogueado }) => {
   };
 
   return (
-    <Container className="mainSection">
+    <Container className="mainSection d-block align-items-center justify-content-center p-3 my-5">
       <Card className="my-5">
-        <Card.Header as="h5">Login</Card.Header>
-        <Card.Body>
+        <Card.Header className="text-center titulo py-3" as="h3">
+          Login
+        </Card.Header>
+        <Card.Body className="texto_general">
           <Form onSubmit={handleSubmit(onSubmit)}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Email</Form.Label>
@@ -68,16 +75,16 @@ const Login = ({ setUsuarioLogueado }) => {
               </Form.Text>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicPassword">
-              <Form.Label>Password</Form.Label>
+              <Form.Label>Contraseña</Form.Label>
               <Form.Control
                 type="password"
-                placeholder="Password"
+                placeholder="Contraseña"
                 {...register("password", {
-                  required: "El password es un dato obligatorio",
+                  required: "La contraseña es un dato obligatorio",
                   pattern: {
                     value: /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/,
                     message:
-                      "El password debe tener entre 8 y 16 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula.",
+                      "La contraseña debe tener entre 8 y 16 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula.",
                   },
                 })}
               />
@@ -85,11 +92,37 @@ const Login = ({ setUsuarioLogueado }) => {
                 {errors.password?.message}
               </Form.Text>
             </Form.Group>
-            <Button variant="primary" type="submit">
-              Ingresar
-            </Button>
+            <div className="d-flex justify-content-center">
+              <Button className="botonIngresar px-3 my-3" type="submit">
+                Ingresar
+              </Button>
+            </div>
           </Form>
         </Card.Body>
+        <Card.Footer className="texto_general">
+          <div
+            className="d-flex justify-content-center mx-auto "
+            style={{ width: "40%" }}
+          >
+            <Button
+              className="m-1 botonesIconos"
+            >
+              <AiFillFacebook size="20" />
+            </Button>
+
+            <Button
+              className="m-1 botonesIconos"
+            >
+              <AiOutlineTwitter size="20" />
+            </Button>
+
+            <Button
+              className="m-1 botonesIconos"
+            >
+              <AiFillInstagram size="20" />
+            </Button>
+          </div>
+        </Card.Footer>
       </Card>
     </Container>
   );

@@ -1,5 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Prata&display=swap');
+
+
+
 .app {
-    font-family: sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -7,7 +11,7 @@
     gap: 20px;
     height: 100vh;
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-    background-color: #f8f9fd;
+    background-color: #e6f7e6;
   }
   
   input[type="text"],
