@@ -1,9 +1,31 @@
 {
-  "posts": [
+  "productos": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "nombreProducto": "fideos con tuco",
+      "precio": "9000",
+      "descripcion": "fideos con salsa roja",
+      "imagen": "https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg",
+      "categoria": "con carne",
+      "estado": "disponible",
+      "id": 2
+    },
+    {
+      "nombreProducto": "fideos con tuco vencidos",
+      "precio": "300",
+      "descripcion": "fideos con salsa roja pasados de fecha",
+      "imagen": "https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg",
+      "categoria": "vegetariano",
+      "estado": "no disponible",
+      "id": 3
+    },
+    {
+      "nombreProducto": "fideossss",
+      "precio": "600",
+      "descripcion": "fideosss",
+      "imagen": "https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg",
+      "categoria": "vegano",
+      "estado": "disponible",
+      "id": 4
     }
   ],
   "comments": [
