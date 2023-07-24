@@ -1,11 +1,13 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider,Route,Routes, BrowserRouter } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
+import Acercadenosotros from "./components/views/Acercadenosotros"
 import Administrador from "./components/views/Administrador";
 import Login from "./components/auth/Login.jsx";
 import Registro from "./components/auth/Registro.jsx";
 import { useState } from "react";
 import ErrorPage from "./components/views/Error-page.jsx"
+import RutasDelAdmin from "./components/routes/RutasDelAdmin";
 
 function App() {
   const usuario = JSON.parse(sessionStorage.getItem('usuario')) || {}; 
@@ -31,6 +33,15 @@ function App() {
       path: "/signup",
       element: <Registro setUsuarioLogueado={setUsuarioLogueado} />,
       errorElement: <ErrorPage />,
+    },
+    {
+      path: "/administrador/*",
+      element: <RutasDelAdmin setUsuarioLogueado={setUsuarioLogueado} />,
+      errorElement: <ErrorPage />,
+    },
+    {
+      path: "/acercadenosotros",
+      element: <Acercadenosotros />,
     },
   ]);
 

@@ -4,12 +4,7 @@ import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import "./Login.css";
 import { useNavigate } from "react-router-dom";
-import {
-  AiFillFacebook,
-  AiOutlineTwitter,
-  AiFillGoogleCircle,
-  AiFillInstagram,
-} from "react-icons/ai";
+//import {AiFillFacebook, AiOutlineTwitter, AiFillGoogleCircle, AiFillInstagram} from "react-icons/ai";
 
 const Login = ({ setUsuarioLogueado }) => {
   const {
