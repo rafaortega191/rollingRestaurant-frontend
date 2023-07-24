@@ -17,15 +17,6 @@
       "categoria": "vegetariano",
       "estado": "no disponible",
       "id": 3
-    },
-    {
-      "nombreProducto": "fideossss",
-      "precio": "600",
-      "descripcion": "fideosss",
-      "imagen": "https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg",
-      "categoria": "vegano",
-      "estado": "disponible",
-      "id": 4
     }
   ],
   "comments": [

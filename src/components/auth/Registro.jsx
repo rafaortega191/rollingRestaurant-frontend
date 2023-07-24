@@ -5,12 +5,7 @@ import "./Registro.css";
 
 import { Form, Button, Container, Card } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import {
-  AiFillFacebook,
-  AiOutlineTwitter,
-  AiFillGoogleCircle,
-  AiFillInstagram,
-} from "react-icons/ai";
+//import {AiFillFacebook,AiOutlineTwitter,AiFillGoogleCircle,AiFillInstagram,} from "react-icons/ai";
 
 const Registro = ({ setUsuarioLogueado }) => {
   const {

@@ -1,15 +1,13 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Acercadenosotros from './components/views/Acercadenosotros'
-import RutasDelAdmin from './components/routes/RutasDelAdmin'
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider,Route,Routes, BrowserRouter } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
+import Acercadenosotros from "./components/views/Acercadenosotros"
 import Administrador from "./components/views/Administrador";
 import Login from "./components/auth/Login.jsx";
 import Registro from "./components/auth/Registro.jsx";
 import { useState } from "react";
 import ErrorPage from "./components/views/Error-page.jsx"
-
+import RutasDelAdmin from "./components/routes/RutasDelAdmin";
 
 function App() {
   const usuario = JSON.parse(sessionStorage.getItem('usuario')) || {}; 
@@ -36,21 +34,20 @@ function App() {
       element: <Registro setUsuarioLogueado={setUsuarioLogueado} />,
       errorElement: <ErrorPage />,
     },
+    {
+      path: "/administrador/*",
+      element: <RutasDelAdmin setUsuarioLogueado={setUsuarioLogueado} />,
+      errorElement: <ErrorPage />,
+    },
+    {
+      path: "/acercadenosotros",
+      element: <Acercadenosotros />,
+    },
   ]);
 
   return (
     <>
-
-      <BrowserRouter>
-      <Routes>
-        <Route exact path="/administrador" element={<Administrador></Administrador>}></Route>
-        <Route exact path="/acercadenosotros" element={<Acercadenosotros></Acercadenosotros>}></Route>
-        <Route path="/administrador/*" element={<RutasDelAdmin></RutasDelAdmin>}></Route>
-        </Routes>
-      </BrowserRouter>
-
       <RouterProvider router={router} />
-
     </>
   );
 }
