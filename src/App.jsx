@@ -9,11 +9,14 @@ import { useState } from "react";
 import ErrorPage from "./components/views/Error404"
 import RutasDelAdmin from "./components/routes/RutasDelAdmin";
 
+
 function App() {
   const usuario = JSON.parse(sessionStorage.getItem('usuario')) || {}; 
   const [usuarioLogueado, setUsuarioLogueado] = useState(usuario);
 
+
   const router = createBrowserRouter([
+    
     {
       path: "/administrador",
       element: <Administrador />,
