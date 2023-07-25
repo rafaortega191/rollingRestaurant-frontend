@@ -3,8 +3,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import Acercadenosotros from "./components/views/Acercadenosotros"
 import Administrador from "./components/views/Administrador";
-import Login from "./components/auth/Login.jsx";
-import Registro from "./components/auth/Registro.jsx";
+import Login from "./components/autenticacion/Login.jsx";
+import Registro from "./components/autenticacion/Registro.jsx";
 import { useState } from "react";
 import ErrorPage from "./components/views/Error404"
 import RutasDelAdmin from "./components/routes/RutasDelAdmin";
@@ -23,7 +23,7 @@ function App() {
       errorElement: <ErrorPage />,
     },
     {
-      path: "/signin",
+      path: "/login",
       element: <Login setUsuarioLogueado={setUsuarioLogueado}></Login>,
       errorElement: <ErrorPage />,
     },
@@ -33,7 +33,7 @@ function App() {
       errorElement: <ErrorPage />,
     },
     {
-      path: "/signup",
+      path: "/registro",
       element: <Registro setUsuarioLogueado={setUsuarioLogueado} />,
       errorElement: <ErrorPage />,
     },
@@ -45,6 +45,7 @@ function App() {
     {
       path: "/acercadenosotros",
       element: <Acercadenosotros />,
+      errorElement: <ErrorPage />,
     },
   ]);
 

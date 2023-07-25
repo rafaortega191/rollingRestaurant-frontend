@@ -2,6 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import './acercadenosotros.css'
 import auto from '../../assets/auto.jpg'
+import Nav from '../common/Nav.jsx';
 
 
 const Acercadenosotros = () => {
@@ -18,6 +19,7 @@ const Acercadenosotros = () => {
 
     return (
         <div className='Acercadenosotros-fondo'>
+          <Nav usuarioLogueado='' setUsuarioLogueado=''></Nav>
           <h1 className='text-center mt-2 text-white h1-acercadenosotros'>Nuestro Equipo</h1>
           <hr className='m-4 text-white'/>
           <div className="card-acercadenosotros-container rounded-4">
