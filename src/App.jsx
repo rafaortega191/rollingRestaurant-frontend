@@ -6,7 +6,7 @@ import Administrador from "./components/views/Administrador";
 import Login from "./components/auth/Login.jsx";
 import Registro from "./components/auth/Registro.jsx";
 import { useState } from "react";
-import ErrorPage from "./components/views/Error-page.jsx"
+import ErrorPage from "./components/views/Error404"
 import RutasDelAdmin from "./components/routes/RutasDelAdmin";
 
 function App() {
