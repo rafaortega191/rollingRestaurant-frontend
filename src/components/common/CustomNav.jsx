@@ -1,5 +1,8 @@
-import { Navbar, Container, Nav, Button } from "react-bootstrap";
+import React from "react";
+import { Navbar, Container, Nav, Button, Image } from "react-bootstrap";
 import { Link, NavLink, useNavigate } from "react-router-dom";
+import logo from "../../assets/trace.svg"; // Importa tu imagen aquí
+import "./CustomNav.css";
 
 const CustomNav = ({ usuarioLogueado, setUsuarioLogueado }) => {
   const navegacion = useNavigate();
@@ -9,20 +12,29 @@ const CustomNav = ({ usuarioLogueado, setUsuarioLogueado }) => {
     sessionStorage.removeItem("usuario");
     navegacion("/");
   };
+
   return (
-    <Navbar bg="danger" variant="dark" expand="lg">
+    <>
+      {/* Imagen centrada arriba de la barra de navegación */}
+      <div className="text-center mt-3">
+        {/* Enlace a la página de inicio */}
+        <Link to="/">
+          <Image
+            src={logo}
+            alt="Logo"
+            style={{ width: '5%', height: '5%', objectFit: 'relative' }}
+            className="mb-3"
+          />
+        </Link>
+      </div>
+      {/* Barra de navegación */}
+      <Navbar  expand="lg" className="mx-5 Navbar justify-content-between">
       <Container>
-        <Navbar.Brand as={Link} to="/">
-          Rolling Restaurant
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Toggle aria-controls="basic-navbar-nav " />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
-            <NavLink end className={"nav-item nav-link"} to={"/"}>
-              Inicio
-            </NavLink>
-            <NavLink end className={"nav-item nav-link"} to={"/signup"}>
-              Registro
+            <NavLink end className={"nav-item nav-link"} to={"/pedidos"}>
+              Pedidos
             </NavLink>
             {usuarioLogueado.nombreUsuario ? (
               <>
@@ -38,14 +50,21 @@ const CustomNav = ({ usuarioLogueado, setUsuarioLogueado }) => {
                 </Button>
               </>
             ) : (
-              <NavLink end className={"nav-item nav-link"} to={"/signin"}>
+              <NavLink end className={"nav-item nav-link"} to={"/login"}>
                 Login
               </NavLink>
             )}
+
+            <NavLink end className={"nav-item nav-link"} to={"/registro"}>
+              Registro
+            </NavLink>
+            
           </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>
+
+    </>
   );
 };
 
