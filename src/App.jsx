@@ -28,7 +28,7 @@ function App() {
       errorElement: <ErrorPage />,
     },
     {
-      path: "/home",
+      path: "/",
       element: <Administrador />,
       errorElement: <ErrorPage />,
     },
@@ -47,11 +47,15 @@ function App() {
       element: <Acercadenosotros />,
       errorElement: <ErrorPage />,
     },
+
+    
   ]);
 
   return (
     <>
       <RouterProvider router={router} />
+
+
     </>
   );
 }
