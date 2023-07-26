@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { consultaListaProductos } from "../helpers/queries";
 import { Link } from "react-router-dom";
 import CargarProducto from "./producto/CargarProducto";
-import Nav from "../common/Nav.jsx";
+import CustomNav from "../common/CustomNav.jsx";
 
 const Administrador = () => {
   const [productos, setProductos] = useState([]);
@@ -16,7 +16,7 @@ const Administrador = () => {
 
   return (
     <section className="container mainSection bg-light rounded-2">
-      <Nav usuarioLogueado="" setUsuarioLogueado=""></Nav>
+      <CustomNav usuarioLogueado="" setUsuarioLogueado=""></CustomNav>
       <div className="d-flex justify-content-between align-items-center mt-5">
         <h1 className="display-4 ">Productos disponibles</h1>
         <Link className="btn btn-primary" to="/administrador/crearproducto">
