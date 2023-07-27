@@ -1,7 +1,7 @@
 import React from "react";
 import { Navbar, Container, Nav, Button, Image } from "react-bootstrap";
 import { Link, NavLink, useNavigate } from "react-router-dom";
-import logo from "../../assets/trace.svg"; // Importa tu imagen aquí
+import logo from "../../assets/trace.svg";
 import "./CustomNav.css";
 
 const CustomNav = ({ usuarioLogueado, setUsuarioLogueado }) => {
@@ -18,12 +18,12 @@ const CustomNav = ({ usuarioLogueado, setUsuarioLogueado }) => {
       {/* Imagen centrada arriba de la barra de navegación */}
       <div className="text-center mt-4">
         {/* Enlace a la página de inicio */}
-        <Link to="home">
+        <Link to="/home">
           <Image src={logo} alt="Logo" className="logo" />
         </Link>
       </div>
       <Container className="mb-4 d-flex justify-content-center align-items-center">
-        <Navbar.Brand href="#home" className="tituloNav fs-4 fw-bold">
+        <Navbar.Brand href="/home" className="tituloNav fs-4 fw-bold">
         <span className="brand-text">Rolling Restaurant</span>        </Navbar.Brand>
       </Container>
       {/* Barra de navegación */}
