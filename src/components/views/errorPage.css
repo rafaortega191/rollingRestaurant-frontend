@@ -1,0 +1,17 @@
+/*Dispositivo Chico*/
+@media all and (max-width: 767px) {
+}
+/*Dispositivo Mediano*/
+@media all and (min-width: 768px) and (max-width: 991px) {
+}
+
+.titulo_1 {
+  font-family: "Cinzel Decorative", cursive;
+  color: black;
+}
+
+.texto_general_1 {
+  font-family: "Prata", serif;
+  background-color: #dccbb9;
+  color: black;
+}
