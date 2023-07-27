@@ -8,6 +8,7 @@ import Registro from "./components/autenticacion/Registro.jsx";
 import { useState } from "react";
 import ErrorPage from "./components/views/Error404"
 import RutasDelAdmin from "./components/routes/RutasDelAdmin";
+import PaginaPrincipal from "./components/views/PaginaPrincipal";
 
 
 function App() {
@@ -29,7 +30,7 @@ function App() {
     },
     {
       path: "/",
-      element: <Administrador />,
+      element: <PaginaPrincipal />,
       errorElement: <ErrorPage />,
     },
     {
