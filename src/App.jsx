@@ -8,7 +8,7 @@ import Registro from "./components/autenticacion/Registro.jsx";
 import { useState } from "react";
 import ErrorPage from "./components/views/Error404"
 import RutasDelAdmin from "./components/routes/RutasDelAdmin";
-
+import ProductDetailles from "./components/views/pagesDetalle"
 
 function App() {
   const usuario = JSON.parse(sessionStorage.getItem('usuario')) || {}; 
@@ -47,7 +47,11 @@ function App() {
       element: <Acercadenosotros />,
       errorElement: <ErrorPage />,
     },
-
+    {
+      path: "/detalles",
+      element: <ProductDetailles />,
+      errorElement: <ErrorPage />,
+    },
     
   ]);
 
