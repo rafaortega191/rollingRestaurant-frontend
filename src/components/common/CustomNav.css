@@ -1,8 +1,24 @@
-.Navbar{
-    background-color: #dccbb9;
-    color: rgb(91, 64, 64);
-    border-radius: 0px 0px 20px 20px;
-    font-family: "Prata", serif;
-    }
+.Navbar {
+  background-color: #f1f4c3;
+  color: rgb(91, 64, 64);
+  border-radius: 0px 0px 20px 20px;
+  font-family: "Prata", serif;
+  padding-top: 0.1rem; 
+  padding-bottom: 0.1rem;
+}
 
-    tituloRestaurante{font-size: 4vw;}
+.tituloNav {
+  color: rgb(255, 235, 175);
+  font-family: "Cinzel Decorative", cursive;
+  
+}
+
+.tituloNav:hover .brand-text {
+  color: #fae967; /* Color claro al pasar el mouse por encima */
+}
+
+.logo {
+  width: 5%;
+  height: 5%;
+}
+
