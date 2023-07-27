@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './acercadenosotros.css'
 import auto from '../../assets/auto.jpg'
 import CustomNav from '../common/CustomNav.jsx';
+import Footer from '../common/Footer';
 
 
 const Acercadenosotros = () => {
@@ -45,6 +46,7 @@ const Acercadenosotros = () => {
             />
           </div>
           <br />
+        <Footer/>
         </div>
       );
 };

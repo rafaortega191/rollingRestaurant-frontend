@@ -1,10 +1,19 @@
 import React from "react"
-
+import { Navbar, Container, Nav, Button, Image } from "react-bootstrap";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import logo from "../../assets/trace.svg";
 
 const Footer = () => <footer className="page-footer font-small blue pt-4">
     <div className="container-fluid text-center text-md-left">
         <div className="row">
-            <div className="col-md-6 mt-md-0 mt-3">
+            <div className="col-md-6 mt-md-0 mt-3"> <Link to="/">
+          <Image
+            src={logo}
+            alt="Logo"
+            style={{ width: '50%', height: '50%', objectFit: 'relative' }}
+            className="mb-3"
+          />
+        </Link>
                 <h5 className="text-uppercase">Footer Content</h5>
                 <p>Here you can use rows and columns to organize your footer content.</p>
             </div>
