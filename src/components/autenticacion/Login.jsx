@@ -22,25 +22,33 @@ const Login = ({ setUsuarioLogueado }) => {
   const navegacion = useNavigate();
 
   const onSubmit = (usuario) => {
-    console.log(usuario);
 
     login(usuario).then((respuesta) => {
       if (respuesta && respuesta.status === 200) {
         sessionStorage.setItem(
           "usuario",
-          JSON.stringify(respuesta.nombreUsuario)
+          JSON.stringify(respuesta)
         );
+
         Swal.fire(
           "Bienvenido",
           `${respuesta.nombreUsuario} iniciaste sesion correctamente`,
           "success"
         );
+
         setUsuarioLogueado(respuesta);
+        
 
-        // #TODO
-        // Si el usuario es tipo admin, redirigir a /administrador. Sino, redirigir a /home.
+        if(respuesta.isAdmin === true)
+        {
+          navegacion("/administrador");
+        }
+        else
+        {
+          navegacion("/home");
+        }
 
-        navegacion("/administrador");
+        
       } else {
         Swal.fire("Error", "Email o password incorrecto ", "error");
       }
@@ -49,7 +57,7 @@ const Login = ({ setUsuarioLogueado }) => {
 
   return (
     <>
-      <CustomNav usuarioLogueado="" setUsuarioLogueado=""></CustomNav>
+      <CustomNav usuarioLogueado="" setUsuarioLogueado={setUsuarioLogueado}></CustomNav>
       <Container className="mainSection d-block align-items-center justify-content-center p-3 my-5">
         <Card className="my-5">
           <Card.Header className="text-center titulo py-3" as="h3">

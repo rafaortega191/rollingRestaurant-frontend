@@ -7,10 +7,12 @@ import "./CustomNav.css";
 const CustomNav = ({ usuarioLogueado, setUsuarioLogueado }) => {
   const navegacion = useNavigate();
 
+  console.log(usuarioLogueado);
+
   const logout = () => {
     setUsuarioLogueado({});
     sessionStorage.removeItem("usuario");
-    navegacion("/");
+    navegacion("/home");
   };
 
   return (
@@ -22,48 +24,65 @@ const CustomNav = ({ usuarioLogueado, setUsuarioLogueado }) => {
           <Image
             src={logo}
             alt="Logo"
-            style={{ width: '5%', height: '5%', objectFit: 'relative' }}
+            style={{ width: "5%", height: "5%", objectFit: "relative" }}
             className="mb-3"
           />
         </Link>
       </div>
       {/* Barra de navegación */}
-      <Navbar  expand="lg" className="mx-5 Navbar justify-content-between">
-      <Container>
-        <Navbar.Toggle aria-controls="basic-navbar-nav " />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ms-auto">
-            <NavLink end className={"nav-item nav-link"} to={"/pedidos"}>
-              Pedidos
-            </NavLink>
-            {usuarioLogueado.nombreUsuario ? (
-              <>
-                <NavLink
-                  end
-                  className={"nav-item nav-link"}
-                  to={"/administrador"}
-                >
-                  Administrador
-                </NavLink>
-                <Button variant="dark" onClick={logout}>
-                  Logout
-                </Button>
-              </>
-            ) : (
-              <NavLink end className={"nav-item nav-link"} to={"/login"}>
-                Login
-              </NavLink>
-            )}
+      <Navbar expand="lg" className="mx-5 Navbar justify-content-between">
+        <Container>
+          <Navbar.Toggle aria-controls="basic-navbar-nav " />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="ms-auto">
+              {usuarioLogueado.nombreUsuario ? (
+                <>
 
-            <NavLink end className={"nav-item nav-link"} to={"/registro"}>
-              Registro
-            </NavLink>
-            
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+                  <NavLink end className={"nav-item nav-link"} to={"#"}>
+                    Hola {usuarioLogueado.nombreUsuario}!
+                  </NavLink>
 
+                  <NavLink end className={"nav-item nav-link"} to={"/pedidos"}>
+                    Pedidos
+                  </NavLink>
+
+                  {usuarioLogueado.isAdmin ? (
+                    <>
+                      <NavLink
+                        end
+                        className={"nav-item nav-link"}
+                        to={"/administrador"}
+                      >
+                        Administrador
+                      </NavLink>
+                    </>
+                  ) : (
+                    <>
+                      <NavLink end className={"nav-item nav-link"} to={"/home"}>
+                        Home
+                      </NavLink>
+                    </>
+                  )}
+
+                  <Button variant="dark" onClick={logout}>
+                    Logout
+                  </Button>
+                </>
+              ) : (
+                <>
+                  <NavLink end className={"nav-item nav-link"} to={"/login"}>
+                    Login
+                  </NavLink>
+
+                  <NavLink end className={"nav-item nav-link"} to={"/registro"}>
+                    Registro
+                  </NavLink>
+                </>
+              )}
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
     </>
   );
 };
