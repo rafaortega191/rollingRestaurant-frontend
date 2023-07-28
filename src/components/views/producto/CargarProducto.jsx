@@ -18,7 +18,7 @@ const CargarProducto = ({producto, setProductos}) => {
     }).then((result) => {
       if (result.isConfirmed) {
         //borrar el producto de la api
-        consultaBorrarProducto(producto.id).then((respuesta)=>{
+        consultaBorrarProducto(producto._id).then((respuesta)=>{
           console.log(respuesta);
           if(respuesta.status === 200){
             Swal.fire(
@@ -49,7 +49,7 @@ const CargarProducto = ({producto, setProductos}) => {
       <td>{producto.categoria}</td>
       <td>{producto.imagen}</td>
       <td>
-        <Link className="btn btn-warning" to={'/administrador/editarproducto/'+producto.id}>Editar</Link>
+        <Link className="btn btn-warning" to={'/administrador/editarproducto/'+producto._id}>Editar</Link>
         <Button variant="danger" onClick={borrarProducto}>
           Borrar
         </Button>
