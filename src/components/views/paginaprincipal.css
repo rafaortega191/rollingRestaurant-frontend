@@ -1,35 +1,75 @@
-.color-fondo-principal{
+.color-fondo-principal {
     background-color: #ffffff;
 }
+
 .carousel-principal {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 60px 160px 60px 160px;
+    margin: 60px 185px 60px 185px;
+    font-family: "Cinzel Decorative", cursive;
+    .carousel-control-prev,
+    .carousel-control-next {
+  display: none;
 }
+
+}
+
 .imagenes-carousel-principal {
-    height: 60ch;
-    width: 250ch;
-    object-fit: cover;
     align-items: center;
     justify-content: center;
+    height: 60ch;
+    width: 190ch;
+    object-fit: cover;
 }
+
+.carousel-titulo-principal {
+    text-shadow: 3px 3px 3px black;
+    font-size: 50;
+}
+
 .section-productos-principal {
-    margin: 60px 160px 60px 160px;
+    margin: 60px 40ch 60px 40ch;
+    padding: 25px;
     position: relative;
     isolation: isolate;
     background: #dccbb9;
-    border: 2px solid rgb(0, 0, 0);
     border-radius: 20px;
-    backdrop-filter: blur(20px);
-    border-radius: 1rem;
-    box-shadow: 0 1px 1rem rgba(0, 0, 0, 0.1);
 }
+
 .layout {
-  display: flex;
-  gap: 16px;
-  justify-content: space-evenly;
-  align-items: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card-principal {
+    width: 150ch;
+    font-family: "Prata", serif;
+    font-size: 18px;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-bottom: 20px;
+    border-color: #101c1c;
+}
+
+.card-titulo-principal {
+    font-family: "Cinzel Decorative", cursive;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.card-boton-principal {
+    font-family: "Prata", serif;
+    font-size: 20px;
+    color: #ffffff;
+    border-color: #101c1c;
+    background-color: #101c1c;
+}
+
+.card-boton-principal:hover {
+    border-color: #101c1c;
+    background-color: #101c1c;
 }
 
 /*Dispositivo Chico*/
