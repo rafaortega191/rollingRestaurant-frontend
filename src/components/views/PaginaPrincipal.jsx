@@ -15,7 +15,7 @@ const PaginaPrincipal = () => {
           <Carousel.Item interval={1100}>
             <img
               src={imagenCarousel1}
-              className="imagenes-carousel-principal"
+              className="imagenes-carousel-principal rounded"
               alt="Imagen 1 - Platos de fideos 1"
             />
             <Carousel.Caption>
@@ -25,17 +25,17 @@ const PaginaPrincipal = () => {
           <Carousel.Item interval={1100}>
             <img
               src={imagenCarousel2}
-              className="imagenes-carousel-principal"
+              className="imagenes-carousel-principal rounded"
               alt="Imagen 2 - Fideos amasados"
             />
             <Carousel.Caption>
-              <h2 className="carousel-titulo-principal">MAS RICAS</h2>
+              <h2 className="carousel-titulo-principal ">MAS RICAS</h2>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item interval={1300}>
             <img
               src={imagenCarousel3}
-              className="imagenes-carousel-principal"
+              className="imagenes-carousel-principal rounded"
               alt="Imagen 3 - Platos de fideos 2"
             />
             <Carousel.Caption>
@@ -91,6 +91,9 @@ const PaginaPrincipal = () => {
               <Button className="card-boton-principal">Ver mas</Button>
             </Card.Body>
           </Card>
+        </div>
+        <div>
+          
         </div>
       </section>
     </body>
