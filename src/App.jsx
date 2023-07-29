@@ -1,24 +1,22 @@
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider,Route,Routes, BrowserRouter } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import Acercadenosotros from "./components/views/Acercadenosotros";
+import Acercadenosotros from "./components/views/Acercadenosotros"
 import Administrador from "./components/views/Administrador";
 import Login from "./components/autenticacion/Login.jsx";
 import Registro from "./components/autenticacion/Registro.jsx";
 import { useState } from "react";
-import ErrorPage from "./components/views/Error404";
+import ErrorPage from "./components/views/Error404"
 import RutasDelAdmin from "./components/routes/RutasDelAdmin";
 
+
 function App() {
-  const usuario = JSON.parse(sessionStorage.getItem("usuario")) || {};
+  const usuario = JSON.parse(sessionStorage.getItem('usuario')) || {}; 
   const [usuarioLogueado, setUsuarioLogueado] = useState(usuario);
 
-  console.log("EN  app: " + usuarioLogueado.nombreUsuario);
 
   const router = createBrowserRouter([
+    
     {
       path: "/administrador",
       element: <Administrador />,
@@ -30,13 +28,8 @@ function App() {
       errorElement: <ErrorPage />,
     },
     {
-      path: "/home",
-      element: (
-        <Acercadenosotros
-          usuarioLogueado={usuarioLogueado}
-          setUsuarioLogueado={setUsuarioLogueado}
-        />
-      ),
+      path: "/",
+      element: <Administrador />,
       errorElement: <ErrorPage />,
     },
     {
@@ -51,12 +44,7 @@ function App() {
     },
     {
       path: "/acercadenosotros",
-      element: (
-        <Acercadenosotros
-          usuarioLogueado={usuarioLogueado}
-          setUsuarioLogueado={setUsuarioLogueado}
-        />
-      ),
+      element: <Acercadenosotros />,
       errorElement: <ErrorPage />,
     },
 
