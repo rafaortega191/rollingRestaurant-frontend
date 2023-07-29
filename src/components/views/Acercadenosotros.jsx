@@ -9,6 +9,7 @@ import emanuel from "../../assets/emanuel.png"
 import github from "../../assets/github.png"
 import linkedin from "../../assets/linkedin.png"
 import { Link } from 'react-router-dom';
+import Footer from '../common/Footer.jsx';
 
 
 const Acercadenosotros = () => {
@@ -93,6 +94,7 @@ const Acercadenosotros = () => {
             />
           </div>
           <br />
+        <Footer/>
         </div>
       );
 };
