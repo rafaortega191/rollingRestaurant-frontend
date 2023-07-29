@@ -16,10 +16,10 @@ export const login = async (usuario) => {
   // }catch(error){
   //     console.log(error)
   // }
-
   return {
     status: 200,
-    nombreUsuario: "usuario",
+    nombreUsuario: "yaya",
+    isAdmin: false,
   };
 };
 
