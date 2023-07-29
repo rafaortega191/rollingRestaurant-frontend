@@ -8,25 +8,13 @@
       "categoria": "con carne",
       "estado": "disponible",
       "id": 2
-    },
-    {
-      "nombreProducto": "fideos con tuco vencidos",
-      "precio": "300",
-      "descripcion": "fideos con salsa roja pasados de fecha",
-      "imagen": "https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg",
-      "categoria": "vegetariano",
-      "estado": "no disponible",
-      "id": 3
     }
   ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
+  "usuarios": [
+    { "id": 1, "nombreUsuario": "admin", "email": "admin@rollingcode.com", "possword": "123456" }
   ],
-  "profile": {
-    "name": "typicode"
-  }
+  "pedidos": [
+      { "nombrePedido": "Lasagna", "descripcion": "alguna descripcion", "imagen": "https://images.pexels.com/photos/6046493/pexels-photo-6046493.jpeg", "precio": 2500, "estado": "pendiente"}
+  ]
+
 }

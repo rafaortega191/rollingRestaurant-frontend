@@ -9,15 +9,17 @@ const Error404 = () => {
       className="d-flex align-items-center justify-content-center p-0"
       style={{
         backgroundImage: `url(${error})`,
-        backgroundRepeat: "no-repeat",
+        backgroundRepeat: "repeat",
         backgroundSize: "cover",
         minHeight: "100vh",
       }}
     >
-      <div className="text-white text-center">
-        <h2 className="titulo_1 display-1">¡Ups!</h2>
-        <p className="texto_general_1">No encontramos lo que estás buscando</p>
-        <Button variant="warning mt-3" href="/home">
+      <div className="text-black text-center">
+        <h1 className="titulo-error">¡Ups!</h1>
+        <p className="texto-general-error">
+          No encontramos lo que estás buscando
+        </p>
+        <Button className="btn-error " href="/">
           Volver a la página principal
         </Button>
       </div>
