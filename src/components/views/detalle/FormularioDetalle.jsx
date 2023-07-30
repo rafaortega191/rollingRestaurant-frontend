@@ -14,8 +14,6 @@ const FormularioDetalle = ({ nombre_producto , id_producto}) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Aquí puedes realizar alguna acción con los valores capturados,
-    // como enviarlos a un servidor o hacer algún cálculo adicional.
     console.log("Salsa seleccionada:", selectedSauce);
     console.log("Cantidad:", quantity);
     console.log("Producto en curso:", nombre_producto);
