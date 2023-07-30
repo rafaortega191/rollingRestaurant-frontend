@@ -15,7 +15,7 @@ import { useState } from "react";
 import ErrorPage from "./components/views/Error404";
 import RutasDelAdmin from "./components/routes/RutasDelAdmin";
 import ProductoDetalles from "./components/views/pageDetalle";
-
+import PaginaPrincipal from "./components/views/PaginaPrincipal";
 
 function App() {
   const usuario = JSON.parse(sessionStorage.getItem("usuario")) || {};
@@ -34,7 +34,7 @@ function App() {
     },
     {
       path: "/",
-      element: <Administrador />,
+      element: <PaginaPrincipal />,
       errorElement: <ErrorPage />,
     },
     {
@@ -62,6 +62,7 @@ function App() {
       element: <Login />,
       errorElement: <ErrorPage />,
     },
+    
   ]);
 
   return (

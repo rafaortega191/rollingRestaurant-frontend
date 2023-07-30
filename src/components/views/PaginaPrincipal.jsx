@@ -11,7 +11,7 @@ const PaginaPrincipal = () => {
   return (
     <body className="color-fondo-principal">
       <section>
-        <Carousel fade className="rounded-circle carousel-principal" >
+        <Carousel fade className="rounded-circle carousel-principal">
           <Carousel.Item interval={1100}>
             <img
               src={imagenCarousel1}
@@ -47,14 +47,13 @@ const PaginaPrincipal = () => {
 
       <section className="section-productos-principal">
         <div class="layout">
-          <Card style={{ width: "20rem" }} className="card-principal">
+          <Card style={{ width: "30rem" }} className="card-principal">
             <img src={imagenCarousel3} className="" alt="Imagen 2" />
-            <Card.Body className="h-25 p-3">
+            <Card.Body >
               <Card.Title className="card-titulo-principal">
                 Explora Lugares Increíbles
               </Card.Title>
               <Card.Text>
-                {" "}
                 Descubre exuberantes paisajes, rica historia y una cultura
                 vibrante en cada rincón de esta maravillosa provincia de
                 Tucumán.
@@ -63,7 +62,7 @@ const PaginaPrincipal = () => {
             </Card.Body>
           </Card>
 
-          <Card style={{ width: "20rem" }} className="card-principal">
+          <Card style={{ width: "30rem" }} className="card-principal">
             <img src={imagenCarousel2} className="" alt="Imagen 2" />
             <Card.Body>
               <Card.Title className="card-titulo-principal">
@@ -78,7 +77,7 @@ const PaginaPrincipal = () => {
             </Card.Body>
           </Card>
 
-          <Card style={{ width: "20rem" }} className="card-principal">
+          <Card style={{ width: "30rem" }} className="card-principal">
             <img src={imagenCarousel2} className="" alt="Imagen 2" />
             <Card.Body>
               <Card.Title className="card-titulo-principal">
@@ -92,8 +91,120 @@ const PaginaPrincipal = () => {
             </Card.Body>
           </Card>
         </div>
-        <div>
-          
+        <div className="contenedor-productos-principal">
+          <h2 className="fw-bold titulos-principal">TODAS NUESTRAS PASTAS</h2>
+          <div className="form-floating mb-2">
+            <input
+              type="text"
+              className="form-control"
+              id="floatingInput"
+              placeholder=" "
+              maxlength="100"
+            />
+            <label for="floatingInput">
+              <i className="bi bi-search"></i>Buscar
+            </label>
+          </div>
+          <h3 className="fw-bold subtitulos-principal">Las mas pedidas</h3>
+          <div className="row">
+          <Card  className="card-productos" >
+              <Card.Body>
+                <Card.Title className="card-productos-titulo">La pasta<span className="badge bg-warning card-productos-etiqueta">Vegetariana</span></Card.Title>
+                <Card.Subtitle className="mb-2 mb-1 text-muted card-productos-precio">
+                 $1000
+                </Card.Subtitle>
+                <Card.Text className="card-productos-descripcion">
+                  La clasica, fideos largos con manteca y queso. Mamamia
+                </Card.Text>
+                <div className="layout-botones">
+                <Button className="card-productos-boton" href="#">Agregar al carrito</Button>
+                <Button className="card-productos-boton"  href="#">Saber mas</Button>
+                </div>
+              </Card.Body>
+            </Card>
+
+            <Card  className="card-productos" >
+              <Card.Body>
+                <Card.Title className="card-productos-titulo">La pasta<span className="badge bg-warning card-productos-etiqueta">Vegetariana</span></Card.Title>
+                <Card.Subtitle className="mb-2 mb-1 text-muted card-productos-precio">
+                 $1000
+                </Card.Subtitle>
+                <Card.Text className="card-productos-descripcion">
+                  La clasica, fideos largos con manteca y queso. Mamamia
+                </Card.Text>
+                <div className="layout-botones">
+                <Button className="card-productos-boton" href="#">Agregar al carrito</Button>
+                <Button className="card-productos-boton"  href="#">Saber mas</Button>
+                </div>
+              </Card.Body>
+            </Card>
+            
+            <Card  className="card-productos" >
+              <Card.Body>
+                <Card.Title className="card-productos-titulo">La pasta<span className="badge bg-warning card-productos-etiqueta">Vegetariana</span></Card.Title>
+                <Card.Subtitle className="mb-2 mb-1 text-muted card-productos-precio">
+                 $1000
+                </Card.Subtitle>
+                <Card.Text className="card-productos-descripcion">
+                  La clasica, fideos largos con manteca y queso. Mamamia
+                </Card.Text>
+                <div className="layout-botones">
+                <Button className="card-productos-boton" href="#">Agregar al carrito</Button>
+                <Button className="card-productos-boton"  href="#">Saber mas</Button>
+                </div>
+              </Card.Body>
+            </Card>
+
+            <Card  className="card-productos" >
+              <Card.Body>
+                <Card.Title className="card-productos-titulo">La pasta<span className="badge bg-warning card-productos-etiqueta">Vegetariana</span></Card.Title>
+                <Card.Subtitle className="mb-2 mb-1 text-muted card-productos-precio">
+                 $1000
+                </Card.Subtitle>
+                <Card.Text className="card-productos-descripcion">
+                  La clasica, fideos largos con manteca y queso. Mamamia
+                </Card.Text>
+                <div className="layout-botones">
+                <Button className="card-productos-boton" href="#">Agregar al carrito</Button>
+                <Button className="card-productos-boton"  href="#">Saber mas</Button>
+                </div>
+              </Card.Body>
+            </Card>
+
+            <Card  className="card-productos" >
+              <Card.Body>
+                <Card.Title className="card-productos-titulo">La pasta<span className="badge bg-warning card-productos-etiqueta">Vegetariana</span></Card.Title>
+                <Card.Subtitle className="mb-2 mb-1 text-muted card-productos-precio">
+                 $1000
+                </Card.Subtitle>
+                <Card.Text className="card-productos-descripcion">
+                  La clasica, fideos largos con manteca y queso. Mamamia
+                </Card.Text>
+                <div className="layout-botones">
+                <Button className="card-productos-boton" href="#">Agregar al carrito</Button>
+                <Button className="card-productos-boton"  href="#">Saber mas</Button>
+                </div>
+              </Card.Body>
+            </Card>
+
+            <Card  className="card-productos" >
+              <Card.Body>
+                <Card.Title className="card-productos-titulo">La pasta<span className="badge bg-warning card-productos-etiqueta">Vegetariana</span></Card.Title>
+                <Card.Subtitle className="mb-2 mb-1 text-muted card-productos-precio">
+                 $1000
+                </Card.Subtitle>
+                <Card.Text className="card-productos-descripcion">
+                  La clasica, fideos largos con manteca y queso. Mamamia
+                </Card.Text>
+                <div className="layout-botones">
+                <Button className="card-productos-boton" href="#">Agregar al carrito</Button>
+                <Button className="card-productos-boton"  href="#">Saber mas</Button>
+                </div>
+              </Card.Body>
+            </Card>
+            
+          </div>
+         
         </div>
       </section>
     </body>
