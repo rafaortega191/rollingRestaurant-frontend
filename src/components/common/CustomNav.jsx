@@ -1,7 +1,7 @@
 import React from "react";
 import { Navbar, Container, Nav, Button, Image } from "react-bootstrap";
 import { Link, NavLink, useNavigate } from "react-router-dom";
-import logo from "../../assets/trace.svg"; // Importa tu imagen aquí
+import logo from "../../assets/trace.svg"; 
 import "./CustomNav.css";
 
 const CustomNav = ({ usuarioLogueado, setUsuarioLogueado }) => {
@@ -15,9 +15,7 @@ const CustomNav = ({ usuarioLogueado, setUsuarioLogueado }) => {
 
   return (
     <>
-      {/* Imagen centrada arriba de la barra de navegación */}
       <div className="text-center mt-3">
-        {/* Enlace a la página de inicio */}
         <Link to="/">
           <Image
             src={logo}

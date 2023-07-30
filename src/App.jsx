@@ -45,6 +45,11 @@ function App() {
       element: <Acercadenosotros />,
       errorElement: <ErrorPage />,
     },
+    {
+      path: "/pedidos",
+      element: <Login />,
+      errorElement: <ErrorPage />,
+    },
   ]);
 
   return (
