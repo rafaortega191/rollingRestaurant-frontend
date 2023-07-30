@@ -21,8 +21,7 @@ const CustomNav = ({ usuarioLogueado, setUsuarioLogueado }) => {
           <Image
             src={logo}
             alt="Logo"
-            style={{ width: "5%", height: "5%", objectFit: "relative" }}
-            className="mb-2"
+            className="mb-2 logo"
           />
           <div className=" d-flex justify-content-center align-items-center tituloNav">
             <Navbar.Brand as={NavLink} to="/home" className="fs-4 tituloNav">
