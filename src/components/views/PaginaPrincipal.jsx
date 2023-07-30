@@ -6,12 +6,15 @@ import imagenCarousel2 from "../../assets/foto-carousel-2.jpg";
 import imagenCarousel3 from "../../assets/foto-carousel-3.jpg";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import CustomNav from "../common/CustomNav.jsx";
+import Footer from "../common/Footer.jsx";
 
 const PaginaPrincipal = () => {
   return (
     <body className="color-fondo-principal">
+      <CustomNav usuarioLogueado="" setUsuarioLogueado=""></CustomNav>
       <section className="carousel-principal">
-        <Carousel fade className="rounded-circle">
+        <Carousel fade >
           <Carousel.Item interval={1100}>
             <img
               src={imagenCarousel1}
@@ -179,6 +182,7 @@ const PaginaPrincipal = () => {
          
         </div>
       </section>
+      <Footer></Footer>
     </body>
   );
 };
