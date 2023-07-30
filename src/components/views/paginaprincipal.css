@@ -82,6 +82,7 @@
 
 .contenedor-productos-principal {
     padding: 4ch 8ch 0px 8ch;
+    
 }
 
 .subtitulos-principal {
@@ -89,6 +90,11 @@
     font-size: 35;
     margin-bottom: 15px;
     margin-top: 30px;
+}
+
+.contenedor-menu{
+    justify-content: space-evenly;
+    grid-auto-flow: row dense;
 }
 
 .card-productos{
@@ -149,7 +155,6 @@ display: flex;
     margin: 10px;
 
 }
-
 /*Dispositivo Chico*/
 @media all and (max-width: 576px) {}
 

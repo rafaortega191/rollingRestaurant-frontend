@@ -106,7 +106,7 @@ const PaginaPrincipal = () => {
             </label>
           </div>
           <h3 className="fw-bold subtitulos-principal">Las mas pedidas</h3>
-          <div className="row">
+          <div className="row contenedor-menu">
           <Card  className="card-productos" >
               <Card.Body>
                 <Card.Title className="card-productos-titulo">La pasta<span className="badge bg-warning card-productos-etiqueta">Vegetariana</span></Card.Title>
@@ -171,37 +171,9 @@ const PaginaPrincipal = () => {
               </Card.Body>
             </Card>
 
-            <Card  className="card-productos" >
-              <Card.Body>
-                <Card.Title className="card-productos-titulo">La pasta<span className="badge bg-warning card-productos-etiqueta">Vegetariana</span></Card.Title>
-                <Card.Subtitle className="mb-2 mb-1 text-muted card-productos-precio">
-                 $1000
-                </Card.Subtitle>
-                <Card.Text className="card-productos-descripcion">
-                  La clasica, fideos largos con manteca y queso. Mamamia
-                </Card.Text>
-                <div className="layout-botones">
-                <Button className="card-productos-boton" href="#">Agregar al carrito</Button>
-                <Button className="card-productos-boton"  href="#">Saber mas</Button>
-                </div>
-              </Card.Body>
-            </Card>
+           
 
-            <Card  className="card-productos" >
-              <Card.Body>
-                <Card.Title className="card-productos-titulo">La pasta<span className="badge bg-warning card-productos-etiqueta">Vegetariana</span></Card.Title>
-                <Card.Subtitle className="mb-2 mb-1 text-muted card-productos-precio">
-                 $1000
-                </Card.Subtitle>
-                <Card.Text className="card-productos-descripcion">
-                  La clasica, fideos largos con manteca y queso. Mamamia
-                </Card.Text>
-                <div className="layout-botones">
-                <Button className="card-productos-boton" href="#">Agregar al carrito</Button>
-                <Button className="card-productos-boton"  href="#">Saber mas</Button>
-                </div>
-              </Card.Body>
-            </Card>
+            
             
           </div>
          
