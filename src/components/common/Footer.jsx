@@ -5,61 +5,65 @@ import "./Footer.css";
 
 const Footer = () => {
   return (
-    <div className="mt-5 footer-banner">
+    <div className="mt-5 footer-estilo">
       <Container>
         <Row>
           <Col lg={6} md={12} mb={4}>
-            <h5 className="my-3" style={{ letterSpacing: "2px", color: "#818963" }}>
+            <h5 className="my-3 color enlaces" style={{ letterSpacing: "2px",}}>
               Roling Restaurant
             </h5>
 
-            <h6 className="mb-3" style={{ letterSpacing: "2px", color: "#818963" }}>
+            <h6 className="mb-3 h6-footer" style={{ letterSpacing: "2px",}}>
               ¡Sabor italiano en cada bocado! Descubre la pasión de nuestra pasta online!
             </h6>
-            <p>
+            <p className="color">
               Sumérgete en el encanto de Italia con cada bocado. Descubre la pasión de nuestra pasta en línea y déjate llevar por una experiencia culinaria inigualable.
             </p>
           </Col>
           <Col lg={2} md={6} mb={4}>
-            <h5 className="my-3" style={{ letterSpacing: "2px", color: "#818963" }}>
-              Enlaces
+            <h5 className="my-3 titulo-footer color" style={{ letterSpacing: "2px", }}>
+              Sitios
             </h5>
             <ul className="list-unstyled mb-0">
               <li className="mb-1">
-                <Link to="/registro" style={{ color: "#4f4f4f" }}>
+                <Link to="/registro" className="color enlaces"> 
                   Registro
                 </Link>
               </li>
               <li className="mb-1">
-                <Link to="/login" style={{ color: "#4f4f4f" }}>
+                <Link to="/login" className="color enlaces" >
                   Login
                 </Link>
               </li>
               <li className="mb-1">
-                <Link to="/login" style={{ color: "#4f4f4f" }}>
+                <Link to="/login" className="color enlaces">
                   Pedidos
                 </Link>
               </li>
               <li>
-                <Link to="/acercadenosotros" style={{ color: "#4f4f4f" }}>
+                <Link to="/acercadenosotros"className="color enlaces">
                   Nosotros
                 </Link>
               </li>
             </ul>
           </Col>
           <Col lg={4} md={6} mb={4}>
-            <h5 className="my-3" style={{ letterSpacing: "2px", color: "#818963" }}>
-              Horario
+            <h5 className="my-3 titulo-footer color"  style={{ letterSpacing: "2px"}}>
+              Horarios
             </h5>
             <Table style={{ color: "#4f4f4f", borderColor: "#666" }}>
               <tbody>
                 <tr>
-                  <td>Lunes - Viernes:</td>
+                  <td>Lunes a Viernes:</td>
                   <td>09:30 - 12:30</td>
                 </tr>
                 <tr>
-                  <td>Lunes - Viernes:</td>
+                  <td>Lunes a Viernes:</td>
                   <td>20:00 - 21:30</td>
+                </tr>
+                <tr>
+                  <td>Sábados:</td>
+                  <td>10:30 - 14:30</td>
                 </tr>
               </tbody>
             </Table>
@@ -69,7 +73,7 @@ const Footer = () => {
 
       <div className="text-center p-3" style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}>
         © 2023 Copyright:
-        <Link className="text-dark mx-2" to="#">
+        <Link className="text-dark mx-2" to="/home">
           rollingRestaurant.com
         </Link>
       </div>
