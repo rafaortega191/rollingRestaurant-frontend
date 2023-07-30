@@ -9,6 +9,7 @@ import {
   AiOutlineTwitter,
   AiFillInstagram,
 } from "react-icons/ai";
+import Footer from "../common/Footer";
 
 
 const Registro = ({ setUsuarioLogueado }) => {
@@ -48,6 +49,7 @@ const Registro = ({ setUsuarioLogueado }) => {
   };
 
   return (
+    <>
     <Container className="mainSection d-block align-items-center justify-content-center p-3 my-5">
       <Card className="my-5">
         <Card.Header className="text-center titulo py-3" as="h3">
@@ -124,63 +126,8 @@ const Registro = ({ setUsuarioLogueado }) => {
         </Card.Footer>
       </Card>
     </Container>
-  );
-
-  return (
-    <div className="mt-5 mainSection d-block align-items-center justify-content-center p-3 my-5">
-      <h3 className="text-center titulo">Registro</h3>
-      <div className="row justify-content-center">
-        <div className="col-12 col-sm-8 col-md-6 col-xl-4 texto_general">
-          <Form onSubmit={handleSubmit(onSubmit)}>
-            <Form.Group className="mb-2">
-              <Form.Control
-                type="text"
-                placeholder="Ingrese un nombre de usuario"
-                {...register("nombre", {
-                  required: "El nombre  es un dato obligatorio",
-                })}
-              />
-            </Form.Group>
-            <Form.Group className="mb-2">
-              <Form.Control
-                placeholder="Ingrese un email"
-                {...register("email", {
-                  required: "El email es un dato obligatorio",
-                  pattern: {
-                    value:
-                      /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/,
-                    message:
-                      "El email debe cumplir con el formato mail@dominio.com",
-                  },
-                })}
-              />
-            </Form.Group>
-            <Form.Group className="mb-2">
-              <Form.Control
-                type="password"
-                placeholder="Ingrese un password"
-                {...register("password", {
-                  required: "El password es un dato obligatorio",
-                  pattern: {
-                    value: /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/,
-                    message:
-                      "El password debe tener entre 8 y 16 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula.",
-                  },
-                })}
-              />
-            </Form.Group>
-            <div className="row">
-              <Button
-                className="btn btn-dark btn-lg btn-block mb-2"
-                type="submit"
-              >
-                Registrar
-              </Button>
-            </div>
-          </Form>
-        </div>
-      </div>
-    </div>
+    <Footer></Footer>
+    </>
   );
 };
 

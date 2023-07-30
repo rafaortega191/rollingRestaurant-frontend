@@ -9,6 +9,7 @@ import {
   AiOutlineTwitter,
   AiFillInstagram,
 } from "react-icons/ai";
+import Footer from "../common/Footer.jsx";
 
 const Login = ({ setUsuarioLogueado }) => {
   const {
@@ -47,6 +48,7 @@ const Login = ({ setUsuarioLogueado }) => {
   };
 
   return (
+    <>
     <Container className="mainSection d-block align-items-center justify-content-center p-3 my-5">
       <Card className="my-5">
         <Card.Header className="text-center titulo py-3" as="h3">
@@ -118,6 +120,8 @@ const Login = ({ setUsuarioLogueado }) => {
         </Card.Footer>
       </Card>
     </Container>
+    <Footer></Footer>
+    </>
   );
 };
 

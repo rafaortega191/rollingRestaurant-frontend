@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const FormularioDetalle = ({ nombre_producto }) => {
+const FormularioDetalle = ({ nombre_producto , id_producto}) => {
   const [selectedSauce, setSelectedSauce] = useState("Small");
   const [quantity, setQuantity] = useState("1");
 
@@ -19,6 +19,7 @@ const FormularioDetalle = ({ nombre_producto }) => {
     console.log("Salsa seleccionada:", selectedSauce);
     console.log("Cantidad:", quantity);
     console.log("Producto en curso:", nombre_producto);
+    console.log("ID Producto en curso:", id_producto);
   };
 
   return (
@@ -80,18 +81,10 @@ const FormularioDetalle = ({ nombre_producto }) => {
         </div>
       </div>
 
-      <a href="#" className="btn btn-warning shadow-0">
-        Buy now
-      </a>
       <button type="submit" className="btn btn-primary shadow-0">
-        <i className="me-1 fa fa-shopping-basket"></i> Add to cart
+        <i className="me-1 fa fa-shopping-basket"></i> Agregar al Pedido
       </button>
-      <a
-        href="#"
-        className="btn btn-light border border-secondary py-2 icon-hover px-3"
-      >
-        <i className="me-1 fa fa-heart fa-lg"></i> Save
-      </a>
+
     </form>
   );
 };
