@@ -1,21 +1,17 @@
 .color-fondo-principal {
     background-color: #ffffff;
 }
-
 .carousel-principal {
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 60px 185px 60px 185px;
     font-family: "Cinzel Decorative", cursive;
-
     .carousel-control-prev,
     .carousel-control-next {
         display: none;
     }
-
 }
-
 .imagenes-carousel-principal {
     align-items: center;
     justify-content: center;
@@ -23,12 +19,10 @@
     width: 180ch;
     object-fit: cover;
 }
-
 .carousel-titulo-principal {
     text-shadow: 3px 3px 3px black;
     font-size: 70px;
 }
-
 .section-productos-principal {
     margin: 60px 40ch 60px 40ch;
     padding: 60px 0ch 60px 0ch;
@@ -82,7 +76,7 @@
 
 .contenedor-productos-principal {
     padding: 4ch 8ch 0px 8ch;
-    
+
 }
 
 .subtitulos-principal {
@@ -92,12 +86,12 @@
     margin-top: 30px;
 }
 
-.contenedor-menu{
+.contenedor-menu {
     justify-content: space-evenly;
     grid-auto-flow: row dense;
 }
 
-.card-productos{
+.card-productos {
     width: 23rem;
     height: 15rem;
     font-family: "Prata", serif;
@@ -109,19 +103,22 @@
     align-items: center;
     justify-content: center;
 }
-.card-productos-titulo{
+
+.card-productos-titulo {
     font-size: 37px;
- 
+
 }
 
-.card-productos-etiqueta{
-font-size: 18px;
-margin-left: 1.2rem;
+.card-productos-etiqueta {
+    font-size: 18px;
+    margin-left: 1.2rem;
 }
-.card-productos-precio{
+
+.card-productos-precio {
     font-size: 18px;
 }
-.card-productos-descripcion{
+
+.card-productos-descripcion {
     font-size: 20px;
 }
 
@@ -130,7 +127,8 @@ margin-left: 1.2rem;
     justify-content: space-around;
     gap: 2px;
 }
-.card-productos-boton{
+
+.card-productos-boton {
     font-size: 18px;
     color: #ffffff;
     background-color: #101c1c;
@@ -138,13 +136,14 @@ margin-left: 1.2rem;
     padding: 8px;
     border-color: #101c1c;
 }
-.card-productos-boton:hover{
+
+.card-productos-boton:hover {
     background-color: #101c1c;
 }
 
 
-.layout-card-productos{
-display: flex;
+.layout-card-productos {
+    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     background-color: #ffffff;
@@ -155,6 +154,7 @@ display: flex;
     margin: 10px;
 
 }
+
 /*Dispositivo Chico*/
 @media all and (max-width: 576px) {}
 

@@ -10,8 +10,8 @@ import Card from "react-bootstrap/Card";
 const PaginaPrincipal = () => {
   return (
     <body className="color-fondo-principal">
-      <section>
-        <Carousel fade className="rounded-circle carousel-principal">
+      <section className="carousel-principal">
+        <Carousel fade className="rounded-circle">
           <Carousel.Item interval={1100}>
             <img
               src={imagenCarousel1}
