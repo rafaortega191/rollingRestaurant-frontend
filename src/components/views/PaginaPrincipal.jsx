@@ -12,7 +12,7 @@ import Footer from "../common/Footer.jsx";
 const PaginaPrincipal = () => {
   return (
     <body className="color-fondo-principal">
-      <CustomNav usuarioLogueado="" setUsuarioLogueado=""></CustomNav>
+       <CustomNav usuarioLogueado="" setUsuarioLogueado=""></CustomNav>
       <section className="carousel-principal">
         <Carousel fade >
           <Carousel.Item interval={1100}>
@@ -51,7 +51,7 @@ const PaginaPrincipal = () => {
       <section className="section-productos-principal">
         <div class="layout">
           <Card style={{ width: "30rem" }} className="card-principal">
-            <img src={imagenCarousel3} className="" alt="Imagen 2" />
+            <img src={imagenCarousel3} className="imagen-dispositivo-chico" alt="Imagen 2" />
             <Card.Body >
               <Card.Title className="card-titulo-principal">
                 Explora Lugares Increíbles
@@ -61,12 +61,12 @@ const PaginaPrincipal = () => {
                 vibrante en cada rincón de esta maravillosa provincia de
                 Tucumán.
               </Card.Text>
-              <Button className="card-boton-principal">Quiero saber mas</Button>
+              <Button className="card-boton-principal">Ver mas</Button>
             </Card.Body>
           </Card>
 
           <Card style={{ width: "30rem" }} className="card-principal">
-            <img src={imagenCarousel2} className="" alt="Imagen 2" />
+            <img src={imagenCarousel2} className="imagen-dispositivo-chico" alt="Imagen 2" />
             <Card.Body>
               <Card.Title className="card-titulo-principal">
                 Nuestros productos sin TACC
@@ -81,7 +81,7 @@ const PaginaPrincipal = () => {
           </Card>
 
           <Card style={{ width: "30rem" }} className="card-principal">
-            <img src={imagenCarousel2} className="" alt="Imagen 2" />
+            <img src={imagenCarousel2} className="imagen-dispositivo-chico" alt="Imagen 2" />
             <Card.Body>
               <Card.Title className="card-titulo-principal">
                 Sobre nosotros
@@ -137,7 +137,7 @@ const PaginaPrincipal = () => {
                 </Card.Text>
                 <div className="layout-botones">
                 <Button className="card-productos-boton" href="#">Agregar al carrito</Button>
-                <Button className="card-productos-boton"  href="#">Saber mas</Button>
+                <Button className="card-productos-boton"  href="#">Ver mas</Button>
                 </div>
               </Card.Body>
             </Card>
@@ -153,7 +153,7 @@ const PaginaPrincipal = () => {
                 </Card.Text>
                 <div className="layout-botones">
                 <Button className="card-productos-boton" href="#">Agregar al carrito</Button>
-                <Button className="card-productos-boton"  href="#">Saber mas</Button>
+                <Button className="card-productos-boton"  href="#">Ver mas</Button>
                 </div>
               </Card.Body>
             </Card>
@@ -169,7 +169,7 @@ const PaginaPrincipal = () => {
                 </Card.Text>
                 <div className="layout-botones">
                 <Button className="card-productos-boton" href="#">Agregar al carrito</Button>
-                <Button className="card-productos-boton"  href="#">Saber mas</Button>
+                <Button className="card-productos-boton"  href="#">Ver mas</Button>
                 </div>
               </Card.Body>
             </Card>
