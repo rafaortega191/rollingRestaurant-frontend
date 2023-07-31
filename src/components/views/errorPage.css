@@ -21,30 +21,25 @@
 @media all and (min-width: 577px) and (max-width: 991px) {
   .titulo-error {
     font-family: "Cinzel Decorative", cursive;
-  font-size: 95px;
+  font-size: 120px;
   text-shadow: 1px 1px 1px black;
   
   }
   .texto-general-error {
     font-family: "Prata", serif;
-    font-size: 35px;
-    
-  
+    font-size: 41px;  
   }
   .btn-error {
     font-family: "Prata", serif;
-    font-size: 30px;
+    font-size: 35px;
     color: #ffffff;
     border-color:#101c1c ;
     background-color: #101c1c;
     transition: background-color 0.4s ease-out;
-    
   }
   .btn-error:hover {
     background-color: #dccbb9;
     border-color: #dccbb9 ;
-  
-    
   }
 }
 
@@ -52,13 +47,10 @@
   font-family: "Cinzel Decorative", cursive;
 font-size: 95px;
 text-shadow: 1px 1px 1px black;
-
 }
 .texto-general-error {
   font-family: "Prata", serif;
   font-size: 35px;
-  
-
 }
 .btn-error {
   font-family: "Prata", serif;
@@ -67,11 +59,8 @@ text-shadow: 1px 1px 1px black;
   border-color:#101c1c ;
   background-color: #101c1c;
   transition: background-color 0.4s ease-out;
-  
 }
 .btn-error:hover {
   background-color: #dccbb9;
   border-color: #dccbb9 ;
-
-  
 }
