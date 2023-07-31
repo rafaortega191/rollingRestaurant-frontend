@@ -1,9 +1,6 @@
 import {
   createBrowserRouter,
   RouterProvider,
-  Route,
-  Routes,
-  BrowserRouter,
 } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
@@ -15,6 +12,9 @@ import { useState } from "react";
 import ErrorPage from "./components/views/Error404";
 import RutasDelAdmin from "./components/routes/RutasDelAdmin";
 import ProductoDetalles from "./components/views/pageDetalle";
+import Inicio from "./components/views/Inicio";
+import Pedidos from "./components/views/Pedidos";
+import FormularioDetalle from "./components/views/detalle/FormularioDetalle";
 
 function App() {
   const usuario = JSON.parse(sessionStorage.getItem("usuario")) || {};
@@ -53,7 +53,22 @@ function App() {
     },
     {
       path: "/pedidos",
-      element: <Login />,
+      element: <Pedidos />,
+      errorElement: <ErrorPage />,
+    },
+    {
+      path: "/pedidos/:id",
+      element: <Pedidos />,
+      errorElement: <ErrorPage />,
+    },
+    {
+      path: "/",
+      element: <Inicio />,
+      errorElement: <ErrorPage />,
+    },
+    {
+      path: "/FormularioDetalle/:id",
+      element: <FormularioDetalle />,
       errorElement: <ErrorPage />,
     },
   ]);

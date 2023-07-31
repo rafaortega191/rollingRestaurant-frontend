@@ -50,7 +50,7 @@ const CargarProducto = ({producto, setProductos}) => {
       <td>{producto.imagen}</td>
       <td>
         <Link className="btn btn-warning" to={'/administrador/editarproducto/'+producto._id}>Editar</Link>
-        <Button variant="danger" onClick={borrarProducto}>
+        <Button className="m-2" variant="danger" onClick={borrarProducto}>
           Borrar
         </Button>
       </td>

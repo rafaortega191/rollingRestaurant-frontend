@@ -1,4 +1,6 @@
 const URLProductos = import.meta.env.VITE_API_PRODUCTO;
+const URLPedidos = import.meta.env.VITE_API_PEDIDOS;
+
 
 export const consultaListaProductos = async () => {
     try{
@@ -62,3 +64,19 @@ export const consultaProducto = async (id) =>{
         console.log(error);
     }
 }
+
+export const consultaAgregarPedido = async (pedido) => {
+    try {
+      const respuesta = await fetch(URLPedidos, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(pedido),
+      });
+      return respuesta;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  

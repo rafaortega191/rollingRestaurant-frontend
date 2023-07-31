@@ -11,10 +11,32 @@
     }
   ],
   "usuarios": [
-    { "id": 1, "nombreUsuario": "admin", "email": "admin@rollingcode.com", "possword": "123456" }
+    {
+      "id": 1,
+      "nombreUsuario": "admin",
+      "email": "admin@rollingcode.com",
+      "password": "Aa246810"
+    }
   ],
   "pedidos": [
-      { "nombrePedido": "Lasagna", "descripcion": "alguna descripcion", "imagen": "https://images.pexels.com/photos/6046493/pexels-photo-6046493.jpeg", "precio": 2500, "estado": "pendiente"}
+    {
+      "id": 1,
+      "nombrePedido": "Lasagna",
+      "descripcion": "alguna descripcion",
+      "imagen": "https://images.pexels.com/photos/6046493/pexels-photo-6046493.jpeg",
+      "precio": 2500,
+      "estado": "pendiente"
+    },
+    {
+      "_id": "64c32d5f56ea4b74db22e332",
+      "nombreProducto": "fideos",
+      "precio": 5000,
+      "imagen": "https://images.pexels.com/photos/7218637/pexels-photo-7218637.jpeg",
+      "descripcion": "fideosss",
+      "categoria": "con carne",
+      "estado": "disponible",
+      "__v": 0,
+      "id": 2
+    }
   ]
-
 }
