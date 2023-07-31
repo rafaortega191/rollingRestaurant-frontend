@@ -35,12 +35,23 @@ const Pedidos = () => {
   }, []);
 
   const handleCompra = () => {
+    // Cambiar el estado del producto a "pendiente" antes de realizar la compra
+    const productoPendiente = { ...producto, estado: "pendiente" };
+
     // Llamar a la función para insertar los datos en la base de datos
-    consultaAgregarPedido(producto).then((respuesta) => {
+    consultaAgregarPedido(productoPendiente).then((respuesta) => {
       if (respuesta) {
-        Swal.fire("¡Compra realizada!", "La compra se ha realizado exitosamente.", "success");
+        Swal.fire(
+          "¡Compra realizada!",
+          "La compra se ha realizado exitosamente.",
+          "success"
+        );
       } else {
-        Swal.fire("Ocurrió un error", "Intente esta operación en unos minutos", "error");
+        Swal.fire(
+          "Ocurrió un error",
+          "Intente esta operación en unos minutos",
+          "error"
+        );
       }
     });
   };
@@ -69,10 +80,10 @@ const Pedidos = () => {
                 <span className="text-danger fw-semibold ">Precio:</span>{" "}
                 ${producto.precio}
               </Card.Text>
-                <p>Se te puede aplicar impuestos a esta compra*</p>
-                <button className="btn btn-danger" onClick={handleCompra}>
+              <p>Se te puede aplicar impuestos a esta compra*</p>
+              <button className="btn btn-danger" onClick={handleCompra}>
                 COMPRAR
-                </button>
+              </button>
               <br />
               <Link className="btn btn-danger mt-2" to="/">
                 Cancelar
@@ -86,4 +97,3 @@ const Pedidos = () => {
 };
 
 export default Pedidos;
-
