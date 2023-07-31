@@ -8,6 +8,7 @@
     justify-content: center;
     margin: 60px 30ch 60px 30ch;
     font-family: "Cinzel Decorative", cursive;
+
     .carousel-control-prev,
     .carousel-control-next {
         display: none;
@@ -15,7 +16,7 @@
 }
 
 .imagenes-carousel-principal {
-    
+
     align-items: center;
     justify-content: center;
     max-height: 50ch;
@@ -173,7 +174,11 @@
         object-fit: cover;
     }
 
-    
+    .carousel-titulo-principal {
+        text-shadow: 3px 3px 3px black;
+        font-size: 35px;
+    }
+
     .carousel-titulo-principal {
         text-align: center;
     }
@@ -286,13 +291,16 @@
         text-align: center;
         font-size: 35px;
     }
-    .contenedor-menu{
+
+    .contenedor-menu {
         padding: 0px;
         margin: 0px;
     }
+
     .contenedor-productos-principal {
         padding: 2ch 2ch 0px 2ch;
     }
+
     .card-productos {
         text-align: center;
         width: calc(50% - 10px);
