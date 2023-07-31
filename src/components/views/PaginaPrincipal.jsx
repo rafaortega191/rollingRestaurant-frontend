@@ -13,8 +13,8 @@ const PaginaPrincipal = () => {
   return (
     <body className="color-fondo-principal">
        <CustomNav usuarioLogueado="" setUsuarioLogueado=""></CustomNav>
-      <section className="carousel-principal">
-        <Carousel fade >
+      <section>
+        <Carousel fade className="carousel-principal">
           <Carousel.Item interval={1100}>
             <img
               src={imagenCarousel1}

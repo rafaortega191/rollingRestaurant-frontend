@@ -3,7 +3,6 @@
 }
 
 .carousel-principal {
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -16,9 +15,10 @@
 }
 
 .imagenes-carousel-principal {
+    
     align-items: center;
     justify-content: center;
-    height: 60ch;
+    max-height: 50ch;
     width: 180ch;
     object-fit: cover;
 }
@@ -74,7 +74,7 @@
 
 .titulos-principal {
     font-family: "Cinzel Decorative", cursive;
-    font-size: 50;
+    font-size: 50px;
     margin-bottom: 15px;
 }
 
@@ -84,7 +84,7 @@
 
 .subtitulos-principal {
     font-family: "Cinzel Decorative", cursive;
-    font-size: 35;
+    font-size: 35px;
     margin-bottom: 15px;
     margin-top: 30px;
 }
@@ -173,6 +173,7 @@
         object-fit: cover;
     }
 
+    
     .carousel-titulo-principal {
         text-align: center;
     }
