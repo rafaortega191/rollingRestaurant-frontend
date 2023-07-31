@@ -4,11 +4,6 @@ import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import "./Login.css";
 import { useNavigate } from "react-router-dom";
-import {
-  AiFillFacebook,
-  AiOutlineTwitter,
-  AiFillInstagram,
-} from "react-icons/ai";
 import CustomNav from "../common/CustomNav.jsx";
 import Footer from "../common/Footer.jsx";
 
@@ -95,28 +90,12 @@ const Login = ({ setUsuarioLogueado }) => {
                   {errors.password?.message}
                 </Form.Text>
               </Form.Group>
-              <div className="d-flex justify-content-center">
-                <Button className="botonIngresar px-3 my-3" type="submit">
-                  Ingresar
-                </Button>
-              </div>
             </Form>
           </Card.Body>
           <Card.Footer className="texto_general">
-            <div
-              className="d-flex justify-content-center mx-auto "
-              style={{ width: "40%" }}
-            >
-              <Button className="m-1 botonesIconos">
-                <AiFillFacebook size="20" />
-              </Button>
-
-              <Button className="m-1 botonesIconos">
-                <AiOutlineTwitter size="20" />
-              </Button>
-
-              <Button className="m-1 botonesIconos">
-                <AiFillInstagram size="20" />
+            <div className="d-flex justify-content-center">
+              <Button className="botonIngresar px-3 my-3" type="submit">
+                Ingresar
               </Button>
             </div>
           </Card.Footer>
