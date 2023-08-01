@@ -19,7 +19,7 @@ const CustomNav = ({ usuarioLogueado, setUsuarioLogueado }) => {
       <Container fluid className="text-center py-3 navColor">
         <Image src={logo} alt="Logo" className="mb-2 logo" />
         <div className="d-flex justify-content-center align-items-center tituloNav">
-          <Navbar.Brand as={NavLink} to="/home" className="fs-4 tituloNav">
+          <Navbar.Brand as={NavLink} to="/" className="fs-4 tituloNav">
             Rolling Restaurant
           </Navbar.Brand>
         </div>
@@ -60,14 +60,16 @@ const CustomNav = ({ usuarioLogueado, setUsuarioLogueado }) => {
                   </NavLink>
                 </>
               ) : (
-                <NavLink end className="nav-item nav-link" to="/login">
-                  Login
-                </NavLink>
-              )}
+                <>
+                  <NavLink end className="nav-item nav-link" to="/login">
+                    Login
+                  </NavLink>
 
-              <NavLink end className="nav-item nav-link" to="/registro">
-                Registro <AiOutlineUser className="fs-5" />
-              </NavLink>
+                  <NavLink end className="nav-item nav-link" to="/registro">
+                    Registro <AiOutlineUser className="fs-5" />
+                  </NavLink>
+                </>
+              )}
             </Nav>
           </Navbar.Collapse>
         </Container>

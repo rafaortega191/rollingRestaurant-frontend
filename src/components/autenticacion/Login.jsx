@@ -39,8 +39,6 @@ const Login = ({ setUsuarioLogueado }) => {
         } else {
           navegacion("/");
         }
-        // #TODO
-        // Si el usuario es tipo admin, redirigir a /administrador. Sino, redirigir a /home.
       } else {
         Swal.fire("Error", "Email o password incorrecto ", "error");
       }

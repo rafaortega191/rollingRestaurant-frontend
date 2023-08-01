@@ -50,11 +50,12 @@ export const signup = async (usuario) => {
 
     const datos = await respuesta.json();
 
-    if (respuesta.status === 200) {
+    if (respuesta.status === 201) {
 
       return {
         status: respuesta.status,
-        nombreUsuario: datos.nombre
+        nombreUsuario: datos.nombre,
+        es_admin: datos.es_admin
       };
     } else {
       // En caso de que el registro falle, puedes manejar el error adecuadamente.
