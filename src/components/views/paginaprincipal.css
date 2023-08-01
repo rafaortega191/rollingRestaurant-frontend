@@ -36,7 +36,7 @@
     isolation: isolate;
     background: #dccbb9;
     border-radius: 10px;
-    border: 8px solid #101c1c;
+    border: 8px solid #1c443d;
 }
 
 .layout {
@@ -48,10 +48,10 @@
 .card-principal {
     font-family: "Prata", serif;
     font-size: 18px;
-    margin-left: 40px;
-    margin-right: 40px;
+    margin-left: 20px;
+    margin-right: 20px;
     margin-bottom: 20px;
-    border: 5px solid #101c1c;
+    border: 5px solid #1c443d;
 }
 
 .card-titulo-principal {
@@ -64,13 +64,13 @@
     font-family: "Prata", serif;
     font-size: 20px;
     color: #ffffff;
-    border-color: #101c1c;
-    background-color: #101c1c;
+    border-color: #1c443d;
+    background-color: #1c443d;
 }
 
 .card-boton-principal:hover {
-    border-color: #101c1c;
-    background-color: #101c1c;
+    border-color: #1c443d;
+    background-color: #1c443d;
 }
 
 .titulos-principal {
@@ -101,7 +101,7 @@
     font-family: "Prata", serif;
     padding: 5px;
     margin: 10px;
-    border: 4px solid #101c1c;
+    border: 4px solid #1c443d;
     border-radius: 10px;
     background-color: #ffffff;
     align-items: center;
@@ -135,14 +135,14 @@
 .card-productos-boton {
     font-size: 18px;
     color: #ffffff;
-    background-color: #101c1c;
+    background-color: #1c443d;
     border-radius: 8px;
     padding: 8px;
-    border-color: #101c1c;
+    border-color: #1c443d;
 }
 
 .card-productos-boton:hover {
-    background-color: #101c1c;
+    background-color: #1c443d;
 }
 
 
@@ -153,7 +153,7 @@
     background-color: #ffffff;
     height: 100px;
     width: 450px;
-    border: 4px solid #101c1c;
+    border: 4px solid #1c443d    ;
     border-radius: 10px;
     margin: 10px;
 

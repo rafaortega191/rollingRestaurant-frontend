@@ -12,8 +12,8 @@ import Footer from "../common/Footer.jsx";
 const PaginaPrincipal = () => {
   return (
     <body className="color-fondo-principal">
-       <CustomNav usuarioLogueado="" setUsuarioLogueado=""></CustomNav>
-      <section>
+      <CustomNav usuarioLogueado="" setUsuarioLogueado=""></CustomNav>
+      <section >
         <Carousel fade className="carousel-principal">
           <Carousel.Item interval={1100}>
             <img
@@ -51,8 +51,12 @@ const PaginaPrincipal = () => {
       <section className="section-productos-principal">
         <div class="layout">
           <Card style={{ width: "30rem" }} className="card-principal">
-            <img src={imagenCarousel3} className="imagen-dispositivo-chico" alt="Imagen 2" />
-            <Card.Body >
+            <img
+              src={imagenCarousel3}
+              className="imagen-dispositivo-chico"
+              alt="Imagen 2"
+            />
+            <Card.Body>
               <Card.Title className="card-titulo-principal">
                 Explora Lugares Increíbles
               </Card.Title>
@@ -66,7 +70,11 @@ const PaginaPrincipal = () => {
           </Card>
 
           <Card style={{ width: "30rem" }} className="card-principal">
-            <img src={imagenCarousel2} className="imagen-dispositivo-chico" alt="Imagen 2" />
+            <img
+              src={imagenCarousel2}
+              className="imagen-dispositivo-chico"
+              alt="Imagen 2"
+            />
             <Card.Body>
               <Card.Title className="card-titulo-principal">
                 Nuestros productos sin TACC
@@ -81,7 +89,11 @@ const PaginaPrincipal = () => {
           </Card>
 
           <Card style={{ width: "30rem" }} className="card-principal">
-            <img src={imagenCarousel2} className="imagen-dispositivo-chico" alt="Imagen 2" />
+            <img
+              src={imagenCarousel2}
+              className="imagen-dispositivo-chico"
+              alt="Imagen 2"
+            />
             <Card.Body>
               <Card.Title className="card-titulo-principal">
                 Sobre nosotros
@@ -110,76 +122,106 @@ const PaginaPrincipal = () => {
           </div>
           <h3 className="fw-bold subtitulos-principal">Las mas pedidas</h3>
           <div className="row contenedor-menu">
-          <Card  className="card-productos" >
+            <Card className="card-productos">
               <Card.Body>
-                <Card.Title className="card-productos-titulo">La pasta<span className="badge bg-warning card-productos-etiqueta">Vegetariana</span></Card.Title>
+                <Card.Title className="card-productos-titulo">
+                  La pasta
+                  <span className="badge bg-warning card-productos-etiqueta">
+                    Vegetariana
+                  </span>
+                </Card.Title>
                 <Card.Subtitle className="mb-2 mb-1 text-muted card-productos-precio">
-                 $1000
+                  $1000
                 </Card.Subtitle>
                 <Card.Text className="card-productos-descripcion">
                   La clasica, fideos largos con manteca y queso. Mamamia
                 </Card.Text>
                 <div className="layout-botones">
-                <Button className="card-productos-boton" href="#">Agregar al carrito</Button>
-                <Button className="card-productos-boton"  href="#">Saber mas</Button>
+                  <Button className="card-productos-boton" href="#">
+                    Agregar al carrito
+                  </Button>
+                  <Button className="card-productos-boton" href="#">
+                    Saber mas
+                  </Button>
                 </div>
               </Card.Body>
             </Card>
 
-            <Card  className="card-productos" >
+            <Card className="card-productos">
               <Card.Body>
-                <Card.Title className="card-productos-titulo">La pasta<span className="badge bg-warning card-productos-etiqueta">Vegetariana</span></Card.Title>
+                <Card.Title className="card-productos-titulo">
+                  La pasta
+                  <span className="badge bg-warning card-productos-etiqueta">
+                    Vegetariana
+                  </span>
+                </Card.Title>
                 <Card.Subtitle className="mb-2 mb-1 text-muted card-productos-precio">
-                 $1000
+                  $1000
                 </Card.Subtitle>
                 <Card.Text className="card-productos-descripcion">
                   La clasica, fideos largos con manteca y queso. Mamamia
                 </Card.Text>
                 <div className="layout-botones">
-                <Button className="card-productos-boton" href="#">Agregar al carrito</Button>
-                <Button className="card-productos-boton"  href="#">Ver mas</Button>
+                  <Button className="card-productos-boton" href="#">
+                    Agregar al carrito
+                  </Button>
+                  <Button className="card-productos-boton" href="#">
+                    Ver mas
+                  </Button>
                 </div>
               </Card.Body>
             </Card>
-            
-            <Card  className="card-productos" >
+
+            <Card className="card-productos">
               <Card.Body>
-                <Card.Title className="card-productos-titulo">La pasta<span className="badge bg-warning card-productos-etiqueta">Vegetariana</span></Card.Title>
+                <Card.Title className="card-productos-titulo">
+                  La pasta
+                  <span className="badge bg-warning card-productos-etiqueta">
+                    Vegetariana
+                  </span>
+                </Card.Title>
                 <Card.Subtitle className="mb-2 mb-1 text-muted card-productos-precio">
-                 $1000
+                  $1000
                 </Card.Subtitle>
                 <Card.Text className="card-productos-descripcion">
                   La clasica, fideos largos con manteca y queso. Mamamia
                 </Card.Text>
                 <div className="layout-botones">
-                <Button className="card-productos-boton" href="#">Agregar al carrito</Button>
-                <Button className="card-productos-boton"  href="#">Ver mas</Button>
+                  <Button className="card-productos-boton" href="#">
+                    Agregar al carrito
+                  </Button>
+                  <Button className="card-productos-boton" href="#">
+                    Ver mas
+                  </Button>
                 </div>
               </Card.Body>
             </Card>
 
-            <Card  className="card-productos" >
+            <Card className="card-productos">
               <Card.Body>
-                <Card.Title className="card-productos-titulo">La pasta<span className="badge bg-warning card-productos-etiqueta">Vegetariana</span></Card.Title>
+                <Card.Title className="card-productos-titulo">
+                  La pasta
+                  <span className="badge bg-warning card-productos-etiqueta">
+                    Vegetariana
+                  </span>
+                </Card.Title>
                 <Card.Subtitle className="mb-2 mb-1 text-muted card-productos-precio">
-                 $1000
+                  $1000
                 </Card.Subtitle>
                 <Card.Text className="card-productos-descripcion">
                   La clasica, fideos largos con manteca y queso. Mamamia
                 </Card.Text>
                 <div className="layout-botones">
-                <Button className="card-productos-boton" href="#">Agregar al carrito</Button>
-                <Button className="card-productos-boton"  href="#">Ver mas</Button>
+                  <Button className="card-productos-boton" href="#">
+                    Agregar al carrito
+                  </Button>
+                  <Button className="card-productos-boton" href="#">
+                    Ver mas
+                  </Button>
                 </div>
               </Card.Body>
             </Card>
-
-           
-
-            
-            
           </div>
-         
         </div>
       </section>
       <Footer></Footer>
