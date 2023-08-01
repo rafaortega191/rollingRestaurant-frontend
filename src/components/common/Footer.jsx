@@ -21,13 +21,13 @@ const Footer = () => {
               ¡Sabor italiano en cada bocado! Descubre la pasión de nuestra pasta online!
             </h6>
             <div className="d-flex justify-content-center mx-auto">
-              <Button className="m-1 botonesIconos">
-                <AiFillFacebook size="20" to="/Error404" />
+              <Button b className="m-1 botonesIconos">
+                <AiFillFacebook size="20" to="/Error404" href="/error404"/>
               </Button>
-              <Button className="m-1 botonesIconos">
+              <Button className="m-1 botonesIconos" href="/error404">
                 <AiOutlineTwitter size="20" />
               </Button>
-              <Button className="m-1 botonesIconos">
+              <Button className="m-1 botonesIconos enlaces" href="/error404">
                 <AiFillInstagram size="20" />
               </Button>
             </div>
