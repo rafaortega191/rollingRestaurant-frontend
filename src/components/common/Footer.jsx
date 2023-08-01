@@ -14,26 +14,36 @@ const Footer = () => {
       <Container>
         <Row>
           <Col lg={6} md={12} mb={4}>
-            <h5 className="my-3 color enlaces text-center text-sm-start" style={{ letterSpacing: "2px" }}>
+            <h5
+              className="my-3 color enlaces text-center text-sm-start"
+              style={{ letterSpacing: "2px" }}
+            >
               Roling Restaurant
             </h5>
-            <h6 className="mb-3 h6-footer text-center text-sm-start" style={{ letterSpacing: "2px" }}>
-              ¡Sabor italiano en cada bocado! Descubre la pasión de nuestra pasta online!
+            <h6
+              className="mb-3 h6-footer text-center text-sm-start"
+              style={{ letterSpacing: "2px" }}
+            >
+              ¡Sabor italiano en cada bocado! Descubre la pasión de nuestra
+              pasta online!
             </h6>
             <div className="d-flex justify-content-center mx-auto">
-              <Button b className="m-1 botonesIconos">
-                <AiFillFacebook size="20" to="/Error404" href="/error404"/>
+              <Button b className="m-1 botonesIconos" href="/error404">
+                <AiFillFacebook size="20" />
               </Button>
               <Button className="m-1 botonesIconos" href="/error404">
                 <AiOutlineTwitter size="20" />
               </Button>
-              <Button className="m-1 botonesIconos enlaces" href="/error404">
+              <Button className="m-1 botonesIconos" href="/error404">
                 <AiFillInstagram size="20" />
               </Button>
             </div>
           </Col>
           <Col lg={2} md={6} mb={4}>
-            <h5 className="my-3 titulo-footer color text-center text-sm-start" style={{ letterSpacing: "2px" }}>
+            <h5
+              className="my-3 titulo-footer color text-center text-sm-start"
+              style={{ letterSpacing: "2px" }}
+            >
               Sitios
             </h5>
             <ul className="list-unstyled mb-0 text-center text-sm-start">
@@ -60,7 +70,10 @@ const Footer = () => {
             </ul>
           </Col>
           <Col lg={4} md={6} mb={4}>
-            <h5 className="my-3 titulo-footer color text-center text-sm-start" style={{ letterSpacing: "2px" }}>
+            <h5
+              className="my-3 titulo-footer color text-center text-sm-start"
+              style={{ letterSpacing: "2px" }}
+            >
               Horarios
             </h5>
             <Table style={{ color: "#4f4f4f", borderColor: "#666" }}>
@@ -83,7 +96,10 @@ const Footer = () => {
         </Row>
       </Container>
 
-      <div className="text-center p-3" style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}>
+      <div
+        className="text-center p-3"
+        style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
+      >
         © 2023 Copyright:
         <Link className="text-dark mx-2" to="/home">
           rollingRestaurant.com
