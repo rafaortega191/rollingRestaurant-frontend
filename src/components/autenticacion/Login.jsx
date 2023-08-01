@@ -24,11 +24,11 @@ const Login = ({ setUsuarioLogueado }) => {
       if (respuesta && respuesta.status === 200) {
         sessionStorage.setItem(
           "usuario",
-          JSON.stringify(respuesta.nombreUsuario)
+          JSON.stringify(respuesta.token)
         );
         Swal.fire(
           "Bienvenido",
-          `${respuesta.nombreUsuario} iniciaste sesion correctamente`,
+          `${respuesta.token} iniciaste sesion correctamente`,
           "success"
         );
         setUsuarioLogueado(respuesta);
