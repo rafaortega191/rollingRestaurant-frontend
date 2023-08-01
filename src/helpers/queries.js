@@ -1,5 +1,3 @@
-import jwt from 'jsonwebtoken';
-
 const SECRET_KEY = 'TODO_CAMBIAR_ESTE_SECRET';
 
 export const login = async (usuario) => {
@@ -17,11 +15,11 @@ export const login = async (usuario) => {
     if (respuesta.status === 200) {
       // Si el login es exitoso, almacenamos el token en el cliente y retornamos los datos.
       const token = datos.token;
-      const decodedToken = jwt.verify(token, SECRET_KEY);
       
       return {
         status: respuesta.status,
-        nombreUsuario: decodedToken.nombreUsuario,
+        nombreUsuario: datos.nombre,
+        es_admin: datos.es_admin,
         token: token
       };
     } else {
@@ -53,14 +51,10 @@ export const signup = async (usuario) => {
     const datos = await respuesta.json();
 
     if (respuesta.status === 200) {
-      
-      const token = datos.token;
-      const decodedToken = jwt.verify(token, SECRET_KEY);
 
       return {
         status: respuesta.status,
-        nombreUsuario: decodedToken.nombreUsuario,
-        token: token
+        nombreUsuario: datos.nombre
       };
     } else {
       // En caso de que el registro falle, puedes manejar el error adecuadamente.

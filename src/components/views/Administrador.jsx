@@ -6,7 +6,7 @@ import CargarProducto from "./producto/CargarProducto";
 import CustomNav from "../common/CustomNav.jsx";
 import Footer from "../common/Footer.jsx";
 
-const Administrador = () => {
+const Administrador = ({usuarioLogeado, setUsuarioLogueado}) => {
   const [productos, setProductos] = useState([]);
 
   useEffect(() => {
@@ -18,7 +18,7 @@ const Administrador = () => {
   return (
     <>
       <section className="bg-light rounded-2 text-center container-fluid">
-        <CustomNav usuarioLogueado="" setUsuarioLogueado=""></CustomNav>
+        <CustomNav usuarioLogueado={usuarioLogeado} setUsuarioLogueado={setUsuarioLogueado}></CustomNav>
         <div className="d-flex justify-content-between align-items-center mt-5">
           <h1 className="display-4 ">Productos disponibles</h1>
           <Link className="btn btn-primary" to="/administrador/crearproducto">

@@ -32,18 +32,32 @@ const CustomNav = ({ usuarioLogueado, setUsuarioLogueado }) => {
               <NavLink end className="nav-item nav-link" to="/pedidos">
                 Pedidos <AiOutlineShoppingCart className="fs-5" />
               </NavLink>
-              {usuarioLogueado.nombreUsuario ? (
+
+              {usuarioLogueado.es_admin === true ? (
                 <>
                   <NavLink
                     end
                     className="nav-item nav-link"
                     to="/administrador"
                   >
-                    Administrador
+                    Administrador: {usuarioLogueado.nombreUsuario}
                   </NavLink>
-                  <Button variant="dark" onClick={logout}>
+
+                  <NavLink end className="nav-item nav-link" onClick={logout}>
                     Logout
-                  </Button>
+                  </NavLink>
+                </>
+              ) : usuarioLogueado.es_admin === false &&
+                usuarioLogueado.es_admin !== undefined &&
+                usuarioLogueado.es_admin !== null ? (
+                <>
+                  <NavLink end className="nav-item nav-link" to="/">
+                    {usuarioLogueado.nombreUsuario}
+                  </NavLink>
+
+                  <NavLink end className="nav-item nav-link" onClick={logout}>
+                    Logout
+                  </NavLink>
                 </>
               ) : (
                 <NavLink end className="nav-item nav-link" to="/login">

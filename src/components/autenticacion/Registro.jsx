@@ -27,6 +27,7 @@ const Registro = ({ setUsuarioLogueado }) => {
 
     signup(usuario).then((respuesta) => {
       if (respuesta && respuesta.status === 200) {
+        console.log(respuesta)
         sessionStorage.setItem(
           "usuario",
           JSON.stringify(respuesta.nombreUsuario)

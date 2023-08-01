@@ -12,6 +12,8 @@ const ProductoDetalles = ({
   url_imagen_producto,
   nombre_producto,
   precio_producto,
+  usuarioLogeado, 
+  setUsuarioLogueado
 }) => {
   const aux_id_producto = 1;
   const aux_descripcion_larga_1 =
@@ -34,7 +36,7 @@ const ProductoDetalles = ({
 
   return (
     <>
-      <CustomNav usuarioLogueado="" setUsuarioLogueado=""></CustomNav>
+      <CustomNav usuarioLogueado={usuarioLogeado} setUsuarioLogueado={setUsuarioLogueado}></CustomNav>
       <section className="py-5">
         <Container>
           <Row className="gx-5">
