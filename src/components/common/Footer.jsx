@@ -101,7 +101,7 @@ const Footer = () => {
         style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
       >
         © 2023 Copyright:
-        <Link className="text-dark mx-2" to="/home">
+        <Link className="text-dark mx-2" to="/">
           rollingRestaurant.com
         </Link>
       </div>
