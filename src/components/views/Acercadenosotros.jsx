@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom';
 import Footer from '../common/Footer.jsx';
 
 
-const Acercadenosotros = () => {
+const Acercadenosotros = ({usuarioLogeado, setUsuarioLogueado}) => {
   const Card = ({ imagenSrc, titulo, descripcion }) => {
     const [showModal, setShowModal] = useState(false);
 
@@ -68,7 +68,7 @@ const Acercadenosotros = () => {
 
     return (
         <div className=''>
-          <CustomNav usuarioLogueado='' setUsuarioLogueado=''></CustomNav>
+          <CustomNav usuarioLogueado={usuarioLogeado} setUsuarioLogueado={setUsuarioLogueado}></CustomNav>
           <h1 className='text-center mt-2 text-white h1-acercadenosotros pt-3'>Nuestro Equipo</h1>
           <hr className='m-4 text-white'/>
           <div className="card-acercadenosotros-container rounded-4 ">

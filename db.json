@@ -20,15 +20,19 @@
   ],
   "pedidos": [
     {
-      "_id": "64c32d5f56ea4b74db22e332",
-      "nombreProducto": "fideos",
-      "precio": 5000,
-      "imagen": "https://images.pexels.com/photos/7218637/pexels-photo-7218637.jpeg",
-      "descripcion": "fideosss",
-      "categoria": "con carne",
-      "estado": "disponible",
+      "_id": "64c5921dd73b17f38286b464",
+      "nombreProducto": "fideos con salsa blanca",
+      "precio": 5490,
+      "imagen": "https://images.pexels.com/photos/5710178/pexels-photo-5710178.jpeg",
+      "descripcion": "fideos blancos",
+      "categoria": "vegetariano",
+      "estado": "pendiente",
       "__v": 0,
-      "id": 1
+      "id": "7493690f95ec485783f9920b3255981c",
+      "nombreUsuario": "\"rafael\"",
+      "fechaActual": "01/08/2023",
+      "cantidad": 3,
+      "precioTotal": 16470
     }
   ]
 }

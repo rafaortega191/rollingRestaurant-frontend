@@ -19,7 +19,7 @@ const CustomNav = ({ usuarioLogueado, setUsuarioLogueado }) => {
       <Container fluid className="text-center py-3 navColor">
         <Image src={logo} alt="Logo" className="mb-2 logo" />
         <div className="d-flex justify-content-center align-items-center tituloNav">
-          <Navbar.Brand as={NavLink} to="/home" className="fs-4 tituloNav">
+          <Navbar.Brand as={NavLink} to="/" className="fs-4 tituloNav">
             Rolling Restaurant
           </Navbar.Brand>
         </div>
@@ -32,28 +32,44 @@ const CustomNav = ({ usuarioLogueado, setUsuarioLogueado }) => {
               <NavLink end className="nav-item nav-link" to="/pedidos">
                 Pedidos <AiOutlineShoppingCart className="fs-5" />
               </NavLink>
-              {usuarioLogueado.nombreUsuario ? (
+
+              {usuarioLogueado.es_admin === true ? (
                 <>
                   <NavLink
                     end
                     className="nav-item nav-link"
                     to="/administrador"
                   >
-                    Administrador
+                    Administrador: {usuarioLogueado.nombreUsuario}
                   </NavLink>
-                  <Button variant="dark" onClick={logout}>
+
+                  <NavLink end className="nav-item nav-link" onClick={logout}>
                     Logout
-                  </Button>
+                  </NavLink>
+                </>
+              ) : usuarioLogueado.es_admin === false &&
+                usuarioLogueado.es_admin !== undefined &&
+                usuarioLogueado.es_admin !== null ? (
+                <>
+                  <NavLink end className="nav-item nav-link" to="/">
+                    {usuarioLogueado.nombreUsuario}
+                  </NavLink>
+
+                  <NavLink end className="nav-item nav-link" onClick={logout}>
+                    Logout
+                  </NavLink>
                 </>
               ) : (
-                <NavLink end className="nav-item nav-link" to="/login">
-                  Login
-                </NavLink>
-              )}
+                <>
+                  <NavLink end className="nav-item nav-link" to="/login">
+                    Login
+                  </NavLink>
 
-              <NavLink end className="nav-item nav-link" to="/registro">
-                Registro <AiOutlineUser className="fs-5" />
-              </NavLink>
+                  <NavLink end className="nav-item nav-link" to="/registro">
+                    Registro <AiOutlineUser className="fs-5" />
+                  </NavLink>
+                </>
+              )}
             </Nav>
           </Navbar.Collapse>
         </Container>

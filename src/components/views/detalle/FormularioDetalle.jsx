@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 
-const FormularioDetalle = ({ nombre_producto , id_producto}) => {
+import {
+  AiOutlineMinus,
+  AiOutlinePlus,
+} from "react-icons/ai";
+
+const FormularioDetalle = ({ nombre_producto, id_producto }) => {
   const [selectedSauce, setSelectedSauce] = useState("Small");
   const [quantity, setQuantity] = useState("1");
 
@@ -18,6 +23,7 @@ const FormularioDetalle = ({ nombre_producto , id_producto}) => {
     console.log("Cantidad:", quantity);
     console.log("Producto en curso:", nombre_producto);
     console.log("ID Producto en curso:", id_producto);
+    //
   };
 
   return (
@@ -34,7 +40,6 @@ const FormularioDetalle = ({ nombre_producto , id_producto}) => {
             <option value="Roja">Roja</option>
             <option value="Blanca">Blanca</option>
             <option value="Mixta">Mixta</option>
-            
           </select>
         </div>
         <div className="col-md-4 col-6 mb-3">
@@ -51,7 +56,7 @@ const FormularioDetalle = ({ nombre_producto , id_producto}) => {
                 )
               }
             >
-              <i className="fas fa-minus"></i>
+              <AiOutlineMinus/>
             </button>
             <input
               type="text"
@@ -73,7 +78,7 @@ const FormularioDetalle = ({ nombre_producto , id_producto}) => {
                 )
               }
             >
-              <i className="fas fa-plus"></i>
+              <AiOutlinePlus />
             </button>
           </div>
         </div>
@@ -82,7 +87,6 @@ const FormularioDetalle = ({ nombre_producto , id_producto}) => {
       <button type="submit" className="btn btn-primary shadow-0">
         <i className="me-1 fa fa-shopping-basket"></i> Agregar al Pedido
       </button>
-
     </form>
   );
 };

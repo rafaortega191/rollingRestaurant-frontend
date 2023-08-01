@@ -40,7 +40,7 @@ const CrearProducto = () => {
           <Form.Label>Producto*</Form.Label>
           <Form.Control
             type="text"
-            placeholder="Ej: Cafe"
+            placeholder="Ej: Fideos"
             {...register("nombreProducto", {
               required: "El nombre del producto es obligatorio",
               minLength: {
@@ -80,7 +80,7 @@ const CrearProducto = () => {
           <Form.Label>Descripcion*</Form.Label>
           <Form.Control
             type="text"
-            placeholder="Ej: café torrado"
+            placeholder="Ej: Fideos Blancos"
             {...register("descripcion", {
               required: "la descripcion del producto es obligatoria",
               minLength: {
@@ -101,9 +101,9 @@ const CrearProducto = () => {
           <Form.Label>Imagen URL*</Form.Label>
           <Form.Control
             type="text"
-            placeholder="Ej: https://www.pexels.com/es-es/vans-en-blanco-y-negro-fuera-de-la-decoracion-para-colgar-en-la-pared-1230679/"
+            placeholder="Ej: https://images.pexels.com/photos/9617397/pexels-photo-9617397.jpeg"
             {...register("imagen", {
-              required: "La imagen es obligatoria",
+              required: "La imagen es obligatoria y debe tener formato .jpg",
             })}
           />
           <Form.Text className="text-danger">{errors.imagen?.message}</Form.Text>
