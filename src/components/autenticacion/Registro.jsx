@@ -4,11 +4,6 @@ import Swal from "sweetalert2";
 import "./Registro.css";
 import { Form, Button, Container, Card } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import {
-  AiFillFacebook,
-  AiOutlineTwitter,
-  AiFillInstagram,
-} from "react-icons/ai";
 import CustomNav from "../common/CustomNav.jsx";
 import Footer from "../common/Footer";
 
@@ -26,7 +21,8 @@ const Registro = ({ setUsuarioLogueado }) => {
     console.log(usuario);
 
     signup(usuario).then((respuesta) => {
-      if (respuesta && respuesta.status === 200) {
+      if (respuesta && respuesta.status === 201) {
+        console.log(respuesta)
         sessionStorage.setItem(
           "usuario",
           JSON.stringify(respuesta.nombreUsuario)
@@ -38,10 +34,12 @@ const Registro = ({ setUsuarioLogueado }) => {
         );
         setUsuarioLogueado(respuesta);
 
-        // #TODO
-        // Si el usuario es tipo admin, redirigir a /administrador. Sino, redirigir a /home.
+        if (respuesta.es_admin === true) {
+          navegacion("/administrador");
+        } else {
+          navegacion("/");
+        }
 
-        navegacion("/administrador");
       } else {
         Swal.fire("Error", "Email o password incorrecto ", "error");
       }
@@ -108,24 +106,6 @@ const Registro = ({ setUsuarioLogueado }) => {
               </div>
             </Form>
           </Card.Body>
-          <Card.Footer className="texto_general">
-            <div
-              className="d-flex justify-content-center mx-auto "
-              style={{ width: "40%" }}
-            >
-              <Button className="m-1 botonesIconos">
-                <AiFillFacebook size="20" />
-              </Button>
-
-              <Button className="m-1 botonesIconos">
-                <AiOutlineTwitter size="20" />
-              </Button>
-
-              <Button className="m-1 botonesIconos">
-                <AiFillInstagram size="20" />
-              </Button>
-            </div>
-          </Card.Footer>
         </Card>
       </Container>
       <Footer></Footer>

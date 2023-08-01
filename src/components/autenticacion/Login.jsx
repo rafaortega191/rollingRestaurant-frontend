@@ -4,11 +4,6 @@ import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import "./Login.css";
 import { useNavigate } from "react-router-dom";
-import {
-  AiFillFacebook,
-  AiOutlineTwitter,
-  AiFillInstagram,
-} from "react-icons/ai";
 import CustomNav from "../common/CustomNav.jsx";
 import Footer from "../common/Footer.jsx";
 
@@ -26,6 +21,7 @@ const Login = ({ setUsuarioLogueado }) => {
     console.log(usuario);
 
     login(usuario).then((respuesta) => {
+      console.log(respuesta);
       if (respuesta && respuesta.status === 200) {
         sessionStorage.setItem(
           "usuario",
@@ -38,10 +34,11 @@ const Login = ({ setUsuarioLogueado }) => {
         );
         setUsuarioLogueado(respuesta);
 
-        // #TODO
-        // Si el usuario es tipo admin, redirigir a /administrador. Sino, redirigir a /home.
-
-        navegacion("/administrador");
+        if (respuesta.es_admin === true) {
+          navegacion("/administrador");
+        } else {
+          navegacion("/");
+        }
       } else {
         Swal.fire("Error", "Email o password incorrecto ", "error");
       }
@@ -102,24 +99,6 @@ const Login = ({ setUsuarioLogueado }) => {
               </div>
             </Form>
           </Card.Body>
-          <Card.Footer className="texto_general">
-            <div
-              className="d-flex justify-content-center mx-auto "
-              style={{ width: "40%" }}
-            >
-              <Button className="m-1 botonesIconos">
-                <AiFillFacebook size="20" />
-              </Button>
-
-              <Button className="m-1 botonesIconos">
-                <AiOutlineTwitter size="20" />
-              </Button>
-
-              <Button className="m-1 botonesIconos">
-                <AiFillInstagram size="20" />
-              </Button>
-            </div>
-          </Card.Footer>
         </Card>
       </Container>
       <Footer></Footer>

@@ -1,10 +1,4 @@
-import {
-  createBrowserRouter,
-  RouterProvider,
-  Route,
-  Routes,
-  BrowserRouter,
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import Acercadenosotros from "./components/views/Acercadenosotros";
@@ -15,16 +9,26 @@ import { useState } from "react";
 import ErrorPage from "./components/views/Error404";
 import RutasDelAdmin from "./components/routes/RutasDelAdmin";
 import ProductoDetalles from "./components/views/pageDetalle";
+import Inicio from "./components/views/Inicio";
+import Pedidos from "./components/views/Pedidos";
+import FormularioDetalle from "./components/views/detalle/FormularioDetalle";
+import RutasDelUsuario from "./components/routes/RutasDelUsuario";
 import PaginaPrincipal from "./components/views/PaginaPrincipal";
 
 function App() {
-  const usuario = JSON.parse(sessionStorage.getItem("usuario")) || {};
-  const [usuarioLogueado, setUsuarioLogueado] = useState(usuario);
+  // const usuario = JSON.parse(sessionStorage.getItem("usuario")) || {};
+
+  const [usuarioLogueado, setUsuarioLogueado] = useState({});
 
   const router = createBrowserRouter([
     {
       path: "/administrador",
-      element: <Administrador />,
+      element: (
+        <Administrador
+          usuarioLogeado={usuarioLogueado}
+          setUsuarioLogueado={setUsuarioLogueado}
+        />
+      ),
       errorElement: <ErrorPage />,
     },
     {
@@ -44,22 +48,66 @@ function App() {
     },
     {
       path: "/administrador/*",
-      element: <RutasDelAdmin setUsuarioLogueado={setUsuarioLogueado} />,
+      element: (
+        <RutasDelAdmin
+          usuarioLogeado={usuarioLogueado}
+          setUsuarioLogueado={setUsuarioLogueado}
+        />,
+        <RutasDelUsuario
+          usuarioLogeado={usuarioLogueado}
+          setUsuarioLogueado={setUsuarioLogueado}
+        />
+      ),
       errorElement: <ErrorPage />,
     },
     {
       path: "/acercadenosotros",
-      element: <Acercadenosotros />,
+      element: (
+        <Acercadenosotros
+          usuarioLogeado={usuarioLogueado}
+          setUsuarioLogueado={setUsuarioLogueado}
+        />
+      ),
       errorElement: <ErrorPage />,
     },
     {
-      path: "/detalles",
-      element: <ProductoDetalles />,
+      path: "/detalles/:id",
+      element: (
+        <ProductoDetalles
+          usuarioLogeado={usuarioLogueado}
+          setUsuarioLogueado={setUsuarioLogueado}
+        />
+      ),
       errorElement: <ErrorPage />,
     },
     {
       path: "/pedidos",
-      element: <Login />,
+      element: (
+        <Pedidos
+          usuarioLogeado={usuarioLogueado}
+          setUsuarioLogueado={setUsuarioLogueado}
+        />
+      ),
+      errorElement: <ErrorPage />,
+    },
+    {
+      path: "/pedidos/:id",
+      element: (
+        <Pedidos
+          usuarioLogeado={usuarioLogueado}
+          setUsuarioLogueado={setUsuarioLogueado}
+        />
+      ),
+      errorElement: <ErrorPage />,
+    },
+    {
+      path: "/",
+      element: (
+        <Inicio
+          usuarioLogeado={usuarioLogueado}
+          setUsuarioLogueado={setUsuarioLogueado}
+        />
+      ),
       errorElement: <ErrorPage />,
     },
     

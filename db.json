@@ -11,10 +11,28 @@
     }
   ],
   "usuarios": [
-    { "id": 1, "nombreUsuario": "admin", "email": "admin@rollingcode.com", "possword": "123456" }
+    {
+      "id": 1,
+      "nombreUsuario": "admin",
+      "email": "admin@rollingcode.com",
+      "password": "Aa246810"
+    }
   ],
   "pedidos": [
-      { "nombrePedido": "Lasagna", "descripcion": "alguna descripcion", "imagen": "https://images.pexels.com/photos/6046493/pexels-photo-6046493.jpeg", "precio": 2500, "estado": "pendiente"}
+    {
+      "_id": "64c5921dd73b17f38286b464",
+      "nombreProducto": "fideos con salsa blanca",
+      "precio": 5490,
+      "imagen": "https://images.pexels.com/photos/5710178/pexels-photo-5710178.jpeg",
+      "descripcion": "fideos blancos",
+      "categoria": "vegetariano",
+      "estado": "pendiente",
+      "__v": 0,
+      "id": "7493690f95ec485783f9920b3255981c",
+      "nombreUsuario": "\"rafael\"",
+      "fechaActual": "01/08/2023",
+      "cantidad": 3,
+      "precioTotal": 16470
+    }
   ]
-
 }
