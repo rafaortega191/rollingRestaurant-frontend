@@ -69,8 +69,8 @@ const Acercadenosotros = ({usuarioLogeado, setUsuarioLogueado}) => {
     return (
         <div className=''>
           <CustomNav usuarioLogueado={usuarioLogeado} setUsuarioLogueado={setUsuarioLogueado}></CustomNav>
-          <h1 className='text-center mt-2 text-white h1-acercadenosotros pt-3'>Nuestro Equipo</h1>
-          <hr className='m-4 text-white'/>
+          <h1 className='text-center mt-2 h1-acercadenosotros pt-3'>Nuestro Equipo</h1>
+          <hr className='m-4'/>
           <div className="card-acercadenosotros-container rounded-4 ">
             <Card
               imagenSrc={rafa}
