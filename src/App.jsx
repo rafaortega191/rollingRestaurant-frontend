@@ -12,6 +12,7 @@ import ProductoDetalles from "./components/views/pageDetalle";
 import Inicio from "./components/views/Inicio";
 import Pedidos from "./components/views/Pedidos";
 import FormularioDetalle from "./components/views/detalle/FormularioDetalle";
+import RutasDelUsuario from "./components/routes/RutasDelUsuario";
 
 function App() {
   // const usuario = JSON.parse(sessionStorage.getItem("usuario")) || {};
@@ -43,6 +44,10 @@ function App() {
       path: "/administrador/*",
       element: (
         <RutasDelAdmin
+          usuarioLogeado={usuarioLogueado}
+          setUsuarioLogueado={setUsuarioLogueado}
+        />,
+        <RutasDelUsuario
           usuarioLogeado={usuarioLogueado}
           setUsuarioLogueado={setUsuarioLogueado}
         />
@@ -97,11 +102,6 @@ function App() {
           setUsuarioLogueado={setUsuarioLogueado}
         />
       ),
-      errorElement: <ErrorPage />,
-    },
-    {
-      path: "/FormularioDetalle/:id",
-      element: <FormularioDetalle />,
       errorElement: <ErrorPage />,
     },
   ]);
