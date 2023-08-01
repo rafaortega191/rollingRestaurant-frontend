@@ -3,7 +3,7 @@ import { Navbar, Container, Nav, Button, Image } from "react-bootstrap";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import logo from "../../assets/trace.svg";
 import "./CustomNav.css";
-import { AiOutlineShoppingCart,AiOutlineUser, } from "react-icons/ai";
+import { AiOutlineShoppingCart, AiOutlineUser } from "react-icons/ai";
 
 const CustomNav = ({ usuarioLogueado, setUsuarioLogueado }) => {
   const navegacion = useNavigate();
@@ -17,35 +17,27 @@ const CustomNav = ({ usuarioLogueado, setUsuarioLogueado }) => {
   return (
     <>
       <Container fluid className="text-center py-3 navColor">
-        <Nav.Link as={NavLink} to="/home">
-          <Image
-            src={logo}
-            alt="Logo"
-            className="mb-2 logo"
-          />
-          <div className=" d-flex justify-content-center align-items-center tituloNav">
-            <Navbar.Brand as={NavLink} to="/home" className="fs-4 tituloNav">
-              Rolling Restaurant
-            </Navbar.Brand>
-          </div>
-        </Nav.Link>
+        <Image src={logo} alt="Logo" className="mb-2 logo" />
+        <div className="d-flex justify-content-center align-items-center tituloNav">
+          <Navbar.Brand as={NavLink} to="/home" className="fs-4 tituloNav">
+            Rolling Restaurant
+          </Navbar.Brand>
+        </div>
       </Container>
-      {/* Barra de navegación */}
-      <Navbar expand="lg" className="mx-3 navEstilo justify-content-between">
+      <Navbar expand="md" className="mx-md-3 navEstilo justify-content-between">
         <Container>
-          <Navbar.Toggle aria-controls="basic-navbar-nav " />
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
-              <NavLink end className={"nav-item nav-link"} to={"/pedidos"}>
-                Pedidos
-                <AiOutlineShoppingCart className="fs-5"/>
+              <NavLink end className="nav-item nav-link" to="/pedidos">
+                Pedidos <AiOutlineShoppingCart className="fs-5" />
               </NavLink>
               {usuarioLogueado.nombreUsuario ? (
                 <>
                   <NavLink
                     end
-                    className={"nav-item nav-link"}
-                    to={"/administrador"}
+                    className="nav-item nav-link"
+                    to="/administrador"
                   >
                     Administrador
                   </NavLink>
@@ -54,14 +46,13 @@ const CustomNav = ({ usuarioLogueado, setUsuarioLogueado }) => {
                   </Button>
                 </>
               ) : (
-                <NavLink end className={"nav-item nav-link"} to={"/login"}>
+                <NavLink end className="nav-item nav-link" to="/login">
                   Login
                 </NavLink>
               )}
 
-              <NavLink end className={"nav-item nav-link"} to={"/registro"}>
-                Registro
-                <AiOutlineUser></AiOutlineUser>
+              <NavLink end className="nav-item nav-link" to="/registro">
+                Registro <AiOutlineUser className="fs-5" />
               </NavLink>
             </Nav>
           </Navbar.Collapse>
