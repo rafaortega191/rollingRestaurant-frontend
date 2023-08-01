@@ -60,7 +60,7 @@ function App() {
       errorElement: <ErrorPage />,
     },
     {
-      path: "/detalles",
+      path: "/detalles/:id",
       element: (
         <ProductoDetalles
           usuarioLogeado={usuarioLogueado}

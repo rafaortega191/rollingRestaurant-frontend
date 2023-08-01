@@ -4,9 +4,7 @@ import React from "react";
 
 const CardProducto = ({ producto }) => {
   const handleComprarClick = () => {
-    // Convertimos el objeto producto en una cadena JSON
     const productoJSON = JSON.stringify(producto);
-    // Almacenamos los datos del producto en el localStorage con una clave única, por ejemplo, 'productoSeleccionado'
     localStorage.setItem("productoSeleccionado", productoJSON);
   };
 
@@ -17,7 +15,10 @@ const CardProducto = ({ producto }) => {
         <Card.Body>
           <Card.Title>{producto.nombreProducto}</Card.Title>
           <Card.Text>${producto.precio}</Card.Text>
-          <Link className="btn btn-danger me-2" to={`/FormularioDetalle/${producto._id}`}>
+          <Link
+            className="btn btn-danger me-2"
+            to={`/detalles/${producto._id}`}
+          >
             Ver más
           </Link>
           <Link
