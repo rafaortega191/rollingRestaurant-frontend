@@ -21,6 +21,7 @@ const Login = ({ setUsuarioLogueado }) => {
     console.log(usuario);
 
     login(usuario).then((respuesta) => {
+      console.log(respuesta);
       if (respuesta && respuesta.status === 200) {
         sessionStorage.setItem(
           "usuario",
@@ -33,10 +34,13 @@ const Login = ({ setUsuarioLogueado }) => {
         );
         setUsuarioLogueado(respuesta);
 
+        if (respuesta.es_admin === true) {
+          navegacion("/administrador");
+        } else {
+          navegacion("/");
+        }
         // #TODO
         // Si el usuario es tipo admin, redirigir a /administrador. Sino, redirigir a /home.
-
-        navegacion("/administrador");
       } else {
         Swal.fire("Error", "Email o password incorrecto ", "error");
       }
@@ -90,15 +94,13 @@ const Login = ({ setUsuarioLogueado }) => {
                   {errors.password?.message}
                 </Form.Text>
               </Form.Group>
+              <div className="d-flex justify-content-center">
+                <Button className="botonIngresar px-3 my-3" type="submit">
+                  Ingresar
+                </Button>
+              </div>
             </Form>
           </Card.Body>
-          <Card.Footer className="texto_general">
-            <div className="d-flex justify-content-center">
-              <Button className="botonIngresar px-3 my-3" type="submit">
-                Ingresar
-              </Button>
-            </div>
-          </Card.Footer>
         </Card>
       </Container>
       <Footer></Footer>

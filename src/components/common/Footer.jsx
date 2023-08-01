@@ -54,7 +54,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li className="mb-1">
-                <Link to="/login" className="color enlaces">
+                <Link to="/pedidos" className="color enlaces">
                   Pedidos
                 </Link>
               </li>
