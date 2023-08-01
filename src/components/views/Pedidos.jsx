@@ -16,8 +16,8 @@ const Pedidos = ({ usuarioLogeado, setUsuarioLogueado }) => {
   const navegacion = useNavigate();
 
   useEffect(() => {
-    // Leer los datos del producto almacenados en el sessionStorage con la clave "productoSeleccionado"
-    const productoJSON = sessionStorage.getItem("productoSeleccionado");
+    // Leer los datos del producto almacenados en el localStorage con la clave "productoSeleccionado"
+    const productoJSON = localStorage.getItem("productoSeleccionado");
     if (productoJSON) {
       // Si se encontraron datos en el sessionStorage, convertir la cadena JSON en un objeto y asignarlos al estado
       const productoSeleccionado = JSON.parse(productoJSON);
