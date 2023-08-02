@@ -144,14 +144,12 @@ const Inicio = ({ usuarioLogeado, setUsuarioLogueado }) => {
               <i className="bi bi-search"></i>Buscar
             </label>
           </div>
-          <Container>
         <h1 className="text-center fw-bold subtitulos-principal">Nuestra Seleccion de pastas</h1>
         <hr className="" />
-        <Row>
+          <Container className="contenedor-productos-seleccionados">
           {productos.map((producto) => (
             <CardProducto key={producto._id} producto={producto}></CardProducto>
           ))}
-        </Row>
       </Container>
           <div className="row contenedor-menu"></div>
           <h3 className="fw-bold subtitulos-principal">Veganas</h3>
@@ -174,15 +172,15 @@ const Inicio = ({ usuarioLogeado, setUsuarioLogueado }) => {
                   frescas y crocantes.
                 </Card.Text>
                 <div className="layout-botones">
-                  <Button className="card-productos-boton" to="/error404">
-                    Agregar al carrito
-                  </Button>
                   <Link
                     className="card-productos-boton-sabermas"
                     to="/error404"
                   >
                     Ver más
                   </Link>
+                  <Button className="card-productos-boton" to="/error404">
+                    Agregar al carrito
+                  </Button>
                 </div>
               </Card.Body>
             </Card>
@@ -204,18 +202,15 @@ const Inicio = ({ usuarioLogeado, setUsuarioLogueado }) => {
                   en cada bocado.
                 </Card.Text>
                 <div className="layout-botones">
-                  <Button
-                    className="card-productos-boton"
-                    href="../views/Error404.jsx"
-                  >
-                    Agregar al carrito
-                  </Button>
-                  <Link
+                <Link
                     className="card-productos-boton-sabermas"
                     to="/error404"
                   >
                     Ver más
                   </Link>
+                  <Button className="card-productos-boton" to="/error404">
+                    Agregar al carrito
+                  </Button>
                 </div>
               </Card.Body>
             </Card>
@@ -236,18 +231,15 @@ const Inicio = ({ usuarioLogeado, setUsuarioLogueado }) => {
                   hummus. Una combinación única y sabrosa.
                 </Card.Text>
                 <div className="layout-botones">
-                  <Button
-                    className="card-productos-boton"
-                    href="../views/Error404.jsx"
-                  >
-                    Agregar al carrito
-                  </Button>
-                  <Link
+                <Link
                     className="card-productos-boton-sabermas"
                     to="/error404"
                   >
                     Ver más
                   </Link>
+                  <Button className="card-productos-boton" to="/error404">
+                    Agregar al carrito
+                  </Button>
                 </div>
               </Card.Body>
             </Card>
@@ -269,18 +261,15 @@ const Inicio = ({ usuarioLogeado, setUsuarioLogueado }) => {
                   irresistible.
                 </Card.Text>
                 <div className="layout-botones">
-                  <Button
-                    className="card-productos-boton"
-                    href="../views/Error404.jsx"
-                  >
-                    Agregar al carrito
-                  </Button>
-                  <Link
+                <Link
                     className="card-productos-boton-sabermas"
                     to="/error404"
                   >
                     Ver más
                   </Link>
+                  <Button className="card-productos-boton" to="/error404">
+                    Agregar al carrito
+                  </Button>
                 </div>
               </Card.Body>
             </Card>
@@ -306,18 +295,15 @@ const Inicio = ({ usuarioLogeado, setUsuarioLogueado }) => {
                   seitán con toques de manzanas frescas.
                 </Card.Text>
                 <div className="layout-botones">
-                  <Button
-                    className="card-productos-boton"
-                    href="../views/Error404.jsx"
-                  >
-                    Agregar al carrito
-                  </Button>
-                  <Link
+                <Link
                     className="card-productos-boton-sabermas"
                     to="/error404"
                   >
                     Ver más
                   </Link>
+                  <Button className="card-productos-boton" to="/error404">
+                    Agregar al carrito
+                  </Button>
                 </div>
               </Card.Body>
             </Card>
@@ -339,18 +325,15 @@ const Inicio = ({ usuarioLogeado, setUsuarioLogueado }) => {
                   texturas sorprendentes.
                 </Card.Text>
                 <div className="layout-botones">
-                  <Button
-                    className="card-productos-boton"
-                    href="../views/Error404.jsx"
-                  >
-                    Agregar al carrito
-                  </Button>
-                  <Link
+                <Link
                     className="card-productos-boton-sabermas"
                     to="/error404"
                   >
                     Ver más
                   </Link>
+                  <Button className="card-productos-boton" to="/error404">
+                    Agregar al carrito
+                  </Button>
                 </div>
               </Card.Body>
             </Card>
@@ -372,18 +355,15 @@ const Inicio = ({ usuarioLogeado, setUsuarioLogueado }) => {
                   aromáticos y piñones crujientes.
                 </Card.Text>
                 <div className="layout-botones">
-                  <Button
-                    className="card-productos-boton"
-                    href="../views/Error404.jsx"
-                  >
-                    Agregar al carrito
-                  </Button>
-                  <Link
+                <Link
                     className="card-productos-boton-sabermas"
                     to="/error404"
                   >
                     Ver más
                   </Link>
+                  <Button className="card-productos-boton" to="/error404">
+                    Agregar al carrito
+                  </Button>
                 </div>
               </Card.Body>
             </Card>
@@ -406,18 +386,15 @@ const Inicio = ({ usuarioLogeado, setUsuarioLogueado }) => {
                   blancas.
                 </Card.Text>
                 <div className="layout-botones">
-                  <Button
-                    className="card-productos-boton"
-                    href="../views/Error404.jsx"
-                  >
-                    Agregar al carrito
-                  </Button>
-                  <Link
+                <Link
                     className="card-productos-boton-sabermas"
                     to="/error404"
                   >
                     Ver más
                   </Link>
+                  <Button className="card-productos-boton" to="/error404">
+                    Agregar al carrito
+                  </Button>
                 </div>
               </Card.Body>
             </Card>
@@ -446,18 +423,15 @@ const Inicio = ({ usuarioLogeado, setUsuarioLogueado }) => {
                   gluten o que prefieren opciones sin tacc.
                 </Card.Text>
                 <div className="layout-botones">
-                  <Button
-                    className="card-productos-boton"
-                    href="../views/Error404.jsx"
-                  >
-                    Agregar al carrito
-                  </Button>
-                  <Link
+                <Link
                     className="card-productos-boton-sabermas"
                     to="/error404"
                   >
                     Ver más
                   </Link>
+                  <Button className="card-productos-boton" to="/error404">
+                    Agregar al carrito
+                  </Button>
                 </div>
               </Card.Body>
             </Card>
@@ -479,18 +453,15 @@ const Inicio = ({ usuarioLogeado, setUsuarioLogueado }) => {
                   textura única!
                 </Card.Text>
                 <div className="layout-botones">
-                  <Button
-                    className="card-productos-boton"
-                    href="../views/Error404.jsx"
-                  >
-                    Agregar al carrito
-                  </Button>
-                  <Link
+                <Link
                     className="card-productos-boton-sabermas"
                     to="/error404"
                   >
                     Ver más
                   </Link>
+                  <Button className="card-productos-boton" to="/error404">
+                    Agregar al carrito
+                  </Button>
                 </div>
               </Card.Body>
             </Card>
@@ -512,18 +483,15 @@ const Inicio = ({ usuarioLogeado, setUsuarioLogueado }) => {
                   y saludables!
                 </Card.Text>
                 <div className="layout-botones">
-                  <Button
-                    className="card-productos-boton"
-                    href="../views/Error404.jsx"
-                  >
-                    Agregar al carrito
-                  </Button>
-                  <Link
+                <Link
                     className="card-productos-boton-sabermas"
                     to="/error404"
                   >
                     Ver más
                   </Link>
+                  <Button className="card-productos-boton" to="/error404">
+                    Agregar al carrito
+                  </Button>
                 </div>
               </Card.Body>
             </Card>
@@ -544,18 +512,15 @@ const Inicio = ({ usuarioLogeado, setUsuarioLogueado }) => {
                   tomate casera, realzada con el toque fresco de la albahaca.
                 </Card.Text>
                 <div className="layout-botones">
-                  <Button
-                    className="card-productos-boton"
-                    href="../views/Error404.jsx"
-                  >
-                    Agregar al carrito
-                  </Button>
-                  <Link
+                <Link
                     className="card-productos-boton-sabermas"
                     to="/error404"
                   >
                     Ver más
                   </Link>
+                  <Button className="card-productos-boton" to="/error404">
+                    Agregar al carrito
+                  </Button>
                 </div>
               </Card.Body>
             </Card>
@@ -582,18 +547,15 @@ const Inicio = ({ usuarioLogeado, setUsuarioLogueado }) => {
                   robustos de tomate, cebolla y especias.
                 </Card.Text>
                 <div className="layout-botones">
-                  <Button
-                    className="card-productos-boton"
-                    href="../views/Error404.jsx"
-                  >
-                    Agregar al carrito
-                  </Button>
-                  <Link
+                <Link
                     className="card-productos-boton-sabermas"
                     to="/error404"
                   >
                     Ver más
                   </Link>
+                  <Button className="card-productos-boton" to="/error404">
+                    Agregar al carrito
+                  </Button>
                 </div>
               </Card.Body>
             </Card>
@@ -615,18 +577,15 @@ const Inicio = ({ usuarioLogeado, setUsuarioLogueado }) => {
                   salsa de tomate, carne tierna y toques aromáticos de hierbas.
                 </Card.Text>
                 <div className="layout-botones">
-                  <Button
-                    className="card-productos-boton"
-                    href="../views/Error404.jsx"
-                  >
-                    Agregar al carrito
-                  </Button>
-                  <Link
+                <Link
                     className="card-productos-boton-sabermas"
                     to="/error404"
                   >
                     Ver más
                   </Link>
+                  <Button className="card-productos-boton" to="/error404">
+                    Agregar al carrito
+                  </Button>
                 </div>
               </Card.Body>
             </Card>
@@ -647,18 +606,15 @@ const Inicio = ({ usuarioLogeado, setUsuarioLogueado }) => {
                   Una mezcla de sabores reconfortantes y texturas irresistibles.
                 </Card.Text>
                 <div className="layout-botones">
-                  <Button
-                    className="card-productos-boton"
-                    href="../views/Error404.jsx"
-                  >
-                    Agregar al carrito
-                  </Button>
-                  <Link
+                <Link
                     className="card-productos-boton-sabermas"
                     to="/error404"
                   >
                     Ver más
                   </Link>
+                  <Button className="card-productos-boton" to="/error404">
+                    Agregar al carrito
+                  </Button>
                 </div>
               </Card.Body>
             </Card>
@@ -681,18 +637,15 @@ const Inicio = ({ usuarioLogeado, setUsuarioLogueado }) => {
                   casera.
                 </Card.Text>
                 <div className="layout-botones">
-                  <Button
-                    className="card-productos-boton"
-                    href="../views/Error404.jsx"
-                  >
-                    Agregar al carrito
-                  </Button>
-                  <Link
+                <Link
                     className="card-productos-boton-sabermas"
                     to="/error404"
                   >
                     Ver más
                   </Link>
+                  <Button className="card-productos-boton" to="/error404">
+                    Agregar al carrito
+                  </Button>
                 </div>
               </Card.Body>
             </Card>

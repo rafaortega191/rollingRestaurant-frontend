@@ -70,6 +70,7 @@
     color: #ffffff;
     font-size: 20px;
 }
+
 .card-boton-principal {
     font-family: "Prata", serif;
     font-size: 20px;
@@ -106,7 +107,7 @@
 }
 
 .card-productos {
-    width: 20rem;
+    width: 22rem;
     height: 25rem;
     font-family: "Prata", serif;
     padding: 5px;
@@ -152,6 +153,7 @@
     padding: 8px;
     border-color: #1c443d;
 }
+
 .card-productos-boton-sabermas {
     margin: 2px;
     text-decoration: none;
@@ -183,20 +185,29 @@
     margin: 10px;
 
 }
-.imagen-card-seleccionadas{
-   justify-content: center;
-   align-items: center;
+
+.imagen-card-seleccionadas {
+    justify-content: center;
+    align-items: center;
 }
+
 .card-principal-seleccionados {
     font-family: "Prata", serif;
     font-size: 18px;
     border: 5px solid #1c443d;
+    margin: 15px;
 }
-.card-productos-boton-sabermas:hover{
+
+.card-productos-boton-sabermas:hover {
     background-color: #1c443d;
     color: #ffffff;
 }
 
+.contenedor-productos-seleccionados {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row
+}
 
 /*Dispositivo Chico*/
 @media all and (max-width: 576px) {
@@ -244,9 +255,11 @@
         text-align: center;
         font-size: 25px;
     }
-.imagen-card-seleccionadas{
-    height: 18rem;
-}
+
+    .imagen-card-seleccionadas {
+        height: 18rem;
+    }
+
     .contenedor-productos-principal {
         padding: 0ch 2.5ch 0px 2.5ch;
     }
@@ -265,9 +278,10 @@
         justify-content: center;
     }
 
-    .card-productos-titulo{
+    .card-productos-titulo {
         font-size: 25;
     }
+
     .card-productos-etiqueta {
         font-size: 15px;
         margin-left: 8px;
@@ -282,7 +296,12 @@
         padding: 5px;
         border-color: #1c443d;
     }
+
+    .contenedor-productos-seleccionados {
+        display: block;
+    }
 }
+
 /*Dispositivo Mediano*/
 @media all and (min-width: 577px) and (max-width: 991px) {
     .carousel-principal {
@@ -364,14 +383,9 @@
         border-radius: 10px;
         background-color: #ffffff;
         flex-direction: row;
-
-       flex-grow: 2;
+        flex-grow: 2;
     }
-.card-principal-seleccionados{
-    
-   width: 17rem;
-       
-}
+
     .card-productos-etiqueta {
         font-size: 17px;
         margin-left: 1ch;
@@ -386,5 +400,16 @@
         padding: 8px;
         border-color: #1c443d;
     }
-    
+
+    .contenedor-productos-seleccionados {
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: space-evenly;
+    }
+
+    .card-principal-seleccionados {
+        height: 38rem;
+        width: 15rem;
+    }
 }

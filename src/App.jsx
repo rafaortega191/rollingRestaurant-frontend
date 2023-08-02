@@ -13,7 +13,7 @@ import Inicio from "./components/views/Inicio";
 import Pedidos from "./components/views/Pedidos";
 import FormularioDetalle from "./components/views/detalle/FormularioDetalle";
 import RutasDelUsuario from "./components/routes/RutasDelUsuario";
-import PaginaPrincipal from "./components/views/PaginaPrincipal";
+
 
 function App() {
   // const usuario = JSON.parse(sessionStorage.getItem("usuario")) || {};
