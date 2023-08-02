@@ -41,12 +41,18 @@ function App() {
       errorElement: <ErrorPage />,
     },
     {
-      path: "/administrador/*",
+      path: "/administrador/productos/*",
       element: (
         <RutasDelAdmin
           usuarioLogeado={usuarioLogueado}
           setUsuarioLogueado={setUsuarioLogueado}
-        />,
+        />
+      ),
+      errorElement: <ErrorPage />,
+    },
+    {
+      path: "/administrador/usuarios/*",
+      element: (
         <RutasDelUsuario
           usuarioLogeado={usuarioLogueado}
           setUsuarioLogueado={setUsuarioLogueado}
