@@ -96,8 +96,8 @@
 }
 
 .card-productos {
-    width: 23rem;
-    height: 15rem;
+    width: 25rem;
+    height: 22rem;
     font-family: "Prata", serif;
     padding: 5px;
     margin: 10px;
@@ -109,7 +109,7 @@
 }
 
 .card-productos-titulo {
-    font-size: 37px;
+    font-size: 35px;
 
 }
 
@@ -123,7 +123,7 @@
 }
 
 .card-productos-descripcion {
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .layout-botones {

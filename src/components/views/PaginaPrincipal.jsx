@@ -9,7 +9,10 @@ import Card from "react-bootstrap/Card";
 import CustomNav from "../common/CustomNav.jsx";
 import Footer from "../common/Footer.jsx";
 
+
+
 const PaginaPrincipal = () => {
+  
   return (
     <body className="color-fondo-principal">
       <CustomNav usuarioLogueado="" setUsuarioLogueado=""></CustomNav>
@@ -122,19 +125,23 @@ const PaginaPrincipal = () => {
           </div>
           <h3 className="fw-bold subtitulos-principal">Las mas pedidas</h3>
           <div className="row contenedor-menu">
-            <Card className="card-productos">
+      
+          </div>
+          <h3 className="fw-bold subtitulos-principal">Veganas</h3>
+          <div className="row contenedor-menu">
+          <Card className="card-productos">
               <Card.Body>
                 <Card.Title className="card-productos-titulo">
-                  La pasta
-                  <span className="badge bg-warning card-productos-etiqueta">
-                    Vegetariana
+                Ensalada de pasta con tahini
+                  <span className="badge bg-success card-productos-etiqueta">
+                    Vegana
                   </span>
                 </Card.Title>
                 <Card.Subtitle className="mb-2 mb-1 text-muted card-productos-precio">
-                  $1000
+                  $1899
                 </Card.Subtitle>
                 <Card.Text className="card-productos-descripcion">
-                  La clasica, fideos largos con manteca y queso. Mamamia
+                Es una deliciosa combinación de pasta al dente mezclada con una cremosa salsa de tahini y una selección de verduras frescas y crocantes.
                 </Card.Text>
                 <div className="layout-botones">
                   <Button className="card-productos-boton" href="#">
@@ -150,16 +157,41 @@ const PaginaPrincipal = () => {
             <Card className="card-productos">
               <Card.Body>
                 <Card.Title className="card-productos-titulo">
-                  La pasta
-                  <span className="badge bg-warning card-productos-etiqueta">
+                Pasta con salsa de cacahuete
+                  <span className="badge bg-success card-productos-etiqueta">
+                    Vegana
+                  </span>
+                </Card.Title>
+                <Card.Subtitle className="mb-2 mb-1 text-muted card-productos-precio">
+                  $1699
+                </Card.Subtitle>
+                <Card.Text className="card-productos-descripcion">
+                Pasta con salsa de cacahuate, cremosa y sabrosa, acompañada de vegetales frescos. Una combinación deliciosa y reconfortante en cada bocado.
+                </Card.Text>
+                <div className="layout-botones">
+                  <Button className="card-productos-boton" href="#">
+                    Agregar al carrito
+                  </Button>
+                  <Button className="card-productos-boton" href="./Error404.jsx">
+                    Ver mas
+                  </Button>
+                </div>
+              </Card.Body>
+            </Card>
+
+            <Card className="card-productos">
+              <Card.Body>
+                <Card.Title className="card-productos-titulo">
+                Macarrones con hummus
+                  <span className="badge bg-success card-productos-etiqueta">
                     Vegetariana
                   </span>
                 </Card.Title>
                 <Card.Subtitle className="mb-2 mb-1 text-muted card-productos-precio">
-                  $1000
+                  $1699
                 </Card.Subtitle>
                 <Card.Text className="card-productos-descripcion">
-                  La clasica, fideos largos con manteca y queso. Mamamia
+                Pasta cocida al dente con una deliciosa y cremosa salsa de hummus. Una combinación única y sabrosa.
                 </Card.Text>
                 <div className="layout-botones">
                   <Button className="card-productos-boton" href="#">
@@ -175,16 +207,16 @@ const PaginaPrincipal = () => {
             <Card className="card-productos">
               <Card.Body>
                 <Card.Title className="card-productos-titulo">
-                  La pasta
-                  <span className="badge bg-warning card-productos-etiqueta">
+                Espaguetis con almendras, tomate y rúcula
+                  <span className="badge bg-success card-productos-etiqueta">
                     Vegetariana
                   </span>
                 </Card.Title>
                 <Card.Subtitle className="mb-2 mb-1 text-muted card-productos-precio">
-                  $1000
+                  $1999
                 </Card.Subtitle>
                 <Card.Text className="card-productos-descripcion">
-                  La clasica, fideos largos con manteca y queso. Mamamia
+                Una exquisita combinación de sabores, donde el pesto cremoso realza la frescura de los tomates y la rúcula. Un plato irresistible.
                 </Card.Text>
                 <div className="layout-botones">
                   <Button className="card-productos-boton" href="#">
@@ -196,32 +228,7 @@ const PaginaPrincipal = () => {
                 </div>
               </Card.Body>
             </Card>
-
-            <Card className="card-productos">
-              <Card.Body>
-                <Card.Title className="card-productos-titulo">
-                  La pasta
-                  <span className="badge bg-warning card-productos-etiqueta">
-                    Vegetariana
-                  </span>
-                </Card.Title>
-                <Card.Subtitle className="mb-2 mb-1 text-muted card-productos-precio">
-                  $1000
-                </Card.Subtitle>
-                <Card.Text className="card-productos-descripcion">
-                  La clasica, fideos largos con manteca y queso. Mamamia
-                </Card.Text>
-                <div className="layout-botones">
-                  <Button className="card-productos-boton" href="#">
-                    Agregar al carrito
-                  </Button>
-                  <Button className="card-productos-boton" href="#">
-                    Ver mas
-                  </Button>
-                </div>
-              </Card.Body>
-            </Card>
-          </div>
+            </div>
         </div>
       </section>
       <Footer></Footer>
