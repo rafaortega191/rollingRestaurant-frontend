@@ -1,0 +1,415 @@
+.color-fondo-principal {
+    background-color: #ffffff;
+}
+
+.carousel-principal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 60px 10ch 60px 10ch;
+    font-family: "Cinzel Decorative", cursive;
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        display: none;
+    }
+}
+
+.imagenes-carousel-principal {
+
+    align-items: center;
+    justify-content: center;
+    max-height: 50ch;
+    width: 180ch;
+    object-fit: cover;
+}
+
+.carousel-titulo-principal {
+    text-shadow: 3px 3px 3px black;
+    font-size: 70px;
+}
+
+.section-productos-principal {
+    margin: 60px 20ch 60px 20ch;
+    padding: 40px 0ch 40px 0ch;
+    position: relative;
+    isolation: isolate;
+    background: #dccbb9;
+    border-radius: 10px;
+    border: 8px solid #1c443d;
+}
+
+.layout {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card-principal {
+    font-family: "Prata", serif;
+    font-size: 15px;
+    margin-left: 12px;
+    margin-right: 12px;
+    margin-bottom: 20px;
+    border: 5px solid #1c443d;
+}
+
+.card-titulo-principal {
+    font-family: "Cinzel Decorative", cursive;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.cards-productos-principales {
+    padding: 5px;
+    border-radius: 6px;
+    border: 5px solid #1c443d;
+    border-color: #1c443d;
+    background-color: #1c443d;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 20px;
+}
+
+.card-boton-principal {
+    font-family: "Prata", serif;
+    font-size: 20px;
+    color: #ffffff;
+    border-color: #1c443d;
+    background-color: #1c443d;
+}
+
+.card-boton-principal:hover {
+    border-color: #1c443d;
+    background-color: #1c443d;
+}
+
+.titulos-principal {
+    font-family: "Cinzel Decorative", cursive;
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.contenedor-productos-principal {
+    padding: 4ch 5ch 0px 5ch;
+}
+
+.subtitulos-principal {
+    font-family: "Cinzel Decorative", cursive;
+    font-size: 35px;
+    margin-bottom: 15px;
+    margin-top: 30px;
+}
+
+.contenedor-menu {
+    justify-content: space-evenly;
+    grid-auto-flow: row dense;
+}
+
+.card-productos {
+    width: 22rem;
+    height: 25rem;
+    font-family: "Prata", serif;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 4px solid #1c443d;
+    border-radius: 10px;
+    background-color: #ffffff;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.card-productos-titulo {
+    font-size: 30px;
+}
+
+.card-productos-etiqueta {
+    font-size: 14px;
+    margin-left: 1.2rem;
+}
+
+.card-productos-precio {
+    font-size: 15px;
+}
+
+.card-productos-descripcion {
+    font-size: 15px;
+}
+
+.layout-botones {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2px;
+}
+
+
+.card-productos-boton {
+    font-size: 18px;
+    color: #ffffff;
+    background-color: #1c443d;
+    border-radius: 8px;
+    padding: 8px;
+    border-color: #1c443d;
+}
+
+.card-productos-boton-sabermas {
+    margin: 2px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    color: #ffffff;
+    background-color: #1c443d;
+    border-radius: 8px;
+    padding: 8px;
+    border-color: #1c443d;
+}
+
+.card-productos-boton:hover {
+    background-color: #1c443d;
+}
+
+
+.layout-card-productos {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: #ffffff;
+    height: 100px;
+    width: 450px;
+    border: 4px solid #1c443d;
+    border-radius: 10px;
+    margin: 10px;
+
+}
+
+.imagen-card-seleccionadas {
+    justify-content: center;
+    align-items: center;
+}
+
+.card-principal-seleccionados {
+    font-family: "Prata", serif;
+    font-size: 18px;
+    border: 5px solid #1c443d;
+    margin: 15px;
+}
+
+.card-productos-boton-sabermas:hover {
+    background-color: #1c443d;
+    color: #ffffff;
+}
+
+.contenedor-productos-seleccionados {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row
+}
+
+/*Dispositivo Chico*/
+@media all and (max-width: 576px) {
+    .carousel-principal {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 15px;
+    }
+
+    .imagenes-carousel-principal {
+        max-height: 30ch;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .carousel-titulo-principal {
+        text-shadow: 3px 3px 3px black;
+        font-size: 35px;
+    }
+
+    .carousel-titulo-principal {
+        text-align: center;
+    }
+
+    .section-productos-principal {
+        margin: 20px;
+    }
+
+    .card-principal {
+        text-align: center;
+        font-size: 16px;
+    }
+
+    .imagen-dispositivo-chico {
+        display: none;
+    }
+
+    .titulos-principal {
+        text-align: center;
+        font-size: 28px;
+    }
+
+    .subtitulos-principal {
+        text-align: center;
+        font-size: 25px;
+    }
+
+    .imagen-card-seleccionadas {
+        height: 18rem;
+    }
+
+    .contenedor-productos-principal {
+        padding: 0ch 2.5ch 0px 2.5ch;
+    }
+
+    .card-productos {
+        text-align: center;
+        width: 28rem;
+        height: 25rem;
+        font-family: "Prata", serif;
+        padding: 5px;
+        margin: 5px;
+        border: 4px solid #1c443d;
+        border-radius: 10px;
+        background-color: #ffffff;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .card-productos-titulo {
+        font-size: 25;
+    }
+
+    .card-productos-etiqueta {
+        font-size: 15px;
+        margin-left: 8px;
+    }
+
+    .card-productos-boton {
+        margin: 5px;
+        font-size: 18px;
+        color: #ffffff;
+        background-color: #1c443d;
+        border-radius: 8px;
+        padding: 5px;
+        border-color: #1c443d;
+    }
+
+    .contenedor-productos-seleccionados {
+        display: block;
+    }
+}
+
+/*Dispositivo Mediano*/
+@media all and (min-width: 577px) and (max-width: 991px) {
+    .carousel-principal {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 20px;
+    }
+
+    .imagenes-carousel-principal {
+        max-height: 35ch;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .carousel-titulo-principal {
+        text-align: center;
+    }
+
+
+    .section-productos-principal {
+        margin: 60px 3ch 60px 3ch;
+        padding: 30px 0ch 30px 0ch;
+        position: relative;
+        isolation: isolate;
+        background: #dccbb9;
+        border-radius: 10px;
+        border: 8px solid #1c443d;
+    }
+
+    .card-titulo-principal {
+        font-size: 25px;
+    }
+
+    .card-principal {
+        text-align: center;
+        font-size: 18px;
+    }
+
+    .card-principal-seleccionados {
+        margin: 20px;
+        width: 15rem;
+        height: 40rem;
+        font-size: 15px;
+    }
+
+    .imagen-dispositivo-chico {
+        display: none;
+    }
+
+    .titulos-principal {
+        margin-top: 10px;
+        font-size: 40px;
+        text-align: center;
+    }
+
+    .subtitulos-principal {
+        text-align: center;
+        font-size: 35px;
+    }
+
+    .contenedor-menu {
+        padding: 0px;
+        margin: 0px;
+    }
+
+    .contenedor-productos-principal {
+        padding: 2ch 2ch 0px 2ch;
+    }
+
+    .card-productos {
+        text-align: center;
+        width: calc(45% - 30px);
+        height: 28rem;
+        font-family: "Prata", serif;
+        padding: 5px;
+        margin: 5px;
+        border: 4px solid #1c443d;
+        border-radius: 10px;
+        background-color: #ffffff;
+        flex-direction: row;
+        flex-grow: 2;
+    }
+
+    .card-productos-etiqueta {
+        font-size: 17px;
+        margin-left: 1ch;
+    }
+
+    .card-productos-boton {
+        margin: 5px;
+        font-size: 18px;
+        color: #ffffff;
+        background-color: #1c443d;
+        border-radius: 8px;
+        padding: 8px;
+        border-color: #1c443d;
+    }
+
+    .contenedor-productos-seleccionados {
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: space-evenly;
+    }
+
+    .card-principal-seleccionados {
+        height: 38rem;
+        width: 15rem;
+    }
+}

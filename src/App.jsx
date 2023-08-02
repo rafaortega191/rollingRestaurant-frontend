@@ -14,6 +14,7 @@ import Pedidos from "./components/views/Pedidos";
 import FormularioDetalle from "./components/views/detalle/FormularioDetalle";
 import RutasDelUsuario from "./components/routes/RutasDelUsuario";
 
+
 function App() {
   // const usuario = JSON.parse(sessionStorage.getItem("usuario")) || {};
 
@@ -33,6 +34,14 @@ function App() {
     {
       path: "/login",
       element: <Login setUsuarioLogueado={setUsuarioLogueado}></Login>,
+      errorElement: <ErrorPage />,
+    },
+    {
+      path: "/",
+      element:  <Inicio
+      usuarioLogeado={usuarioLogueado}
+      setUsuarioLogueado={setUsuarioLogueado}
+    />,
       errorElement: <ErrorPage />,
     },
     {
@@ -110,6 +119,7 @@ function App() {
       ),
       errorElement: <ErrorPage />,
     },
+    
   ]);
 
   return (
