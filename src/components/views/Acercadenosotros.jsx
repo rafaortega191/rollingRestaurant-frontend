@@ -68,7 +68,7 @@ const Acercadenosotros = ({usuarioLogeado, setUsuarioLogueado}) => {
             <Card
               imagenSrc={rafa}
               titulo="Ortega Rafael"
-              descripcion="maquetado del administrador de productos y la pagina de acerca de nosotros"
+              descripcion="Maquetado del administrador de productos, compra y la pagina de acerca de nosotros"
             />
             <Card
               imagenSrc={gero}
@@ -78,12 +78,12 @@ const Acercadenosotros = ({usuarioLogeado, setUsuarioLogueado}) => {
             <Card
               imagenSrc={euge}
               titulo="Cáceres Eugenia"
-              descripcion="maquetado del login y registro"
+              descripcion="maquetado del navbar, footer, detalles, del login y registro"
             />
             <Card
               imagenSrc={emanuel}
               titulo="Flores Emanuel"
-              descripcion="maquetado del navbar, footer y la pagina de detalles"
+              descripcion="maquetado de readme"
             />
           </div>
           <br />
