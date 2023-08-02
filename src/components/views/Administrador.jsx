@@ -1,14 +1,20 @@
 import { Table } from "react-bootstrap";
 import { useEffect, useState } from "react";
-import { consultaListaProductos, consultaListaUsuarios } from "../helpers/queries";
+import {
+  consultaListaPedidos,
+  consultaListaProductos,
+  consultaListaUsuarios,
+} from "../helpers/queries";
 import { Link } from "react-router-dom";
 import CargarProducto from "./producto/CargarProducto";
 import CustomNav from "../common/CustomNav.jsx";
 import Footer from "../common/Footer.jsx";
 import CargarUsuario from "./usuario/CargarUsuario";
+import CargarPedido from "./pedido/CargarPedido";
 
 const Administrador = ({ usuarioLogeado, setUsuarioLogueado }) => {
   const [productos, setProductos] = useState([]);
+  const [pedidos, setPedidos] = useState([]);
   const [usuarios, setUsuarios] = useState([]);
 
   useEffect(() => {
@@ -19,27 +25,32 @@ const Administrador = ({ usuarioLogeado, setUsuarioLogueado }) => {
   }, []);
 
   useEffect(() => {
+    // Fetch and update the productos list
+    consultaListaPedidos().then((respuesta) => {
+      setPedidos(respuesta);
+    });
+  }, []);
+
+  useEffect(() => {
     // Fetch and update the usuarios list
     consultaListaUsuarios().then((respuesta) => {
       setUsuarios(respuesta);
     });
   }, []);
 
-
   console.log(usuarios);
   return (
     <>
+      <CustomNav
+        usuarioLogueado={usuarioLogeado}
+        setUsuarioLogueado={setUsuarioLogueado}
+      ></CustomNav>
       <section className="bg-light rounded-2 text-center container-fluid">
-        <CustomNav
-          usuarioLogueado={usuarioLogeado}
-          setUsuarioLogueado={setUsuarioLogueado}
-        ></CustomNav>
-        <div className="d-flex justify-content-between align-items-center mt-5">
-          <h1 className="display-4 ">Productos disponibles</h1>
-          <Link className="btn btn-primary" to="/administrador/crearproducto">
-            Agregar
-          </Link>
-        </div>
+        <h1 className="display-4 mt-4">Productos disponibles</h1>
+        <Link className="btn btn-primary" to="/administrador/crearproducto">
+          Agregar
+        </Link>
+
         <hr />
         <Table responsive striped bordered hover>
           <thead>
@@ -64,6 +75,38 @@ const Administrador = ({ usuarioLogeado, setUsuarioLogueado }) => {
             ))}
           </tbody>
         </Table>
+        <hr />
+        <h1 className="display-4 ">Pedidos ingresados</h1>
+        <hr />
+        <Table responsive striped bordered hover>
+          <thead>
+            <tr>
+              <th>Cod</th>
+              <th>Producto</th>
+              <th>Precio</th>
+              <th>Categoria</th>
+              <th>URL de Imagen</th>
+              <th>Opciones</th>
+              <th>descripcion</th>
+              <th>estado</th>
+              <th>usuario</th>
+              <th>cantidad</th>
+              <th>precioTotal</th>
+              <th>fecha</th>
+            </tr>
+          </thead>
+          <tbody>
+            {pedidos.map((pedido) => (
+              <CargarPedido
+                key={pedido._id}
+                pedido={pedido}
+                setPedidos={setPedidos}
+              ></CargarPedido>
+            ))}
+          </tbody>
+        </Table>
+        <hr />
+        <h1 className="display-4 ">Usuarios Registrados</h1>
         <hr />
         <Table responsive striped bordered hover>
           <thead>

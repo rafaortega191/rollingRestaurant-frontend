@@ -19,8 +19,10 @@ const CrearProducto = () => {
           "Producto creado",
           `El producto ${productoNuevo.nombreProducto} fue creado correctamente`,
           "success"
+          
         );
         reset();
+        navegacion('/administrador');
       } else {
         Swal.fire(
           "Ocurrio un error",
