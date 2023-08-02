@@ -60,7 +60,18 @@
     font-weight: 600;
 }
 
+.cards-productos-principales {
+    padding: 5px;
+    border-radius: 6px;
+    border: 5px solid #1c443d;
+    border-color: #1c443d;
+    background-color: #1c443d;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 20px;
+}
 .card-boton-principal {
+    
     font-family: "Prata", serif;
     font-size: 20px;
     color: #ffffff;
@@ -97,7 +108,7 @@
 
 .card-productos {
     width: 25rem;
-    height: 22rem;
+    height: 25rem;
     font-family: "Prata", serif;
     padding: 5px;
     margin: 10px;
@@ -106,11 +117,11 @@
     background-color: #ffffff;
     align-items: center;
     justify-content: center;
+
 }
 
 .card-productos-titulo {
     font-size: 35px;
-
 }
 
 .card-productos-etiqueta {
@@ -128,11 +139,25 @@
 
 .layout-botones {
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: center;
     gap: 2px;
 }
 
+
 .card-productos-boton {
+    font-size: 18px;
+    color: #ffffff;
+    background-color: #1c443d;
+    border-radius: 8px;
+    padding: 8px;
+    border-color: #1c443d;
+}
+.card-productos-boton-sabermas {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 18px;
     color: #ffffff;
     background-color: #1c443d;
@@ -153,7 +178,7 @@
     background-color: #ffffff;
     height: 100px;
     width: 450px;
-    border: 4px solid #1c443d    ;
+    border: 4px solid #1c443d;
     border-radius: 10px;
     margin: 10px;
 
