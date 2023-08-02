@@ -2,7 +2,7 @@ const SECRET_KEY = 'TODO_CAMBIAR_ESTE_SECRET';
 
 export const login = async (usuario) => {
   try {
-    const respuesta = await fetch('http://localhost:4000/user/login', {
+    const respuesta = await fetch('https://rolling-restaurant-backend.vercel.app/user/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -40,7 +40,7 @@ export const login = async (usuario) => {
 
 export const signup = async (usuario) => {
   try {
-    const respuesta = await fetch('http://localhost:4000/user/registro', {
+    const respuesta = await fetch('https://rolling-restaurant-backend.vercel.app/user/registro', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
