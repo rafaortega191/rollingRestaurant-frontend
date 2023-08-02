@@ -47,7 +47,7 @@ const Administrador = ({ usuarioLogeado, setUsuarioLogueado }) => {
       ></CustomNav>
       <section className="bg-light rounded-2 text-center container-fluid">
         <h1 className="display-4 mt-4">Productos disponibles</h1>
-        <Link className="btn btn-primary" to="/administrador/crearproducto">
+        <Link className="btn btn-primary" to="/administrador/productos/crearproducto">
           Agregar
         </Link>
 

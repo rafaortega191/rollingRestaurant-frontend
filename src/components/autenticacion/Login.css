@@ -9,10 +9,7 @@
   background-color: #dccbb9;
 }
 
-.mainSection {
-  height: auto;
-  width: 50%;
-}
+
 
 .botonIngresar {
   background-color: #205249;
@@ -43,4 +40,23 @@ input[type="email"],
 input[type="password"] {
   height: 6vh;
   border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para el formulario en pantallas grandes */
+@media (min-width: 768px) {
+
+  .mainSection {
+    height: auto;
+    width: 50%;
+  }
+
+}
+
+/* Estilos para el formulario en pantallas pequeñas */
+@media (max-width: 767px) {
+
+  .mainSection {
+    height: auto;
+    width: 100%;
+  }
 }
