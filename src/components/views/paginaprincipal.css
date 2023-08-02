@@ -6,7 +6,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 60px 30ch 60px 30ch;
+    margin: 60px 10ch 60px 10ch;
     font-family: "Cinzel Decorative", cursive;
 
     .carousel-control-prev,
@@ -30,8 +30,8 @@
 }
 
 .section-productos-principal {
-    margin: 60px 40ch 60px 40ch;
-    padding: 60px 0ch 60px 0ch;
+    margin: 60px 20ch 60px 20ch;
+    padding: 40px 0ch 40px 0ch;
     position: relative;
     isolation: isolate;
     background: #dccbb9;
@@ -47,16 +47,16 @@
 
 .card-principal {
     font-family: "Prata", serif;
-    font-size: 18px;
-    margin-left: 20px;
-    margin-right: 20px;
+    font-size: 15px;
+    margin-left: 12px;
+    margin-right: 12px;
     margin-bottom: 20px;
     border: 5px solid #1c443d;
 }
 
 .card-titulo-principal {
     font-family: "Cinzel Decorative", cursive;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
 }
 
@@ -71,7 +71,6 @@
     font-size: 20px;
 }
 .card-boton-principal {
-    
     font-family: "Prata", serif;
     font-size: 20px;
     color: #ffffff;
@@ -86,12 +85,12 @@
 
 .titulos-principal {
     font-family: "Cinzel Decorative", cursive;
-    font-size: 50px;
+    font-size: 45px;
     margin-bottom: 15px;
 }
 
 .contenedor-productos-principal {
-    padding: 4ch 8ch 0px 8ch;
+    padding: 4ch 5ch 0px 5ch;
 }
 
 .subtitulos-principal {
@@ -107,11 +106,11 @@
 }
 
 .card-productos {
-    width: 25rem;
+    width: 20rem;
     height: 25rem;
     font-family: "Prata", serif;
     padding: 5px;
-    margin: 10px;
+    margin-bottom: 10px;
     border: 4px solid #1c443d;
     border-radius: 10px;
     background-color: #ffffff;
@@ -121,20 +120,20 @@
 }
 
 .card-productos-titulo {
-    font-size: 35px;
+    font-size: 30px;
 }
 
 .card-productos-etiqueta {
-    font-size: 18px;
+    font-size: 14px;
     margin-left: 1.2rem;
 }
 
 .card-productos-precio {
-    font-size: 18px;
+    font-size: 15px;
 }
 
 .card-productos-descripcion {
-    font-size: 18px;
+    font-size: 15px;
 }
 
 .layout-botones {
@@ -154,6 +153,7 @@
     border-color: #1c443d;
 }
 .card-productos-boton-sabermas {
+    margin: 2px;
     text-decoration: none;
     display: flex;
     justify-content: center;
@@ -183,6 +183,20 @@
     margin: 10px;
 
 }
+.imagen-card-seleccionadas{
+   justify-content: center;
+   align-items: center;
+}
+.card-principal-seleccionados {
+    font-family: "Prata", serif;
+    font-size: 18px;
+    border: 5px solid #1c443d;
+}
+.card-productos-boton-sabermas:hover{
+    background-color: #1c443d;
+    color: #ffffff;
+}
+
 
 /*Dispositivo Chico*/
 @media all and (max-width: 576px) {
@@ -190,7 +204,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin: 30px;
+        margin: 15px;
     }
 
     .imagenes-carousel-principal {
@@ -209,7 +223,7 @@
     }
 
     .section-productos-principal {
-        margin: 15px;
+        margin: 20px;
     }
 
     .card-principal {
@@ -223,12 +237,16 @@
 
     .titulos-principal {
         text-align: center;
+        font-size: 28px;
     }
 
     .subtitulos-principal {
         text-align: center;
+        font-size: 25px;
     }
-
+.imagen-card-seleccionadas{
+    height: 18rem;
+}
     .contenedor-productos-principal {
         padding: 0ch 2.5ch 0px 2.5ch;
     }
@@ -236,7 +254,7 @@
     .card-productos {
         text-align: center;
         width: 28rem;
-        height: 32rem;
+        height: 25rem;
         font-family: "Prata", serif;
         padding: 5px;
         margin: 5px;
@@ -247,9 +265,12 @@
         justify-content: center;
     }
 
+    .card-productos-titulo{
+        font-size: 25;
+    }
     .card-productos-etiqueta {
-        font-size: 17px;
-        margin: 2px;
+        font-size: 15px;
+        margin-left: 8px;
     }
 
     .card-productos-boton {
@@ -262,7 +283,6 @@
         border-color: #1c443d;
     }
 }
-
 /*Dispositivo Mediano*/
 @media all and (min-width: 577px) and (max-width: 991px) {
     .carousel-principal {
@@ -302,6 +322,13 @@
         font-size: 18px;
     }
 
+    .card-principal-seleccionados {
+        margin: 20px;
+        width: 15rem;
+        height: 40rem;
+        font-size: 15px;
+    }
+
     .imagen-dispositivo-chico {
         display: none;
     }
@@ -329,7 +356,7 @@
     .card-productos {
         text-align: center;
         width: calc(45% - 30px);
-        height: 30rem;
+        height: 28rem;
         font-family: "Prata", serif;
         padding: 5px;
         margin: 5px;
@@ -340,7 +367,11 @@
 
        flex-grow: 2;
     }
-
+.card-principal-seleccionados{
+    
+   width: 17rem;
+       
+}
     .card-productos-etiqueta {
         font-size: 17px;
         margin-left: 1ch;
@@ -355,4 +386,5 @@
         padding: 8px;
         border-color: #1c443d;
     }
+    
 }

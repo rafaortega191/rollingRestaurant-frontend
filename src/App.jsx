@@ -38,7 +38,10 @@ function App() {
     },
     {
       path: "/",
-      element: <PaginaPrincipal />,
+      element:  <Inicio
+      usuarioLogeado={usuarioLogueado}
+      setUsuarioLogueado={setUsuarioLogueado}
+    />,
       errorElement: <ErrorPage />,
     },
     {

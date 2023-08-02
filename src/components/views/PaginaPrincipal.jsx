@@ -13,6 +13,8 @@ import CustomNav from "../common/CustomNav.jsx";
 import Footer from "../common/Footer.jsx";
 import { Link } from "react-router-dom";
 
+
+
 const PaginaPrincipal = () => {
   return (
     <body className="color-fondo-principal">
@@ -136,7 +138,8 @@ const PaginaPrincipal = () => {
               <i className="bi bi-search"></i>Buscar
             </label>
           </div>
-          <h3 className="fw-bold subtitulos-principal">Las mas pedidas</h3>
+         
+
           <div className="row contenedor-menu"></div>
           <h3 className="fw-bold subtitulos-principal">Veganas</h3>
           <div className="row contenedor-menu">
