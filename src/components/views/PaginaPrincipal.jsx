@@ -268,6 +268,139 @@ const PaginaPrincipal = () => {
               </Card.Body>
             </Card>
           </div>
+          <h3 id="productos-sin-tacc" className="fw-bold subtitulos-principal">
+            Vegetariano
+          </h3>
+          <div className="row contenedor-menu">
+            <Card className="card-productos">
+              <Card.Body>
+                <Card.Title className="card-productos-titulo">
+                  Tagliatelle con Salsa de Seitán con Manzanas
+                  <span className="badge bg-info card-productos-etiqueta">
+                    Vegetariano
+                  </span>
+                </Card.Title>
+                <Card.Subtitle className="mb-2 mb-1 text-muted card-productos-precio">
+                  $1599
+                </Card.Subtitle>
+                <Card.Text className="card-productos-descripcion">
+                  Una fusión única de tagliatelle al dente y una suave salsa de
+                  seitán con toques de manzanas frescas.
+                </Card.Text>
+                <div className="layout-botones">
+                  <Button
+                    className="card-productos-boton"
+                    href="../views/Error404.jsx"
+                  >
+                    Agregar al carrito
+                  </Button>
+                  <Link
+                    className="card-productos-boton-sabermas"
+                    to="/error404"
+                  >
+                    Saber mas
+                  </Link>
+                </div>
+              </Card.Body>
+            </Card>
+
+            <Card className="card-productos">
+              <Card.Body>
+                <Card.Title className="card-productos-titulo">
+                  Tallarines y Ragú de Zanahoria
+                  <span className="badge bg-info card-productos-etiqueta">
+                    Vegetariano
+                  </span>
+                </Card.Title>
+                <Card.Subtitle className="mb-2 mb-1 text-muted card-productos-precio">
+                  $1899
+                </Card.Subtitle>
+                <Card.Text className="card-productos-descripcion">
+                  Combinación única de tallarines bañados en té Matcha y el
+                  delicioso ragú de zanahoria dulce. Un festín de sabores y
+                  texturas sorprendentes.
+                </Card.Text>
+                <div className="layout-botones">
+                  <Button
+                    className="card-productos-boton"
+                    href="../views/Error404.jsx"
+                  >
+                    Agregar al carrito
+                  </Button>
+                  <Link
+                    className="card-productos-boton-sabermas"
+                    to="/error404"
+                  >
+                    Saber mas
+                  </Link>
+                </div>
+              </Card.Body>
+            </Card>
+
+            <Card className="card-productos">
+              <Card.Body>
+                <Card.Title className="card-productos-titulo">
+                  Pasta con Aceitunas y Tomates Secos
+                  <span className="badge bg-info card-productos-etiqueta">
+                    Vegetariano
+                  </span>
+                </Card.Title>
+                <Card.Subtitle className="mb-2 mb-1 text-muted card-productos-precio">
+                  $1599
+                </Card.Subtitle>
+                <Card.Text className="card-productos-descripcion">
+                  Una mezcla de sabores mediterráneos en cada
+                  bocado. La pasta al dente realzada con aceitunas
+                  jugosas, tomates secos aromáticos y piñones crujientes.
+                </Card.Text>
+                <div className="layout-botones">
+                  <Button
+                    className="card-productos-boton"
+                    href="../views/Error404.jsx"
+                  >
+                    Agregar al carrito
+                  </Button>
+                  <Link
+                    className="card-productos-boton-sabermas"
+                    to="/error404"
+                  >
+                    Saber mas
+                  </Link>
+                </div>
+              </Card.Body>
+            </Card>
+
+            <Card className="card-productos">
+              <Card.Body>
+                <Card.Title className="card-productos-titulo">
+                Pasta con Crema Cannellini
+                  <span className="badge bg-info card-productos-etiqueta">
+                    Vegetariano
+                  </span>
+                </Card.Title>
+                <Card.Subtitle className="mb-2 mb-1 text-muted card-productos-precio">
+                  $1499
+                </Card.Subtitle>
+                <Card.Text className="card-productos-descripcion">
+                Pasta elegante con crema de cannellini, una delicia italiana poco convencional pero sabrosa. Salsa fácil de hacer, perfecta con judías blancas o cualquier otra variante de judías blancas.
+                </Card.Text>
+                <div className="layout-botones">
+                  <Button
+                    className="card-productos-boton"
+                    href="../views/Error404.jsx"
+                  >
+                    Agregar al carrito
+                  </Button>
+                  <Link
+                    className="card-productos-boton-sabermas"
+                    to="/error404"
+                  >
+                    Saber mas
+                  </Link>
+                </div>
+              </Card.Body>
+            </Card>
+          </div>
 
           <h3 id="productos-sin-tacc" className="fw-bold subtitulos-principal">
             Sin TACC (Trigo, Avena, Cebada, Centeno){" "}
