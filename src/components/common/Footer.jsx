@@ -2,11 +2,7 @@ import React from "react";
 import { Container, Row, Col, Table, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./Footer.css";
-import {
-  AiFillFacebook,
-  AiOutlineTwitter,
-  AiFillInstagram,
-} from "react-icons/ai";
+
 
 const Footer = () => {
   return (
@@ -27,17 +23,7 @@ const Footer = () => {
               ¡Sabor italiano en cada bocado! Descubre la pasión de nuestra
               pasta online!
             </h6>
-            <div className="d-flex justify-content-center mx-auto">
-              <Button b className="m-1 botonesIconos" href="/error404">
-                <AiFillFacebook size="20" />
-              </Button>
-              <Button className="m-1 botonesIconos" href="/error404">
-                <AiOutlineTwitter size="20" />
-              </Button>
-              <Button className="m-1 botonesIconos" href="/error404">
-                <AiFillInstagram size="20" />
-              </Button>
-            </div>
+            
           </Col>
           <Col lg={2} md={6} mb={4}>
             <h5
