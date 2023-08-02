@@ -25,7 +25,7 @@ const Login = ({ setUsuarioLogueado }) => {
       if (respuesta && respuesta.status === 200) {
         sessionStorage.setItem(
           "usuario",
-          JSON.stringify(respuesta.nombreUsuario)
+          JSON.stringify(respuesta)
         );
         Swal.fire(
           "Bienvenido",
