@@ -68,7 +68,7 @@ const Acercadenosotros = ({usuarioLogeado, setUsuarioLogueado}) => {
             <Card
               imagenSrc={rafa}
               titulo="Ortega Rafael"
-              descripcion="maquetado del administrador de productos y la pagina de acerca de nosotros"
+              descripcion="maquetado del administrador de productos, pagina de pedidos y logica de ambas y la pagina de acerca de nosotros"
             />
             <Card
               imagenSrc={gero}
