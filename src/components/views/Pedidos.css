@@ -1,0 +1,30 @@
+/* estilos.css */
+
+.carrito {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 400px;
+    margin: 0 auto;
+    
+  }
+  
+  .carrito h2 {
+    margin-top: 0;
+  }
+  
+  .carrito ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .carrito li {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+    max-width: 100%; /* Ajusta el ancho máximo según tus necesidades */
+    overflow-wrap: break-word; /* Permite que el contenido largo se divida en varias líneas */
+  }
+  
+  

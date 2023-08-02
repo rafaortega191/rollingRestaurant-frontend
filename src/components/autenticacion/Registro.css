@@ -1,0 +1,45 @@
+.titulo {
+  font-family: "Cinzel Decorative", cursive;
+  background-color: #1c443d;
+  color: #ffffff;
+}
+
+.texto_general {
+  font-family: "Prata", serif;
+  background-color: #dccbb9;
+}
+
+.mainSection {
+  height: auto;
+  width: 50%;
+}
+
+.botonIngresar {
+  background-color: #205249;
+  border: #dccbb9;
+}
+
+.botonIngresar:hover {
+  background-color: #a08070;
+}
+
+
+
+.botonesIconos {
+  color: #205249;
+  background-color: #dccbb9;
+  border: none;
+}
+.botonesIconos:hover {
+  background-color: #a08070; /* Cambia el color de fondo al hacer hover */
+  color: #fff;
+}
+
+
+
+input[type="email"],
+input[type="text"],
+input[type="password"] {
+  height: 6vh;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}

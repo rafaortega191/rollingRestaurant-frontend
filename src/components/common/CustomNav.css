@@ -1,0 +1,25 @@
+.navEstilo {
+  background-color: #f1f4c3;
+  border-radius: 0px 0px 20px 20px;
+  font-family: "Prata", serif;
+  padding-top: 0.1rem; 
+}
+
+.tituloNav {
+  color: #ffebaf;
+  font-family: "Cinzel Decorative", cursive;
+}
+
+.tituloNav:hover {
+  color: #fae967; 
+}
+
+.navColor{
+background-color: #00796b;
+border-radius: 0px 0px 5px 5px;
+
+}
+
+.logo {
+  width: 50px;
+}
