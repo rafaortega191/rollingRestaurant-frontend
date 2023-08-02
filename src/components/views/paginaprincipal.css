@@ -235,12 +235,12 @@
 
     .card-productos {
         text-align: center;
-        width: 20rem;
-        height: 22rem;
+        width: 28rem;
+        height: 32rem;
         font-family: "Prata", serif;
         padding: 5px;
         margin: 5px;
-        border: 4px solid #101c1c;
+        border: 4px solid #1c443d;
         border-radius: 10px;
         background-color: #ffffff;
         align-items: center;
@@ -256,10 +256,10 @@
         margin: 5px;
         font-size: 18px;
         color: #ffffff;
-        background-color: #101c1c;
+        background-color: #1c443d;
         border-radius: 8px;
         padding: 5px;
-        border-color: #101c1c;
+        border-color: #1c443d;
     }
 }
 
@@ -290,7 +290,7 @@
         isolation: isolate;
         background: #dccbb9;
         border-radius: 10px;
-        border: 8px solid #101c1c;
+        border: 8px solid #1c443d;
     }
 
     .card-titulo-principal {
@@ -328,16 +328,17 @@
 
     .card-productos {
         text-align: center;
-        width: calc(50% - 10px);
-        height: 20rem;
+        width: calc(45% - 30px);
+        height: 30rem;
         font-family: "Prata", serif;
         padding: 5px;
         margin: 5px;
-        border: 4px solid #101c1c;
+        border: 4px solid #1c443d;
         border-radius: 10px;
         background-color: #ffffff;
-        align-items: center;
-        justify-content: center;
+        flex-direction: row;
+
+       flex-grow: 2;
     }
 
     .card-productos-etiqueta {
@@ -349,9 +350,9 @@
         margin: 5px;
         font-size: 18px;
         color: #ffffff;
-        background-color: #101c1c;
+        background-color: #1c443d;
         border-radius: 8px;
         padding: 8px;
-        border-color: #101c1c;
+        border-color: #1c443d;
     }
 }

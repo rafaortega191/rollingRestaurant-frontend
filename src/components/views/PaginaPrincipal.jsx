@@ -8,15 +8,13 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import CustomNav from "../common/CustomNav.jsx";
 import Footer from "../common/Footer.jsx";
-import { Link } from 'react-router-dom';
-
-
+import { Link } from "react-router-dom";
 
 const PaginaPrincipal = () => {
   return (
     <body className="color-fondo-principal">
       <CustomNav usuarioLogueado="" setUsuarioLogueado=""></CustomNav>
-      <section >
+      <section>
         <Carousel fade className="carousel-principal">
           <Carousel.Item interval={1100}>
             <img
@@ -68,7 +66,9 @@ const PaginaPrincipal = () => {
                 vibrante en cada rincón de esta maravillosa provincia de
                 Tucumán.
               </Card.Text>
-              <Link  className="cards-productos-principales" to="/error404">Ver mas</Link>
+              <Link className="cards-productos-principales" to="/error404">
+                Ver mas
+              </Link>
             </Card.Body>
           </Card>
 
@@ -87,7 +87,12 @@ const PaginaPrincipal = () => {
                 (Trigo, Avena, Cebada, Centeno) para disfrutar de sabores
                 increíbles sin preocupaciones.
               </Card.Text>
-              <Button href="#productos-sin-tacc" className="card-boton-principal">Date un gustito</Button>
+              <Button
+                href="#productos-sin-tacc"
+                className="card-boton-principal"
+              >
+                Date un gustito
+              </Button>
             </Card.Body>
           </Card>
 
@@ -105,7 +110,12 @@ const PaginaPrincipal = () => {
                 Conoce nuestra apasionante historia y el compromiso que nos
                 impulsa a ofrecerte experiencias inolvidables.
               </Card.Text>
-              <Link  className="cards-productos-principales" to="/acercadenosotros">Ver mas</Link>
+              <Link
+                className="cards-productos-principales"
+                to="/acercadenosotros"
+              >
+                Ver mas
+              </Link>
             </Card.Body>
           </Card>
         </div>
@@ -124,15 +134,13 @@ const PaginaPrincipal = () => {
             </label>
           </div>
           <h3 className="fw-bold subtitulos-principal">Las mas pedidas</h3>
-          <div className="row contenedor-menu">
-      
-          </div>
+          <div className="row contenedor-menu"></div>
           <h3 className="fw-bold subtitulos-principal">Veganas</h3>
           <div className="row contenedor-menu">
-          <Card className="card-productos">
+            <Card className="card-productos">
               <Card.Body>
                 <Card.Title className="card-productos-titulo">
-                Ensalada de pasta con tahini
+                  Ensalada de pasta con tahini
                   <span className="badge bg-success card-productos-etiqueta">
                     Vegana
                   </span>
@@ -141,13 +149,18 @@ const PaginaPrincipal = () => {
                   $1899
                 </Card.Subtitle>
                 <Card.Text className="card-productos-descripcion">
-                Es una deliciosa combinación de pasta al dente mezclada con una cremosa salsa de tahini y una selección de verduras frescas y crocantes.
+                  Es una deliciosa combinación de pasta al dente mezclada con
+                  una cremosa salsa de tahini y una selección de verduras
+                  frescas y crocantes.
                 </Card.Text>
                 <div className="layout-botones">
                   <Button className="card-productos-boton" to="/error404">
                     Agregar al carrito
                   </Button>
-                  <Link className="card-productos-boton-sabermas" to="/error404">
+                  <Link
+                    className="card-productos-boton-sabermas"
+                    to="/error404"
+                  >
                     Saber mas
                   </Link>
                 </div>
@@ -157,7 +170,7 @@ const PaginaPrincipal = () => {
             <Card className="card-productos">
               <Card.Body>
                 <Card.Title className="card-productos-titulo">
-                Pasta con salsa de cacahuete
+                  Pasta con salsa de cacahuete
                   <span className="badge bg-success card-productos-etiqueta">
                     Vegana
                   </span>
@@ -166,13 +179,21 @@ const PaginaPrincipal = () => {
                   $1699
                 </Card.Subtitle>
                 <Card.Text className="card-productos-descripcion">
-                Pasta con salsa de cacahuate, cremosa y sabrosa, acompañada de vegetales frescos. Una combinación deliciosa y reconfortante en cada bocado.
+                  Pasta con salsa de cacahuate, cremosa y sabrosa, acompañada de
+                  vegetales frescos. Una combinación deliciosa y reconfortante
+                  en cada bocado.
                 </Card.Text>
                 <div className="layout-botones">
-                  <Button className="card-productos-boton" href="../views/Error404.jsx">
+                  <Button
+                    className="card-productos-boton"
+                    href="../views/Error404.jsx"
+                  >
                     Agregar al carrito
                   </Button>
-                  <Link className="card-productos-boton-sabermas" to="/error404">
+                  <Link
+                    className="card-productos-boton-sabermas"
+                    to="/error404"
+                  >
                     Saber mas
                   </Link>
                 </div>
@@ -182,7 +203,7 @@ const PaginaPrincipal = () => {
             <Card className="card-productos">
               <Card.Body>
                 <Card.Title className="card-productos-titulo">
-                Macarrones con hummus
+                  Macarrones con hummus
                   <span className="badge bg-success card-productos-etiqueta">
                     Vegetariana
                   </span>
@@ -191,13 +212,20 @@ const PaginaPrincipal = () => {
                   $1699
                 </Card.Subtitle>
                 <Card.Text className="card-productos-descripcion">
-                Pasta cocida al dente con una deliciosa y cremosa salsa de hummus. Una combinación única y sabrosa.
+                  Pasta cocida al dente con una deliciosa y cremosa salsa de
+                  hummus. Una combinación única y sabrosa.
                 </Card.Text>
                 <div className="layout-botones">
-                  <Button className="card-productos-boton" href="../views/Error404.jsx">
+                  <Button
+                    className="card-productos-boton"
+                    href="../views/Error404.jsx"
+                  >
                     Agregar al carrito
                   </Button>
-                  <Link className="card-productos-boton-sabermas" to="/error404">
+                  <Link
+                    className="card-productos-boton-sabermas"
+                    to="/error404"
+                  >
                     Saber mas
                   </Link>
                 </div>
@@ -207,7 +235,7 @@ const PaginaPrincipal = () => {
             <Card className="card-productos">
               <Card.Body>
                 <Card.Title className="card-productos-titulo">
-                Espaguetis con almendras, tomate y rúcula
+                  Espaguetis con almendras, tomate y rúcula
                   <span className="badge bg-success card-productos-etiqueta">
                     Vegetariana
                   </span>
@@ -216,26 +244,36 @@ const PaginaPrincipal = () => {
                   $1999
                 </Card.Subtitle>
                 <Card.Text className="card-productos-descripcion">
-                Una exquisita combinación de sabores, donde el pesto cremoso realza la frescura de los tomates y la rúcula. Un plato irresistible.
+                  Una exquisita combinación de sabores, donde el pesto cremoso
+                  realza la frescura de los tomates y la rúcula. Un plato
+                  irresistible.
                 </Card.Text>
                 <div className="layout-botones">
-                  <Button className="card-productos-boton" href="../views/Error404.jsx">
+                  <Button
+                    className="card-productos-boton"
+                    href="../views/Error404.jsx"
+                  >
                     Agregar al carrito
                   </Button>
-                  <Link className="card-productos-boton-sabermas" to="/error404">
+                  <Link
+                    className="card-productos-boton-sabermas"
+                    to="/error404"
+                  >
                     Saber mas
                   </Link>
                 </div>
               </Card.Body>
             </Card>
-            </div>
+          </div>
 
-            <h3  id="productos-sin-tacc" className="fw-bold subtitulos-principal">Sin TACC (Trigo, Avena, Cebada, Centeno) </h3>
+          <h3 id="productos-sin-tacc" className="fw-bold subtitulos-principal">
+            Sin TACC (Trigo, Avena, Cebada, Centeno){" "}
+          </h3>
           <div className="row contenedor-menu">
-          <Card className="card-productos">
+            <Card className="card-productos">
               <Card.Body>
                 <Card.Title className="card-productos-titulo">
-                Penne rigate 
+                  Penne rigate
                   <span className="badge bg-warning card-productos-etiqueta">
                     Sin tacc
                   </span>
@@ -244,13 +282,22 @@ const PaginaPrincipal = () => {
                   $1899
                 </Card.Subtitle>
                 <Card.Text className="card-productos-descripcion">
-                Conserva su forma característica de tubo con estrías exteriores que retienen la salsa, brindando una textura y sabor deliciosos. Ideal para aquellos con sensibilidad al gluten o que prefieren opciones sin tacc.
+                  Conserva su forma característica de tubo con estrías
+                  exteriores que retienen la salsa, brindando una textura y
+                  sabor deliciosos. Ideal para aquellos con sensibilidad al
+                  gluten o que prefieren opciones sin tacc.
                 </Card.Text>
                 <div className="layout-botones">
-                  <Button className="card-productos-boton" href="../views/Error404.jsx">
+                  <Button
+                    className="card-productos-boton"
+                    href="../views/Error404.jsx"
+                  >
                     Agregar al carrito
                   </Button>
-                  <Link className="card-productos-boton-sabermas" to="/error404">
+                  <Link
+                    className="card-productos-boton-sabermas"
+                    to="/error404"
+                  >
                     Saber mas
                   </Link>
                 </div>
@@ -260,58 +307,7 @@ const PaginaPrincipal = () => {
             <Card className="card-productos">
               <Card.Body>
                 <Card.Title className="card-productos-titulo">
-                Pasta de porotos rojos
-                  <span className="badge bg-warning card-productos-etiqueta">
-                  Sin tacc
-                  </span>
-                </Card.Title>
-                <Card.Subtitle className="mb-2 mb-1 text-muted card-productos-precio">
-                  $1999
-                </Card.Subtitle>
-                <Card.Text className="card-productos-descripcion">
-                Una opción deliciosa y saludable hecha con harina de porotos rojos, alta en proteínas y sin gluten. ¡Disfruta de su sabor y textura única!
-                </Card.Text>
-                <div className="layout-botones">
-                  <Button className="card-productos-boton" href="../views/Error404.jsx">
-                    Agregar al carrito
-                  </Button>
-                  <Link className="card-productos-boton-sabermas" to="/error404">
-                    Saber mas
-                  </Link>
-                </div>
-              </Card.Body>
-            </Card>
-
-            <Card className="card-productos">
-              <Card.Body>
-                <Card.Title className="card-productos-titulo">
-                Pasta básica de buñuelos de verduras
-                  <span className="badge bg-warning card-productos-etiqueta">
-                  Sin tacc 
-                  </span>
-                  
-                </Card.Title>
-                <Card.Subtitle className="mb-2 mb-1 text-muted card-productos-precio">
-                  $1899
-                </Card.Subtitle>
-                <Card.Text className="card-productos-descripcion">
-                Deliciosa y versátil masa sin gluten y vegana, ideal para acompañar tus buñuelos de verduras frescas. ¡Sabores naturales y saludables!
-                </Card.Text>
-                <div className="layout-botones">
-                  <Button className="card-productos-boton" href="../views/Error404.jsx">
-                    Agregar al carrito
-                  </Button>
-                  <Link className="card-productos-boton-sabermas" to="/error404">
-                    Saber mas
-                  </Link>
-                </div>
-              </Card.Body>
-            </Card>
-
-            <Card className="card-productos">
-              <Card.Body>
-                <Card.Title className="card-productos-titulo">
-                Ñoquis con salsa de tomate y albahaca
+                  Pasta de porotos rojos
                   <span className="badge bg-warning card-productos-etiqueta">
                     Sin tacc
                   </span>
@@ -320,19 +316,220 @@ const PaginaPrincipal = () => {
                   $1999
                 </Card.Subtitle>
                 <Card.Text className="card-productos-descripcion">
-                Ñoquis de papa acompañados de una suave y aromática salsa de tomate casera, realzada con el toque fresco de la albahaca.
+                  Una opción deliciosa y saludable hecha con harina de porotos
+                  rojos, alta en proteínas y sin gluten. ¡Disfruta de su sabor y
+                  textura única!
                 </Card.Text>
                 <div className="layout-botones">
-                  <Button className="card-productos-boton" href="../views/Error404.jsx">
+                  <Button
+                    className="card-productos-boton"
+                    href="../views/Error404.jsx"
+                  >
                     Agregar al carrito
                   </Button>
-                  <Link className="card-productos-boton-sabermas" to="/error404">
+                  <Link
+                    className="card-productos-boton-sabermas"
+                    to="/error404"
+                  >
                     Saber mas
                   </Link>
                 </div>
               </Card.Body>
             </Card>
-            </div>
+
+            <Card className="card-productos">
+              <Card.Body>
+                <Card.Title className="card-productos-titulo">
+                  Pasta básica de buñuelos de verduras
+                  <span className="badge bg-warning card-productos-etiqueta">
+                    Sin tacc
+                  </span>
+                </Card.Title>
+                <Card.Subtitle className="mb-2 mb-1 text-muted card-productos-precio">
+                  $1899
+                </Card.Subtitle>
+                <Card.Text className="card-productos-descripcion">
+                  Deliciosa y versátil masa sin gluten y vegana, ideal para
+                  acompañar tus buñuelos de verduras frescas. ¡Sabores naturales
+                  y saludables!
+                </Card.Text>
+                <div className="layout-botones">
+                  <Button
+                    className="card-productos-boton"
+                    href="../views/Error404.jsx"
+                  >
+                    Agregar al carrito
+                  </Button>
+                  <Link
+                    className="card-productos-boton-sabermas"
+                    to="/error404"
+                  >
+                    Saber mas
+                  </Link>
+                </div>
+              </Card.Body>
+            </Card>
+
+            <Card className="card-productos">
+              <Card.Body>
+                <Card.Title className="card-productos-titulo">
+                  Ñoquis con salsa de tomate y albahaca
+                  <span className="badge bg-warning card-productos-etiqueta">
+                    Sin tacc
+                  </span>
+                </Card.Title>
+                <Card.Subtitle className="mb-2 mb-1 text-muted card-productos-precio">
+                  $1999
+                </Card.Subtitle>
+                <Card.Text className="card-productos-descripcion">
+                  Ñoquis de papa acompañados de una suave y aromática salsa de
+                  tomate casera, realzada con el toque fresco de la albahaca.
+                </Card.Text>
+                <div className="layout-botones">
+                  <Button
+                    className="card-productos-boton"
+                    href="../views/Error404.jsx"
+                  >
+                    Agregar al carrito
+                  </Button>
+                  <Link
+                    className="card-productos-boton-sabermas"
+                    to="/error404"
+                  >
+                    Saber mas
+                  </Link>
+                </div>
+              </Card.Body>
+            </Card>
+          </div>
+          <h3 id="productos-sin-tacc" className="fw-bold subtitulos-principal">
+            Pastas con carne
+          </h3>
+          <div className="row contenedor-menu">
+            <Card className="card-productos">
+              <Card.Body>
+                <Card.Title className="card-productos-titulo">
+                Espagueti con Carne Molida
+                  <span className="badge bg-danger card-productos-etiqueta">
+                    Carne
+                  </span>
+                </Card.Title>
+                <Card.Subtitle className="mb-2 mb-1 text-muted card-productos-precio">
+                  $1599
+                </Card.Subtitle>
+                <Card.Text className="card-productos-descripcion">
+                Disfruta de una suculenta combinación de espagueti al dente, bañado en una salsa casera de carne molida con sabores robustos de tomate, cebolla y especias.
+                </Card.Text>
+                <div className="layout-botones">
+                  <Button
+                    className="card-productos-boton"
+                    href="../views/Error404.jsx"
+                  >
+                    Agregar al carrito
+                  </Button>
+                  <Link
+                    className="card-productos-boton-sabermas"
+                    to="/error404"
+                  >
+                    Saber mas
+                  </Link>
+                </div>
+              </Card.Body>
+            </Card>
+
+            <Card className="card-productos">
+              <Card.Body>
+                <Card.Title className="card-productos-titulo">
+                Guiso de carne y pasta
+                  <span className="badge bg-danger card-productos-etiqueta">
+                    Carne
+                  </span>
+                </Card.Title>
+                <Card.Subtitle className="mb-2 mb-1 text-muted card-productos-precio">
+                  $1499
+                </Card.Subtitle>
+                <Card.Text className="card-productos-descripcion">
+                Nuestro guiso de carne, acompañado de fideos moñitos al dente. Una fusión exquisita que cautivará tus sentidos con su rica salsa de tomate, carne tierna y toques aromáticos de hierbas.
+                </Card.Text>
+                <div className="layout-botones">
+                  <Button
+                    className="card-productos-boton"
+                    href="../views/Error404.jsx"
+                  >
+                    Agregar al carrito
+                  </Button>
+                  <Link
+                    className="card-productos-boton-sabermas"
+                    to="/error404"
+                  >
+                    Saber mas
+                  </Link>
+                </div>
+              </Card.Body>
+            </Card>
+
+            <Card className="card-productos">
+              <Card.Body>
+                <Card.Title className="card-productos-titulo">
+                  Lasagna con carne desmechada 
+                  <span className="badge bg-danger card-productos-etiqueta">
+                    Carne
+                  </span>
+                </Card.Title>
+                <Card.Subtitle className="mb-2 mb-1 text-muted card-productos-precio">
+                  $1599
+                </Card.Subtitle>
+                <Card.Text className="card-productos-descripcion">
+                  Rellena de suculenta carne desmechada y nutritivas verduras. Una mezcla de sabores reconfortantes y texturas irresistibles.
+                </Card.Text>
+                <div className="layout-botones">
+                  <Button
+                    className="card-productos-boton"
+                    href="../views/Error404.jsx"
+                  >
+                    Agregar al carrito
+                  </Button>
+                  <Link
+                    className="card-productos-boton-sabermas"
+                    to="/error404"
+                  >
+                    Saber mas
+                  </Link>
+                </div>
+              </Card.Body>
+            </Card>
+
+            <Card className="card-productos">
+              <Card.Body>
+                <Card.Title className="card-productos-titulo">
+                Pasta con carne desmechada
+                  <span className="badge bg-danger card-productos-etiqueta">
+                    Carne
+                  </span>
+                </Card.Title>
+                <Card.Subtitle className="mb-2 mb-1 text-muted card-productos-precio">
+                  $1399
+                </Card.Subtitle>
+                <Card.Text className="card-productos-descripcion">
+                Una irresistible combinación de fideos largos al dente con suave y jugosa carne desmechada. Sumérgete en una experiencia gastronómica con sabores que te transportarán a la cocina casera.
+                </Card.Text>
+                <div className="layout-botones">
+                  <Button
+                    className="card-productos-boton"
+                    href="../views/Error404.jsx"
+                  >
+                    Agregar al carrito
+                  </Button>
+                  <Link
+                    className="card-productos-boton-sabermas"
+                    to="/error404"
+                  >
+                    Saber mas
+                  </Link>
+                </div>
+              </Card.Body>
+            </Card>
+          </div>
         </div>
       </section>
       <Footer></Footer>
