@@ -6,9 +6,7 @@ import rafa from "../../assets/rafa.png"
 import gero from "../../assets/gero.jpg"
 import euge from "../../assets/euge.jpg"
 import emanuel from "../../assets/emanuel.png"
-import github from "../../assets/github.png"
-import linkedin from "../../assets/linkedin.png"
-import { Link } from 'react-router-dom';
+
 import Footer from '../common/Footer.jsx';
 
 
@@ -30,12 +28,7 @@ const Acercadenosotros = ({usuarioLogeado, setUsuarioLogueado}) => {
           </button>
         </div>
         <div className="content container d-flex align-items-end icono-tamaño mt-4">
-          <Link className="btn btn-white p-2 me-1" to="/error404">
-            <img src={github} alt="github" />
-          </Link>
-          <Link className="btn btn-white p-2 me-1" to="/error404">
-            <img src={linkedin} alt="linkedin" />
-          </Link>
+          
           {/* Modal structure */}
           {showModal && (
             <>
