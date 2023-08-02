@@ -4,6 +4,9 @@ import Carousel from "react-bootstrap/Carousel";
 import imagenCarousel1 from "../../assets/foto-carousel-1.jpg";
 import imagenCarousel2 from "../../assets/foto-carousel-2.jpg";
 import imagenCarousel3 from "../../assets/foto-carousel-3.jpg";
+import imagenAcercaDeNosotros from "../../assets/acercadenosotros.jpg";
+import imagenSinTacc from "../../assets/amasando.jpg";
+import imagenSitioTuristico from "../../assets/turistico.jpg";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import CustomNav from "../common/CustomNav.jsx";
@@ -53,7 +56,7 @@ const PaginaPrincipal = () => {
         <div class="layout">
           <Card style={{ width: "30rem" }} className="card-principal">
             <img
-              src={imagenCarousel3}
+              src={imagenSitioTuristico}
               className="imagen-dispositivo-chico"
               alt="Imagen 2"
             />
@@ -74,7 +77,7 @@ const PaginaPrincipal = () => {
 
           <Card style={{ width: "30rem" }} className="card-principal">
             <img
-              src={imagenCarousel2}
+              src={imagenSinTacc}
               className="imagen-dispositivo-chico"
               alt="Imagen 2"
             />
@@ -98,7 +101,7 @@ const PaginaPrincipal = () => {
 
           <Card style={{ width: "30rem" }} className="card-principal">
             <img
-              src={imagenCarousel2}
+              src={imagenAcercaDeNosotros}
               className="imagen-dispositivo-chico"
               alt="Imagen 2"
             />
@@ -409,7 +412,7 @@ const PaginaPrincipal = () => {
             <Card className="card-productos">
               <Card.Body>
                 <Card.Title className="card-productos-titulo">
-                Espagueti con Carne Molida
+                  Espagueti con Carne Molida
                   <span className="badge bg-danger card-productos-etiqueta">
                     Carne
                   </span>
@@ -418,7 +421,9 @@ const PaginaPrincipal = () => {
                   $1599
                 </Card.Subtitle>
                 <Card.Text className="card-productos-descripcion">
-                Disfruta de una suculenta combinación de espagueti al dente, bañado en una salsa casera de carne molida con sabores robustos de tomate, cebolla y especias.
+                  Disfruta de una suculenta combinación de espagueti al dente,
+                  bañado en una salsa casera de carne molida con sabores
+                  robustos de tomate, cebolla y especias.
                 </Card.Text>
                 <div className="layout-botones">
                   <Button
@@ -440,7 +445,7 @@ const PaginaPrincipal = () => {
             <Card className="card-productos">
               <Card.Body>
                 <Card.Title className="card-productos-titulo">
-                Guiso de carne y pasta
+                  Guiso de carne y pasta
                   <span className="badge bg-danger card-productos-etiqueta">
                     Carne
                   </span>
@@ -449,7 +454,9 @@ const PaginaPrincipal = () => {
                   $1499
                 </Card.Subtitle>
                 <Card.Text className="card-productos-descripcion">
-                Nuestro guiso de carne, acompañado de fideos moñitos al dente. Una fusión exquisita que cautivará tus sentidos con su rica salsa de tomate, carne tierna y toques aromáticos de hierbas.
+                  Nuestro guiso de carne, acompañado de fideos moñitos al dente.
+                  Una fusión exquisita que cautivará tus sentidos con su rica
+                  salsa de tomate, carne tierna y toques aromáticos de hierbas.
                 </Card.Text>
                 <div className="layout-botones">
                   <Button
@@ -471,7 +478,7 @@ const PaginaPrincipal = () => {
             <Card className="card-productos">
               <Card.Body>
                 <Card.Title className="card-productos-titulo">
-                  Lasagna con carne desmechada 
+                  Lasagna con carne desmechada
                   <span className="badge bg-danger card-productos-etiqueta">
                     Carne
                   </span>
@@ -480,7 +487,8 @@ const PaginaPrincipal = () => {
                   $1599
                 </Card.Subtitle>
                 <Card.Text className="card-productos-descripcion">
-                  Rellena de suculenta carne desmechada y nutritivas verduras. Una mezcla de sabores reconfortantes y texturas irresistibles.
+                  Rellena de suculenta carne desmechada y nutritivas verduras.
+                  Una mezcla de sabores reconfortantes y texturas irresistibles.
                 </Card.Text>
                 <div className="layout-botones">
                   <Button
@@ -502,7 +510,7 @@ const PaginaPrincipal = () => {
             <Card className="card-productos">
               <Card.Body>
                 <Card.Title className="card-productos-titulo">
-                Pasta con carne desmechada
+                  Pasta con carne desmechada
                   <span className="badge bg-danger card-productos-etiqueta">
                     Carne
                   </span>
@@ -511,7 +519,10 @@ const PaginaPrincipal = () => {
                   $1399
                 </Card.Subtitle>
                 <Card.Text className="card-productos-descripcion">
-                Una irresistible combinación de fideos largos al dente con suave y jugosa carne desmechada. Sumérgete en una experiencia gastronómica con sabores que te transportarán a la cocina casera.
+                  Una irresistible combinación de fideos largos al dente con
+                  suave y jugosa carne desmechada. Sumérgete en una experiencia
+                  gastronómica con sabores que te transportarán a la cocina
+                  casera.
                 </Card.Text>
                 <div className="layout-botones">
                   <Button
