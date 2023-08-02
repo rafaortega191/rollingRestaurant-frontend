@@ -51,7 +51,7 @@ const CargarUsuario = ({ usuario, setUsuarios }) => {
       <td>
         <Link
           className="btn btn-warning"
-          to={"/administrador/editarusuario/" + usuario._id}
+          to={"/administrador/usuarios/editarusuario/" + usuario._id}
         >
           Editar
         </Link>

@@ -49,7 +49,7 @@ const CargarPedido = ({pedido, setPedidos}) => {
       <td>{pedido.categoria}</td>
       <td>{pedido.imagen}</td>
       <td>
-        <Link className="btn btn-warning" to={'/administrador/editarpedido/'+pedido._id}>Editar</Link>
+        <Link className="btn btn-warning" to={'/administrador/usuarios/editarpedido/'+pedido._id}>Editar</Link>
         <Button className="m-2" variant="danger" onClick={borrarPedido}>
           Borrar
         </Button>
