@@ -21,10 +21,6 @@ const Login = ({ setUsuarioLogueado }) => {
   const navegacion = useNavigate();
 
   const onSubmit = (usuario) => {
-    console.log(usuario);
-    usuario.password = bcrypt.hashSync(usuario.password, 2);
-    console.log(usuario);
-  
     login(usuario).then((respuesta) => {
       console.log(respuesta);
       if (respuesta && respuesta.status === 200) {
