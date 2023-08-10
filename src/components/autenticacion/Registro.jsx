@@ -19,9 +19,7 @@ const Registro = ({ setUsuarioLogueado }) => {
   const navegacion = useNavigate();
 
   const onSubmit = (usuario) => {
-    console.log(usuario);
     usuario.password = bcrypt.hashSync(usuario.password, 2);
-    console.log(usuario);
   
     signup(usuario).then((respuesta) => {
       if (respuesta && respuesta.status === 201) {
