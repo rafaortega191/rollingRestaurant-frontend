@@ -6,6 +6,9 @@ import "./Login.css";
 import { useNavigate } from "react-router-dom";
 import CustomNav from "../common/CustomNav.jsx";
 import Footer from "../common/Footer.jsx";
+import bcrypt from 'bcryptjs';
+
+
 
 const Login = ({ setUsuarioLogueado }) => {
   const {
@@ -19,7 +22,9 @@ const Login = ({ setUsuarioLogueado }) => {
 
   const onSubmit = (usuario) => {
     console.log(usuario);
-
+    usuario.password = bcrypt.hashSync(usuario.password, 2);
+    console.log(usuario);
+  
     login(usuario).then((respuesta) => {
       console.log(respuesta);
       if (respuesta && respuesta.status === 200) {

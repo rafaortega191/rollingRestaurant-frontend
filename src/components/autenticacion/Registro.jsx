@@ -6,6 +6,7 @@ import { Form, Button, Container, Card } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import CustomNav from "../common/CustomNav.jsx";
 import Footer from "../common/Footer";
+import bcrypt from 'bcryptjs';
 
 const Registro = ({ setUsuarioLogueado }) => {
   const {
@@ -19,7 +20,9 @@ const Registro = ({ setUsuarioLogueado }) => {
 
   const onSubmit = (usuario) => {
     console.log(usuario);
-
+    usuario.password = bcrypt.hashSync(usuario.password, 2);
+    console.log(usuario);
+  
     signup(usuario).then((respuesta) => {
       if (respuesta && respuesta.status === 201) {
         console.log(respuesta)
