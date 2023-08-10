@@ -5,8 +5,11 @@ import React from "react";
 const CardProducto = ({ producto }) => {
   const handleComprarClick = () => {
     const productoJSON = JSON.stringify(producto);
-    localStorage.setItem("productoSeleccionado", productoJSON);
+    const productosSeleccionados = JSON.parse(localStorage.getItem("productosSeleccionados")) || [];
+    productosSeleccionados.push(producto);
+    localStorage.setItem("productosSeleccionados", JSON.stringify(productosSeleccionados));
   };
+  
 
   return (
     <Col md={4} ld={3} className="mb-3">
