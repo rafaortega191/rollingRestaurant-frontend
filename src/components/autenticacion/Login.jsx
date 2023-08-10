@@ -88,12 +88,13 @@ const Login = ({ setUsuarioLogueado }) => {
                   {...register("password", {
                     required: "La contraseña es un dato obligatorio",
                     pattern: {
-                      value: /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/,
+                      value: /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,100}$/                      ,
                       message:
-                        "La contraseña debe tener entre 8 y 16 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula.",
+                        "La contraseña debe tener por lo menos 8 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula.",
                     },
                   })}
-                  maxLength={16}
+                  minLength={8}
+                  maxLength={100}
                 />
                 <Form.Text className="text-danger">
                   {errors.password?.message}
