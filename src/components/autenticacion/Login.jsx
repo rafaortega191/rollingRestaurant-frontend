@@ -69,6 +69,7 @@ const Login = ({ setUsuarioLogueado }) => {
                         "El email debe cumplir con el formato mail@dominio.com",
                     },
                   })}
+                  maxLength={50}
                 />
                 <Form.Text className="text-danger">
                   {errors.email?.message}
@@ -87,6 +88,7 @@ const Login = ({ setUsuarioLogueado }) => {
                         "La contraseña debe tener entre 8 y 16 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula.",
                     },
                   })}
+                  maxLength={16}
                 />
                 <Form.Text className="text-danger">
                   {errors.password?.message}

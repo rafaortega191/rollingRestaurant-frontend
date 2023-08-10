@@ -65,6 +65,7 @@ const Registro = ({ setUsuarioLogueado }) => {
                   {...register("nombre", {
                     required: "El nombre  es un dato obligatorio",
                   })}
+                  maxLength={50}
                 />
               </Form.Group>
               <Form.Group className="mb-2">
@@ -81,6 +82,7 @@ const Registro = ({ setUsuarioLogueado }) => {
                         "El email debe cumplir con el formato mail@dominio.com",
                     },
                   })}
+                  maxLength={50}
                 />
               </Form.Group>
               <Form.Group className="mb-2">
@@ -96,6 +98,7 @@ const Registro = ({ setUsuarioLogueado }) => {
                         "La contraseña debe tener entre 8 y 16 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula.",
                     },
                   })}
+                  maxLength={16}
                 />
               </Form.Group>
 
