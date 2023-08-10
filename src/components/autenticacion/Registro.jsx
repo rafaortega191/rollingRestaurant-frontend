@@ -6,6 +6,7 @@ import { Form, Button, Container, Card } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import CustomNav from "../common/CustomNav.jsx";
 import Footer from "../common/Footer";
+import bcrypt from 'bcryptjs';
 
 const Registro = ({ setUsuarioLogueado }) => {
   const {
@@ -19,7 +20,9 @@ const Registro = ({ setUsuarioLogueado }) => {
 
   const onSubmit = (usuario) => {
     console.log(usuario);
-
+    usuario.password = bcrypt.hashSync(usuario.password, 2);
+    console.log(usuario);
+  
     signup(usuario).then((respuesta) => {
       if (respuesta && respuesta.status === 201) {
         console.log(respuesta)
@@ -65,6 +68,7 @@ const Registro = ({ setUsuarioLogueado }) => {
                   {...register("nombre", {
                     required: "El nombre  es un dato obligatorio",
                   })}
+                  maxLength={50}
                 />
               </Form.Group>
               <Form.Group className="mb-2">
@@ -81,6 +85,7 @@ const Registro = ({ setUsuarioLogueado }) => {
                         "El email debe cumplir con el formato mail@dominio.com",
                     },
                   })}
+                  maxLength={50}
                 />
               </Form.Group>
               <Form.Group className="mb-2">
@@ -91,11 +96,13 @@ const Registro = ({ setUsuarioLogueado }) => {
                   {...register("password", {
                     required: "La contraseña es un dato obligatorio",
                     pattern: {
-                      value: /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/,
+                      value: /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,100}$/                      ,
                       message:
-                        "La contraseña debe tener entre 8 y 16 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula.",
+                        "La contraseña debe tener por lo menos 8 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula.",
                     },
                   })}
+                  minLength={8}
+                  maxLength={100}
                 />
               </Form.Group>
 
