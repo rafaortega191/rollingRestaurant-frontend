@@ -40,6 +40,10 @@ const Pedidos = ({ usuarioLogeado, setUsuarioLogueado }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const handleCancelarCompra = () => {
+    localStorage.clear();
+  }
+
   const handleCompra = () => {
     // Leer el nombre del usuario almacenado en el sessionStorage con la clave "nombreUsuario"
     const nombreUsuario = sessionStorage.getItem("usuario");
@@ -68,14 +72,14 @@ const Pedidos = ({ usuarioLogeado, setUsuarioLogueado }) => {
 
     // Llamar a la función para insertar los datos en la base de datos
     consultaAgregarPedido(productoPendiente).then((respuesta) => {
-      if (respuesta) {
+      if (respuesta && sessionStorage.getItem('usuario')) {
         Swal.fire(
           "¡Compra realizada!",
           "La compra se ha realizado exitosamente. Muchas Gracias.",
           "success"
         );
-
-        // Limpiar el localStorage después de la compra
+      
+        // Limpiar el sessionStorage después de la compra
         localStorage.clear();
       } else {
         Swal.fire(
@@ -84,6 +88,7 @@ const Pedidos = ({ usuarioLogeado, setUsuarioLogueado }) => {
           "error"
         );
       }
+      
     });
   };
 
@@ -137,14 +142,19 @@ const Pedidos = ({ usuarioLogeado, setUsuarioLogueado }) => {
               />
 
               {/* Mostrar el precio total */}
-              <p>Precio Total: ${producto.precio * cantidad}</p>
+              <p>Precio Total: ${(producto.precio || 0) * (cantidad || 0)}</p>
+
 
               <button className="btn btn-danger" onClick={handleCompra}>
                 COMPRAR
               </button>
               <br />
+              <button className="btn btn-danger mt-2" onClick={handleCancelarCompra}>
+                Cancelar Compra
+              </button>
+              <br />
               <Link className="btn btn-danger mt-2" to="/">
-                Cancelar
+                Volver a inicio
               </Link>
             </Card.Body>
           </Col>
