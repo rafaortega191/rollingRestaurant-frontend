@@ -6,6 +6,9 @@ import "./Login.css";
 import { useNavigate } from "react-router-dom";
 import CustomNav from "../common/CustomNav.jsx";
 import Footer from "../common/Footer.jsx";
+import bcrypt from 'bcryptjs';
+
+
 
 const Login = ({ setUsuarioLogueado }) => {
   const {
@@ -18,8 +21,6 @@ const Login = ({ setUsuarioLogueado }) => {
   const navegacion = useNavigate();
 
   const onSubmit = (usuario) => {
-    console.log(usuario);
-
     login(usuario).then((respuesta) => {
       console.log(respuesta);
       if (respuesta && respuesta.status === 200) {
@@ -69,6 +70,7 @@ const Login = ({ setUsuarioLogueado }) => {
                         "El email debe cumplir con el formato mail@dominio.com",
                     },
                   })}
+                  maxLength={50}
                 />
                 <Form.Text className="text-danger">
                   {errors.email?.message}
@@ -82,11 +84,13 @@ const Login = ({ setUsuarioLogueado }) => {
                   {...register("password", {
                     required: "La contraseña es un dato obligatorio",
                     pattern: {
-                      value: /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/,
+                      value: /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,100}$/                      ,
                       message:
-                        "La contraseña debe tener entre 8 y 16 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula.",
+                        "La contraseña debe tener por lo menos 8 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula.",
                     },
                   })}
+                  minLength={8}
+                  maxLength={100}
                 />
                 <Form.Text className="text-danger">
                   {errors.password?.message}
