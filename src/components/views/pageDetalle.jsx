@@ -9,7 +9,7 @@ import { consultaProducto } from "../helpers/queries";
 
 const ProductoDetalles = ({
   usuarioLogeado,
-  setUsuarioLogueado,
+  setUsuarioLogeado,
 }) => {
 
   const { id } = useParams();
@@ -32,8 +32,8 @@ const ProductoDetalles = ({
   return (
     <>
       <CustomNav
-        usuarioLogueado={usuarioLogeado}
-        setUsuarioLogueado={setUsuarioLogueado}
+        usuarioLogeado={usuarioLogeado}
+        setUsuarioLogeado={setUsuarioLogeado}
       ></CustomNav>
       <section className="py-5">
         <Container>

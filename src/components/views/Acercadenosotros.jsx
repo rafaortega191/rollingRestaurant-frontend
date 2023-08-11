@@ -10,7 +10,7 @@ import emanuel from "../../assets/emanuel.png"
 import Footer from '../common/Footer.jsx';
 
 
-const Acercadenosotros = ({usuarioLogeado, setUsuarioLogueado}) => {
+const Acercadenosotros = ({usuarioLogeado, setUsuarioLogeado}) => {
   const Card = ({ imagenSrc, titulo, descripcion }) => {
     const [showModal, setShowModal] = useState(false);
 
@@ -61,7 +61,7 @@ const Acercadenosotros = ({usuarioLogeado, setUsuarioLogueado}) => {
 
     return (
         <div className=''>
-          <CustomNav usuarioLogueado={usuarioLogeado} setUsuarioLogueado={setUsuarioLogueado}></CustomNav>
+          <CustomNav usuarioLogeado={usuarioLogeado} setUsuarioLogeado={setUsuarioLogeado}></CustomNav>
           <h1 className='text-center mt-2 h1-acercadenosotros pt-3'>Nuestro Equipo</h1>
           <hr className='m-4'/>
           <div className="card-acercadenosotros-container rounded-4 ">
