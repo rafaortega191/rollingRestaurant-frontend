@@ -6,8 +6,11 @@ import "../paginaprincipal.css";
 const CardProducto = ({ producto }) => {
   const handleComprarClick = () => {
     const productoJSON = JSON.stringify(producto);
-    localStorage.setItem("productoSeleccionado", productoJSON);
+    const productosSeleccionados = JSON.parse(localStorage.getItem("productosSeleccionados")) || [];
+    productosSeleccionados.push(producto);
+    localStorage.setItem("productosSeleccionados", JSON.stringify(productosSeleccionados));
   };
+  
 
   return (
     <Col md={3} ld={2} className="mb-3">
