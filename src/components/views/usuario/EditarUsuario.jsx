@@ -91,7 +91,7 @@ const EditarUsuario = () => {
           <Form.Label>Es Admin?*</Form.Label>
           <Form.Select
             {...register("es_admin", {
-              required: "La disponibilidad es obligatoria",
+              required: "Seleccionar un valor es obligatorio",
             })}
           >
             <option value="">Seleccione una opcion</option>

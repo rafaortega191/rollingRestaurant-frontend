@@ -40,7 +40,7 @@ export const login = async (usuario) => {
 
 export const signup = async (usuario) => {
   try {
-    const respuesta = await fetch('http://localhost:4000/user/users/registro', {
+    const respuesta = await fetch('http://localhost:4000/user/registro', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
