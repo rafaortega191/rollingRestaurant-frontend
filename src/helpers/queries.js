@@ -1,4 +1,4 @@
-const SECRET_KEY = "TODO_CAMBIAR_ESTE_SECRET";
+const SECRET_KEY = import.meta.env.API_SECRET;
 
 export const login = async (usuario) => {
   try {
