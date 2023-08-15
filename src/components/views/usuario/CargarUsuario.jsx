@@ -44,7 +44,6 @@ const CargarUsuario = ({ usuario, setUsuarios }) => {
   return (
     <tr>
       {/* <td>{props.producto._id}</td> */}
-      <td>{usuario._id}</td>
       <td>{usuario.email}</td>
       <td>{usuario.es_admin ? "Si" : "No"}</td>
       <td>{usuario.nombre}</td>
