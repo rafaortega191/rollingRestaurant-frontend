@@ -72,7 +72,7 @@ const Pedidos = ({ usuarioLogeado, setUsuarioLogueado }) => {
 
     // Llamar a la función para insertar los datos en la base de datos
     consultaAgregarPedido(productoPendiente).then((respuesta) => {
-      if (respuesta && sessionStorage.getItem('usuario')) {
+      if (respuesta && sessionStorage.getItem('usuario') && localStorage.getItem('productosSeleccionados')) {
         Swal.fire(
           "¡Compra realizada!",
           "La compra se ha realizado exitosamente. Muchas Gracias.",

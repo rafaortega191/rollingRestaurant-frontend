@@ -55,7 +55,6 @@ const Administrador = ({ usuarioLogeado, setUsuarioLogueado }) => {
         <Table responsive striped bordered hover>
           <thead>
             <tr>
-              <th>Cod</th>
               <th>Producto</th>
               <th>Precio</th>
               <th>Categoria</th>
@@ -81,7 +80,6 @@ const Administrador = ({ usuarioLogeado, setUsuarioLogueado }) => {
         <Table responsive striped bordered hover>
           <thead>
             <tr>
-              <th>Cod</th>
               <th>Producto</th>
               <th>Precio</th>
               <th>Categoria</th>
@@ -111,7 +109,6 @@ const Administrador = ({ usuarioLogeado, setUsuarioLogueado }) => {
         <Table responsive striped bordered hover>
           <thead>
             <tr>
-              <th>Cod</th>
               <th>Email</th>
               <th>Es Admin?</th>
               <th>Nombre</th>
