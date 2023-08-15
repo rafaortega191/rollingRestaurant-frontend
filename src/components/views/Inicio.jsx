@@ -10,7 +10,7 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
 
-const Inicio = ({ usuarioLogeado, setUsuarioLogueado }) => {
+const Inicio = ({ usuarioLogeado, setUsuarioLogeado }) => {
   const [productos, setProductos] = useState([]);
   useEffect(() => {
     consultaListaProductos().then((respuesta) => {
@@ -18,11 +18,12 @@ const Inicio = ({ usuarioLogeado, setUsuarioLogueado }) => {
     });
   }, []);
 
+  
   return (
     <body className="color-fondo-principal">
       <CustomNav
-        usuarioLogueado={usuarioLogeado}
-        setUsuarioLogueado={setUsuarioLogueado}
+        usuarioLogeado={usuarioLogeado}
+        setUsuarioLogeado={setUsuarioLogeado}
       ></CustomNav>
       
       <section>
@@ -61,7 +62,7 @@ const Inicio = ({ usuarioLogeado, setUsuarioLogueado }) => {
       </section>
 
       <section className="section-productos-principal">
-        <div class="layout">
+        <div className="layout">
           <Card style={{ width: "30rem" }} className="card-principal">
             <img
               src="https://images.pexels.com/photos/3184192/pexels-photo-3184192.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
@@ -138,9 +139,9 @@ const Inicio = ({ usuarioLogeado, setUsuarioLogueado }) => {
               className="form-control"
               id="floatingInput"
               placeholder=" "
-              maxlength="100"
+              maxLength="100"
             />
-            <label for="floatingInput">
+            <label htmlFor="floatingInput">
               <i className="bi bi-search"></i>Buscar
             </label>
           </div>
@@ -148,7 +149,7 @@ const Inicio = ({ usuarioLogeado, setUsuarioLogueado }) => {
         <hr className="" />
           <Container className="contenedor-productos-seleccionados">
           {productos.map((producto) => (
-            <CardProducto key={producto._id} producto={producto}></CardProducto>
+            <CardProducto  key={producto._id} user={usuarioLogeado} producto={producto}></CardProducto>
           ))}
       </Container>
           <div className="row contenedor-menu"></div>

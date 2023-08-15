@@ -9,7 +9,7 @@ import { v4 as uuidv4 } from "uuid"; // Importar la función uuidv4 de la biblio
 import CustomNav from "../common/CustomNav.jsx";
 import Footer from "../common/Footer.jsx";
 
-const Pedidos = ({ usuarioLogeado, setUsuarioLogueado }) => {
+const Pedidos = ({ usuarioLogeado, setUsuarioLogeado }) => {
   const { id } = useParams();
   const [producto, setProducto] = useState({});
   const [cantidad, setCantidad] = useState(1); // Estado para almacenar la cantidad seleccionada
@@ -100,8 +100,8 @@ const Pedidos = ({ usuarioLogeado, setUsuarioLogueado }) => {
   return (
     <section>
       <CustomNav
-        usuarioLogueado={usuarioLogeado}
-        setUsuarioLogueado={setUsuarioLogueado}
+        usuarioLogeado={usuarioLogeado}
+        setUsuarioLogeado={setUsuarioLogeado}
       ></CustomNav>
 
     <Container className="my-3 container-fluid">

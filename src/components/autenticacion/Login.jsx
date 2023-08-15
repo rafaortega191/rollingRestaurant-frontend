@@ -6,11 +6,11 @@ import "./Login.css";
 import { useNavigate } from "react-router-dom";
 import CustomNav from "../common/CustomNav.jsx";
 import Footer from "../common/Footer.jsx";
-import bcrypt from 'bcryptjs';
 
 
 
-const Login = ({ setUsuarioLogueado }) => {
+
+const Login = ({usuarioLogeado,setUsuarioLogeado }) => {
   const {
     register,
     handleSubmit,
@@ -33,7 +33,7 @@ const Login = ({ setUsuarioLogueado }) => {
           `${respuesta.nombreUsuario} iniciaste sesion correctamente`,
           "success"
         );
-        setUsuarioLogueado(respuesta);
+        setUsuarioLogeado(respuesta);
 
         if (respuesta.es_admin === true) {
           navegacion("/administrador");
@@ -48,7 +48,7 @@ const Login = ({ setUsuarioLogueado }) => {
 
   return (
     <>
-      <CustomNav usuarioLogueado="" setUsuarioLogueado=""></CustomNav>
+      <CustomNav usuarioLogeado={usuarioLogeado} setUsuarioLogeado={setUsuarioLogeado}></CustomNav>
       <Container className="mainSection d-block align-items-center justify-content-center p-3 my-5">
         <Card className="my-5">
           <Card.Header className="text-center titulo py-3" as="h3">

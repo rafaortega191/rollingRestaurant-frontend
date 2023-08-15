@@ -12,7 +12,7 @@ import Footer from "../common/Footer.jsx";
 import CargarUsuario from "./usuario/CargarUsuario";
 import CargarPedido from "./pedido/CargarPedido";
 
-const Administrador = ({ usuarioLogeado, setUsuarioLogueado }) => {
+const Administrador = ({ usuarioLogeado, setUsuarioLogeado }) => {
   const [productos, setProductos] = useState([]);
   const [pedidos, setPedidos] = useState([]);
   const [usuarios, setUsuarios] = useState([]);
@@ -42,8 +42,8 @@ const Administrador = ({ usuarioLogeado, setUsuarioLogueado }) => {
   return (
     <>
       <CustomNav
-        usuarioLogueado={usuarioLogeado}
-        setUsuarioLogueado={setUsuarioLogueado}
+        usuarioLogeado={usuarioLogeado}
+        setUsuarioLogeado={setUsuarioLogeado}
       ></CustomNav>
       <section className="bg-light rounded-2 text-center container-fluid">
         <h1 className="display-4 mt-4">Productos disponibles</h1>

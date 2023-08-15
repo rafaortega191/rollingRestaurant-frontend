@@ -8,7 +8,7 @@ import CustomNav from "../common/CustomNav.jsx";
 import Footer from "../common/Footer";
 import bcrypt from 'bcryptjs';
 
-const Registro = ({ setUsuarioLogueado }) => {
+const Registro = ({ setUsuarioLogeado }) => {
   const {
     register,
     handleSubmit,
@@ -33,7 +33,7 @@ const Registro = ({ setUsuarioLogueado }) => {
           `${respuesta.nombreUsuario} te registraste correctamente`,
           "success"
         );
-        setUsuarioLogueado(respuesta);
+        setUsuarioLogeado(respuesta);
 
         if (respuesta.es_admin === true) {
           navegacion("/administrador");
@@ -49,7 +49,7 @@ const Registro = ({ setUsuarioLogueado }) => {
 
   return (
     <>
-      <CustomNav usuarioLogueado="" setUsuarioLogueado=""></CustomNav>
+      <CustomNav usuarioLogeado="" setUsuarioLogeado=""></CustomNav>
 
       <Container className="mainSection d-block align-items-center justify-content-center p-3 my-5">
         <Card className="my-5">

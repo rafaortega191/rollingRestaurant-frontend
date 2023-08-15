@@ -3,7 +3,7 @@ pagina del frontend del proyecto final de rolling code
 # Proyecto final del módulo 4 - Rolling Code
 ## Ecommerce de comida
 ## ¿Qué es RollingRestaurant?
-RollingRestaurant es un ecommerce de comidas online dedicado al mercado de las pastas y fideos, fue creado utilizando HTML, CSS, Bootstrap, Javascript y REACT, una persona puede entrar y ver una seleccion de productos de primera y si asi lo desea comprarlos atraves de una cuenta creadad por el, asi mismo una cuenta administrador se encargar de la edicion de productos, pedidos y los usuarios, todo esto se guarda en su base de datos alojada en mongoDB para mas comodidad.
+RollingRestaurant es un ecommerce de comidas online dedicado al mercado de las pastas y fideos, fue creado utilizando HTML, CSS, Bootstrap, Javascript y REACT, una persona puede entrar y ver una seleccion de productos de primera y si asi lo desea comprarlos atraves de una cuenta creadad por el, asi mismo una cuenta administrador se encargar de la edicion de productos, pedidos y los usuarios, todo esto se guarda en su base de datos alojada en mongoDB para mas comodidad..
 
 ## Integrantes
 
