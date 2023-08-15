@@ -43,7 +43,6 @@ const CargarProducto = ({producto, setProductos}) => {
    return (
     <tr>
       {/* <td>{props.producto._id}</td> */}
-      <td>{producto._id}</td>
       <td>{producto.nombreProducto}</td>
       <td>${producto.precio}</td>
       <td>{producto.categoria}</td>

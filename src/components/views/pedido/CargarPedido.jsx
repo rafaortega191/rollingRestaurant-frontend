@@ -43,7 +43,6 @@ const CargarPedido = ({pedido, setPedidos}) => {
    return (
     <tr>
       {/* <td>{props.pedido._id}</td> */}
-      <td>{pedido._id}</td>
       <td>{pedido.nombreProducto}</td>
       <td>${pedido.precio}</td>
       <td>{pedido.categoria}</td>
