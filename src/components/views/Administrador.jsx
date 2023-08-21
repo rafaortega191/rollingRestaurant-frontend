@@ -11,6 +11,7 @@ import CustomNav from "../common/CustomNav.jsx";
 import Footer from "../common/Footer.jsx";
 import CargarUsuario from "./usuario/CargarUsuario";
 import CargarPedido from "./pedido/CargarPedido";
+import './administrador.css'
 
 const Administrador = ({ usuarioLogeado, setUsuarioLogeado }) => {
   const [productos, setProductos] = useState([]);
@@ -38,6 +39,9 @@ const Administrador = ({ usuarioLogeado, setUsuarioLogeado }) => {
     });
   }, []);
 
+  
+  
+
   console.log(usuarios);
   return (
     <>
@@ -45,21 +49,21 @@ const Administrador = ({ usuarioLogeado, setUsuarioLogeado }) => {
         usuarioLogeado={usuarioLogeado}
         setUsuarioLogeado={setUsuarioLogeado}
       ></CustomNav>
-      <section className="bg-light rounded-2 text-center container-fluid">
+      <section className="bg-light rounded-2 container-fluid text-truncate">
         <h1 className="display-4 mt-4">Productos disponibles</h1>
         <Link className="btn btn-primary" to="/administrador/productos/crearproducto">
-          Agregar
+          Agregar nuevo producto al sistema
         </Link>
 
         <hr />
         <Table responsive striped bordered hover>
           <thead>
             <tr>
+              <th>Opciones</th>
               <th>Producto</th>
               <th>Precio</th>
               <th>Categoria</th>
               <th>URL de Imagen</th>
-              <th>Opciones</th>
               <th>descripcion</th>
               <th>disponible</th>
             </tr>
@@ -80,11 +84,11 @@ const Administrador = ({ usuarioLogeado, setUsuarioLogeado }) => {
         <Table responsive striped bordered hover>
           <thead>
             <tr>
+              <th>Opciones</th>
               <th>Producto</th>
               <th>Precio</th>
               <th>Categoria</th>
               <th>URL de Imagen</th>
-              <th>Opciones</th>
               <th>descripcion</th>
               <th>estado</th>
               <th>usuario</th>
@@ -109,6 +113,7 @@ const Administrador = ({ usuarioLogeado, setUsuarioLogeado }) => {
         <Table responsive striped bordered hover>
           <thead>
             <tr>
+              <th>Opciones</th>
               <th>Email</th>
               <th>Es Admin?</th>
               <th>Nombre</th>

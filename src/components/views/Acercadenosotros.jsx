@@ -6,7 +6,6 @@ import rafa from "../../assets/rafa.png"
 import gero from "../../assets/gero.jpg"
 import euge from "../../assets/euge.jpg"
 import emanuel from "../../assets/emanuel.png"
-
 import Footer from '../common/Footer.jsx';
 
 

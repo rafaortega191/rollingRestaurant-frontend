@@ -44,9 +44,6 @@ const CargarUsuario = ({ usuario, setUsuarios }) => {
   return (
     <tr>
       {/* <td>{props.producto._id}</td> */}
-      <td>{usuario.email}</td>
-      <td>{usuario.es_admin ? "Si" : "No"}</td>
-      <td>{usuario.nombre}</td>
       <td>
         <Link
           className="btn btn-warning"
@@ -58,6 +55,9 @@ const CargarUsuario = ({ usuario, setUsuarios }) => {
           Borrar
         </Button>
       </td>
+      <td>{usuario.email}</td>
+      <td>{usuario.es_admin ? "Si" : "No"}</td>
+      <td>{usuario.nombre}</td>
     </tr>
   );
 };

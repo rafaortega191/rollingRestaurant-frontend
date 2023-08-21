@@ -204,7 +204,7 @@ const EditarPedido = () => {
         <Form.Group className="mb-3" controlId="formfechaActual">
           <Form.Label>fecha de compra*</Form.Label>
           <Form.Control
-            type="text"
+            type="date"
             placeholder="Ej: 00/00/0000"
             {...register("fechaActual", {
               required: "ingrese la fecha de compra, es obligatoria",
