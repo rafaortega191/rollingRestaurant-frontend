@@ -49,7 +49,7 @@ const Pedidos = ({ usuarioLogeado, setUsuarioLogeado }) => {
     const nombreUsuario = sessionStorage.getItem("usuario");
 
     // Obtener la fecha actual en formato argentino
-    const fechaActual = format(new Date(), "dd/MM/yyyy");
+    const fechaActual = format(new Date(), "yyyy-MM-dd");
 
     // Generar un ID aleatorio único para el pedido usando la función uuidv4 y eliminar los guiones
     const pedidoId = uuidv4().replace(/-/g, '');
@@ -111,7 +111,7 @@ const Pedidos = ({ usuarioLogeado, setUsuarioLogeado }) => {
       <Card>
         <Row>
           <Col md={6}>
-            <Card.Img variant="top" src={producto.imagen} />
+            <Card.Img variant="top" src={producto.imagen} className="img-fluid w-50" />
           </Col>
           <Col md={6}>
             <Card.Body>
