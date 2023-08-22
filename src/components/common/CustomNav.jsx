@@ -1,17 +1,34 @@
+
 import React from "react";
-import { Navbar, Container, Nav, Button, Image } from "react-bootstrap";
-import { Link, NavLink, useNavigate } from "react-router-dom";
-import logo from "../../assets/trace.svg";
 import "./CustomNav.css";
+import { Navbar, Container, Nav, Image } from "react-bootstrap";
+import { NavLink, useNavigate } from "react-router-dom";
+import logo from "../../assets/trace.svg";
+import Swal from "sweetalert2";
 import { AiOutlineShoppingCart, AiOutlineUser } from "react-icons/ai";
 
-const CustomNav = ({ usuarioLogueado, setUsuarioLogueado }) => {
+const CustomNav = (props) => {
+  const {usuarioLogeado,setUsuarioLogeado}=props;
   const navegacion = useNavigate();
 
-  const logout = () => {
-    setUsuarioLogueado({});
-    sessionStorage.removeItem("usuario");
-    navegacion("/");
+  const logout = async () => {
+     
+  Swal.fire({
+    title: '¿ Deseas Cerrar Sesion ?',
+    showDenyButton: true,
+    confirmButtonText: 'Cerrar Sesion',
+    denyButtonText: 'Cancelar',
+  }).then((result) => {
+    /* Read more about isConfirmed, isDenied below */
+    if (result.isConfirmed) {
+      Swal.fire('Cerraste Sesion', '', 'success')
+      setUsuarioLogeado(null);
+      sessionStorage.removeItem("usuario");
+      navegacion("/")
+    }
+  })
+    
+    
   };
 
   return (
@@ -32,27 +49,66 @@ const CustomNav = ({ usuarioLogueado, setUsuarioLogueado }) => {
               <NavLink end className="nav-item nav-link" to="/pedidos">
                 Pedidos <AiOutlineShoppingCart className="fs-5" />
               </NavLink>
+              {
+                usuarioLogeado === null ? 
+                <>
+                  <NavLink end className="nav-item nav-link" to="/login">
+                    Login
+                  </NavLink>
 
-              {usuarioLogueado.es_admin === true ? (
+                  <NavLink end className="nav-item nav-link" to="/registro">
+                    Registro <AiOutlineUser className="fs-5" />
+                  </NavLink>
+                </> 
+                : 
+                (usuarioLogeado?.es_admin) ?
                 <>
                   <NavLink
                     end
                     className="nav-item nav-link"
                     to="/administrador"
                   >
-                    Administrador: {usuarioLogueado.nombreUsuario}
+                    Administrador: {usuarioLogeado?.nombreUsuario}
+                  </NavLink>
+                  <NavLink end className="nav-item nav-link" onClick={logout}>
+                    Logout
+                  </NavLink>
+                </>
+                :
+                <>
+                  <NavLink
+                    end
+                    className="nav-item nav-link"
+                    to="/"
+                  >
+                    {usuarioLogeado?.nombreUsuario}
+                  </NavLink>
+                  <NavLink end className="nav-item nav-link" onClick={logout}>
+                    Logout
+                  </NavLink>
+                </>
+              }
+
+              {/* {usuarioLogeado.es_admin === true ? (
+                <>
+                  <NavLink
+                    end
+                    className="nav-item nav-link"
+                    to="/administrador"
+                  >
+                    Administrador: {usuarioLogeado.nombreUsuario}
                   </NavLink>
 
                   <NavLink end className="nav-item nav-link" onClick={logout}>
                     Logout
                   </NavLink>
                 </>
-              ) : usuarioLogueado.es_admin === false &&
-                usuarioLogueado.es_admin !== undefined &&
-                usuarioLogueado.es_admin !== null ? (
+              ) : usuarioLogeado.es_admin === false &&
+                usuarioLogeado.es_admin !== undefined &&
+                usuarioLogeado.es_admin !== null ? (
                 <>
                   <NavLink end className="nav-item nav-link" to="/">
-                    {usuarioLogueado.nombreUsuario}
+                    {usuarioLogeado.nombreUsuario}
                   </NavLink>
 
                   <NavLink end className="nav-item nav-link" onClick={logout}>
@@ -69,7 +125,7 @@ const CustomNav = ({ usuarioLogueado, setUsuarioLogueado }) => {
                     Registro <AiOutlineUser className="fs-5" />
                   </NavLink>
                 </>
-              )}
+              )} */}
             </Nav>
           </Navbar.Collapse>
         </Container>

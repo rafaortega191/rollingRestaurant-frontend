@@ -23,7 +23,7 @@ const CargarPedido = ({pedido, setPedidos}) => {
           if(respuesta.status === 200){
             Swal.fire(
               'pedido Eliminado!',
-              `El ${pedido.nombrepedido} fue eliminado correctamente`,
+              `El Pedido fue eliminado correctamente`,
               'success'
             );
             //actualizar la table de pedidos
@@ -43,17 +43,16 @@ const CargarPedido = ({pedido, setPedidos}) => {
    return (
     <tr>
       {/* <td>{props.pedido._id}</td> */}
-      <td>{pedido._id}</td>
-      <td>{pedido.nombreProducto}</td>
-      <td>${pedido.precio}</td>
-      <td>{pedido.categoria}</td>
-      <td>{pedido.imagen}</td>
       <td>
         <Link className="btn btn-warning" to={'/administrador/usuarios/editarpedido/'+pedido._id}>Editar</Link>
         <Button className="m-2" variant="danger" onClick={borrarPedido}>
           Borrar
         </Button>
       </td>
+      <td>{pedido.nombreProducto}</td>
+      <td>${pedido.precio}</td>
+      <td>{pedido.categoria}</td>
+      <td>{pedido.imagen}</td>
       <td>{pedido.descripcion}</td>
       <td>{pedido.estado}</td>
       <td>{pedido.nombreUsuario}</td>

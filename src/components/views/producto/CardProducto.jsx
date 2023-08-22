@@ -1,14 +1,23 @@
 import { Col, Card } from "react-bootstrap";
-import { Link } from "react-router-dom";
+
+import { Link,useNavigate} from "react-router-dom";
 import React from "react";
 import "../paginaprincipal.css";
 
-const CardProducto = ({ producto }) => {
+const CardProducto = ({ user,producto }) => {
+  const navigate = useNavigate();
+  console.log(user)
   const handleComprarClick = () => {
-    const productoJSON = JSON.stringify(producto);
-    const productosSeleccionados = JSON.parse(localStorage.getItem("productosSeleccionados")) || [];
-    productosSeleccionados.push(producto);
-    localStorage.setItem("productosSeleccionados", JSON.stringify(productosSeleccionados));
+    if(user===null){
+      navigate("/login")
+    }else{  
+      const productoJSON = JSON.stringify(producto);
+      const productosSeleccionados = JSON.parse(localStorage.getItem("productosSeleccionados")) || [];
+      productosSeleccionados.push(producto);
+      localStorage.setItem("productosSeleccionados", JSON.stringify(productosSeleccionados));
+      navigate(`/pedidos/${producto._id}`)
+    }
+    
   };
   
 
@@ -27,7 +36,6 @@ const CardProducto = ({ producto }) => {
           </Link>
           <Link
             className="btn card-productos-boton-sabermas"
-            to={`/pedidos/${producto._id}`}
             onClick={handleComprarClick} // Llamamos a la función al hacer clic en el botón "Comprar"
           >
             Comprar

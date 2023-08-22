@@ -18,6 +18,7 @@ const Inicio = ({ usuarioLogeado, setUsuarioLogeado }) => {
     });
   }, []);
 
+  
   return (
     <body className="color-fondo-principal">
       <CustomNav
@@ -149,15 +150,11 @@ const Inicio = ({ usuarioLogeado, setUsuarioLogeado }) => {
           </h1>
           <hr className="" />
           <Container className="contenedor-productos-seleccionados">
-            {productos.map((producto) => (
-              <CardProducto
-                key={producto._id}
-                user={usuarioLogeado}
-                producto={producto}
-              ></CardProducto>
-            ))}
-          </Container>
-
+          {productos.map((producto) => (
+            <CardProducto key={producto._id} producto={producto}></CardProducto>
+          ))}
+      </Container>
+          <div className="row contenedor-menu"></div>
           <h3 className="fw-bold subtitulos-principal">Veganas</h3>
           <hr className="" />
           <div className="row contenedor-menu"></div>

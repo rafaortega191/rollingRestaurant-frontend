@@ -9,7 +9,7 @@ import { v4 as uuidv4 } from "uuid"; // Importar la función uuidv4 de la biblio
 import CustomNav from "../common/CustomNav.jsx";
 import Footer from "../common/Footer.jsx";
 
-const Pedidos = ({ usuarioLogeado, setUsuarioLogueado }) => {
+const Pedidos = ({ usuarioLogeado, setUsuarioLogeado }) => {
   const { id } = useParams();
   const [producto, setProducto] = useState({});
   const [cantidad, setCantidad] = useState(1); // Estado para almacenar la cantidad seleccionada
@@ -49,7 +49,7 @@ const Pedidos = ({ usuarioLogeado, setUsuarioLogueado }) => {
     const nombreUsuario = sessionStorage.getItem("usuario");
 
     // Obtener la fecha actual en formato argentino
-    const fechaActual = format(new Date(), "dd/MM/yyyy");
+    const fechaActual = format(new Date(), "yyyy-MM-dd");
 
     // Generar un ID aleatorio único para el pedido usando la función uuidv4 y eliminar los guiones
     const pedidoId = uuidv4().replace(/-/g, '');
@@ -72,7 +72,7 @@ const Pedidos = ({ usuarioLogeado, setUsuarioLogueado }) => {
 
     // Llamar a la función para insertar los datos en la base de datos
     consultaAgregarPedido(productoPendiente).then((respuesta) => {
-      if (respuesta && sessionStorage.getItem('usuario')) {
+      if (respuesta && sessionStorage.getItem('usuario') && localStorage.getItem('productosSeleccionados')) {
         Swal.fire(
           "¡Compra realizada!",
           "La compra se ha realizado exitosamente. Muchas Gracias.",
@@ -100,8 +100,8 @@ const Pedidos = ({ usuarioLogeado, setUsuarioLogueado }) => {
   return (
     <section>
       <CustomNav
-        usuarioLogueado={usuarioLogeado}
-        setUsuarioLogueado={setUsuarioLogueado}
+        usuarioLogeado={usuarioLogeado}
+        setUsuarioLogeado={setUsuarioLogeado}
       ></CustomNav>
 
     <Container className="my-3 container-fluid">
@@ -111,7 +111,7 @@ const Pedidos = ({ usuarioLogeado, setUsuarioLogueado }) => {
       <Card>
         <Row>
           <Col md={6}>
-            <Card.Img variant="top" src={producto.imagen} />
+            <Card.Img variant="top" src={producto.imagen} className="img-fluid w-50" />
           </Col>
           <Col md={6}>
             <Card.Body>

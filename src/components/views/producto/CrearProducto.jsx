@@ -50,8 +50,8 @@ const CrearProducto = () => {
                 message: "La cantidad minima de caracteres es de 2 digitos",
               },
               maxLength: {
-                value: 100,
-                message: "La cantidad maxima de caracteres es de 100 digitos",
+                value: 30,
+                message: "La cantidad maxima de caracteres es de 30 digitos",
               },
             })}
           />
@@ -90,8 +90,8 @@ const CrearProducto = () => {
                 message: "La cantidad minima de caracteres es de 2 digitos",
               },
               maxLength: {
-                value: 300,
-                message: "La cantidad maxima de caracteres es de 300 digitos",
+                value: 100,
+                message: "La cantidad maxima de caracteres es de 100 digitos",
               },
             })}
           />
@@ -103,7 +103,7 @@ const CrearProducto = () => {
           <Form.Label>Imagen URL*</Form.Label>
           <Form.Control
             type="text"
-            placeholder="Ej: https://images.pexels.com/photos/9617397/pexels-photo-9617397.jpeg"
+            placeholder="Ej: https://images.pexels.com/photos/9617397/pexels-photo-9617397.jpg"
             {...register("imagen", {
               required: "La imagen es obligatoria y debe tener formato .jpg",
             })}
