@@ -20,6 +20,17 @@ function App() {
 
   const [usuarioLogueado, setUsuarioLogueado] = useState({});
 
+  /*  useEffect(()=>{
+    
+    setUsuarioLogeado({
+      "email":"prueba2@gmail.com",
+      "password":"Prueba_123!",
+      "nombreUsuario":"Euge",
+      "es_admin":true})
+  },[]) */
+  
+
+
   const router = createBrowserRouter([
     {
       path: "/administrador",
