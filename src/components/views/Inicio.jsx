@@ -12,15 +12,21 @@ import { Link } from "react-router-dom";
 
 const Inicio = ({ usuarioLogeado, setUsuarioLogeado }) => {
   const [productos, setProductos] = useState([]);
+
   useEffect(() => {
     consultaListaProductos().then((respuesta) => {
       setProductos(respuesta);
+      setUsuarioLogeado({
+        "email":"prueba2@gmail.com",
+        "password":"Prueba_123!",
+        "nonbreusuario":"Euge",
+         "es_admin":true})
     });
   }, []);
 
   
   return (
-    <body className="color-fondo-principal">
+    <div className="color-fondo-principal">
       <CustomNav
         usuarioLogeado={usuarioLogeado}
         setUsuarioLogeado={setUsuarioLogeado}
@@ -181,7 +187,7 @@ const Inicio = ({ usuarioLogeado, setUsuarioLogeado }) => {
       </section>
 
       <Footer />
-    </body>
+    </div>
   );
 };
 
