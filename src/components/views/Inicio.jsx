@@ -11,21 +11,22 @@ import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
 
 const Inicio = ({ usuarioLogeado, setUsuarioLogeado }) => {
+
   const [productos, setProductos] = useState([]);
+
   useEffect(() => {
     consultaListaProductos().then((respuesta) => {
       setProductos(respuesta);
     });
   }, []);
 
-  
   return (
     <body className="color-fondo-principal">
       <CustomNav
         usuarioLogeado={usuarioLogeado}
         setUsuarioLogeado={setUsuarioLogeado}
       ></CustomNav>
-      
+
       <section>
         <Carousel fade className="carousel-principal">
           <Carousel.Item interval={1100}>
@@ -62,6 +63,34 @@ const Inicio = ({ usuarioLogeado, setUsuarioLogeado }) => {
       </section>
 
       <section className="section-productos-principal">
+      <h2 className="fw-bold titulos-principal">TODAS NUESTRAS PASTAS</h2>
+          <div className="form-floating mb-2">
+            <input
+              type="text"
+              className="form-control"
+              id="floatingInput"
+              placeholder=" "
+              maxLength="100"
+            />
+            <label htmlFor="floatingInput">
+              <i className="bi bi-search"></i>Buscar
+            </label>
+          </div>
+          <h1 className="text-center fw-bold subtitulos-principal">
+            Nuestra Seleccion de pastas
+          </h1>
+          <hr className="" />
+          <Container className="contenedor-productos-seleccionados">
+            {productos.map((producto) => (
+              <CardProducto
+                key={producto._id}
+                user={usuarioLogeado}
+                producto={producto}
+
+                
+              ></CardProducto>
+            ))}
+          </Container>
         <div className="layout">
           <Card style={{ width: "30rem" }} className="card-principal">
             <img
@@ -132,26 +161,7 @@ const Inicio = ({ usuarioLogeado, setUsuarioLogeado }) => {
           </Card>
         </div>
         <div className="contenedor-productos-principal">
-          <h2 className="fw-bold titulos-principal">TODAS NUESTRAS PASTAS</h2>
-          <div className="form-floating mb-2">
-            <input
-              type="text"
-              className="form-control"
-              id="floatingInput"
-              placeholder=" "
-              maxLength="100"
-            />
-            <label htmlFor="floatingInput">
-              <i className="bi bi-search"></i>Buscar
-            </label>
-          </div>
-        <h1 className="text-center fw-bold subtitulos-principal">Nuestra Seleccion de pastas</h1>
-        <hr className="" />
-          <Container className="contenedor-productos-seleccionados">
-          {productos.map((producto) => (
-            <CardProducto  key={producto._id} user={usuarioLogeado} producto={producto}></CardProducto>
-          ))}
-      </Container>
+          
           <div className="row contenedor-menu"></div>
           <h3 className="fw-bold subtitulos-principal">Veganas</h3>
           <hr className="" />
@@ -203,7 +213,7 @@ const Inicio = ({ usuarioLogeado, setUsuarioLogeado }) => {
                   en cada bocado.
                 </Card.Text>
                 <div className="layout-botones">
-                <Link
+                  <Link
                     className="card-productos-boton-sabermas"
                     to="/error404"
                   >
@@ -232,7 +242,7 @@ const Inicio = ({ usuarioLogeado, setUsuarioLogeado }) => {
                   hummus. Una combinación única y sabrosa.
                 </Card.Text>
                 <div className="layout-botones">
-                <Link
+                  <Link
                     className="card-productos-boton-sabermas"
                     to="/error404"
                   >
@@ -262,7 +272,7 @@ const Inicio = ({ usuarioLogeado, setUsuarioLogeado }) => {
                   irresistible.
                 </Card.Text>
                 <div className="layout-botones">
-                <Link
+                  <Link
                     className="card-productos-boton-sabermas"
                     to="/error404"
                   >
@@ -296,7 +306,7 @@ const Inicio = ({ usuarioLogeado, setUsuarioLogeado }) => {
                   seitán con toques de manzanas frescas.
                 </Card.Text>
                 <div className="layout-botones">
-                <Link
+                  <Link
                     className="card-productos-boton-sabermas"
                     to="/error404"
                   >
@@ -326,7 +336,7 @@ const Inicio = ({ usuarioLogeado, setUsuarioLogeado }) => {
                   texturas sorprendentes.
                 </Card.Text>
                 <div className="layout-botones">
-                <Link
+                  <Link
                     className="card-productos-boton-sabermas"
                     to="/error404"
                   >
@@ -356,7 +366,7 @@ const Inicio = ({ usuarioLogeado, setUsuarioLogeado }) => {
                   aromáticos y piñones crujientes.
                 </Card.Text>
                 <div className="layout-botones">
-                <Link
+                  <Link
                     className="card-productos-boton-sabermas"
                     to="/error404"
                   >
@@ -387,7 +397,7 @@ const Inicio = ({ usuarioLogeado, setUsuarioLogeado }) => {
                   blancas.
                 </Card.Text>
                 <div className="layout-botones">
-                <Link
+                  <Link
                     className="card-productos-boton-sabermas"
                     to="/error404"
                   >
@@ -424,7 +434,7 @@ const Inicio = ({ usuarioLogeado, setUsuarioLogeado }) => {
                   gluten o que prefieren opciones sin tacc.
                 </Card.Text>
                 <div className="layout-botones">
-                <Link
+                  <Link
                     className="card-productos-boton-sabermas"
                     to="/error404"
                   >
@@ -454,7 +464,7 @@ const Inicio = ({ usuarioLogeado, setUsuarioLogeado }) => {
                   textura única!
                 </Card.Text>
                 <div className="layout-botones">
-                <Link
+                  <Link
                     className="card-productos-boton-sabermas"
                     to="/error404"
                   >
@@ -484,7 +494,7 @@ const Inicio = ({ usuarioLogeado, setUsuarioLogeado }) => {
                   y saludables!
                 </Card.Text>
                 <div className="layout-botones">
-                <Link
+                  <Link
                     className="card-productos-boton-sabermas"
                     to="/error404"
                   >
@@ -513,7 +523,7 @@ const Inicio = ({ usuarioLogeado, setUsuarioLogeado }) => {
                   tomate casera, realzada con el toque fresco de la albahaca.
                 </Card.Text>
                 <div className="layout-botones">
-                <Link
+                  <Link
                     className="card-productos-boton-sabermas"
                     to="/error404"
                   >
@@ -548,7 +558,7 @@ const Inicio = ({ usuarioLogeado, setUsuarioLogeado }) => {
                   robustos de tomate, cebolla y especias.
                 </Card.Text>
                 <div className="layout-botones">
-                <Link
+                  <Link
                     className="card-productos-boton-sabermas"
                     to="/error404"
                   >
@@ -578,7 +588,7 @@ const Inicio = ({ usuarioLogeado, setUsuarioLogeado }) => {
                   salsa de tomate, carne tierna y toques aromáticos de hierbas.
                 </Card.Text>
                 <div className="layout-botones">
-                <Link
+                  <Link
                     className="card-productos-boton-sabermas"
                     to="/error404"
                   >
@@ -607,7 +617,7 @@ const Inicio = ({ usuarioLogeado, setUsuarioLogeado }) => {
                   Una mezcla de sabores reconfortantes y texturas irresistibles.
                 </Card.Text>
                 <div className="layout-botones">
-                <Link
+                  <Link
                     className="card-productos-boton-sabermas"
                     to="/error404"
                   >
@@ -638,7 +648,7 @@ const Inicio = ({ usuarioLogeado, setUsuarioLogeado }) => {
                   casera.
                 </Card.Text>
                 <div className="layout-botones">
-                <Link
+                  <Link
                     className="card-productos-boton-sabermas"
                     to="/error404"
                   >
