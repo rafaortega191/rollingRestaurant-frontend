@@ -49,16 +49,9 @@ const CargarPedido = ({pedido, setPedidos}) => {
           Borrar
         </Button>
       </td>
-      <td>{pedido.nombreProducto}</td>
-      <td>${pedido.precio}</td>
-      <td>{pedido.categoria}</td>
-      <td>{pedido.imagen}</td>
-      <td>{pedido.descripcion}</td>
+      <td>{pedido.fecha}</td>
       <td>{pedido.estado}</td>
-      <td>{pedido.nombreUsuario}</td>
-      <td>{pedido.cantidad}</td>
-      <td>{pedido.precioTotal}</td>
-      <td>{pedido.fechaActual}</td>
+      <td>{pedido.usuario}</td>
     </tr>
   );
 };
