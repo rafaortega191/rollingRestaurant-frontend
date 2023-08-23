@@ -1,86 +1,79 @@
-import React, { useEffect, useState } from "react";
-import { Container, Card, Row, Col } from "react-bootstrap";
-import { consultaProducto } from "../helpers/queries";
-import { Link, useNavigate, useParams } from "react-router-dom";
-import Swal from "sweetalert2";
-import { consultaAgregarPedido } from "../helpers/queries";
+import React, { useEffect, useState } from 'react';
+import { Container } from 'react-bootstrap';
+import Footer from '../common/Footer';
+import CustomNav from '../common/CustomNav';
+import { Link } from 'react-router-dom';
 import { format } from "date-fns";
-import { v4 as uuidv4 } from "uuid"; // Importar la función uuidv4 de la biblioteca uuid
-import CustomNav from "../common/CustomNav.jsx";
-import Footer from "../common/Footer.jsx";
+import { v4 as uuidv4 } from "uuid";
+import { consultaAgregarPedido } from '../helpers/queries';
+import Swal from 'sweetalert2';
 
-const Pedidos = ({ usuarioLogeado, setUsuarioLogeado }) => {
-  const { id } = useParams();
-  const [producto, setProducto] = useState({});
-  const [cantidad, setCantidad] = useState(1); // Estado para almacenar la cantidad seleccionada
-  const navegacion = useNavigate();
+const Pedidos = ({usuarioLogeado, setUsuarioLogeado}) => {
+  const [productosSeleccionados, setProductosSeleccionados] = useState([]);
 
   useEffect(() => {
-    // Leer los datos del producto almacenados en el localStorage con la clave "productoSeleccionado"
-    const productoJSON = localStorage.getItem("productoSeleccionado");
-    if (productoJSON) {
-      // Si se encontraron datos en el sessionStorage, convertir la cadena JSON en un objeto y asignarlos al estado
-      const productoSeleccionado = JSON.parse(productoJSON);
-      setProducto(productoSeleccionado);
-    } else {
-      // Si no se encontraron datos en el sessionStorage, obtener los datos del producto mediante la consulta
-      consultaProducto(id).then((respuesta) => {
-        if (respuesta) {
-          console.log(respuesta);
-          setProducto(respuesta);
-        } else {
-          Swal.fire(
-            "Ocurrió un error",
-            "Intente esta operación en unos minutos",
-            "error"
-          );
-        }
-      });
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // Obtener los productos seleccionados del Local Storage
+    const productosJSON = localStorage.getItem("productosSeleccionados");
+    const productos = JSON.parse(productosJSON) || [];
+    
+    setProductosSeleccionados(productos);
   }, []);
 
-  const handleCancelarCompra = () => {
-    localStorage.clear();
-  }
+  const handleEliminarClick = (indice) => {
+    const nuevosProductos = [...productosSeleccionados];
+    nuevosProductos.splice(indice, 1);
+    setProductosSeleccionados(nuevosProductos);
+    localStorage.setItem("productosSeleccionados", JSON.stringify(nuevosProductos));
+  };
 
+  const handleCantidadChange = (indice, cantidad) => {
+    const nuevosProductos = [...productosSeleccionados];
+    nuevosProductos[indice].cantidad = cantidad;
+    setProductosSeleccionados(nuevosProductos);
+    localStorage.setItem("productosSeleccionados", JSON.stringify(nuevosProductos));
+  };
+
+    const calcularPrecioTotal = () => {
+    let total = 0;
+    productosSeleccionados.forEach((producto) => {
+      total += producto.precio * (producto.cantidad || 1);
+    });
+    return total;
+  };
+  
   const handleCompra = () => {
-    // Leer el nombre del usuario almacenado en el sessionStorage con la clave "nombreUsuario"
     const nombreUsuario = sessionStorage.getItem("usuario");
-
-    // Obtener la fecha actual en formato argentino
     const fechaActual = format(new Date(), "yyyy-MM-dd");
-
-    // Generar un ID aleatorio único para el pedido usando la función uuidv4 y eliminar los guiones
     const pedidoId = uuidv4().replace(/-/g, '');
-
-    // Calcular el precio total multiplicando el precio del producto por la cantidad
-    const precioTotal = producto.precio * cantidad;
-
-    // Fusionar el nombre del usuario, la fecha actual, la cantidad, el precio total y el estado actual del producto
-    const productoPendiente = {
-      ...producto,
-      id: pedidoId,
-      nombreUsuario,
-      fechaActual,
+  
+    const productosLocalStorage = JSON.parse(localStorage.getItem("productosSeleccionados")) || [];
+  
+    const productosPendientes = {
+      _id: pedidoId,
+      fecha: fechaActual,
+      usuario: nombreUsuario,
+      productos: productosLocalStorage.map(producto => ({
+        nombreProducto: producto.nombreProducto,
+        cantidad: producto.cantidad,
+        precio: producto.precio,
+        imagen: producto.imagen,
+        categoria: producto.categoria,
+        descripcion: producto.descripcion,
+      })),
       estado: "pendiente",
-      cantidad: parseInt(cantidad), // Convertir la cantidad a número entero
-      precioTotal,
+      precioTotal: calcularPrecioTotal(productosLocalStorage), // Asegúrate de tener la función calcularPrecioTotal definida
     };
-
-    navegacion('/');
-
-    // Llamar a la función para insertar los datos en la base de datos
-    consultaAgregarPedido(productoPendiente).then((respuesta) => {
-      if (respuesta && sessionStorage.getItem('usuario') && localStorage.getItem('productosSeleccionados')) {
+  
+    consultaAgregarPedido(productosPendientes).then((respuesta) => {
+      if (respuesta && sessionStorage.getItem("usuario") && localStorage.getItem("productosSeleccionados")) {
         Swal.fire(
           "¡Compra realizada!",
           "La compra se ha realizado exitosamente. Muchas Gracias.",
           "success"
         );
-      
-        // Limpiar el sessionStorage después de la compra
-        localStorage.clear();
+  
+        localStorage.removeItem("productosSeleccionados");
+        
       } else {
         Swal.fire(
           "Ocurrió un error",
@@ -88,80 +81,61 @@ const Pedidos = ({ usuarioLogeado, setUsuarioLogeado }) => {
           "error"
         );
       }
-      
     });
+    
   };
-
-  const handleChangeCantidad = (event) => {
-    const value = event.target.value;
-    setCantidad(value); // Actualizar el estado de la cantidad
-  };
+  
+  
+  
+  
 
   return (
     <section>
-      <CustomNav
-        usuarioLogeado={usuarioLogeado}
-        setUsuarioLogeado={setUsuarioLogeado}
+      <CustomNav 
+      usuarioLogeado={usuarioLogeado}
+      setUsuarioLogeado={setUsuarioLogeado}
       ></CustomNav>
-
-    <Container className="my-3 container-fluid">
-      <h1>Carro de la compra</h1>
-      <hr />
-      <h2>Estás a punto de comprar esto:</h2>
-      <Card>
-        <Row>
-          <Col md={6}>
-            <Card.Img variant="top" src={producto.imagen} className="img-fluid w-50" />
-          </Col>
-          <Col md={6}>
-            <Card.Body>
-              <Card.Title>{producto.nombreProducto}</Card.Title>
-              <hr />
-              <Card.Text>
-                {producto.descripcion}
+    <Container>
+      <h2>Tus Pedidos</h2>
+      <div className="row">
+        {productosSeleccionados.map((producto, index) => (
+          <div className="col-md-4" key={index}>
+            <div className="card mb-4">
+              <img src={producto.imagen} className="card-img-top" alt={producto.nombreProducto} />
+              <div className="card-body">
+                <h5 className="card-title">{producto.nombreProducto}</h5>
+                <p className="card-text">Precio: {producto.precio}</p>
+                <p className="card-text">Categoría: {producto.categoria}</p>
+                <p className="card-text">{producto.descripcion}</p>
+                {/* Otros detalles del producto */}
+                <button
+                  className="btn btn-danger"
+                  onClick={() => handleEliminarClick(index)}
+                >
+                  Eliminar
+                </button>
                 <br />
-                <br />
-                <span className="text-danger fw-semibold ">Categoria:</span>{" "}
-                {producto.categoria}
-                <br />
-                <span className="text-danger fw-semibold ">Precio:</span>{" "}
-                ${producto.precio}
-              </Card.Text>
-              <p>Se te puede aplicar impuestos a esta compra*</p>
-              
-              {/* Agregar el campo de entrada para la cantidad */}
-              <label htmlFor="cantidad">Cantidad:</label>
-              <label htmlFor="cantidad">Cantidad:</label>
-              <input
-                type="number"
-                id="cantidad"
-                name="cantidad"
-                value={cantidad}
-                onChange={handleChangeCantidad}
-                min="1"
-              />
-
-              {/* Mostrar el precio total */}
-              <p>Precio Total: ${(producto.precio || 0) * (cantidad || 0)}</p>
-
-
-              <button className="btn btn-danger" onClick={handleCompra}>
-                COMPRAR
-              </button>
-              <br />
-              <button className="btn btn-danger mt-2" onClick={handleCancelarCompra}>
-                Cancelar Compra
-              </button>
-              <br />
-              <Link className="btn btn-danger mt-2" to="/">
-                Volver a inicio
-              </Link>
-            </Card.Body>
-          </Col>
-        </Row>
-      </Card>
+                {/* Agregar el campo de entrada para la cantidad */}
+                <label>Cantidad:</label>
+                  <input
+                    type="number"
+                    value={producto.cantidad || 1}
+                    onChange={(e) => handleCantidadChange(index, parseInt(e.target.value))}
+                    className="form-control"
+                    min="1"
+                  />
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      <h4>Precio Total: {calcularPrecioTotal()}</h4>
+      <br />
+      <button className="btn btn-danger" onClick={handleCompra}>COMPRAR</button>
+      <br />
+      <Link className="btn btn-danger mt-2" to="/">Volver a inicio</Link>
     </Container>
-      <Footer></Footer>
+    <Footer></Footer>
     </section>
   );
 };

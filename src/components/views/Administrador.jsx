@@ -85,16 +85,9 @@ const Administrador = ({ usuarioLogeado, setUsuarioLogeado }) => {
           <thead>
             <tr>
               <th>Opciones</th>
-              <th>Producto</th>
-              <th>Precio</th>
-              <th>Categoria</th>
-              <th>URL de Imagen</th>
-              <th>descripcion</th>
+              <th>fecha</th>
               <th>estado</th>
               <th>usuario</th>
-              <th>cantidad</th>
-              <th>precioTotal</th>
-              <th>fecha</th>
             </tr>
           </thead>
           <tbody>
