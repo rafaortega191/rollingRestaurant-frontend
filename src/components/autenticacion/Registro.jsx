@@ -8,7 +8,7 @@ import CustomNav from "../common/CustomNav.jsx";
 import Footer from "../common/Footer";
 import bcrypt from 'bcryptjs';
 
-const Registro = ({ setUsuarioLogeado }) => {
+const Registro = ({usuarioLogeado,setUsuarioLogeado }) => {
   const {
     register,
     handleSubmit,
@@ -49,7 +49,7 @@ const Registro = ({ setUsuarioLogeado }) => {
 
   return (
     <>
-      <CustomNav usuarioLogeado="" setUsuarioLogeado=""></CustomNav>
+      <CustomNav usuarioLogeado={usuarioLogeado} setUsuarioLogeado={setUsuarioLogeado}></CustomNav>
 
       <Container className="mainSection d-block align-items-center justify-content-center p-3 my-5">
         <Card className="my-5">
