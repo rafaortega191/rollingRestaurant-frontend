@@ -39,36 +39,28 @@ const CardProducto = ({ user, producto }) => {
   };
 
   return (
-    <Col md={4} ld={2} className="d-flex">
-      <Card className="card-principal-seleccionados d-flex">
-        <Card.Img
-          className="imagen-card-seleccionadas"
-          variant="top"
-          src={producto.imagen}
-        />
-        <Card.Body className="d-flex flex-column">
-          <div>
-            <Card.Title className="card-productos-titulo">
-              {producto.nombreProducto}
-            </Card.Title>
-          </div>
-          <div className="mt-auto">
-            <Card.Text className="card-productos-precio">
-              ${producto.precio}
-            </Card.Text>
-            <Link
-              className="btn card-productos-boton-sabermas"
-              to={`/detalles/${producto._id}`}
-            >
-              Ver más
-            </Link>
-            <Link
-              className="btn card-productos-boton-sabermas"
-              onClick={handleComprarClick}
-            >
-              Comprar
-            </Link>
-          </div>
+    <Col md={3} ld={2} xs={10} className="mb-3 card-productos-contenido">
+      <Card className="card-productos">
+        <Card.Img className="card-imagen" variant="top" src={producto.imagen} />
+        <Card.Body className="card-productos-body">
+          <Card.Title className="card-productos-titulo">
+            {producto.nombreProducto}
+          </Card.Title>
+          <Card.Text className="card-productos-precio">
+            Precio: ${producto.precio}
+          </Card.Text>
+          <Link
+            className="btn card-productos-boton"
+            onClick={handleComprarClick} // Llamamos a la función al hacer clic en el botón "Comprar"
+          >
+            Agregar al carrito
+          </Link>
+          <Link
+            className="btn card-productos-boton"
+            to={`/detalles/${producto._id}`}
+          >
+            Ver más
+          </Link>
         </Card.Body>
       </Card>
     </Col>
