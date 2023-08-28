@@ -1,3 +1,4 @@
+/*Carrusel*/
 .contenedor-carrusel {
     display: flex;
     align-items: center;
@@ -9,6 +10,7 @@
     .carousel-control-next {
         display: none;
     }
+
     .carousel-indicators {
         display: none;
     }
@@ -27,313 +29,327 @@
     font-size: 70px;
 }
 
-.section-productos-principal {  
-    margin: 0px 12ch 60px 12ch;
-    padding: 40px 0ch 40px 0ch;
+/*Inicio*/
+.contenedor-inicio {
+    margin: 0px 10ch 40px 10ch;
+    padding: 20px 0ch 20px 0ch;
     position: relative;
     isolation: isolate;
     background: #dccbb9;
     border-radius: 10px;
-    border: 8px solid #1c443d;
 }
 
-.layout {
+/*Cards Principales*/
+.contenedor-cards-principales {
+    margin: 0px 50px 0px 50px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-evenly;
+    align-items: stretch;
 }
 
-.card-principal {
+.cards-principales {
     font-family: "Prata", serif;
     font-size: 15px;
     margin-left: 12px;
     margin-right: 12px;
     margin-bottom: 20px;
-    border: 5px solid #1c443d;
+    border: 3px solid #1c443d;
+    width: 25rem;
 }
 
-.card-titulo-principal {
-    font-family: "Cinzel Decorative", cursive;
-    font-size: 18px;
-    font-weight: 600;
-}
-
-.cards-productos-principales {
-    padding: 5px;
-    border-radius: 6px;
-    border: 5px solid #1c443d;
-    border-color: #1c443d;
-    background-color: #1c443d;
+.cards-links {
     text-decoration: none;
-    color: #ffffff;
-    font-size: 20px;
 }
 
-.card-boton-principal {
-    font-family: "Prata", serif;
-    font-size: 20px;
-    color: #ffffff;
-    border-color: #1c443d;
-    background-color: #1c443d;
+.imagenes-cards-principales {
+    width: 100%;
 }
 
-.card-boton-principal:hover {
-    border-color: #1c443d;
-    background-color: #1c443d;
+.titulos-cards-principales {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-family: "Cinzel Decorative", cursive;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    color: black
 }
 
-.titulos-principal {
+.subtitulos-cards-principales {
+    font-size: 18px;
+    text-align: center;
+    color: black
+}
+
+/*Buscador*/
+.titulo-buscador {
     font-family: "Cinzel Decorative", cursive;
     font-size: 45px;
     margin-bottom: 15px;
 }
 
-.contenedor-productos-principal {
-    padding: 4ch 5ch 0px 5ch;
+.contenedor-productos {
+    padding: 3ch 6ch 0ch 6ch;
 }
 
 .subtitulos-principal {
     font-family: "Cinzel Decorative", cursive;
-    font-size: 35px;
+    font-size: 40px;
     margin-bottom: 15px;
     margin-top: 30px;
 }
 
-.contenedor-menu {
-    justify-content: space-evenly;
-    grid-auto-flow: row dense;
+/*Contenedor del menu*/
+.contenedor-productos-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: stretch;
 }
 
+/*Cards del menu*/
 .card-productos {
-    width: 22rem;
-    height: 25rem;
-    font-family: "Prata", serif;
-    padding: 5px;
-    margin-bottom: 10px;
-    border: 4px solid #1c443d;
-    border-radius: 10px;
-    background-color: #ffffff;
-    align-items: center;
-    justify-content: center;
+    border: 3px solid #101c1c;
+    background-color: #ffff;
+    margin: 8px;
+    text-align: center;
+}
 
+.card-imagen {
+    justify-content: center;
+    align-items: center;
 }
 
 .card-productos-titulo {
-    font-size: 30px;
-}
-
-.card-productos-etiqueta {
-    font-size: 14px;
-    margin-left: 1.2rem;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-family: "Cinzel Decorative", cursive;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    color: black
 }
 
 .card-productos-precio {
-    font-size: 15px;
+    font-size: 18px;
+    padding-left: 8px;
+    text-align: start;
+    color: black
 }
-
-.card-productos-descripcion {
-    font-size: 15px;
-}
-
-.layout-botones {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 2px;
-}
-
 
 .card-productos-boton {
-    font-size: 18px;
-    color: #ffffff;
-    background-color: #1c443d;
-    border-radius: 8px;
-    padding: 8px;
-    border-color: #1c443d;
-}
-
-.card-productos-boton-sabermas {
-    margin: 2px;
+    margin: 1px;
     text-decoration: none;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 18px;
+    font-size: 15px;
     color: #ffffff;
     background-color: #1c443d;
-    border-radius: 8px;
-    padding: 8px;
+    border-radius: 5px;
+    padding: 6px;
     border-color: #1c443d;
 }
 
 .card-productos-boton:hover {
-    background-color: #1c443d;
-}
-
-
-.layout-card-productos {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    background-color: #ffffff;
-    height: 100px;
-    width: 450px;
-    border: 4px solid #1c443d;
-    border-radius: 10px;
-    margin: 10px;
-
-}
-
-.imagen-card-seleccionadas {
-    justify-content: center;
-    align-items: center;
-}
-
-.card-principal-seleccionados {
-    font-family: "Prata", serif;
-    font-size: 18px;
-    border: 5px solid #1c443d;
-    margin: 15px;
-}
-
-.card-productos-boton-sabermas:hover {
-    background-color: #1c443d;
     color: #ffffff;
-}
-
-.contenedor-productos-seleccionados {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row
+    background-color: #17564c;
 }
 
 /*Dispositivo Chico*/
 @media all and (max-width: 576px) {
+
+    /*Carrusel*/
     .contenedor-carrusel {
         display: flex;
         align-items: center;
         justify-content: center;
         margin: 10px 10px 10px 10px;
         font-family: "Cinzel Decorative", cursive;
+
         .carousel-control-prev,
         .carousel-control-next {
             display: none;
         }
+
         .carousel-indicators {
             display: none;
         }
     }
-    
+
     .imagenes-carrusel {
         max-height: 15ch;
         width: 100%;
         object-fit: cover;
     }
-    
+
     .titulo-carrusel {
         text-shadow: 2px 2px 2px black;
         font-size: 35px;
         text-align: center;
     }
-    
-    .section-productos-principal {
-        margin: 20px;
+
+    /*Inicio*/
+    .contenedor-inicio {
+        margin: 10px 10px 10px 10px;
+        background: #dccbb9;
+        border-radius: 10px;
     }
 
-    .card-principal {
-        text-align: center;
-        font-size: 16px;
+    /*Cards Principales*/
+    .contenedor-cards-principales {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin-left: 10px;
+        margin-right: 10px;
     }
 
-    .imagen-dispositivo-chico {
+    .imagenes-cards-principales {
         display: none;
     }
 
-    .titulos-principal {
+    .cards-principales {
+        font-family: "Prata", serif;
+        font-size: 15px;
+        margin-bottom: 15px;
+        border: 3px solid #000000;
+    }
+
+
+    .contenedor-productos {
         text-align: center;
-        font-size: 28px;
+        padding: 3ch 2ch 0ch 2ch;
+
+    }
+
+    .titulos-cards-principales {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        font-family: "Cinzel Decorative", cursive;
+        font-size: 20px;
+        font-weight: 800;
+        text-align: center;
+        color: black
+    }
+
+    .subtitulos-cards-principales {
+        font-size: 18px;
+        text-align: center;
+        color: black
+    }
+
+
+    /*Buscador*/
+    .titulo-buscador {
+        font-family: "Cinzel Decorative", cursive;
+        font-size: 24px;
     }
 
     .subtitulos-principal {
         text-align: center;
-        font-size: 25px;
+        font-size: 20px;
     }
 
-    .imagen-card-seleccionadas {
-        height: 18rem;
-    }
-
-    .contenedor-productos-principal {
-        padding: 0ch 2.5ch 0px 2.5ch;
-    }
-
-    .card-productos {
-        text-align: center;
-        width: 28rem;
-        height: 25rem;
-        font-family: "Prata", serif;
-        padding: 5px;
-        margin: 5px;
-        border: 4px solid #1c443d;
-        border-radius: 10px;
-        background-color: #ffffff;
-        align-items: center;
+    /* Contenedor del menu */
+    .contenedor-productos-menu {
+        display: flex;
+        flex-wrap: wrap;
         justify-content: center;
     }
 
-    .card-productos-titulo {
-        font-size: 25;
+    /* Cards del menu */
+    .card-productos {
+        border: 3px solid #101c1c;
+        background-color: #ffff;
+        margin: 10px;
+        text-align: center;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        /* Si se usa el s9 se sale del menu la card
+        min-width: 315px;
+        */
     }
 
-    .card-productos-etiqueta {
-        font-size: 15px;
-        margin-left: 8px;
+    .card-imagen {
+        max-height: 13ch;
+        width: 100%;
+        object-fit: cover;
+        /*otra opcion 
+            width: 100%;
+    height: 50%;
+        object-fit: cover;
+        */
+    }
+
+    .card-productos-titulo {
+        margin-top: 2px;
+        margin-bottom: 2px;
+        font-family: "Cinzel Decorative", cursive;
+        font-size: 20px;
+        font-weight: 600;
+        text-align: center;
+        color: black;
+    }
+
+    .card-productos-precio {
+        font-size: 16px;
+        padding-left: 5px;
+        text-align: start;
+        color: black;
     }
 
     .card-productos-boton {
-        margin: 5px;
-        font-size: 18px;
+        margin: 3px;
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 17px;
         color: #ffffff;
         background-color: #1c443d;
-        border-radius: 8px;
-        padding: 5px;
+        border-radius: 5px;
+        padding: 6px;
         border-color: #1c443d;
-    }
-
-    .contenedor-productos-seleccionados {
-        display: block;
     }
 }
 
 /*Dispositivo Mediano*/
 @media all and (min-width: 577px) and (max-width: 991px) {
+
+    /*Carrusel*/
     .contenedor-carrusel {
         display: flex;
         align-items: center;
         justify-content: center;
         margin: 20px 35px 20px 35px;
         font-family: "Cinzel Decorative", cursive;
+
         .carousel-control-prev,
         .carousel-control-next {
             display: none;
         }
+
         .carousel-indicators {
             display: none;
         }
     }
-    
+
     .imagenes-carrusel {
         max-height: 18ch;
         width: 100%;
         object-fit: cover;
     }
-    
+
     .titulo-carrusel {
         text-shadow: 2px 2px 2px black;
         font-size: 50px;
         text-align: center;
     }
-    
+
 
     .carousel-principal {
         display: flex;
@@ -352,95 +368,137 @@
         text-align: center;
     }
 
-
-    .section-productos-principal {
-        margin: 60px 3ch 60px 3ch;
-        padding: 30px 0ch 30px 0ch;
-        position: relative;
-        isolation: isolate;
+    /*Inicio*/
+    .contenedor-inicio {
+        margin: 20px 35px 20px 35px;
         background: #dccbb9;
         border-radius: 10px;
-        border: 8px solid #1c443d;
     }
 
-    .card-titulo-principal {
-        font-size: 25px;
+    /*Cards Principales*/
+    .contenedor-cards-principales {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
+        align-items: stretch;
+        margin: 0px 5px 0px 5px;
     }
 
-    .card-principal {
-        text-align: center;
-        font-size: 18px;
-    }
-
-    .card-principal-seleccionados {
-        margin: 20px;
-        width: 15rem;
-        height: 40rem;
-        font-size: 15px;
-    }
-
-    .imagen-dispositivo-chico {
+    .imagenes-cards-principales {
         display: none;
     }
 
-    .titulos-principal {
-        margin-top: 10px;
-        font-size: 40px;
+    .cards-principales {
+        font-family: "Prata", serif;
+        margin-bottom: 10px;
+        border: 3px solid #000000;
+    }
+
+    .titulos-cards-principales {
+        margin-bottom: 10px;
+        font-family: "Cinzel Decorative", cursive;
+        font-size: 20px;
+        font-weight: 800;
         text-align: center;
+        color: black
+    }
+
+    .subtitulos-cards-principales {
+        font-size: 15px;
+        text-align: center;
+        color: black
+    }
+
+    .contenedor-productos {
+        text-align: center;
+        padding: 2ch 3ch 0ch 3ch;
+
+    }
+
+    /*Buscador*/
+    .titulo-buscador {
+        font-family: "Cinzel Decorative", cursive;
+        font-size: 28px;
     }
 
     .subtitulos-principal {
         text-align: center;
-        font-size: 35px;
+        font-size: 24px;
     }
 
-    .contenedor-menu {
-        padding: 0px;
-        margin: 0px;
-    }
+   /* Contenedor del menu */
+.contenedor-productos-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: stretch;
+}
 
-    .contenedor-productos-principal {
-        padding: 2ch 2ch 0px 2ch;
-    }
+/* Agrega un contenedor interno para el contenido de la tarjeta */
+.card-productos-contenido {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+}
+/* Cards del menu */
+.card-productos {
+    border: 3px solid #101c1c;
+    background-color: #ffff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    min-width: 150px;
+    flex: 1; /* Distribuye el espacio disponible */
+}
 
-    .card-productos {
-        text-align: center;
-        width: calc(45% - 30px);
-        height: 28rem;
-        font-family: "Prata", serif;
-        padding: 5px;
-        margin: 5px;
-        border: 4px solid #1c443d;
-        border-radius: 10px;
-        background-color: #ffffff;
-        flex-direction: row;
-        flex-grow: 2;
-    }
+/* Contenido de la tarjeta */
+.card-productos-contenido {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+}
 
-    .card-productos-etiqueta {
-        font-size: 17px;
-        margin-left: 1ch;
-    }
+/* Imagen de la tarjeta */
+.card-imagen {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-height: 18ch;
+}
 
-    .card-productos-boton {
-        margin: 5px;
-        font-size: 18px;
-        color: #ffffff;
-        background-color: #1c443d;
-        border-radius: 8px;
-        padding: 8px;
-        border-color: #1c443d;
-    }
+/* Título de la tarjeta */
+.card-productos-titulo {
+    font-family: "Cinzel Decorative", cursive;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+    color: black;
+}
 
-    .contenedor-productos-seleccionados {
-        display: grid;
-        grid-template-rows: repeat(2, 1fr);
-        grid-template-columns: repeat(2, 1fr);
-        justify-content: space-evenly;
-    }
+/* Precio de la tarjeta */
+.card-productos-precio {
+    font-size: 13px;
+    text-align: center;
+    color: black;
+}
 
-    .card-principal-seleccionados {
-        height: 38rem;
-        width: 15rem;
-    }
+/* Botón de la tarjeta */
+.card-productos-boton {
+    margin-bottom: 3px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    color: #ffffff;
+    background-color: #1c443d;
+    border-radius: 5px;
+    padding: 4px;
+    border-color: #1c443d;
+}
+
 }

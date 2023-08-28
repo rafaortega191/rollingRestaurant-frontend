@@ -11,16 +11,16 @@ import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
 
 const Inicio = ({ usuarioLogeado, setUsuarioLogeado }) => {
-
   const [productos, setProductos] = useState([]);
   useEffect(() => {
     consultaListaProductos().then((respuesta) => {
       setProductos(respuesta);
       setUsuarioLogeado({
-        "email":"prueba2@gmail.com",
-        "password":"Prueba_123!",
-        "nonbreusuario":"Euge",
-         "es_admin":true})
+        email: "prueba2@gmail.com",
+        password: "Prueba_123!",
+        nonbreusuario: "Euge",
+        es_admin: true,
+      });
     });
   }, []);
 
@@ -66,78 +66,65 @@ const Inicio = ({ usuarioLogeado, setUsuarioLogeado }) => {
         </Carousel>
       </section>
 
-      <section className="section-productos-principal">
-        <div className="layout">
-          <Card style={{ width: "30rem" }} className="card-principal">
-            <img
-              src="https://images.pexels.com/photos/3184192/pexels-photo-3184192.jpeg"
-              className="imagen-dispositivo-chico"
-              alt="Imagen 2"
-            />
-            <Card.Body>
-              <Card.Title className="card-titulo-principal">
-                Explora Lugares Increíbles
-              </Card.Title>
-              <Card.Text>
-                Descubre exuberantes paisajes, rica historia y una cultura
-                vibrante en cada rincón de esta maravillosa provincia de
-                Tucumán.
-              </Card.Text>
-              <Link className="cards-productos-principales" to="/error404">
-                Ver mas
-              </Link>
-            </Card.Body>
+      <section className="contenedor-inicio">
+        <div className="contenedor-cards-principales">
+          <Card style={{ maxWidth: "100%" }} className="cards-principales">
+            <Link className="cards-links" href="#menu">
+              <img
+                src="https://images.pexels.com/photos/6287298/pexels-photo-6287298.jpeg"
+                className="imagenes-cards-principales "
+                alt="Manos amasando"
+              />
+              <Card.Body>
+                <Card.Title className="titulos-cards-principales">
+                  Descubre un Mundo de Sabores Inclusivos
+                </Card.Title>
+                <Card.Text className="subtitulos-cards-principales">
+                  Descubre nuestra diversa carta con opciones sin TACC, veganas
+                  y vegetarianas.
+                </Card.Text>
+              </Card.Body>
+            </Link>
           </Card>
-
-          <Card style={{ width: "30rem" }} className="card-principal">
-            <img
-              src="https://images.pexels.com/photos/6287298/pexels-photo-6287298.jpeg"
-              className="imagen-dispositivo-chico"
-              alt="Imagen 2"
-            />
-            <Card.Body>
-              <Card.Title className="card-titulo-principal">
-                Nuestros productos sin TACC
-              </Card.Title>
-              <Card.Text>
-                Explora nuestra deliciosa selección de productos sin TACC
-                (Trigo, Avena, Cebada, Centeno) para disfrutar de sabores
-                increíbles sin preocupaciones.
-              </Card.Text>
-              <Button
-                href="#productos-sin-tacc"
-                className="card-boton-principal"
-              >
-                Date un gustito
-              </Button>
-            </Card.Body>
+          <Card style={{ maxWidth: "100%" }} className="cards-principales">
+            <Link className="cards-links" to="/acercadenosotros">
+              <img
+                src="https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg"
+                className="imagenes-cards-principales"
+                alt="Chef preparando un plato"
+              />
+              <Card.Body>
+                <Card.Title className="titulos-cards-principales">
+                  Sobre nosotros
+                </Card.Title>
+                <Card.Text className="subtitulos-cards-principales">
+                  Conoce nuestra apasionante historia y el compromiso que nos
+                  impulsa a ofrecerte experiencias inolvidables.
+                </Card.Text>
+              </Card.Body>
+            </Link>
           </Card>
-
-          <Card style={{ width: "30rem" }} className="card-principal">
-            <img
-              src="https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg"
-              className="imagen-dispositivo-chico"
-              alt="Imagen 2"
-            />
-            <Card.Body>
-              <Card.Title className="card-titulo-principal">
-                Sobre nosotros
-              </Card.Title>
-              <Card.Text>
-                Conoce nuestra apasionante historia y el compromiso que nos
-                impulsa a ofrecerte experiencias inolvidables.
-              </Card.Text>
-              <Link
-                className="cards-productos-principales"
-                to="/acercadenosotros"
-              >
-                Ver mas
-              </Link>
-            </Card.Body>
+          <Card style={{ maxWidth: "100%" }} className="cards-principales">
+            <Link className="cards-links" to="/error404">
+              <img
+                src="https://images.pexels.com/photos/3184192/pexels-photo-3184192.jpeg"
+                className="imagenes-cards-principales "
+                alt="Mesa con platos de comida"
+              />
+              <Card.Body>
+                <Card.Title className="titulos-cards-principales">
+                  Explora Lugares Increíbles
+                </Card.Title>
+                <Card.Text className="subtitulos-cards-principales">
+                  Descubre rica historia y una cultura vibrante en cada rincón
+                  de esta maravillosa provincia de Tucumán.
+                </Card.Text>
+              </Card.Body>
+            </Link>
           </Card>
         </div>
-        <div className="contenedor-productos-principal">
-          <h2 className="fw-bold titulos-principal">TODAS NUESTRAS PASTAS</h2>
+        <div className="contenedor-productos">
+          <h2 className="fw-bold titulo-buscador">TODAS NUESTRAS PASTAS</h2>
           <div className="form-floating mb-2">
             <input
               type="text"
@@ -150,40 +137,23 @@ const Inicio = ({ usuarioLogeado, setUsuarioLogeado }) => {
               <i className="bi bi-search"></i>Buscar
             </label>
           </div>
-        <h1 className="text-center fw-bold subtitulos-principal">Nuestra Seleccion de pastas</h1>
-        <hr className="" />
-          <Container className="contenedor-productos-seleccionados">
-          {productos.map((producto) => (
-            <CardProducto  key={producto._id} user={usuarioLogeado} producto={producto}></CardProducto>
-          ))}
-      </Container>
-          <h3 className="fw-bold subtitulos-principal">Veganas</h3>
-          <hr className="" />
-          <div className="row contenedor-menu">
-          </div>
-
-          <h3 id="productos-sin-tacc" className="fw-bold subtitulos-principal">
-            Vegetariano
-          </h3>
-          <hr className="" />
-          <div className="row contenedor-menu">
-          </div>
-
-          <h3 id="productos-sin-tacc" className="fw-bold subtitulos-principal">
-            Sin TACC (Trigo, Avena, Cebada, Centeno)
-          </h3>
-          <hr className="" />
-          <div className="row contenedor-menu">
-          </div>
-
-          <h3 id="productos-sin-tacc" className="fw-bold subtitulos-principal">
-            Pastas con carne
-          </h3>
-          <hr className="" />
-          <div className="row contenedor-menu">
-          </div>
         </div>
+        <div>
+          <h1 className="text-center fw-bold subtitulos-principal">
+            Nuestra Seleccion de pastas
+          </h1>
+          <hr id="menu" className="m-3"/>
 
+          <Container className="contenedor-productos-menu">
+            {productos.map((producto) => (
+              <CardProducto 
+                key={producto._id}
+                user={usuarioLogeado}
+                producto={producto}
+              ></CardProducto>
+            ))}
+          </Container>
+        </div>
       </section>
 
       <Footer />

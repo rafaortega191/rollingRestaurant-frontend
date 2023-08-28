@@ -34,23 +34,23 @@ const CardProducto = ({ user,producto }) => {
   
 
   return (
-    <Col md={3} ld={2} className="mb-3">
-      <Card className="card-principal-seleccionados">
-        <Card.Img className="imagen-card-seleccionadas" variant="top" src={producto.imagen} />
-        <Card.Body>
+    <Col md={3} ld={2} className="mb-3 card-productos-contenido">
+      <Card className="card-productos">
+        <Card.Img className="card-imagen" variant="top" src={producto.imagen} />
+        <Card.Body >
           <Card.Title className="card-productos-titulo">{producto.nombreProducto}</Card.Title>
-          <Card.Text className="card-productos-precio">${producto.precio}</Card.Text>
+          <Card.Text className="card-productos-precio">Precio: ${producto.precio}</Card.Text>
           <Link
-            className="btn card-productos-boton-sabermas"
+            className="btn card-productos-boton"
+            onClick={handleComprarClick} // Llamamos a la función al hacer clic en el botón "Comprar"
+          >
+            Agregar al carrito
+          </Link>
+          <Link
+            className="btn card-productos-boton"
             to={`/detalles/${producto._id}`}
           >
             Ver más
-          </Link>
-          <Link
-            className="btn card-productos-boton-sabermas"
-            onClick={handleComprarClick} // Llamamos a la función al hacer clic en el botón "Comprar"
-          >
-            Comprar
           </Link>
         </Card.Body>
       </Card>
