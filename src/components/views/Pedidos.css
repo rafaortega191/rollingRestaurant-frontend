@@ -1,30 +1,32 @@
-/* estilos.css */
+body {
+  font-family: 'Prata', serif;
+}
 
-.carrito {
-    background-color: #f9f9f9;
-    border: 1px solid #ccc;
-    padding: 20px;
-    border-radius: 5px;
-    max-width: 400px;
-    margin: 0 auto;
-    
+
+.card-pedidos-container {
+  background-color: #dccbb9;
+}
+
+.pago-container {
+background-color: #dccbb9;
+}
+
+.pago-texto{
+  font-family: 'Prata', serif;
+  padding-top: 15px;
+}
+
+
+
+
+
+@media all and (min-width: 577px) and (max-width: 991px) {
+  .card-container {
+    flex-direction: column;
   }
+}
+
+/*Grandes*/
+@media all and (min-width: 991px) {
   
-  .carrito h2 {
-    margin-top: 0;
-  }
-  
-  .carrito ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .carrito li {
-    margin-bottom: 10px;
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 5px;
-    max-width: 100%; /* Ajusta el ancho máximo según tus necesidades */
-    overflow-wrap: break-word; /* Permite que el contenido largo se divida en varias líneas */
-  }
-  
-  
+}

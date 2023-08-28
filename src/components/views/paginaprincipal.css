@@ -154,7 +154,12 @@
 
 .card-productos-boton:hover {
     color: #ffffff;
-    background-color: #17564c;
+}
+
+.contenedor-productos-seleccionados {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row
 }
 
 /*Dispositivo Chico*/
