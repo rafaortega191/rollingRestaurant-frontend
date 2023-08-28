@@ -11,7 +11,6 @@ import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
 
 const Inicio = ({ usuarioLogeado, setUsuarioLogeado }) => {
-
   const [productos, setProductos] = useState([]);
 
   useEffect(() => {
@@ -63,34 +62,34 @@ const Inicio = ({ usuarioLogeado, setUsuarioLogeado }) => {
       </section>
 
       <section className="section-productos-principal">
-      <h2 className="fw-bold titulos-principal">TODAS NUESTRAS PASTAS</h2>
-          <div className="form-floating mb-2">
-            <input
-              type="text"
-              className="form-control"
-              id="floatingInput"
-              placeholder=" "
-              maxLength="100"
-            />
-            <label htmlFor="floatingInput">
-              <i className="bi bi-search"></i>Buscar
-            </label>
-          </div>
-          <h1 className="text-center fw-bold subtitulos-principal">
-            Nuestra Seleccion de pastas
-          </h1>
-          <hr className="" />
-          <Container className="contenedor-productos-seleccionados">
+        <h2 className="fw-bold titulos-principal">TODAS NUESTRAS PASTAS</h2>
+        <div className="form-floating mb-2">
+          <input
+            type="text"
+            className="form-control"
+            id="floatingInput"
+            placeholder=" "
+            maxLength="100"
+          />
+          <label htmlFor="floatingInput">
+            <i className="bi bi-search"></i>Buscar
+          </label>
+        </div>
+        <h1 className="text-center fw-bold subtitulos-principal">
+          Nuestra Seleccion de pastas
+        </h1>
+        <hr />
+        <section>
+          <Container className="contenedor-productos-seleccionados row">
             {productos.map((producto) => (
               <CardProducto
                 key={producto._id}
                 user={usuarioLogeado}
                 producto={producto}
-
-                
               ></CardProducto>
             ))}
           </Container>
+        </section>
         <div className="layout">
           <Card style={{ width: "30rem" }} className="card-principal">
             <img
@@ -161,7 +160,6 @@ const Inicio = ({ usuarioLogeado, setUsuarioLogeado }) => {
           </Card>
         </div>
         <div className="contenedor-productos-principal">
-          
           <div className="row contenedor-menu"></div>
           <h3 className="fw-bold subtitulos-principal">Veganas</h3>
           <hr className="" />

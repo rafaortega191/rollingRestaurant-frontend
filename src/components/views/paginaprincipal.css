@@ -205,8 +205,8 @@
 
 .contenedor-productos-seleccionados {
     display: flex;
-    justify-content: space-between;
-    flex-direction: row
+    justify-content: center;
+    
 }
 
 /*Dispositivo Chico*/

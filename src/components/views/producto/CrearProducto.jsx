@@ -2,8 +2,10 @@ import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import { consultaAgregarProducto } from "../../helpers/queries";
+import { useNavigate } from "react-router-dom";
 
 const CrearProducto = () => {
+  const navegacion = useNavigate();
   const {
     register,
     handleSubmit,
