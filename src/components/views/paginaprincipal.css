@@ -108,17 +108,33 @@
     align-items: stretch;
 }
 
-/*Cards del menu*/
+
+/* Cards del menu */
 .card-productos {
     border: 3px solid #101c1c;
     background-color: #ffff;
-    margin: 8px;
+    margin: 10px;
     text-align: center;
+    flex: 1;
+    /* Agrega una altura fija para las tarjetas en dispositivos grandes */
+    height: 650px; /* Ajusta este valor según tus necesidades */
+    overflow: hidden; /* Asegura que el contenido no se desborde */
 }
+
 
 .card-imagen {
     justify-content: center;
     align-items: center;
+}
+
+.card-productos-body {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100%;
+   
 }
 
 .card-productos-titulo {
@@ -139,27 +155,23 @@
 }
 
 .card-productos-boton {
-    margin: 1px;
+    margin-bottom: 2px;
     text-decoration: none;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 15px;
+    font-size: 16px;
     color: #ffffff;
     background-color: #1c443d;
     border-radius: 5px;
-    padding: 6px;
+    padding: 4px;
     border-color: #1c443d;
+    width: 100%;
 }
 
 .card-productos-boton:hover {
     color: #ffffff;
-}
-
-.contenedor-productos-seleccionados {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row
+    background-color: #17564c;
 }
 
 /*Dispositivo Chico*/
@@ -269,25 +281,27 @@
     .card-productos {
         border: 3px solid #101c1c;
         background-color: #ffff;
+        flex: 1;
+        flex-basis: calc(33.33% - 20px);
         margin: 10px;
         text-align: center;
-        flex: 1;
         display: flex;
         flex-direction: column;
-        /* Si se usa el s9 se sale del menu la card
-        min-width: 315px;
-        */
     }
 
+  
     .card-imagen {
         max-height: 13ch;
         width: 100%;
         object-fit: cover;
-        /*otra opcion 
-            width: 100%;
-    height: 50%;
-        object-fit: cover;
-        */
+    }
+
+    .card-productos-body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
     }
 
     .card-productos-titulo {
@@ -310,7 +324,6 @@
     .card-productos-boton {
         margin: 3px;
         text-decoration: none;
-        display: flex;
         justify-content: center;
         align-items: center;
         font-size: 17px;
@@ -320,6 +333,7 @@
         padding: 6px;
         border-color: #1c443d;
     }
+
 }
 
 /*Dispositivo Mediano*/
@@ -431,79 +445,81 @@
         font-size: 24px;
     }
 
-   /* Contenedor del menu */
-.contenedor-productos-menu {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: start;
-    align-items: stretch;
-}
+    /* Contenedor del menu */
+    .contenedor-productos-menu {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: start;
+        align-items: stretch;
+    }
 
-/* Agrega un contenedor interno para el contenido de la tarjeta */
-.card-productos-contenido {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 10px;
-}
-/* Cards del menu */
-.card-productos {
-    border: 3px solid #101c1c;
-    background-color: #ffff;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    min-width: 150px;
-    flex: 1; /* Distribuye el espacio disponible */
-}
+    /* Cards del menu */
+    .card-productos {
+        border: 3px solid #101c1c;
+        background-color: #ffff;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        min-width: 150px;
+        flex: 1;
+        /* Distribuye el espacio disponible */
+    }
 
-/* Contenido de la tarjeta */
-.card-productos-contenido {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 10px;
-}
+    /* Contenido de la tarjeta */
+    .card-productos-contenido {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 10px;
+    }
 
-/* Imagen de la tarjeta */
-.card-imagen {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    max-height: 18ch;
-}
+    /* Imagen de la tarjeta */
+    .card-imagen {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        max-height: 18ch;
+    }
 
-/* Título de la tarjeta */
-.card-productos-titulo {
-    font-family: "Cinzel Decorative", cursive;
-    font-size: 15px;
-    font-weight: 600;
-    text-align: center;
-    color: black;
-}
+    .card-productos-body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+    }
 
-/* Precio de la tarjeta */
-.card-productos-precio {
-    font-size: 13px;
-    text-align: center;
-    color: black;
-}
+    /* Título de la tarjeta */
+    .card-productos-titulo {
+        font-family: "Cinzel Decorative", cursive;
+        font-size: 15px;
+        font-weight: 600;
+        text-align: center;
+        color: black;
+    }
 
-/* Botón de la tarjeta */
-.card-productos-boton {
-    margin-bottom: 3px;
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 13px;
-    color: #ffffff;
-    background-color: #1c443d;
-    border-radius: 5px;
-    padding: 4px;
-    border-color: #1c443d;
-}
+    /* Precio de la tarjeta */
+    .card-productos-precio {
+        font-size: 13px;
+        text-align: center;
+        color: black;
+    }
+
+    /* Botón de la tarjeta */
+    .card-productos-boton {
+        margin-bottom: 3px;
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 12px;
+        color: #ffffff;
+        background-color: #1c443d;
+        border-radius: 5px;
+        padding: 4px;
+        border-color: #1c443d;
+        width: 100%;
+    }
 
 }
