@@ -75,14 +75,17 @@ const Pedidos = ({ usuarioLogeado, setUsuarioLogeado }) => {
 
     consultaAgregarPedido(productosPendientes).then((respuesta) => {
       if (respuesta) {
-        if (sessionStorage.getItem("usuario") && localStorage.getItem("productosSeleccionados")) {
+        if (
+          sessionStorage.getItem("usuario") &&
+          localStorage.getItem("productosSeleccionados")
+        ) {
           // Usuario loggeado y productos en el carrito
           Swal.fire(
             "¡Compra realizada!",
             "La compra se ha realizado exitosamente. Muchas Gracias.",
             "success"
           );
-      
+
           localStorage.removeItem("productosSeleccionados");
           navegacion("/");
         } else if (!sessionStorage.getItem("usuario")) {
@@ -101,7 +104,6 @@ const Pedidos = ({ usuarioLogeado, setUsuarioLogeado }) => {
           );
         }
       }
-      
     });
   };
 
@@ -154,7 +156,7 @@ const Pedidos = ({ usuarioLogeado, setUsuarioLogeado }) => {
             </div>
           ))}
         </div>
-        <div className="mt-5 pago-container w-25 rounded-3">
+        <div className="mt-5 pago-container rounded-3 d-flex flex-column align-items-center w-50 ">
           <h4 className="text-center pago-texto">
             Precio Total: {calcularPrecioTotal()}
           </h4>
@@ -162,7 +164,7 @@ const Pedidos = ({ usuarioLogeado, setUsuarioLogeado }) => {
           <button className="btn btn-danger m-2" onClick={handleCompra}>
             COMPRAR
           </button>
-          <br />
+
           <Link className="btn btn-danger m-2" to="/">
             Volver a inicio
           </Link>

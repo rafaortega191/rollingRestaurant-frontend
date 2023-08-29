@@ -2,7 +2,7 @@ import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import { consultaAgregarProducto } from "../../helpers/queries";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const CrearProducto = () => {
   const navegacion = useNavigate();
@@ -21,10 +21,9 @@ const CrearProducto = () => {
           "Producto creado",
           `El producto ${productoNuevo.nombreProducto} fue creado correctamente`,
           "success"
-          
         );
         reset();
-        navegacion('/administrador');
+        navegacion("/administrador");
       } else {
         Swal.fire(
           "Ocurrio un error",
@@ -78,7 +77,9 @@ const CrearProducto = () => {
               },
             })}
           />
-          <Form.Text className="text-danger">{errors.precio?.message}</Form.Text>
+          <Form.Text className="text-danger">
+            {errors.precio?.message}
+          </Form.Text>
         </Form.Group>
         <Form.Group className="mb-3" controlId="formDescripcion">
           <Form.Label>Descripcion*</Form.Label>
@@ -110,7 +111,9 @@ const CrearProducto = () => {
               required: "La imagen es obligatoria y debe tener formato .jpg",
             })}
           />
-          <Form.Text className="text-danger">{errors.imagen?.message}</Form.Text>
+          <Form.Text className="text-danger">
+            {errors.imagen?.message}
+          </Form.Text>
         </Form.Group>
         <Form.Group className="mb-3" controlId="formPrecio">
           <Form.Label>Categoria*</Form.Label>
@@ -147,6 +150,9 @@ const CrearProducto = () => {
         <Button variant="primary" type="submit" className="mb-2">
           Guardar
         </Button>
+        <Link className="btn btn-danger mb-2 ms-2" to="/administrador">
+          Cancelar Carga del Producto
+        </Link>
       </Form>
     </section>
   );
