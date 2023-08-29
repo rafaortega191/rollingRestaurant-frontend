@@ -116,9 +116,8 @@
     margin: 10px;
     text-align: center;
     flex: 1;
-    /* Agrega una altura fija para las tarjetas en dispositivos grandes */
-    height: 650px; /* Ajusta este valor según tus necesidades */
-    overflow: hidden; /* Asegura que el contenido no se desborde */
+    height: 650px;
+    overflow: hidden;
 }
 
 
@@ -135,7 +134,7 @@
     align-items: center;
     justify-content: space-evenly;
     height: 100%;
-   
+
 }
 
 
@@ -164,9 +163,29 @@
 
 .card-productos-boton:hover {
     color: #ffffff;
-    background-color: #17564c;
+    background-color: #066253;
+    transition: background-color 0.3s; 
 }
 
+/*Botones carrito */
+.botones-carrito .swal2-confirm {
+    background-color: #1c443d;
+    border-color: #1c443d;
+    color: #fff;
+    transition: background-color 0.3s; 
+}
+
+.botones-carrito .swal2-cancel {
+    background-color: #1c443d;
+    border-color: #1c443d;
+    color: #fff;
+    transition: background-color 0.3s; 
+   
+}
+.botones-carrito .swal2-confirm:hover,
+.botones-carrito .swal2-cancel:hover {
+  background-color: #066253; 
+}
 
 /*Dispositivo Chico*/
 @media all and (max-width: 576px) {
@@ -283,7 +302,7 @@
         flex-direction: column;
     }
 
-  
+
     .card-imagen {
         max-height: 550px;
         width: 100%;
@@ -456,7 +475,7 @@
         flex-direction: column;
         min-width: 150px;
         flex: 1;
-        /* Distribuye el espacio disponible */
+
     }
 
     /* Contenido de la tarjeta */
@@ -465,7 +484,6 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        padding: 10px;
     }
 
     /* Imagen de la tarjeta */

@@ -6,7 +6,6 @@ import CustomNav from "../common/CustomNav";
 import Footer from "../common/Footer";
 import "./paginaprincipal.css";
 import Carousel from "react-bootstrap/Carousel";
-import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
 
@@ -30,7 +29,6 @@ const Inicio = ({ usuarioLogeado, setUsuarioLogeado }) => {
         usuarioLogeado={usuarioLogeado}
         setUsuarioLogeado={setUsuarioLogeado}
       ></CustomNav>
-
       <section>
         <Carousel fade className="contenedor-carrusel">
           <Carousel.Item interval={1500}>
@@ -65,7 +63,6 @@ const Inicio = ({ usuarioLogeado, setUsuarioLogeado }) => {
           </Carousel.Item>
         </Carousel>
       </section>
-
       <section className="contenedor-inicio">
         <div className="contenedor-cards-principales">
           <Card style={{ maxWidth: "100%" }} className="cards-principales">
@@ -142,11 +139,11 @@ const Inicio = ({ usuarioLogeado, setUsuarioLogeado }) => {
           <h1 className="text-center fw-bold subtitulos-principal">
             Nuestra Seleccion de pastas
           </h1>
-          <hr id="menu" className="m-3"/>
+          <hr id="menu" className="m-3" />
 
           <Container className="contenedor-productos-menu">
             {productos.map((producto) => (
-              <CardProducto 
+              <CardProducto
                 key={producto._id}
                 user={usuarioLogeado}
                 producto={producto}
@@ -155,10 +152,8 @@ const Inicio = ({ usuarioLogeado, setUsuarioLogeado }) => {
           </Container>
         </div>
       </section>
-
       <Footer />
     </div>
   );
 };
-
 export default Inicio;
