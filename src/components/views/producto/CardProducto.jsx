@@ -43,10 +43,10 @@ const CardProducto = ({ user, producto }) => {
       <Card className="card-productos">
         <Card.Img className="card-imagen" variant="top" src={producto.imagen} />
         <Card.Body className="card-productos-body">
-          <Card.Title className="card-productos-titulo">
+          <Card.Title className="card-productos-titulo mt-auto ">
             {producto.nombreProducto}
           </Card.Title>
-          <Card.Text className="card-productos-precio">
+          <Card.Text className="card-productos-precio mt-auto">
             Precio: ${producto.precio}
           </Card.Text>
           <Link
