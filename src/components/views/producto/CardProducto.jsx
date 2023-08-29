@@ -1,39 +1,51 @@
+import React, { useState } from "react";
 import { Col, Card } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
-import React from "react";
-import "../paginaprincipal.css";
 import Swal from "sweetalert2";
+import "../paginaprincipal.css";
 
 const CardProducto = ({ user, producto }) => {
   const navigate = useNavigate();
-  console.log(user);
+  const [agregadoAlCarrito, setAgregadoAlCarrito] = useState(false);
+
   const handleComprarClick = () => {
     if (user === null) {
       navigate("/login");
     } else {
-      const productoJSON = JSON.stringify(producto);
-      const productosSeleccionados =
-        JSON.parse(localStorage.getItem("productosSeleccionados")) || [];
-
-      // Verificar si el producto ya está en el carrito
-      const productoExistente = productosSeleccionados.find(
-        (item) => item._id === producto._id
-      );
-
-      if (productoExistente) {
-        // Mostrar mensaje de error usando SweetAlert2
+      if (agregadoAlCarrito) {
         Swal.fire({
           icon: "error",
-          title: "Producto ya en el carrito",
-          text: "Este producto ya ha sido agregado al carrito.",
+          title: "El producto ya está en el carrito",
+          showCancelButton: true,
+          confirmButtonText: "Seguir comprando",
+          cancelButtonText: "Ir al carrito",
+          customClass: {
+            container: "botones-carrito",
+          },
+        }).then((result) => {
+          if (result.isConfirmed) {
+          } else if (result.dismiss === Swal.DismissReason.cancel) {
+            navigate("/pedidos");
+          }
         });
       } else {
+        const productosSeleccionados =
+          JSON.parse(localStorage.getItem("productosSeleccionados")) || [];
+
         productosSeleccionados.push(producto);
         localStorage.setItem(
           "productosSeleccionados",
           JSON.stringify(productosSeleccionados)
         );
-        navigate(`/pedidos/${producto._id}`);
+
+        setAgregadoAlCarrito(true);
+
+        Swal.fire({
+          icon: "success",
+          title: "Agregado al carrito",
+          showConfirmButton: false,
+          timer: 1500,
+        });
       }
     }
   };
@@ -43,18 +55,18 @@ const CardProducto = ({ user, producto }) => {
       <Card className="card-productos">
         <Card.Img className="card-imagen" variant="top" src={producto.imagen} />
         <Card.Body className="card-productos-body">
-          <Card.Title className="card-productos-titulo mt-auto ">
+          <Card.Title className="card-productos-titulo mt-auto">
             {producto.nombreProducto}
           </Card.Title>
           <Card.Text className="card-productos-precio mt-auto">
             Precio: ${producto.precio}
           </Card.Text>
-          <Link
+          <button
             className="btn card-productos-boton"
-            onClick={handleComprarClick} // Llamamos a la función al hacer clic en el botón "Comprar"
+            onClick={handleComprarClick}
           >
-            Agregar al carrito
-          </Link>
+            {agregadoAlCarrito ? "Ya en el carrito" : "Agregar al carrito"}
+          </button>
           <Link
             className="btn card-productos-boton"
             to={`/detalles/${producto._id}`}
