@@ -44,7 +44,7 @@ const CardProducto = ({ user, producto }) => {
           icon: "success",
           title: "Agregado al carrito",
           showConfirmButton: false,
-          timer: 1500,
+          timer: 1100,
         });
       }
     }
