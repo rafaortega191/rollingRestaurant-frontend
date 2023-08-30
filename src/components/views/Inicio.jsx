@@ -4,7 +4,7 @@ import { consultaListaProductos } from "../helpers/queries";
 import { useEffect, useState } from "react";
 import CustomNav from "../common/CustomNav";
 import Footer from "../common/Footer";
-import "./paginaprincipal.css";
+import "./inicio.css";
 import Carousel from "react-bootstrap/Carousel";
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
