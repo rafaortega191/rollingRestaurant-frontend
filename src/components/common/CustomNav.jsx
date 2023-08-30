@@ -6,8 +6,7 @@ import logo from "../../assets/trace.svg";
 import Swal from "sweetalert2";
 import { AiOutlineShoppingCart, AiOutlineUser } from "react-icons/ai";
 
-const CustomNav = (props) => {
-  const { usuarioLogeado, setUsuarioLogeado } = props;
+const CustomNav = ({usuarioLogeado, setUsuarioLogeado}) => {
   const navegacion = useNavigate();
 
   const logout = async () => {
