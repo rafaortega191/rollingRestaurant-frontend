@@ -1,4 +1,4 @@
-import React,{useEffect,useState} from "react"
+import React, { useEffect, useState } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
@@ -11,36 +11,18 @@ import RutasDelAdmin from "./components/routes/RutasDelAdmin";
 import ProductoDetalles from "./components/views/pageDetalle";
 import Inicio from "./components/views/Inicio";
 import Pedidos from "./components/views/Pedidos";
-import FormularioDetalle from "./components/views/detalle/FormularioDetalle";
 import RutasDelUsuario from "./components/routes/RutasDelUsuario";
 
-
 function App() {
-  // const usuario = JSON.parse(sessionStorage.getItem("usuario")) || {};
-
 
   const [usuarioLogeado, setUsuarioLogeado] = useState(null);
 
- /*  useEffect(()=>{
-    
-    setUsuarioLogeado({
-      "email":"prueba2@gmail.com",
-      "password":"Prueba_123!",
-      "nombreUsuario":"Euge",
-      "es_admin":true})
-  },[]) */
-  
-
-  /*  useEffect(()=>{
-    
-    setUsuarioLogeado({
-      "email":"prueba2@gmail.com",
-      "password":"Prueba_123!",
-      "nombreUsuario":"Euge",
-      "es_admin":true})
-  },[]) */
-  
-
+  useEffect(() => {
+    const usuarioGuardado = JSON.parse(sessionStorage.getItem("usuario"));
+    if (usuarioGuardado) {
+      setUsuarioLogeado(usuarioGuardado);
+    }
+  }, []);
 
   const router = createBrowserRouter([
     {
@@ -55,15 +37,22 @@ function App() {
     },
     {
       path: "/login",
-      element: <Login usuarioLogeado={usuarioLogeado} setUsuarioLogeado={setUsuarioLogeado}></Login>,
+      element: (
+        <Login
+          usuarioLogeado={usuarioLogeado}
+          setUsuarioLogeado={setUsuarioLogeado}
+        ></Login>
+      ),
       errorElement: <ErrorPage />,
     },
     {
       path: "/",
-      element:  <Inicio
-      usuarioLogeado={usuarioLogeado}
-      setUsuarioLogeado={setUsuarioLogeado}
-    />,
+      element: (
+        <Inicio
+          usuarioLogeado={usuarioLogeado}
+          setUsuarioLogeado={setUsuarioLogeado}
+        />
+      ),
       errorElement: <ErrorPage />,
     },
     {
@@ -141,7 +130,6 @@ function App() {
       ),
       errorElement: <ErrorPage />,
     },
-    
   ]);
 
   return (
