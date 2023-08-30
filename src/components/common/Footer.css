@@ -1,14 +1,15 @@
 .footer-estilo {
-  background-color: #00796b;
+  background-color: #066253;
   font-family: "Prata", serif;
 }
 
 .titulo-footer:hover {
-  color: #ffeb65;
+  color: #ffebaf;
+  transition: 0.3s;
 }
 
 .h6-footer {
-  color: #c9a448;
+  color: #dccbb9;
 }
 
 .color {
@@ -16,5 +17,5 @@
 }
 
 .enlaces:hover {
-  color: #ffeb65;
+  color: #ffebaf;
 }

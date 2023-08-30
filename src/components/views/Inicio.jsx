@@ -14,12 +14,6 @@ const Inicio = ({ usuarioLogeado, setUsuarioLogeado }) => {
   useEffect(() => {
     consultaListaProductos().then((respuesta) => {
       setProductos(respuesta);
-      setUsuarioLogeado({
-        email: "prueba2@gmail.com",
-        password: "Prueba_123!",
-        nonbreusuario: "Euge",
-        es_admin: true,
-      });
     });
   }, []);
 
