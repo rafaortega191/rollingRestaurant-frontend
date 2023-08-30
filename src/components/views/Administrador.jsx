@@ -64,8 +64,8 @@ const Administrador = ({ usuarioLogeado, setUsuarioLogeado }) => {
               <th>Precio</th>
               <th>Categoria</th>
               <th>URL de Imagen</th>
-              <th>descripcion</th>
-              <th>disponible</th>
+              <th>Descripcion</th>
+              <th>Disponible</th>
             </tr>
           </thead>
           <tbody>
@@ -85,9 +85,9 @@ const Administrador = ({ usuarioLogeado, setUsuarioLogeado }) => {
           <thead>
             <tr>
               <th>Opciones</th>
-              <th>fecha</th>
-              <th>estado</th>
-              <th>usuario</th>
+              <th>Fecha</th>
+              <th>Estado</th>
+              <th>Usuario</th>
             </tr>
           </thead>
           <tbody>
@@ -108,7 +108,7 @@ const Administrador = ({ usuarioLogeado, setUsuarioLogeado }) => {
             <tr>
               <th>Opciones</th>
               <th>Email</th>
-              <th>Es Admin?</th>
+              <th>Administrador</th>
               <th>Nombre</th>
             </tr>
           </thead>
