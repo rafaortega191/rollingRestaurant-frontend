@@ -47,12 +47,12 @@ const CrearProducto = () => {
             {...register("nombreProducto", {
               required: "El nombre del producto es obligatorio",
               minLength: {
-                value: 2,
-                message: "La cantidad minima de caracteres es de 2 digitos",
+                value: 10,
+                message: "Se requieren al menos 10 caracteres.",
               },
               maxLength: {
-                value: 30,
-                message: "La cantidad maxima de caracteres es de 30 digitos",
+                value: 75,
+                message: "Se permite un máximo de 75 caracteres.",
               },
             })}
           />
@@ -68,8 +68,8 @@ const CrearProducto = () => {
             {...register("precio", {
               required: "El precio del producto es obligatorio",
               min: {
-                value: 1,
-                message: "El precio minimo es de $1",
+                value: 100,
+                message: "El precio minimo es de $100",
               },
               max: {
                 value: 10000,
@@ -85,16 +85,16 @@ const CrearProducto = () => {
           <Form.Label>Descripcion*</Form.Label>
           <Form.Control
             type="text"
-            placeholder="Ej: Fideos Blancos"
+            placeholder="Ej: Fideos con salsa"
             {...register("descripcion", {
-              required: "la descripcion del producto es obligatoria",
+              required: "La descripcion del producto es obligatoria",
               minLength: {
-                value: 2,
-                message: "La cantidad minima de caracteres es de 2 digitos",
+                value: 10,
+                message: "Se requieren al menos 10 caracteres.",
               },
               maxLength: {
-                value: 100,
-                message: "La cantidad maxima de caracteres es de 100 digitos",
+                value: 250,
+                message: "Se permite un máximo de 250 caracteres.",
               },
             })}
           />
@@ -123,10 +123,10 @@ const CrearProducto = () => {
             })}
           >
             <option value="">Seleccione una opcion</option>
-            <option value="con carne">con carne</option>
-            <option value="vegetariano">vegetariano</option>
-            <option value="sin tacc">sin tacc</option>
-            <option value="vegano">vegano</option>
+            <option value="sin tacc">Sin tacc</option>
+            <option value="vegetariano">Vegetariano</option>
+            <option value="vegano">Vegano</option>
+            <option value="con carne">Con carne</option>
           </Form.Select>
           <Form.Text className="text-danger">
             {errors.categoria?.message}
@@ -151,7 +151,7 @@ const CrearProducto = () => {
           Guardar
         </Button>
         <Link className="btn btn-danger mb-2 ms-2" to="/administrador">
-          Cancelar Carga del Producto
+          Cancelar la carga del producto
         </Link>
       </Form>
     </section>

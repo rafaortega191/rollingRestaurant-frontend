@@ -31,8 +31,8 @@ const CargarProducto = ({producto, setProductos}) => {
           }else{
             Swal.fire(
               'Ocurrio un error!',
-              `intente realizar esto mas tarde`,
-              'error'
+              `Intente realizar esto mas tarde`,
+              'Error'
             )
           }
         })
