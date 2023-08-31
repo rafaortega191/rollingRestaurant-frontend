@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Container } from "react-bootstrap";
+import 'bootstrap/dist/css/bootstrap.css';
 import Footer from "../common/Footer";
 import CustomNav from "../common/CustomNav";
 import { Link, useNavigate } from "react-router-dom";
@@ -113,7 +113,7 @@ const Pedidos = ({ usuarioLogeado, setUsuarioLogeado }) => {
         usuarioLogeado={usuarioLogeado}
         setUsuarioLogeado={setUsuarioLogeado}
       ></CustomNav>
-      <Container>
+      <section className="container">
         <h1 className="h1-titulo text-center m-4">Tus Pedidos</h1>
         <hr />
         <div className="row card-pedidos-container rounded-4">
@@ -156,7 +156,7 @@ const Pedidos = ({ usuarioLogeado, setUsuarioLogeado }) => {
             </div>
           ))}
         </div>
-        <div className="mt-5 pago-container rounded-3 d-flex flex-column align-items-center w-50 ">
+        <div className="mt-5 pago-container rounded-3 d-flex flex-column align-items-center w-50">
           <h4 className="text-center pago-texto">
             Precio Total: {calcularPrecioTotal()}
           </h4>
@@ -169,7 +169,7 @@ const Pedidos = ({ usuarioLogeado, setUsuarioLogeado }) => {
             Volver a inicio
           </Link>
         </div>
-      </Container>
+      </section>
 
       <Footer></Footer>
     </section>
