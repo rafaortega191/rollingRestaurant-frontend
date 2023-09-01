@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Col, Card } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
@@ -7,6 +7,19 @@ import "../inicio.css";
 const CardProducto = ({ user, producto }) => {
   const navigate = useNavigate();
   const [agregadoAlCarrito, setAgregadoAlCarrito] = useState(false);
+
+  useEffect(() => {
+    const productosSeleccionados =
+      JSON.parse(localStorage.getItem("productosSeleccionados")) || [];
+
+    const estaEnCarrito = productosSeleccionados.some(
+      (item) => item._id === producto._id
+    );
+
+    if (estaEnCarrito) {
+      setAgregadoAlCarrito(true);
+    }
+  }, [producto._id]);
 
   const handleComprarClick = () => {
     if (user === null) {
@@ -44,7 +57,7 @@ const CardProducto = ({ user, producto }) => {
           icon: "success",
           title: "Agregado al carrito",
           showConfirmButton: false,
-          timer: 1100,
+          timer: 1500,
         });
       }
     }
