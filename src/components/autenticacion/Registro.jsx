@@ -26,7 +26,7 @@ const Registro = ({usuarioLogeado,setUsuarioLogeado }) => {
         console.log(respuesta)
         sessionStorage.setItem(
           "usuario",
-          JSON.stringify(respuesta.nombreUsuario)
+          JSON.stringify(respuesta)
         );
         Swal.fire(
           "Bienvenido",
