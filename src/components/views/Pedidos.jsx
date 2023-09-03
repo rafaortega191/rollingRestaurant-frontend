@@ -50,7 +50,7 @@ const Pedidos = ({ usuarioLogeado, setUsuarioLogeado }) => {
   };
 
   const handleCompra = () => {
-    const nombreUsuario = sessionStorage.getItem("usuario");
+    const usuarioPrueba = JSON.parse(sessionStorage.getItem("usuario"));
     const fechaActual = format(new Date(), "yyyy-MM-dd");
     const pedidoId = uuidv4().replace(/-/g, "");
 
@@ -60,7 +60,7 @@ const Pedidos = ({ usuarioLogeado, setUsuarioLogeado }) => {
     const productosPendientes = {
       _id: pedidoId,
       fecha: fechaActual,
-      usuario: nombreUsuario,
+      usuario: usuarioPrueba.nombreUsuario,
       productos: productosLocalStorage.map((producto) => ({
         nombreProducto: producto.nombreProducto,
         cantidad: producto.cantidad,
