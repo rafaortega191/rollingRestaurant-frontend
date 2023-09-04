@@ -19,7 +19,7 @@ const CustomNav = ({usuarioLogeado, setUsuarioLogeado}) => {
         confirmButton: "swal2-confirm cerrar-sesion-confirm-button",
       },
     }).then((result) => {
-      /* Read more about isConfirmed, isDenied below */
+     
       if (result.isConfirmed) {
         Swal.fire("Cerraste Sesion", "", "success");
         setUsuarioLogeado(null);

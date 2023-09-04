@@ -11,7 +11,7 @@ import CustomNav from "../common/CustomNav.jsx";
 import Footer from "../common/Footer.jsx";
 import CargarUsuario from "./usuario/CargarUsuario";
 import CargarPedido from "./pedido/CargarPedido";
-import './administrador.css'
+import "./administrador.css";
 
 const Administrador = ({ usuarioLogeado, setUsuarioLogeado }) => {
   const [productos, setProductos] = useState([]);
@@ -19,30 +19,24 @@ const Administrador = ({ usuarioLogeado, setUsuarioLogeado }) => {
   const [usuarios, setUsuarios] = useState([]);
 
   useEffect(() => {
-    // Fetch and update the productos list
     consultaListaProductos().then((respuesta) => {
       setProductos(respuesta);
     });
   }, []);
 
   useEffect(() => {
-    // Fetch and update the productos list
     consultaListaPedidos().then((respuesta) => {
       setPedidos(respuesta);
     });
   }, []);
 
   useEffect(() => {
-    // Fetch and update the usuarios list
     consultaListaUsuarios().then((respuesta) => {
       setUsuarios(respuesta);
     });
   }, []);
 
   
-  
-
-  console.log(usuarios);
   return (
     <>
       <CustomNav
@@ -51,7 +45,10 @@ const Administrador = ({ usuarioLogeado, setUsuarioLogeado }) => {
       ></CustomNav>
       <section className="bg-light rounded-2 container-fluid text-truncate">
         <h1 className="display-4 mt-4">Productos disponibles</h1>
-        <Link className="btn btn-primary" to="/administrador/productos/crearproducto">
+        <Link
+          className="btn btn-primary"
+          to="/administrador/productos/crearproducto"
+        >
           Agregar nuevo producto al sistema
         </Link>
 

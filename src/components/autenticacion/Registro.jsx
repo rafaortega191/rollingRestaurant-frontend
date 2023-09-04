@@ -4,7 +4,6 @@ import Swal from "sweetalert2";
 import "./Registro.css";
 import { Form, Button, Container, Card } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
-import CustomNav from "../common/CustomNav.jsx";
 import Footer from "../common/Footer";
 import bcrypt from "bcryptjs";
 import logo from "../../assets/logoRecortado.png";
@@ -24,7 +23,7 @@ const Registro = ({ usuarioLogeado, setUsuarioLogeado }) => {
 
     signup(usuario).then((respuesta) => {
       if (respuesta && respuesta.status === 201) {
-        console.log(respuesta);
+        
         sessionStorage.setItem("usuario", JSON.stringify(respuesta));
         Swal.fire(
           "Bienvenido",

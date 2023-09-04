@@ -20,14 +20,13 @@ const CargarUsuario = ({ usuario, setUsuarios }) => {
     }).then((result) => {
       if (result.isConfirmed) {
         consultaBorrarUsuario(usuario._id).then((respuesta) => {
-          console.log(respuesta);
           if (respuesta.status === 200) {
             Swal.fire(
               "Usuario Eliminado!",
               `El ${usuario.nombre} fue eliminado correctamente`,
               "success"
             );
-            //actualizar la table de productos
+
             consultaListaUsuarios().then((respuesta) => setUsuarios(respuesta));
           } else {
             Swal.fire(
@@ -43,7 +42,6 @@ const CargarUsuario = ({ usuario, setUsuarios }) => {
 
   return (
     <tr>
-      {/* <td>{props.producto._id}</td> */}
       <td>
         <Link
           className="btn btn-warning"

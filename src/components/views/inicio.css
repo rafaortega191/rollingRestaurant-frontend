@@ -1,4 +1,4 @@
-/*Carrusel*/
+
 .contenedor-carrusel {
     display: flex;
     align-items: center;
@@ -29,7 +29,7 @@
     font-size: 70px;
 }
 
-/*Inicio*/
+
 .contenedor-inicio {
     margin: 0px 10ch 40px 10ch;
     padding: 20px 0ch 20px 0ch;
@@ -39,7 +39,7 @@
     border-radius: 10px;
 }
 
-/*Cards Principales*/
+
 .contenedor-cards-principales {
     margin: 0px 50px 0px 50px;
     display: flex;
@@ -82,7 +82,7 @@
     color: black
 }
 
-/*Buscador*/
+
 .titulo-buscador {
     font-family: "Cinzel Decorative", cursive;
     font-size: 45px;
@@ -100,7 +100,7 @@
     margin-top: 30px;
 }
 
-/*Contenedor del menu*/
+
 .contenedor-productos-menu {
     display: flex;
     flex-wrap: wrap;
@@ -109,7 +109,7 @@
 }
 
 
-/* Cards del menu */
+
 .card-productos {
     border: 3px solid #101c1c;
     background-color: #ffff;
@@ -167,7 +167,7 @@
     transition: background-color 0.3s; 
 }
 
-/*Botones carrito */
+
 .botones-carrito .swal2-confirm {
     background-color: #1c443d;
     border-color: #1c443d;
@@ -187,10 +187,10 @@
   background-color: #00796b; 
 }
 
-/*Dispositivo Chico*/
+
 @media all and (max-width: 576px) {
 
-    /*Carrusel*/
+   
     .contenedor-carrusel {
         display: flex;
         align-items: center;
@@ -220,14 +220,14 @@
         text-align: center;
     }
 
-    /*Inicio*/
+   
     .contenedor-inicio {
         margin: 10px 10px 10px 10px;
         background: #dccbb9;
         border-radius: 10px;
     }
 
-    /*Cards Principales*/
+   
     .contenedor-cards-principales {
         display: flex;
         flex-wrap: wrap;
@@ -272,7 +272,7 @@
     }
 
 
-    /*Buscador*/
+   
     .titulo-buscador {
         font-family: "Cinzel Decorative", cursive;
         font-size: 24px;
@@ -283,14 +283,14 @@
         font-size: 20px;
     }
 
-    /* Contenedor del menu */
+   
     .contenedor-productos-menu {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
     }
 
-    /* Cards del menu */
+   
     .card-productos {
         border: 3px solid #101c1c;
         background-color: #ffff;
@@ -349,10 +349,10 @@
 
 }
 
-/*Dispositivo Mediano*/
+
 @media all and (min-width: 577px) and (max-width: 991px) {
 
-    /*Carrusel*/
+   
     .contenedor-carrusel {
         display: flex;
         align-items: center;
@@ -400,14 +400,14 @@
         text-align: center;
     }
 
-    /*Inicio*/
+   
     .contenedor-inicio {
         margin: 20px 35px 20px 35px;
         background: #dccbb9;
         border-radius: 10px;
     }
 
-    /*Cards Principales*/
+   
     .contenedor-cards-principales {
         display: flex;
         flex-wrap: nowrap;
@@ -447,7 +447,7 @@
 
     }
 
-    /*Buscador*/
+   
     .titulo-buscador {
         font-family: "Cinzel Decorative", cursive;
         font-size: 28px;
@@ -458,7 +458,7 @@
         font-size: 24px;
     }
 
-    /* Contenedor del menu */
+   
     .contenedor-productos-menu {
         display: flex;
         flex-wrap: wrap;
@@ -466,7 +466,7 @@
         align-items: stretch;
     }
 
-    /* Cards del menu */
+   
     .card-productos {
         border: 3px solid #101c1c;
         background-color: #ffff;
@@ -478,14 +478,14 @@
 
     }
 
-    /* Contenido de la tarjeta */
+   
     .card-productos-contenido {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
     }
 
-    /* Imagen de la tarjeta */
+   
     .card-imagen {
         width: 100%;
         height: auto;
@@ -501,7 +501,7 @@
         height: 100%;
     }
 
-    /* Título de la tarjeta */
+   
     .card-productos-titulo {
         font-family: "Cinzel Decorative", cursive;
         font-size: 15px;
@@ -510,14 +510,14 @@
         color: black;
     }
 
-    /* Precio de la tarjeta */
+   
     .card-productos-precio {
         font-size: 13px;
         text-align: center;
         color: black;
     }
 
-    /* Botón de la tarjeta */
+   
     .card-productos-boton {
         margin-bottom: 3px;
         text-decoration: none;

@@ -19,10 +19,10 @@ const FormularioDetalle = ({ nombre_producto, id_producto }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log("Salsa seleccionada:", selectedSauce);
-    console.log("Cantidad:", quantity);
-    console.log("Producto en curso:", nombre_producto);
-    console.log("ID Producto en curso:", id_producto);
+    
+    
+    
+    
     //
   };
 

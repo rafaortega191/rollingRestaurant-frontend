@@ -1,5 +1,5 @@
 table {
-  width: 100%; /* changing to auto stops the truncation */
+  width: 100%;
   border-spacing: 5px;
 }
 

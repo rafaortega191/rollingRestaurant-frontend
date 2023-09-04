@@ -17,16 +17,16 @@ const CargarPedido = ({pedido, setPedidos}) => {
       cancelButtonText: 'Cancelar',
     }).then((result) => {
       if (result.isConfirmed) {
-        //borrar el pedido de la api
+        
         consultaBorrarPedido(pedido._id).then((respuesta)=>{
-          console.log(respuesta);
+          
           if(respuesta.status === 200){
             Swal.fire(
               'pedido Eliminado!',
               `El Pedido fue eliminado correctamente`,
               'success'
             );
-            //actualizar la table de pedidos
+            
             consultaListaPedidos().then((respuesta)=>setPedidos(respuesta))
           }else{
             Swal.fire(

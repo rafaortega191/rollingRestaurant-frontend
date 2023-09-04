@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import 'bootstrap/dist/css/bootstrap.css';
+import "bootstrap/dist/css/bootstrap.css";
 import Footer from "../common/Footer";
 import CustomNav from "../common/CustomNav";
 import { Link, useNavigate } from "react-router-dom";
@@ -14,7 +14,6 @@ const Pedidos = ({ usuarioLogeado, setUsuarioLogeado }) => {
   const navegacion = useNavigate();
 
   useEffect(() => {
-    // Obtener los productos seleccionados del Local Storage
     const productosJSON = localStorage.getItem("productosSeleccionados");
     const productos = JSON.parse(productosJSON) || [];
 
@@ -70,7 +69,7 @@ const Pedidos = ({ usuarioLogeado, setUsuarioLogeado }) => {
         descripcion: producto.descripcion,
       })),
       estado: "pendiente",
-      precioTotal: calcularPrecioTotal(productosLocalStorage), // Asegúrate de tener la función calcularPrecioTotal definida
+      precioTotal: calcularPrecioTotal(productosLocalStorage),
     };
 
     consultaAgregarPedido(productosPendientes).then((respuesta) => {
@@ -79,7 +78,6 @@ const Pedidos = ({ usuarioLogeado, setUsuarioLogeado }) => {
           sessionStorage.getItem("usuario") &&
           localStorage.getItem("productosSeleccionados")
         ) {
-          // Usuario loggeado y productos en el carrito
           Swal.fire(
             "¡Compra realizada!",
             "La compra se ha realizado exitosamente. Muchas Gracias.",
@@ -89,14 +87,12 @@ const Pedidos = ({ usuarioLogeado, setUsuarioLogeado }) => {
           localStorage.removeItem("productosSeleccionados");
           navegacion("/");
         } else if (!sessionStorage.getItem("usuario")) {
-          // Usuario no loggeado
           Swal.fire(
             "¡Error!",
             "Debes iniciar sesión para realizar una compra.",
             "error"
           );
         } else {
-          // Usuario loggeado pero sin productos en el carrito
           Swal.fire(
             "¡Error!",
             "Tu carrito está vacío. Agrega productos antes de realizar una compra.",
@@ -170,10 +166,9 @@ const Pedidos = ({ usuarioLogeado, setUsuarioLogeado }) => {
           </Link>
         </div>
       </section>
-<section className="contenedor-footer">
-
-      <Footer></Footer>
-</section>
+      <section className="contenedor-footer">
+        <Footer></Footer>
+      </section>
     </section>
   );
 };

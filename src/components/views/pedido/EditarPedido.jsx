@@ -36,7 +36,7 @@ const EditarPedido = () => {
   }, []);
 
   const onSubmit = (pedidoEditado) => {
-    console.log(pedidoEditado);
+    
     consultaEditarPedido(pedidoEditado, id).then((respuesta) => {
       if (respuesta && respuesta.status === 200) {
         Swal.fire(

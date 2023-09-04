@@ -35,7 +35,7 @@
   background-color: #066253;
 }
 
-/*Dispositivo Chico*/
+
 @media all and (max-width: 576px) {
   .logo {
     display: none;
@@ -52,7 +52,7 @@
   }
 }
 
-/*Dispositivo Mediano*/
+
 @media all and (min-width: 577px) and (max-width: 991px) {
   .container-nav {
     display: flex;

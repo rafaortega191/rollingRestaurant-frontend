@@ -31,7 +31,7 @@ const EditarProducto = () => {
   }, [])
 
   const onSubmit = (productoEditado) => {
-    console.log(productoEditado);
+    
    consultaEditarProducto(productoEditado,id).then((respuesta)=>{
     if(respuesta && respuesta.status === 200){
       Swal.fire('Producto editado', `El producto ${productoEditado.nombreProducto} fue editado correctamente`, 'success');

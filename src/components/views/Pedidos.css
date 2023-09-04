@@ -1,18 +1,17 @@
 body {
-  font-family: 'Prata', serif;
+  font-family: "Prata", serif;
 }
-
 
 .card-pedidos-container {
   background-color: #dccbb9;
 }
 
 .pago-container {
-background-color: #dccbb9;
+  background-color: #dccbb9;
 }
 
-.pago-texto{
-  font-family: 'Prata', serif;
+.pago-texto {
+  font-family: "Prata", serif;
   padding-top: 15px;
 }
 
@@ -23,9 +22,8 @@ background-color: #dccbb9;
 }
 
 .contenedor-footer {
-    margin-top: auto;
+  margin-top: auto;
 }
-
 
 @media all and (min-width: 577px) and (max-width: 991px) {
   .card-container {
@@ -33,7 +31,5 @@ background-color: #dccbb9;
   }
 }
 
-/*Grandes*/
 @media all and (min-width: 991px) {
-  
 }

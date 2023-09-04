@@ -29,7 +29,7 @@ const EditarUsuario = () => {
   }, [])
 
   const onSubmit = (usuarioEditado) => {
-    console.log(usuarioEditado);
+    
    consultaEditarUsuario(usuarioEditado, id).then((respuesta)=>{
     if(respuesta && respuesta.status === 200){
       Swal.fire('Usuario editado', `El usuario ${usuarioEditado.nombre} fue editado correctamente`, 'success');
