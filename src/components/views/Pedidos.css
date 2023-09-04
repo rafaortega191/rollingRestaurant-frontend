@@ -16,7 +16,15 @@ background-color: #dccbb9;
   padding-top: 15px;
 }
 
+.contenedor-principal {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
+.contenedor-footer {
+    margin-top: auto;
+}
 
 
 @media all and (min-width: 577px) and (max-width: 991px) {

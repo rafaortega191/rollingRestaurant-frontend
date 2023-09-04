@@ -41,6 +41,17 @@ input[type="password"] {
   border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
+.contenedor {
+  position: relative; /* Establece el contenedor como posición relativa */
+  width: 500px; /* Ajusta el ancho según tus necesidades */
+  height: 300px; /* Ajusta la altura según tus necesidades */
+}
+
+.bordeLogo{
+  background-color: #205249;
+}
+
+
 
 /* Estilos para el formulario en pantallas grandes */
 @media (min-width: 768px) {
@@ -48,6 +59,14 @@ input[type="password"] {
   .mainSection {
     height: auto;
     width: 50%;
+  }
+
+  .tituloPagina {
+    color: #ffebaf;
+    font-family: "Cinzel Decorative", cursive;
+    font-size: 20px; /* Ajusta el tamaño de la fuente según tus preferencias */
+    -webkit-text-stroke: 0.5px black; /* Borde negro de 1 píxel */
+    
   }
 
 }
@@ -58,6 +77,14 @@ input[type="password"] {
   .mainSection {
     height: auto;
     width: 100%;
+  }
+
+  .tituloPagina {
+    color: #ffebaf;
+    font-family: "Cinzel Decorative", cursive;
+    font-size: 20px; /* Ajusta el tamaño de la fuente según tus preferencias */
+    -webkit-text-stroke: 0.5px black; /* Borde negro de 1 píxel */
+    
   }
 
 }

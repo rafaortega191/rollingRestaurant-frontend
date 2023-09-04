@@ -3,14 +3,11 @@ import { login } from "../../helpers/queries";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import "./Login.css";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import CustomNav from "../common/CustomNav.jsx";
 import Footer from "../common/Footer.jsx";
 
-
-
-
-const Login = ({usuarioLogeado,setUsuarioLogeado }) => {
+const Login = ({ usuarioLogeado, setUsuarioLogeado }) => {
   const {
     register,
     handleSubmit,
@@ -24,10 +21,7 @@ const Login = ({usuarioLogeado,setUsuarioLogeado }) => {
     login(usuario).then((respuesta) => {
       console.log(respuesta);
       if (respuesta && respuesta.status === 200) {
-        sessionStorage.setItem(
-          "usuario",
-          JSON.stringify(respuesta)
-        );
+        sessionStorage.setItem("usuario", JSON.stringify(respuesta));
         Swal.fire(
           "Bienvenido",
           `${respuesta.nombreUsuario} iniciaste sesion correctamente`,
@@ -48,7 +42,10 @@ const Login = ({usuarioLogeado,setUsuarioLogeado }) => {
 
   return (
     <>
-      <CustomNav usuarioLogeado={usuarioLogeado} setUsuarioLogeado={setUsuarioLogeado}></CustomNav>
+      <CustomNav
+        usuarioLogeado={usuarioLogeado}
+        setUsuarioLogeado={setUsuarioLogeado}
+      ></CustomNav>
       <Container className="mainSection d-block align-items-center justify-content-center p-3 my-5">
         <Card className="my-5">
           <Card.Header className="text-center titulo py-3" as="h3">
@@ -84,7 +81,7 @@ const Login = ({usuarioLogeado,setUsuarioLogeado }) => {
                   {...register("password", {
                     required: "La contraseña es un dato obligatorio",
                     pattern: {
-                      value: /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,100}$/                      ,
+                      value: /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,100}$/,
                       message:
                         "La contraseña debe tener por lo menos 8 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula.",
                     },
@@ -96,8 +93,11 @@ const Login = ({usuarioLogeado,setUsuarioLogeado }) => {
                   {errors.password?.message}
                 </Form.Text>
               </Form.Group>
-              <div className="d-flex justify-content-center">
-                <Button className="botonIngresar px-3 my-3" type="submit">
+              <div className="d-flex justify-content-center row">
+                <p>
+                  No tienes cuenta? <Link to="/registro">Registrate Gratis</Link>.
+                </p>
+                <Button className="botonIngresar px-3 my-3 w-50" type="submit">
                   Ingresar
                 </Button>
               </div>
