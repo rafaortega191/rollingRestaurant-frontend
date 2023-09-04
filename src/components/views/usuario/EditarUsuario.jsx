@@ -29,7 +29,7 @@ const EditarUsuario = () => {
   }, [])
 
   const onSubmit = (usuarioEditado) => {
-    console.log(usuarioEditado);
+    
    consultaEditarUsuario(usuarioEditado, id).then((respuesta)=>{
     if(respuesta && respuesta.status === 200){
       Swal.fire('Usuario editado', `El usuario ${usuarioEditado.nombre} fue editado correctamente`, 'success');
@@ -91,7 +91,7 @@ const EditarUsuario = () => {
           <Form.Label>Es Admin?*</Form.Label>
           <Form.Select
             {...register("es_admin", {
-              required: "La disponibilidad es obligatoria",
+              required: "Seleccionar un valor es obligatorio",
             })}
           >
             <option value="">Seleccione una opcion</option>

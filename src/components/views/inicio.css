@@ -1,0 +1,536 @@
+
+.contenedor-carrusel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 40px 8ch 40px 8ch;
+    font-family: "Cinzel Decorative", cursive;
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        display: none;
+    }
+
+    .carousel-indicators {
+        display: none;
+    }
+}
+
+.imagenes-carrusel {
+    align-items: center;
+    justify-content: center;
+    max-height: 35ch;
+    width: 100%;
+    object-fit: cover;
+}
+
+.titulo-carrusel {
+    text-shadow: 2px 2px 2px black;
+    font-size: 70px;
+}
+
+
+.contenedor-inicio {
+    margin: 0px 10ch 40px 10ch;
+    padding: 20px 0ch 20px 0ch;
+    position: relative;
+    isolation: isolate;
+    background: #dccbb9;
+    border-radius: 10px;
+}
+
+
+.contenedor-cards-principales {
+    margin: 0px 50px 0px 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: stretch;
+}
+
+.cards-principales {
+    font-family: "Prata", serif;
+    font-size: 15px;
+    margin-left: 12px;
+    margin-right: 12px;
+    margin-bottom: 20px;
+    border: 3px solid #1c443d;
+    width: 25rem;
+}
+
+.cards-links {
+    text-decoration: none;
+}
+
+.imagenes-cards-principales {
+    width: 100%;
+}
+
+.titulos-cards-principales {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-family: "Cinzel Decorative", cursive;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    color: black
+}
+
+.subtitulos-cards-principales {
+    font-size: 18px;
+    text-align: center;
+    color: black
+}
+
+
+.titulo-buscador {
+    font-family: "Cinzel Decorative", cursive;
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.contenedor-productos {
+    padding: 3ch 6ch 0ch 6ch;
+}
+
+.subtitulos-principal {
+    font-family: "Cinzel Decorative", cursive;
+    font-size: 40px;
+    margin-bottom: 15px;
+    margin-top: 30px;
+}
+
+
+.contenedor-productos-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: stretch;
+}
+
+
+
+.card-productos {
+    border: 3px solid #101c1c;
+    background-color: #ffff;
+    margin: 10px;
+    text-align: center;
+    flex: 1;
+    height: 650px;
+    overflow: hidden;
+}
+
+
+.card-imagen {
+    justify-content: center;
+    align-items: center;
+    max-height: 430px;
+}
+
+.card-productos-body {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100%;
+
+}
+
+
+
+.card-productos-precio {
+    font-size: 18px;
+    padding-left: 8px;
+    text-align: start;
+    color: black
+}
+
+.card-productos-boton {
+    margin-bottom: 2px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #1c443d;
+    border-radius: 5px;
+    padding: 4px;
+    border-color: #1c443d;
+    width: 100%;
+}
+
+.card-productos-boton:hover {
+    color: #ffffff;
+    background-color: #00796b;
+    transition: background-color 0.3s; 
+}
+
+
+.botones-carrito .swal2-confirm {
+    background-color: #1c443d;
+    border-color: #1c443d;
+    color: #fff;
+    transition: background-color 0.3s; 
+}
+
+.botones-carrito .swal2-cancel {
+    background-color: #1c443d;
+    border-color: #1c443d;
+    color: #fff;
+    transition: background-color 0.3s; 
+   
+}
+.botones-carrito .swal2-confirm:hover,
+.botones-carrito .swal2-cancel:hover {
+  background-color: #00796b; 
+}
+
+
+@media all and (max-width: 576px) {
+
+   
+    .contenedor-carrusel {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 10px 10px 10px 10px;
+        font-family: "Cinzel Decorative", cursive;
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            display: none;
+        }
+
+        .carousel-indicators {
+            display: none;
+        }
+    }
+
+    .imagenes-carrusel {
+        max-height: 15ch;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .titulo-carrusel {
+        text-shadow: 2px 2px 2px black;
+        font-size: 35px;
+        text-align: center;
+    }
+
+   
+    .contenedor-inicio {
+        margin: 10px 10px 10px 10px;
+        background: #dccbb9;
+        border-radius: 10px;
+    }
+
+   
+    .contenedor-cards-principales {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .imagenes-cards-principales {
+        display: none;
+    }
+
+    .cards-principales {
+        font-family: "Prata", serif;
+        font-size: 15px;
+        margin-bottom: 15px;
+        border: 3px solid #000000;
+    }
+
+
+    .contenedor-productos {
+        text-align: center;
+        padding: 3ch 2ch 0ch 2ch;
+
+    }
+
+    .titulos-cards-principales {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        font-family: "Cinzel Decorative", cursive;
+        font-size: 20px;
+        font-weight: 800;
+        text-align: center;
+        color: black
+    }
+
+    .subtitulos-cards-principales {
+        font-size: 18px;
+        text-align: center;
+        color: black
+    }
+
+
+   
+    .titulo-buscador {
+        font-family: "Cinzel Decorative", cursive;
+        font-size: 24px;
+    }
+
+    .subtitulos-principal {
+        text-align: center;
+        font-size: 20px;
+    }
+
+   
+    .contenedor-productos-menu {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+   
+    .card-productos {
+        border: 3px solid #101c1c;
+        background-color: #ffff;
+        flex: 1;
+        flex-basis: calc(33.33% - 20px);
+        margin: 10px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    .card-imagen {
+        max-height: 550px;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .card-productos-body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+    }
+
+    .card-productos-titulo {
+        margin-top: 2px;
+        margin-bottom: 2px;
+        font-family: "Cinzel Decorative", cursive;
+        font-size: 20px;
+        font-weight: 600;
+        text-align: center;
+        color: black;
+    }
+
+    .card-productos-precio {
+        font-size: 16px;
+        padding-left: 5px;
+        text-align: start;
+        color: black;
+    }
+
+    .card-productos-boton {
+        margin: 3px;
+        text-decoration: none;
+        justify-content: center;
+        align-items: center;
+        font-size: 17px;
+        color: #ffffff;
+        background-color: #1c443d;
+        border-radius: 5px;
+        padding: 6px;
+        border-color: #1c443d;
+    }
+
+}
+
+
+@media all and (min-width: 577px) and (max-width: 991px) {
+
+   
+    .contenedor-carrusel {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 20px 35px 20px 35px;
+        font-family: "Cinzel Decorative", cursive;
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            display: none;
+        }
+
+        .carousel-indicators {
+            display: none;
+        }
+    }
+
+    .imagenes-carrusel {
+        max-height: 18ch;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .titulo-carrusel {
+        text-shadow: 2px 2px 2px black;
+        font-size: 50px;
+        text-align: center;
+    }
+
+
+    .carousel-principal {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 20px;
+    }
+
+    .imagenes-carousel-principal {
+        max-height: 35ch;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .carousel-titulo-principal {
+        text-align: center;
+    }
+
+   
+    .contenedor-inicio {
+        margin: 20px 35px 20px 35px;
+        background: #dccbb9;
+        border-radius: 10px;
+    }
+
+   
+    .contenedor-cards-principales {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
+        align-items: stretch;
+        margin: 0px 5px 0px 5px;
+    }
+
+    .imagenes-cards-principales {
+        display: none;
+    }
+
+    .cards-principales {
+        font-family: "Prata", serif;
+        margin-bottom: 10px;
+        border: 3px solid #000000;
+    }
+
+    .titulos-cards-principales {
+        margin-bottom: 10px;
+        font-family: "Cinzel Decorative", cursive;
+        font-size: 20px;
+        font-weight: 800;
+        text-align: center;
+        color: black
+    }
+
+    .subtitulos-cards-principales {
+        font-size: 15px;
+        text-align: center;
+        color: black
+    }
+
+    .contenedor-productos {
+        text-align: center;
+        padding: 2ch 3ch 0ch 3ch;
+
+    }
+
+   
+    .titulo-buscador {
+        font-family: "Cinzel Decorative", cursive;
+        font-size: 28px;
+    }
+
+    .subtitulos-principal {
+        text-align: center;
+        font-size: 24px;
+    }
+
+   
+    .contenedor-productos-menu {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: start;
+        align-items: stretch;
+    }
+
+   
+    .card-productos {
+        border: 3px solid #101c1c;
+        background-color: #ffff;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        min-width: 150px;
+        flex: 1;
+
+    }
+
+   
+    .card-productos-contenido {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+   
+    .card-imagen {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        max-height: 18ch;
+    }
+
+    .card-productos-body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+    }
+
+   
+    .card-productos-titulo {
+        font-family: "Cinzel Decorative", cursive;
+        font-size: 15px;
+        font-weight: 600;
+        text-align: center;
+        color: black;
+    }
+
+   
+    .card-productos-precio {
+        font-size: 13px;
+        text-align: center;
+        color: black;
+    }
+
+   
+    .card-productos-boton {
+        margin-bottom: 3px;
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 12px;
+        color: #ffffff;
+        background-color: #1c443d;
+        border-radius: 5px;
+        padding: 4px;
+        border-color: #1c443d;
+        width: 100%;
+    }
+
+}

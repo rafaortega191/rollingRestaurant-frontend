@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
@@ -5,56 +6,66 @@ import Acercadenosotros from "./components/views/Acercadenosotros";
 import Administrador from "./components/views/Administrador";
 import Login from "./components/autenticacion/Login.jsx";
 import Registro from "./components/autenticacion/Registro.jsx";
-import { useState } from "react";
 import ErrorPage from "./components/views/Error404";
 import RutasDelAdmin from "./components/routes/RutasDelAdmin";
 import ProductoDetalles from "./components/views/pageDetalle";
 import Inicio from "./components/views/Inicio";
 import Pedidos from "./components/views/Pedidos";
-import FormularioDetalle from "./components/views/detalle/FormularioDetalle";
 import RutasDelUsuario from "./components/routes/RutasDelUsuario";
 
-
 function App() {
-  // const usuario = JSON.parse(sessionStorage.getItem("usuario")) || {};
 
-  const [usuarioLogueado, setUsuarioLogueado] = useState({});
+  const [usuarioLogeado, setUsuarioLogeado] = useState(null);
+
+  useEffect(() => {
+    const usuarioGuardado = JSON.parse(sessionStorage.getItem("usuario"));
+    if (usuarioGuardado) {
+      setUsuarioLogeado(usuarioGuardado);
+    }
+  }, []);
 
   const router = createBrowserRouter([
     {
       path: "/administrador",
       element: (
         <Administrador
-          usuarioLogeado={usuarioLogueado}
-          setUsuarioLogueado={setUsuarioLogueado}
+          usuarioLogeado={usuarioLogeado}
+          setUsuarioLogeado={setUsuarioLogeado}
         />
       ),
       errorElement: <ErrorPage />,
     },
     {
       path: "/login",
-      element: <Login setUsuarioLogueado={setUsuarioLogueado}></Login>,
+      element: (
+        <Login
+          usuarioLogeado={usuarioLogeado}
+          setUsuarioLogeado={setUsuarioLogeado}
+        ></Login>
+      ),
       errorElement: <ErrorPage />,
     },
     {
       path: "/",
-      element:  <Inicio
-      usuarioLogeado={usuarioLogueado}
-      setUsuarioLogueado={setUsuarioLogueado}
-    />,
+      element: (
+        <Inicio
+          usuarioLogeado={usuarioLogeado}
+          setUsuarioLogeado={setUsuarioLogeado}
+        />
+      ),
       errorElement: <ErrorPage />,
     },
     {
       path: "/registro",
-      element: <Registro setUsuarioLogueado={setUsuarioLogueado} />,
+      element: <Registro setUsuarioLogeado={setUsuarioLogeado} />,
       errorElement: <ErrorPage />,
     },
     {
       path: "/administrador/productos/*",
       element: (
         <RutasDelAdmin
-          usuarioLogeado={usuarioLogueado}
-          setUsuarioLogueado={setUsuarioLogueado}
+          usuarioLogeado={usuarioLogeado}
+          setUsuarioLogeado={setUsuarioLogeado}
         />
       ),
       errorElement: <ErrorPage />,
@@ -63,8 +74,8 @@ function App() {
       path: "/administrador/usuarios/*",
       element: (
         <RutasDelUsuario
-          usuarioLogeado={usuarioLogueado}
-          setUsuarioLogueado={setUsuarioLogueado}
+          usuarioLogeado={usuarioLogeado}
+          setUsuarioLogeado={setUsuarioLogeado}
         />
       ),
       errorElement: <ErrorPage />,
@@ -73,8 +84,8 @@ function App() {
       path: "/acercadenosotros",
       element: (
         <Acercadenosotros
-          usuarioLogeado={usuarioLogueado}
-          setUsuarioLogueado={setUsuarioLogueado}
+          usuarioLogeado={usuarioLogeado}
+          setUsuarioLogeado={setUsuarioLogeado}
         />
       ),
       errorElement: <ErrorPage />,
@@ -83,8 +94,8 @@ function App() {
       path: "/detalles/:id",
       element: (
         <ProductoDetalles
-          usuarioLogeado={usuarioLogueado}
-          setUsuarioLogueado={setUsuarioLogueado}
+          usuarioLogeado={usuarioLogeado}
+          setUsuarioLogeado={setUsuarioLogeado}
         />
       ),
       errorElement: <ErrorPage />,
@@ -93,8 +104,8 @@ function App() {
       path: "/pedidos",
       element: (
         <Pedidos
-          usuarioLogeado={usuarioLogueado}
-          setUsuarioLogueado={setUsuarioLogueado}
+          usuarioLogeado={usuarioLogeado}
+          setUsuarioLogeado={setUsuarioLogeado}
         />
       ),
       errorElement: <ErrorPage />,
@@ -103,8 +114,8 @@ function App() {
       path: "/pedidos/:id",
       element: (
         <Pedidos
-          usuarioLogeado={usuarioLogueado}
-          setUsuarioLogueado={setUsuarioLogueado}
+          usuarioLogeado={usuarioLogeado}
+          setUsuarioLogeado={setUsuarioLogeado}
         />
       ),
       errorElement: <ErrorPage />,
@@ -113,13 +124,12 @@ function App() {
       path: "/",
       element: (
         <Inicio
-          usuarioLogeado={usuarioLogueado}
-          setUsuarioLogueado={setUsuarioLogueado}
+          usuarioLogeado={usuarioLogeado}
+          setUsuarioLogeado={setUsuarioLogeado}
         />
       ),
       errorElement: <ErrorPage />,
     },
-    
   ]);
 
   return (

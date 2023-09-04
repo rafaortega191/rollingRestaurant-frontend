@@ -31,7 +31,7 @@ const EditarProducto = () => {
   }, [])
 
   const onSubmit = (productoEditado) => {
-    console.log(productoEditado);
+    
    consultaEditarProducto(productoEditado,id).then((respuesta)=>{
     if(respuesta && respuesta.status === 200){
       Swal.fire('Producto editado', `El producto ${productoEditado.nombreProducto} fue editado correctamente`, 'success');
@@ -51,16 +51,16 @@ const EditarProducto = () => {
           <Form.Label>Producto*</Form.Label>
           <Form.Control
             type="text"
-            placeholder="Ej: Cafe"
+            placeholder="Ej: Fideos con salsa"
             {...register("nombreProducto", {
               required: "El nombre del producto es obligatorio",
               minLength: {
-                value: 2,
-                message: "La cantidad minima de caracteres es de 2 digitos",
+                value: 10,
+                message: "Se requieren al menos 10 caracteres.",
               },
               maxLength: {
-                value: 100,
-                message: "La cantidad minima de caracteres es de 2 digitos",
+                value: 75,
+                message: "Se permite un máximo de 75 caracteres..",
               },
             })}
           />
@@ -72,12 +72,12 @@ const EditarProducto = () => {
           <Form.Label>Precio*</Form.Label>
           <Form.Control
             type="number"
-            placeholder="Ej: 50"
+            placeholder="Ej: 1500"
             {...register("precio", {
               required: "El precio del producto es obligatorio",
               min: {
-                value: 1,
-                message: "El precio minimo es de $1",
+                value: 100,
+                message: "El precio minimo es de $100",
               },
               max: {
                 value: 10000,
@@ -97,12 +97,12 @@ const EditarProducto = () => {
             {...register("descripcion", {
               required: "la descripcion del producto es obligatoria",
               minLength: {
-                value: 2,
-                message: "La cantidad minima de caracteres es de 2 digitos",
+                value: 10,
+                message: "Se requieren al menos 10 caracteres.",
               },
               maxLength: {
-                value: 300,
-                message: "La cantidad maxima de caracteres es de 2 digitos",
+                value: 250,
+                message: "Se permite un máximo de 250 caracteres.",
               },
             })}
           />
@@ -131,10 +131,10 @@ const EditarProducto = () => {
             })}
           >
             <option value="">Seleccione una opcion</option>
-            <option value="con carne">con carne</option>
-            <option value="vegetariano">vegetariano</option>
-            <option value="sin tacc">sin tacc</option>
-            <option value="vegano">vegano</option>
+            <option value="sin tacc">Sin tacc</option>
+            <option value="vegetariano">Vegetariano</option>
+            <option value="vegano">Vegano</option>
+            <option value="con carne">Con carne</option>
           </Form.Select>
           <Form.Text className="text-danger">
             {errors.categoria?.message}

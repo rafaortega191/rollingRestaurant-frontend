@@ -28,7 +28,7 @@
   border: none;
 }
 .botonesIconos:hover {
-  background-color: #a08070; /* Cambia el color de fondo al hacer hover */
+  background-color: #a08070;
   color: #fff;
 }
 
@@ -41,8 +41,19 @@ input[type="password"] {
   border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
+.contenedor {
+  position: relative;
+  width: 500px;
+  height: 300px;
+}
 
-/* Estilos para el formulario en pantallas grandes */
+.bordeLogo{
+  background-color: #205249;
+}
+
+
+
+
 @media (min-width: 768px) {
 
   .mainSection {
@@ -50,14 +61,30 @@ input[type="password"] {
     width: 50%;
   }
 
+  .tituloPagina {
+    color: #ffebaf;
+    font-family: "Cinzel Decorative", cursive;
+    font-size: 20px;
+    -webkit-text-stroke: 0.5px black;
+    
+  }
+
 }
 
-/* Estilos para el formulario en pantallas pequeñas */
+
 @media (max-width: 767px) {
 
   .mainSection {
     height: auto;
     width: 100%;
+  }
+
+  .tituloPagina {
+    color: #ffebaf;
+    font-family: "Cinzel Decorative", cursive;
+    font-size: 20px;
+    -webkit-text-stroke: 0.5px black;
+    
   }
 
 }

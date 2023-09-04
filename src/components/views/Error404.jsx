@@ -1,4 +1,4 @@
-import { Form, Button, Container, Card } from "react-bootstrap";
+import { Button, Container, Card } from "react-bootstrap";
 import error from "../../assets/fondoError.jpg";
 import "./errorPage.css";
 

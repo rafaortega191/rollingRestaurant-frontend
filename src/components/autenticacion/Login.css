@@ -30,7 +30,7 @@ body {
   border: none;
 }
 .botonesIconos:hover {
-  background-color: #a08070; /* Cambia el color de fondo al hacer hover */
+  background-color: #a08070;
   color: #fff;
 }
 
@@ -42,7 +42,7 @@ input[type="password"] {
   border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-/* Estilos para el formulario en pantallas grandes */
+
 @media (min-width: 768px) {
 
   .mainSection {
@@ -52,7 +52,7 @@ input[type="password"] {
 
 }
 
-/* Estilos para el formulario en pantallas pequeñas */
+
 @media (max-width: 767px) {
 
   .mainSection {

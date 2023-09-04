@@ -1,157 +1,174 @@
 import React, { useEffect, useState } from "react";
-import { Container, Card, Row, Col } from "react-bootstrap";
-import { consultaProducto } from "../helpers/queries";
-import { Link, useNavigate, useParams } from "react-router-dom";
-import Swal from "sweetalert2";
-import { consultaAgregarPedido } from "../helpers/queries";
+import "bootstrap/dist/css/bootstrap.css";
+import Footer from "../common/Footer";
+import CustomNav from "../common/CustomNav";
+import { Link, useNavigate } from "react-router-dom";
 import { format } from "date-fns";
-import { v4 as uuidv4 } from "uuid"; // Importar la función uuidv4 de la biblioteca uuid
-import CustomNav from "../common/CustomNav.jsx";
-import Footer from "../common/Footer.jsx";
+import { v4 as uuidv4 } from "uuid";
+import { consultaAgregarPedido } from "../helpers/queries";
+import Swal from "sweetalert2";
+import "./Pedidos.css";
 
-const Pedidos = ({ usuarioLogeado, setUsuarioLogueado }) => {
-  const { id } = useParams();
-  const [producto, setProducto] = useState({});
-  const [cantidad, setCantidad] = useState(1); // Estado para almacenar la cantidad seleccionada
+const Pedidos = ({ usuarioLogeado, setUsuarioLogeado }) => {
+  const [productosSeleccionados, setProductosSeleccionados] = useState([]);
   const navegacion = useNavigate();
 
   useEffect(() => {
-    // Leer los datos del producto almacenados en el localStorage con la clave "productoSeleccionado"
-    const productoJSON = localStorage.getItem("productoSeleccionado");
-    if (productoJSON) {
-      // Si se encontraron datos en el sessionStorage, convertir la cadena JSON en un objeto y asignarlos al estado
-      const productoSeleccionado = JSON.parse(productoJSON);
-      setProducto(productoSeleccionado);
-    } else {
-      // Si no se encontraron datos en el sessionStorage, obtener los datos del producto mediante la consulta
-      consultaProducto(id).then((respuesta) => {
-        if (respuesta) {
-          console.log(respuesta);
-          setProducto(respuesta);
+    const productosJSON = localStorage.getItem("productosSeleccionados");
+    const productos = JSON.parse(productosJSON) || [];
+
+    setProductosSeleccionados(productos);
+  }, []);
+
+  const handleEliminarClick = (indice) => {
+    const nuevosProductos = [...productosSeleccionados];
+    nuevosProductos.splice(indice, 1);
+    setProductosSeleccionados(nuevosProductos);
+    localStorage.setItem(
+      "productosSeleccionados",
+      JSON.stringify(nuevosProductos)
+    );
+  };
+
+  const handleCantidadChange = (indice, cantidad) => {
+    const nuevosProductos = [...productosSeleccionados];
+    nuevosProductos[indice].cantidad = cantidad;
+    setProductosSeleccionados(nuevosProductos);
+    localStorage.setItem(
+      "productosSeleccionados",
+      JSON.stringify(nuevosProductos)
+    );
+  };
+
+  const calcularPrecioTotal = () => {
+    let total = 0;
+    productosSeleccionados.forEach((producto) => {
+      total += producto.precio * (producto.cantidad || 1);
+    });
+    return total;
+  };
+
+  const handleCompra = () => {
+    const usuarioPrueba = JSON.parse(sessionStorage.getItem("usuario"));
+    const fechaActual = format(new Date(), "yyyy-MM-dd");
+    const pedidoId = uuidv4().replace(/-/g, "");
+
+    const productosLocalStorage =
+      JSON.parse(localStorage.getItem("productosSeleccionados")) || [];
+
+    const productosPendientes = {
+      _id: pedidoId,
+      fecha: fechaActual,
+      usuario: usuarioPrueba.nombreUsuario,
+      productos: productosLocalStorage.map((producto) => ({
+        nombreProducto: producto.nombreProducto,
+        cantidad: producto.cantidad,
+        precio: producto.precio,
+        imagen: producto.imagen,
+        categoria: producto.categoria,
+        descripcion: producto.descripcion,
+      })),
+      estado: "pendiente",
+      precioTotal: calcularPrecioTotal(productosLocalStorage),
+    };
+
+    consultaAgregarPedido(productosPendientes).then((respuesta) => {
+      if (respuesta) {
+        if (
+          sessionStorage.getItem("usuario") &&
+          localStorage.getItem("productosSeleccionados")
+        ) {
+          Swal.fire(
+            "¡Compra realizada!",
+            "La compra se ha realizado exitosamente. Muchas Gracias.",
+            "success"
+          );
+
+          localStorage.removeItem("productosSeleccionados");
+          navegacion("/");
+        } else if (!sessionStorage.getItem("usuario")) {
+          Swal.fire(
+            "¡Error!",
+            "Debes iniciar sesión para realizar una compra.",
+            "error"
+          );
         } else {
           Swal.fire(
-            "Ocurrió un error",
-            "Intente esta operación en unos minutos",
+            "¡Error!",
+            "Tu carrito está vacío. Agrega productos antes de realizar una compra.",
             "error"
           );
         }
-      });
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  const handleCompra = () => {
-    // Leer el nombre del usuario almacenado en el sessionStorage con la clave "nombreUsuario"
-    const nombreUsuario = sessionStorage.getItem("usuario");
-
-    // Obtener la fecha actual en formato argentino
-    const fechaActual = format(new Date(), "dd/MM/yyyy");
-
-    // Generar un ID aleatorio único para el pedido usando la función uuidv4 y eliminar los guiones
-    const pedidoId = uuidv4().replace(/-/g, '');
-
-    // Calcular el precio total multiplicando el precio del producto por la cantidad
-    const precioTotal = producto.precio * cantidad;
-
-    // Fusionar el nombre del usuario, la fecha actual, la cantidad, el precio total y el estado actual del producto
-    const productoPendiente = {
-      ...producto,
-      id: pedidoId,
-      nombreUsuario,
-      fechaActual,
-      estado: "pendiente",
-      cantidad: parseInt(cantidad), // Convertir la cantidad a número entero
-      precioTotal,
-    };
-
-    navegacion('/');
-
-    // Llamar a la función para insertar los datos en la base de datos
-    consultaAgregarPedido(productoPendiente).then((respuesta) => {
-      if (respuesta) {
-        Swal.fire(
-          "¡Compra realizada!",
-          "La compra se ha realizado exitosamente. Muchas Gracias.",
-          "success"
-        );
-
-        // Limpiar el localStorage después de la compra
-        localStorage.clear();
-      } else {
-        Swal.fire(
-          "Ocurrió un error",
-          "Intente esta operación en unos minutos",
-          "error"
-        );
       }
     });
-  };
-
-  const handleChangeCantidad = (event) => {
-    const value = event.target.value;
-    setCantidad(value); // Actualizar el estado de la cantidad
   };
 
   return (
     <section>
       <CustomNav
-        usuarioLogueado={usuarioLogeado}
-        setUsuarioLogueado={setUsuarioLogueado}
+        usuarioLogeado={usuarioLogeado}
+        setUsuarioLogeado={setUsuarioLogeado}
       ></CustomNav>
+      <section className="container contenedor-principal">
+        <h1 className="h1-titulo text-center m-4">Tus Pedidos</h1>
+        <hr />
+        <div className="row card-pedidos-container rounded-4">
+          {productosSeleccionados.map((producto, index) => (
+            <div className="col-md-4 d-flex mt-3" key={index}>
+              <div className="card mb-4 d-flex flex-column">
+                <img
+                  src={producto.imagen}
+                  className="card-img-top"
+                  alt={producto.nombreProducto}
+                />
+                <div className="card-body d-flex flex-column">
+                  <div>
+                    <h5 className="card-title">{producto.nombreProducto}</h5>
+                    <p className="card-text">Precio: {producto.precio}</p>
+                    <p className="card-text">Categoría: {producto.categoria}</p>
+                    <p className="card-text">{producto.descripcion}</p>
+                  </div>
+                  <div className="mt-auto">
+                    <button
+                      className="btn btn-danger mt-4 mb-2"
+                      onClick={() => handleEliminarClick(index)}
+                    >
+                      Eliminar
+                    </button>
+                    <br />
+                    <label>Cantidad:</label>
+                    <input
+                      type="number"
+                      value={producto.cantidad || 1}
+                      onChange={(e) =>
+                        handleCantidadChange(index, parseInt(e.target.value))
+                      }
+                      className="form-control"
+                      min="1"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="mt-5 pago-container rounded-3 d-flex flex-column align-items-center w-50">
+          <h4 className="text-center pago-texto">
+            Precio Total: {calcularPrecioTotal()}
+          </h4>
 
-    <Container className="my-3 container-fluid">
-      <h1>Carro de la compra</h1>
-      <hr />
-      <h2>Estás a punto de comprar esto:</h2>
-      <Card>
-        <Row>
-          <Col md={6}>
-            <Card.Img variant="top" src={producto.imagen} />
-          </Col>
-          <Col md={6}>
-            <Card.Body>
-              <Card.Title>{producto.nombreProducto}</Card.Title>
-              <hr />
-              <Card.Text>
-                {producto.descripcion}
-                <br />
-                <br />
-                <span className="text-danger fw-semibold ">Categoria:</span>{" "}
-                {producto.categoria}
-                <br />
-                <span className="text-danger fw-semibold ">Precio:</span>{" "}
-                ${producto.precio}
-              </Card.Text>
-              <p>Se te puede aplicar impuestos a esta compra*</p>
-              
-              {/* Agregar el campo de entrada para la cantidad */}
-              <label htmlFor="cantidad">Cantidad:</label>
-              <label htmlFor="cantidad">Cantidad:</label>
-              <input
-                type="number"
-                id="cantidad"
-                name="cantidad"
-                value={cantidad}
-                onChange={handleChangeCantidad}
-                min="1"
-              />
+          <button className="btn btn-danger m-2" onClick={handleCompra}>
+            COMPRAR
+          </button>
 
-              {/* Mostrar el precio total */}
-              <p>Precio Total: ${producto.precio * cantidad}</p>
-
-              <button className="btn btn-danger" onClick={handleCompra}>
-                COMPRAR
-              </button>
-              <br />
-              <Link className="btn btn-danger mt-2" to="/">
-                Cancelar
-              </Link>
-            </Card.Body>
-          </Col>
-        </Row>
-      </Card>
-    </Container>
-      <Footer></Footer>
+          <Link className="btn btn-danger m-2" to="/">
+            Volver a inicio
+          </Link>
+        </div>
+      </section>
+      <section className="contenedor-footer">
+        <Footer></Footer>
+      </section>
     </section>
   );
 };

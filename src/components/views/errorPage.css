@@ -1,4 +1,4 @@
-/*Dispositivo Chico*/
+
 @media all and (max-width: 576px) {
   .titulo-error {
     font-family: "Cinzel Decorative", cursive;
@@ -17,7 +17,7 @@
     background-color: #101c1c;
   }
 }
-/*Dispositivo Mediano*/
+
 @media all and (min-width: 577px) and (max-width: 991px) {
   .titulo-error {
     font-family: "Cinzel Decorative", cursive;

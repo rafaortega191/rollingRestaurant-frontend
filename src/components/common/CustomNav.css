@@ -1,8 +1,9 @@
 .navEstilo {
-  background-color: #f1f4c3;
-  border-radius: 0px 0px 20px 20px;
+  background-color: #dccbb9;
+  border-radius: 0px 0px 10px 10px;
   font-family: "Prata", serif;
-  padding-top: 0.1rem; 
+  padding-top: 0.1rem;
+  padding-bottom: 0.1rem;
 }
 
 .tituloNav {
@@ -11,15 +12,53 @@
 }
 
 .tituloNav:hover {
-  color: #fae967; 
+  color: #dccbb9;
+  transition: 0.3s;
 }
 
-.navColor{
-background-color: #00796b;
-border-radius: 0px 0px 5px 5px;
-
+.navColor {
+  background-color: #066253;
 }
 
 .logo {
-  width: 50px;
+  width: 45px;
+}
+
+.cerrar-sesion-confirm-button.swal2-confirm {
+  background-color: #1c443d;
+  color: white;
+  border: none;
+  margin-right: 8px;
+}
+
+.cerrar-sesion-confirm-button.swal2-confirm:hover {
+  background-color: #066253;
+}
+
+
+@media all and (max-width: 576px) {
+  .logo {
+    display: none;
+  }
+
+  .navEstilo {
+    background-color: #dccbb9;
+    border-radius: 0px 0px 10px 10px;
+    font-family: "Prata", serif;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
+
+@media all and (min-width: 577px) and (max-width: 991px) {
+  .container-nav {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+
+  }
 }

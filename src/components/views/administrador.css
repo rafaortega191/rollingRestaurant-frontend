@@ -1,0 +1,11 @@
+table {
+  width: 100%;
+  border-spacing: 5px;
+}
+
+td {
+  overflow: hidden;
+  padding: 5px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

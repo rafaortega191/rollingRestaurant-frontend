@@ -8,7 +8,7 @@ export const consultarUsuario = async (id) =>{
         const usuario = await respuesta.json();
         return usuario;
     }catch(error){
-        console.log(error);
+        
     }
 }
 
@@ -18,7 +18,7 @@ export const consultaListaUsuarios = async () => {
         const listaUsuarios = await respuesta.json();
         return listaUsuarios;
     }catch(error){
-        console.log(error);
+        
     }
 
 }
@@ -31,7 +31,7 @@ export const consultaBorrarUsuario = async (id) => {
             return respuesta;  
 
     }catch(error){
-        console.log(error);
+        
     }
 }
 
@@ -46,7 +46,7 @@ export const consultaEditarUsuario = async (usuario, id) =>{
         });
         return respuesta;
     }catch(error){
-        console.log(error);
+        
     }
 }
 
@@ -56,7 +56,7 @@ export const consultaListaProductos = async () => {
         const listaProductos = await respuesta.json();
         return listaProductos;
     }catch(error){
-        console.log(error);
+        
     }
 
 }
@@ -69,7 +69,7 @@ export const consultaBorrarProducto = async (id) => {
             return respuesta;  
 
     }catch(error){
-        console.log(error);
+        
     }
 }
 
@@ -84,7 +84,7 @@ export const consultaAgregarProducto = async (producto) =>{
         });
         return respuesta;
     }catch(error){
-        console.log(error);
+        
     }
 }
 
@@ -99,7 +99,7 @@ export const consultaEditarProducto = async (producto, id) =>{
         });
         return respuesta;
     }catch(error){
-        console.log(error);
+        
     }
 }
 
@@ -109,7 +109,7 @@ export const consultaProducto = async (id) =>{
         const producto = await respuesta.json();
         return producto;
     }catch(error){
-        console.log(error);
+        
     }
 }
 
@@ -124,7 +124,7 @@ export const consultaAgregarPedido = async (pedido) => {
       });
       return respuesta;
     } catch (error) {
-      console.log(error);
+      
     }
 };
 
@@ -134,7 +134,7 @@ export const consultaListaPedidos = async () => {
         const listaPedidos = await respuesta.json();
         return listaPedidos;
     }catch(error){
-        console.log(error);
+        
     }
 
 }
@@ -147,7 +147,7 @@ export const consultaBorrarPedido = async (id) => {
             return respuesta;  
 
     }catch(error){
-        console.log(error);
+        
     }
 }
 
@@ -157,7 +157,7 @@ export const consultaPedido = async (id) =>{
         const pedido = await respuesta.json();
         return pedido;
     }catch(error){
-        console.log(error);
+        
     }
 }
 
@@ -172,6 +172,6 @@ export const consultaEditarPedido = async (pedido, id) =>{
         });
         return respuesta;
     }catch(error){
-        console.log(error);
+        
     }
 }

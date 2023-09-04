@@ -17,16 +17,16 @@ const CargarPedido = ({pedido, setPedidos}) => {
       cancelButtonText: 'Cancelar',
     }).then((result) => {
       if (result.isConfirmed) {
-        //borrar el pedido de la api
+        
         consultaBorrarPedido(pedido._id).then((respuesta)=>{
-          console.log(respuesta);
+          
           if(respuesta.status === 200){
             Swal.fire(
               'pedido Eliminado!',
-              `El ${pedido.nombrepedido} fue eliminado correctamente`,
+              `El Pedido fue eliminado correctamente`,
               'success'
             );
-            //actualizar la table de pedidos
+            
             consultaListaPedidos().then((respuesta)=>setPedidos(respuesta))
           }else{
             Swal.fire(
@@ -43,23 +43,15 @@ const CargarPedido = ({pedido, setPedidos}) => {
    return (
     <tr>
       {/* <td>{props.pedido._id}</td> */}
-      <td>{pedido._id}</td>
-      <td>{pedido.nombreProducto}</td>
-      <td>${pedido.precio}</td>
-      <td>{pedido.categoria}</td>
-      <td>{pedido.imagen}</td>
       <td>
         <Link className="btn btn-warning" to={'/administrador/usuarios/editarpedido/'+pedido._id}>Editar</Link>
         <Button className="m-2" variant="danger" onClick={borrarPedido}>
           Borrar
         </Button>
       </td>
-      <td>{pedido.descripcion}</td>
+      <td>{pedido.fecha}</td>
       <td>{pedido.estado}</td>
-      <td>{pedido.nombreUsuario}</td>
-      <td>{pedido.cantidad}</td>
-      <td>{pedido.precioTotal}</td>
-      <td>{pedido.fechaActual}</td>
+      <td>{pedido.usuario}</td>
     </tr>
   );
 };
