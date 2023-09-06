@@ -23,7 +23,6 @@ const Registro = ({ usuarioLogeado, setUsuarioLogeado }) => {
 
     signup(usuario).then((respuesta) => {
       if (respuesta && respuesta.status === 201) {
-        
         sessionStorage.setItem("usuario", JSON.stringify(respuesta));
         Swal.fire(
           "Bienvenido",
@@ -47,9 +46,14 @@ const Registro = ({ usuarioLogeado, setUsuarioLogeado }) => {
     <>
       <Container className="mainSection d-block align-items-center justify-content-center p-3 my-5">
         <section className="row bordeLogo rounded rounded-3 mx-auto">
-        <img src={logo} alt="Imagen" className="img-fluid w-50 mx-auto d-block" />
-        <p className="text-center tituloPagina ">Rolling Restaurant</p>
-
+          <a href="/">
+            <img
+              src={logo}
+              alt="Imagen"
+              className="img-fluid w-50 mx-auto d-block"
+            />
+          </a>
+          <p className="text-center tituloPagina ">Rolling Restaurant</p>
         </section>
         <Card className="my-5">
           <Card.Header className="text-center titulo py-3" as="h3">
