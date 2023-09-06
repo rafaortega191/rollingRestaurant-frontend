@@ -12,9 +12,9 @@ import ProductoDetalles from "./components/views/pageDetalle";
 import Inicio from "./components/views/Inicio";
 import Pedidos from "./components/views/Pedidos";
 import RutasDelUsuario from "./components/routes/RutasDelUsuario";
+import RutasProtegidas from "./components/routes/RutasProtegidas";
 
 function App() {
-
   const [usuarioLogeado, setUsuarioLogeado] = useState(null);
 
   useEffect(() => {
@@ -28,10 +28,12 @@ function App() {
     {
       path: "/administrador",
       element: (
-        <Administrador
-          usuarioLogeado={usuarioLogeado}
-          setUsuarioLogeado={setUsuarioLogeado}
-        />
+        <RutasProtegidas>
+          <Administrador
+            usuarioLogeado={usuarioLogeado}
+            setUsuarioLogeado={setUsuarioLogeado}
+          />
+        </RutasProtegidas>
       ),
       errorElement: <ErrorPage />,
     },
@@ -46,16 +48,6 @@ function App() {
       errorElement: <ErrorPage />,
     },
     {
-      path: "/",
-      element: (
-        <Inicio
-          usuarioLogeado={usuarioLogeado}
-          setUsuarioLogeado={setUsuarioLogeado}
-        />
-      ),
-      errorElement: <ErrorPage />,
-    },
-    {
       path: "/registro",
       element: <Registro setUsuarioLogeado={setUsuarioLogeado} />,
       errorElement: <ErrorPage />,
@@ -63,20 +55,24 @@ function App() {
     {
       path: "/administrador/productos/*",
       element: (
-        <RutasDelAdmin
-          usuarioLogeado={usuarioLogeado}
-          setUsuarioLogeado={setUsuarioLogeado}
-        />
+        <RutasProtegidas>
+          <RutasDelAdmin
+            usuarioLogeado={usuarioLogeado}
+            setUsuarioLogeado={setUsuarioLogeado}
+          />
+        </RutasProtegidas>
       ),
       errorElement: <ErrorPage />,
     },
     {
       path: "/administrador/usuarios/*",
       element: (
-        <RutasDelUsuario
-          usuarioLogeado={usuarioLogeado}
-          setUsuarioLogeado={setUsuarioLogeado}
-        />
+        <RutasProtegidas>
+          <RutasDelUsuario
+            usuarioLogeado={usuarioLogeado}
+            setUsuarioLogeado={setUsuarioLogeado}
+          />
+        </RutasProtegidas>
       ),
       errorElement: <ErrorPage />,
     },
@@ -102,16 +98,6 @@ function App() {
     },
     {
       path: "/pedidos",
-      element: (
-        <Pedidos
-          usuarioLogeado={usuarioLogeado}
-          setUsuarioLogeado={setUsuarioLogeado}
-        />
-      ),
-      errorElement: <ErrorPage />,
-    },
-    {
-      path: "/pedidos/:id",
       element: (
         <Pedidos
           usuarioLogeado={usuarioLogeado}

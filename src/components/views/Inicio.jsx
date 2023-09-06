@@ -60,7 +60,7 @@ const Inicio = ({ usuarioLogeado, setUsuarioLogeado }) => {
       <section className="contenedor-inicio">
         <div className="contenedor-cards-principales">
           <Card style={{ maxWidth: "100%" }} className="cards-principales">
-            <Link className="cards-links" href="#menu">
+            <Link className="cards-links" to="/error404">
               <img
                 src="https://images.pexels.com/photos/6287298/pexels-photo-6287298.jpeg"
                 className="imagenes-cards-principales "

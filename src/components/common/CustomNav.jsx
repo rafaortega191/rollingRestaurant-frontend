@@ -24,7 +24,7 @@ const CustomNav = ({usuarioLogeado, setUsuarioLogeado}) => {
         Swal.fire("Cerraste Sesion", "", "success");
         setUsuarioLogeado(null);
         sessionStorage.removeItem("usuario");
-        navegacion("/");
+        navegacion("/login");
       }
     });
   };
@@ -81,43 +81,7 @@ const CustomNav = ({usuarioLogeado, setUsuarioLogeado}) => {
                 </>
               )}
 
-              {/* {usuarioLogeado.es_admin === true ? (
-                <>
-                  <NavLink
-                    end
-                    className="nav-item nav-link"
-                    to="/administrador"
-                  >
-                    Administrador: {usuarioLogeado.nombreUsuario}
-                  </NavLink>
-
-                  <NavLink end className="nav-item nav-link" onClick={logout}>
-                    Logout
-                  </NavLink>
-                </>
-              ) : usuarioLogeado.es_admin === false &&
-                usuarioLogeado.es_admin !== undefined &&
-                usuarioLogeado.es_admin !== null ? (
-                <>
-                  <NavLink end className="nav-item nav-link" to="/">
-                    {usuarioLogeado.nombreUsuario}
-                  </NavLink>
-
-                  <NavLink end className="nav-item nav-link" onClick={logout}>
-                    Logout
-                  </NavLink>
-                </>
-              ) : (
-                <>
-                  <NavLink end className="nav-item nav-link" to="/login">
-                    Login
-                  </NavLink>
-
-                  <NavLink end className="nav-item nav-link" to="/registro">
-                    Registro <AiOutlineUser className="fs-5" />
-                  </NavLink>
-                </>
-              )} */}
+              
             </Nav>
           </Navbar.Collapse>
         </Container>
