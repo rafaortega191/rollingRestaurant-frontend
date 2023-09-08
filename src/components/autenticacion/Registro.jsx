@@ -6,7 +6,7 @@ import { Form, Button, Container, Card } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import Footer from "../common/Footer";
 import bcrypt from "bcryptjs";
-import logo from "../../assets/LOGO_navbar.png";
+import logo from "../../assets/logo_navbar.png";
 
 const Registro = ({ usuarioLogeado, setUsuarioLogeado }) => {
   const {
