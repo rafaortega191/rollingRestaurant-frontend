@@ -86,22 +86,53 @@ const Registro = ({ usuarioLogeado, setUsuarioLogeado }) => {
                   maxLength={50}
                 />
               </Form.Group>
-              <Form.Group className="mb-2">
+              <Form.Group className="mb-2" controlId="formBasicPassword">
                 <Form.Label>Contraseña</Form.Label>
                 <Form.Control
                   type="password"
-                  placeholder="Ingrese una contraseña"
+                  placeholder="Contraseña"
                   {...register("password", {
                     required: "La contraseña es un dato obligatorio",
                     pattern: {
-                      value: /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,100}$/,
-                      message:
-                        "La contraseña debe tener por lo menos 8 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula.",
+                      value: /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[\w\d\S]{8,100}$/,
+                      message: () => {
+                        let errorMessage =
+                          "La contraseña no cumple con los requisitos.";
+                        const passwordValue =
+                          errors.password && errors.password.ref.value;
+
+                        if (passwordValue && !/[A-Z]/.test(passwordValue)) {
+                          errorMessage +=
+                            " La contraseña debe contener al menos una mayúscula.";
+                        }
+
+                        if (passwordValue && !/[a-z]/.test(passwordValue)) {
+                          errorMessage +=
+                            " La contraseña debe contener al menos una minúscula.";
+                        }
+
+                        if (passwordValue && !/\d/.test(passwordValue)) {
+                          errorMessage +=
+                            " La contraseña debe contener al menos un dígito.";
+                        }
+
+                        return errorMessage;
+                      },
                     },
                   })}
                   minLength={8}
                   maxLength={100}
                 />
+                {errors.password && (
+                  <div className="text-danger">
+                    {errors.password.type === "required" && (
+                      <p>La contraseña es un dato obligatorio.</p>
+                    )}
+                    {errors.password.type === "pattern" && (
+                      <p>{errors.password.message()}</p>
+                    )}
+                  </div>
+                )}
               </Form.Group>
 
               <div className="d-flex justify-content-center row">

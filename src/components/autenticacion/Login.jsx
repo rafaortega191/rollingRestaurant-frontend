@@ -12,7 +12,6 @@ const Login = ({ usuarioLogeado, setUsuarioLogeado }) => {
     register,
     handleSubmit,
     formState: { errors },
-    reset,
   } = useForm();
 
   const navegacion = useNavigate();
@@ -81,21 +80,50 @@ const Login = ({ usuarioLogeado, setUsuarioLogeado }) => {
                   {...register("password", {
                     required: "La contraseña es un dato obligatorio",
                     pattern: {
-                      value: /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,100}$/,
-                      message:
-                        "La contraseña debe tener por lo menos 8 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula.",
+                      value: /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[\w\d\S]{8,100}$/,
+                      message: () => {
+                        let errorMessage =
+                          "La contraseña no cumple con los requisitos.";
+                        const passwordValue =
+                          errors.password && errors.password.ref.value;
+
+                        if (passwordValue && !/[A-Z]/.test(passwordValue)) {
+                          errorMessage +=
+                            " La contraseña debe contener al menos una mayúscula.";
+                        }
+
+                        if (passwordValue && !/[a-z]/.test(passwordValue)) {
+                          errorMessage +=
+                            " La contraseña debe contener al menos una minúscula.";
+                        }
+
+                        if (passwordValue && !/\d/.test(passwordValue)) {
+                          errorMessage +=
+                            " La contraseña debe contener al menos un dígito.";
+                        }
+
+                        return errorMessage;
+                      },
                     },
                   })}
                   minLength={8}
                   maxLength={100}
                 />
-                <Form.Text className="text-danger">
-                  {errors.password?.message}
-                </Form.Text>
+                {errors.password && (
+                  <div className="text-danger">
+                    {errors.password.type === "required" && (
+                      <p>La contraseña es un dato obligatorio.</p>
+                    )}
+                    {errors.password.type === "pattern" && (
+                      <p>{errors.password.message()}</p>
+                    )}
+                  </div>
+                )}
               </Form.Group>
               <div className="d-flex justify-content-center row">
                 <p>
-                  No tienes cuenta? <Link to="/registro">Registrate Gratis</Link>.
+                  No tienes cuenta?{" "}
+                  <Link to="/registro">Registrate Gratis</Link>.
                 </p>
                 <Button className="botonIngresar px-3 my-3 w-50" type="submit">
                   Ingresar
