@@ -122,8 +122,12 @@ const Login = ({ usuarioLogeado, setUsuarioLogeado }) => {
               </Form.Group>
               <div className="d-flex justify-content-center row">
                 <p>
+<<<<<<< HEAD
                   No tienes cuenta?{" "}
                   <Link to="/registro">Registrate Gratis</Link>.
+=======
+                  No tienes cuenta? <Link to="/registro">Registrate Gratis</Link>.
+>>>>>>> dev
                 </p>
                 <Button className="botonIngresar px-3 my-3 w-50" type="submit">
                   Ingresar

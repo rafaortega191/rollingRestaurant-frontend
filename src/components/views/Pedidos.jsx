@@ -113,7 +113,7 @@ const Pedidos = ({ usuarioLogeado, setUsuarioLogeado }) => {
         usuarioLogeado={usuarioLogeado}
         setUsuarioLogeado={setUsuarioLogeado}
       ></CustomNav>
-      <section className="container">
+      <section className="container contenedor-principal">
         <h1 className="h1-titulo text-center m-4">Tus Pedidos</h1>
         <hr />
         <div className="row card-pedidos-container rounded-4">
@@ -170,8 +170,10 @@ const Pedidos = ({ usuarioLogeado, setUsuarioLogeado }) => {
           </Link>
         </div>
       </section>
+<section className="contenedor-footer">
 
       <Footer></Footer>
+</section>
     </section>
   );
 };
