@@ -4,8 +4,8 @@ import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import "./Login.css";
 import { Link, useNavigate } from "react-router-dom";
-import CustomNav from "../common/CustomNav.jsx";
 import Footer from "../common/Footer.jsx";
+import logo from "../../assets/logo_navbar.png";
 
 const Login = ({ usuarioLogeado, setUsuarioLogeado }) => {
   const {
@@ -42,14 +42,13 @@ const Login = ({ usuarioLogeado, setUsuarioLogeado }) => {
 
   return (
     <>
-      <CustomNav
-        usuarioLogeado={usuarioLogeado}
-        setUsuarioLogeado={setUsuarioLogeado}
-      ></CustomNav>
-      <Container className="mainSection d-block align-items-center justify-content-center p-3 my-5">
+      <Container className="mainSection d-block align-items-center justify-content-center pb-3 my-3">
         <Card className="my-5">
-          <Card.Header className="text-center titulo py-3" as="h3">
-            Login
+          <Card.Header className="text-center titulo" as="h3">
+          <a href="/">
+              <Card.Img variant="top" src={logo} className="w-50" />
+            </a>
+            <Card.Title className="titulo">Iniciar Sesion</Card.Title>
           </Card.Header>
           <Card.Body className="texto_general">
             <Form onSubmit={handleSubmit(onSubmit)}>
