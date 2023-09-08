@@ -6,7 +6,7 @@ import { Form, Button, Container, Card } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import Footer from "../common/Footer";
 import bcrypt from "bcryptjs";
-import logo from "../../assets/logoRecortado.png";
+import logo from "../../assets/LOGO_navbar.png";
 
 const Registro = ({ usuarioLogeado, setUsuarioLogeado }) => {
   const {
@@ -44,20 +44,13 @@ const Registro = ({ usuarioLogeado, setUsuarioLogeado }) => {
 
   return (
     <>
-      <Container className="mainSection d-block align-items-center justify-content-center p-3 my-5">
-        <section className="row bordeLogo rounded rounded-3 mx-auto">
-          <a href="/">
-            <img
-              src={logo}
-              alt="Imagen"
-              className="img-fluid w-50 mx-auto d-block"
-            />
-          </a>
-          <p className="text-center tituloPagina ">Rolling Restaurant</p>
-        </section>
-        <Card className="my-5">
-          <Card.Header className="text-center titulo py-3" as="h3">
-            Registro
+      <Container className="mainSection d-block align-items-center justify-content-center pb-3 my-3">
+        <Card>
+          <Card.Header className="text-center titulo" as="h3">
+            <a href="/">
+              <Card.Img variant="top" src={logo} className="w-50" />
+            </a>
+            <Card.Title className="titulo">Registro</Card.Title>
           </Card.Header>
           <Card.Body className="texto_general">
             <Form onSubmit={handleSubmit(onSubmit)}>
