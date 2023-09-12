@@ -58,6 +58,10 @@ const Inicio = ({ usuarioLogeado, setUsuarioLogeado }) => {
         </Carousel>
       </section>
       <section className="contenedor-inicio">
+      <h2 className="text-center fw-bold subtitulos-principal">
+            Informacion
+          </h2>
+          <hr id="menu" className="m-3" />
         <div className="contenedor-cards-principales">
           <Card style={{ maxWidth: "100%" }} className="cards-principales">
             <Link className="cards-links" to="/error404">
@@ -114,25 +118,10 @@ const Inicio = ({ usuarioLogeado, setUsuarioLogeado }) => {
             </Link>
           </Card>
         </div>
-        <div className="contenedor-productos">
-          <h2 className="fw-bold titulo-buscador">TODAS NUESTRAS PASTAS</h2>
-          <div className="form-floating mb-2">
-            <input
-              type="text"
-              className="form-control"
-              id="floatingInput"
-              placeholder=" Busca algun producto"
-              maxLength="100"
-            />
-            <label htmlFor="floatingInput">
-              <i className="bi bi-search"></i>Buscar
-            </label>
-          </div>
-        </div>
         <div>
-          <h1 className="text-center fw-bold subtitulos-principal">
+          <h2 className="text-center fw-bold subtitulos-principal">
             Nuestra Seleccion de pastas
-          </h1>
+          </h2>
           <hr id="menu" className="m-3" />
 
           <Container className="contenedor-productos-menu">
