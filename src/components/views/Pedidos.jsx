@@ -137,15 +137,29 @@ const Pedidos = ({ usuarioLogeado, setUsuarioLogeado }) => {
                     </button>
                     <br />
                     <label>Cantidad:</label>
-                    <input
-                      type="number"
-                      value={producto.cantidad || 1}
-                      onChange={(e) =>
-                        handleCantidadChange(index, parseInt(e.target.value))
-                      }
-                      className="form-control"
-                      min="1"
-                    />
+                    <div className="form-control text-center contenedor-cantidad">
+                      <button className="btn rounded-3 bg-danger text-white"
+                        onClick={() => {
+                          const newValue = (producto.cantidad || 1) - 1;
+                          if (newValue >= 1) {
+                            handleCantidadChange(index, newValue);
+                          }
+                        }}
+                      >
+                        -
+                      </button>
+                      <span className="me-3 ms-3">{producto.cantidad || 1}</span>
+                      <button className="btn rounded-3 bg-danger text-white"
+                        onClick={() => {
+                          const newValue = (producto.cantidad || 1) + 1;
+                          if (newValue <= 25) {
+                            handleCantidadChange(index, newValue);
+                          }
+                        }}
+                      >
+                        +
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
