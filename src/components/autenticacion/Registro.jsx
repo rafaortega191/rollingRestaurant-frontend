@@ -60,11 +60,31 @@ const Registro = ({ usuarioLogeado, setUsuarioLogeado }) => {
                   type="text"
                   placeholder="Ingrese un nombre de usuario"
                   {...register("nombre", {
-                    required: "El nombre  es un dato obligatorio",
+                    required: {
+                      value: true,
+                      message: "El Usuario es un dato obligatorio",
+                    },
+                    pattern: {
+                      value: /^\S+$/,
+                      message:
+                        "El usuario no puede estar vacío o contener solo espacios en blanco",
+                    },
                   })}
                   maxLength={50}
                 />
+
+                {errors.nombre && (
+                  <div className="text-danger">
+                    {errors.nombre.type === "required" && (
+                      <p>El usuario es un dato obligatorio.</p>
+                    )}
+                    {errors.nombre.type === "pattern" && (
+                      <p>{errors.nombre.message}</p>
+                    )}
+                  </div>
+                )}
               </Form.Group>
+
               <Form.Group className="mb-2">
                 <Form.Label>Email</Form.Label>
                 <Form.Control
