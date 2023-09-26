@@ -48,9 +48,12 @@ const Registro = ({ usuarioLogeado, setUsuarioLogeado }) => {
     <>
       <Container className="mainSection d-block align-items-center justify-content-center p-3 my-5">
         <section className="row bordeLogo rounded rounded-3 mx-auto">
-        <img src={logo} alt="Imagen" className="img-fluid w-50 mx-auto d-block" />
-        <p className="text-center tituloPagina ">Rolling Restaurant</p>
-
+          <img
+            src={logo}
+            alt="Imagen"
+            className="img-fluid w-50 mx-auto d-block"
+          />
+          <p className="text-center tituloPagina ">Rolling Restaurant</p>
         </section>
         <Card className="my-5">
           <Card.Header className="text-center titulo py-3" as="h3">
@@ -64,11 +67,31 @@ const Registro = ({ usuarioLogeado, setUsuarioLogeado }) => {
                   type="text"
                   placeholder="Ingrese un nombre de usuario"
                   {...register("nombre", {
-                    required: "El nombre  es un dato obligatorio",
+                    required: {
+                      value: true,
+                      message: "El Usuario es un dato obligatorio",
+                    },
+                    pattern: {
+                      value: /^\S+$/,
+                      message:
+                        "El usuario no puede estar vacío o contener solo espacios en blanco",
+                    },
                   })}
                   maxLength={50}
                 />
+
+                {errors.nombre && (
+                  <div className="text-danger">
+                    {errors.nombre.type === "required" && (
+                      <p>El usuario es un dato obligatorio.</p>
+                    )}
+                    {errors.nombre.type === "pattern" && (
+                      <p>{errors.nombre.message}</p>
+                    )}
+                  </div>
+                )}
               </Form.Group>
+
               <Form.Group className="mb-2">
                 <Form.Label>Email</Form.Label>
                 <Form.Control
