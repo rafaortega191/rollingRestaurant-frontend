@@ -37,7 +37,7 @@ const Registro = ({ usuarioLogeado, setUsuarioLogeado }) => {
           navegacion("/");
         }
       } else {
-        Swal.fire("Error", "Email o password incorrecto ", "error");
+        Swal.fire("Error", "Ingrese un correo electronico diferente", "error");
       }
     });
   };
