@@ -68,7 +68,7 @@ const CardProducto = ({ user, producto }) => {
       <Card className="card-productos">
         <Card.Img className="card-imagen" variant="top" src={producto.imagen} />
         <Card.Body className="card-productos-body">
-          <Card.Title className="card-productos-titulo mt-auto">
+          <Card.Title className="card-productos-titulo mt-auto w-75">
             {producto.nombreProducto}
           </Card.Title>
           <Card.Text className="card-productos-precio mt-auto">

@@ -124,7 +124,9 @@
 .card-imagen {
     justify-content: center;
     align-items: center;
-    max-height: 430px;
+    min-width: auto;
+    min-height: 400px;
+    object-fit: cover;
 }
 
 .card-productos-body {
@@ -186,6 +188,7 @@
 .botones-carrito .swal2-cancel:hover {
   background-color: #00796b; 
 }
+
 
 
 @media all and (max-width: 576px) {

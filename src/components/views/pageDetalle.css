@@ -11,3 +11,17 @@
   body{
     background-color: white;
   }
+
+  .card-imagen-detalles {
+    justify-content: center;
+    align-items: center;
+    min-width: 550px;
+    min-height: 850px;
+    object-fit: cover;
+  }
+
+  .card-texto{
+    word-wrap: break-word;
+  }
+
+  
