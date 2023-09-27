@@ -29,6 +29,14 @@ body {
   width: 150px;
 }
 
+.card-imagen-pedidos {
+  justify-content: center;
+  align-items: center;
+  min-width: auto;
+  min-height: 650px;
+  object-fit: cover;
+}
+
 @media all and (min-width: 577px) and (max-width: 991px) {
   .card-container {
     flex-direction: column;

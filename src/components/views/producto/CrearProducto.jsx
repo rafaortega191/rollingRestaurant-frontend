@@ -15,7 +15,6 @@ const CrearProducto = () => {
 
   const onSubmit = (productoNuevo) => {
     consultaAgregarProducto(productoNuevo).then((respuestaCreated) => {
-      
       if (respuestaCreated && respuestaCreated.status === 201) {
         Swal.fire(
           "Producto creado",
@@ -46,13 +45,24 @@ const CrearProducto = () => {
             placeholder="Ej: Fideos"
             {...register("nombreProducto", {
               required: "El nombre del producto es obligatorio",
+              pattern: {
+                value: /^[a-zA-Z0-9\s]*$/,
+                message:
+                  "El nombre del producto solo puede contener letras, números y espacios.",
+              },
               minLength: {
                 value: 10,
                 message: "Se requieren al menos 10 caracteres.",
               },
               maxLength: {
-                value: 75,
-                message: "Se permite un máximo de 75 caracteres.",
+                value: 35,
+                message: "Se permite un máximo de 35 caracteres.",
+              },
+              validate: (value) => {
+                if (value.trim() !== value) {
+                  return "El nombre del producto no puede empezar ni terminar con espacios en blanco.";
+                }
+                return true;
               },
             })}
           />
@@ -64,16 +74,21 @@ const CrearProducto = () => {
           <Form.Label>Precio*</Form.Label>
           <Form.Control
             type="number"
-            placeholder="Ej: 50"
+            placeholder="Ej: 500"
             {...register("precio", {
-              required: "El precio del producto es obligatorio",
+              required:
+                "El precio del producto es obligatorio y debe ser numerico",
               min: {
                 value: 100,
-                message: "El precio minimo es de $100",
+                message: "El precio mínimo es de $100",
               },
               max: {
                 value: 10000,
-                message: "El precio maximo es de $10000",
+                message: "El precio máximo es de $10000",
+              },
+              pattern: {
+                value: /^[1-9]\d*$/,
+                message: "Ingresa un valor positivo.",
               },
             })}
           />
@@ -81,13 +96,14 @@ const CrearProducto = () => {
             {errors.precio?.message}
           </Form.Text>
         </Form.Group>
+
         <Form.Group className="mb-3" controlId="formDescripcion">
-          <Form.Label>Descripcion*</Form.Label>
+          <Form.Label>Descripción*</Form.Label>
           <Form.Control
             type="text"
             placeholder="Ej: Fideos con salsa"
             {...register("descripcion", {
-              required: "La descripcion del producto es obligatoria",
+              required: "La descripción del producto es obligatoria",
               minLength: {
                 value: 10,
                 message: "Se requieren al menos 10 caracteres.",
@@ -96,25 +112,38 @@ const CrearProducto = () => {
                 value: 250,
                 message: "Se permite un máximo de 250 caracteres.",
               },
+              validate: (value) => {
+                if (value.trim() !== value) {
+                  return "El nombre del producto no puede empezar ni terminar con espacios en blanco.";
+                }
+                return true;
+              },
             })}
           />
           <Form.Text className="text-danger">
             {errors.descripcion?.message}
           </Form.Text>
         </Form.Group>
+
         <Form.Group className="mb-3" controlId="formImagen">
           <Form.Label>Imagen URL*</Form.Label>
           <Form.Control
             type="text"
             placeholder="Ej: https://images.pexels.com/photos/9617397/pexels-photo-9617397.jpg"
             {...register("imagen", {
-              required: "La imagen es obligatoria y debe tener formato .jpg",
+              required:
+                "La imagen es obligatoria y debe tener formato .jpg o .jpeg",
+              pattern: {
+                value: /^(https?:\/\/.*\.(jpg|jpeg))$/,
+                message: "Ingresa un enlace válido con formato .jpg o .jpeg",
+              },
             })}
           />
           <Form.Text className="text-danger">
             {errors.imagen?.message}
           </Form.Text>
         </Form.Group>
+
         <Form.Group className="mb-3" controlId="formPrecio">
           <Form.Label>Categoria*</Form.Label>
           <Form.Select

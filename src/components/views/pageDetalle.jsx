@@ -41,12 +41,7 @@ const ProductoDetalles = ({
             <Col lg={6}>
               <div className="border rounded-4 mb-3 d-flex justify-content-center">
                 <Image
-                  style={{
-                    maxWidth: "100%",
-                    maxHeight: "100vh",
-                    margin: "auto",
-                  }}
-                  className="rounded-4 fit"
+                  className="rounded-4 fit card-imagen-detalles"
                   src={producto.imagen}
                   alt="Product"
                 />
@@ -60,7 +55,7 @@ const ProductoDetalles = ({
                   <span className="h5">${producto.precio}</span>
                   <span className="text-muted">/por producto</span>
                 </div>
-                <p>{producto.descripcion}</p>
+                <p className="card-texto">{producto.descripcion}</p>
                 <div className="row">
                   <Table className="border mt-3 mb-2">
                     <tbody>

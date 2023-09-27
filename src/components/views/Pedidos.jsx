@@ -118,7 +118,7 @@ const Pedidos = ({ usuarioLogeado, setUsuarioLogeado }) => {
               <div className="card mb-4 d-flex flex-column">
                 <img
                   src={producto.imagen}
-                  className="card-img-top"
+                  className="card-img-top card-imagen-pedidos"
                   alt={producto.nombreProducto}
                 />
                 <div className="card-body d-flex flex-column">
