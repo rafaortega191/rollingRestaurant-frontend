@@ -7,6 +7,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Footer from "../common/Footer";
 import bcrypt from "bcryptjs";
 import logo from "../../assets/logo_navbar.png";
+import { useState } from "react";
 
 const Registro = ({ usuarioLogeado, setUsuarioLogeado }) => {
   const {
@@ -17,6 +18,11 @@ const Registro = ({ usuarioLogeado, setUsuarioLogeado }) => {
   } = useForm();
 
   const navegacion = useNavigate();
+  const [mostrarContraseña, setMostrarContraseña] = useState(false);
+
+  const alternarVisibilidadContraseña = () => {
+    setMostrarContraseña(!mostrarContraseña);
+  };
 
   const onSubmit = (usuario) => {
     usuario.password = bcrypt.hashSync(usuario.password, 2);
@@ -65,12 +71,12 @@ const Registro = ({ usuarioLogeado, setUsuarioLogeado }) => {
                       message: "El Usuario es un dato obligatorio",
                     },
                     pattern: {
-                      value: /^\S+$/,
+                      value: /^(?!\s)(?!.*\s$)[a-zA-Z\s]+$/,
                       message:
-                        "El usuario no puede estar vacío o contener solo espacios en blanco",
+                        "El usuario debe contener solo letras y espacios y no puede empezar ni terminar con espacios.",
                     },
                   })}
-                  maxLength={50}
+                  maxLength={35}
                 />
 
                 {errors.nombre && (
@@ -98,47 +104,72 @@ const Registro = ({ usuarioLogeado, setUsuarioLogeado }) => {
                       message:
                         "El email debe cumplir con el formato mail@dominio.com",
                     },
+                    validate: (value) => {
+                      const trimmedValue = value.trim();
+                      if (value !== trimmedValue) {
+                        return "No se permiten espacios al principio y al final del email";
+                      }
+                    },
                   })}
                   maxLength={50}
                 />
+                {errors.email && (
+                  <p className="text-danger">{errors.email.message}</p>
+                )}
               </Form.Group>
+
               <Form.Group className="mb-2" controlId="formBasicPassword">
                 <Form.Label>Contraseña</Form.Label>
-                <Form.Control
-                  type="password"
-                  placeholder="Contraseña"
-                  {...register("password", {
-                    required: "La contraseña es un dato obligatorio",
-                    pattern: {
-                      value: /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[\w\d\S]{8,100}$/,
-                      message: () => {
-                        let errorMessage =
-                          "La contraseña no cumple con los requisitos.";
-                        const passwordValue =
-                          errors.password && errors.password.ref.value;
+                <div className="input-group">
+                  <Form.Control
+                    type={mostrarContraseña ? "text" : "password"}
+                    placeholder="Contraseña"
+                    {...register("password", {
+                      required: "La contraseña es un dato obligatorio",
+                      pattern: {
+                        value: /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[\w\d\S]{8,50}$/,
+                        message: () => {
+                          let mensajeError =
+                            "La contraseña no cumple con los requisitos debe tener entre 8 y 50 caracteres y no incluir espacios.";
+                          const valorContraseña =
+                            errors.password && errors.password.ref.value;
 
-                        if (passwordValue && !/[A-Z]/.test(passwordValue)) {
-                          errorMessage +=
-                            " La contraseña debe contener al menos una mayúscula.";
-                        }
+                          if (
+                            valorContraseña &&
+                            !/[A-Z]/.test(valorContraseña)
+                          ) {
+                            mensajeError +=
+                              " La contraseña debe contener al menos una mayúscula.";
+                          }
 
-                        if (passwordValue && !/[a-z]/.test(passwordValue)) {
-                          errorMessage +=
-                            " La contraseña debe contener al menos una minúscula.";
-                        }
+                          if (
+                            valorContraseña &&
+                            !/[a-z]/.test(valorContraseña)
+                          ) {
+                            mensajeError +=
+                              " La contraseña debe contener al menos una minúscula.";
+                          }
 
-                        if (passwordValue && !/\d/.test(passwordValue)) {
-                          errorMessage +=
-                            " La contraseña debe contener al menos un dígito.";
-                        }
+                          if (valorContraseña && !/\d/.test(valorContraseña)) {
+                            mensajeError +=
+                              " La contraseña debe contener al menos un dígito.";
+                          }
 
-                        return errorMessage;
+                          return mensajeError;
+                        },
                       },
-                    },
-                  })}
-                  minLength={8}
-                  maxLength={100}
-                />
+                    })}
+                    minLength={8}
+                    maxLength={50}
+                  />
+                  <button
+                    className="btn btn-outline-secondary"
+                    type="button"
+                    onClick={alternarVisibilidadContraseña}
+                  >
+                    {mostrarContraseña ? "Ocultar" : "Mostrar"}
+                  </button>
+                </div>
                 {errors.password && (
                   <div className="text-danger">
                     {errors.password.type === "required" && (
