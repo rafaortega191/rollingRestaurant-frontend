@@ -35,7 +35,7 @@ const ProductoDetalles = ({
         usuarioLogeado={usuarioLogeado}
         setUsuarioLogeado={setUsuarioLogeado}
       ></CustomNav>
-      <section className="py-5">
+      <section className="py-5 container">
         <Container>
           <Row className="gx-5">
             <Col lg={6}>
