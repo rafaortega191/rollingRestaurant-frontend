@@ -24,7 +24,6 @@
     word-wrap: break-word;
   }
 
-  /* Estilos para dispositivos pequeños (smartphones) */
 @media only screen and (max-width: 767px) {
   .card-imagen-detalles {
     justify-content: center;
@@ -35,7 +34,6 @@
   }
 }
 
-/* Estilos para dispositivos medianos (tablets) */
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
   .card-imagen-detalles {
     justify-content: center;
